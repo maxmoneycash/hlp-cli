@@ -1,0 +1,55 @@
+{
+ "top": [
+  {
+   "addr": "0xad0a…cc67",
+   "arcadeScore": -0.36661999999523687,
+   "pnlPct": -0.36661999999523687,
+   "difficulty": "beginner",
+   "multiplier": 1,
+   "outcome": "survived",
+   "flips": 0,
+   "ts": 1780779266522
+  },
+  {
+   "addr": "0xad0a…cc67",
+   "arcadeScore": -1.2938799999938055,
+   "pnlPct": -1.2938799999938055,
+   "difficulty": "beginner",
+   "multiplier": 1,
+   "outcome": "survived",
+   "flips": 0,
+   "ts": 1780772835672
+  },
+  {
+   "addr": "0xad0a…cc67",
+   "arcadeScore": -1.5249100000073668,
+   "pnlPct": -1.5249100000073668,
+   "difficulty": "beginner",
+   "multiplier": 1,
+   "outcome": "survived",
+   "flips": 0,
+   "ts": 1780772877747
+  },
+  {
+   "addr": "0xad0a…cc67",
+   "arcadeScore": -21.05460000000676,
+   "pnlPct": -14.036400000004507,
+   "difficulty": "intermediate",
+   "multiplier": 1.5,
+   "outcome": "survived",
+   "flips": 0,
+   "ts": 1780798597205
+  },
+  {
+   "addr": "0xad0a…cc67",
+   "arcadeScore": -100,
+   "pnlPct": -100,
+   "difficulty": "beginner",
+   "multiplier": 1,
+   "outcome": "liquidated",
+   "flips": 1,
+   "ts": 1780779634706
+  }
+ ],
+ "history": []
+}

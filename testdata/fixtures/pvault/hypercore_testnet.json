@@ -1,0 +1,142 @@
+{
+ "_note": "HyperCore testnet (api.hyperliquid-testnet.xyz/info) view of the vault contract address, which is its own HyperCore account.",
+ "clearinghouseState": {
+  "marginSummary": {
+   "accountValue": "306.751387",
+   "totalNtlPos": "173.75032",
+   "totalRawUsd": "480.501707",
+   "totalMarginUsed": "34.750064"
+  },
+  "crossMarginSummary": {
+   "accountValue": "306.751387",
+   "totalNtlPos": "173.75032",
+   "totalRawUsd": "480.501707",
+   "totalMarginUsed": "34.750064"
+  },
+  "crossMaintenanceMarginUsed": "3.315463",
+  "withdrawable": "272.001323",
+  "assetPositions": [
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "SOL",
+     "szi": "-0.32",
+     "leverage": {
+      "type": "cross",
+      "value": 5
+     },
+     "entryPx": "64.2371",
+     "positionValue": "20.80096",
+     "unrealizedPnl": "-0.24508",
+     "returnOnEquity": "-0.0596131131",
+     "liquidationPx": "968.0861071429",
+     "marginUsed": "4.160192",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "1.535531",
+      "sinceOpen": "1.535531",
+      "sinceChange": "0.769967"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "BTC",
+     "szi": "-0.00164",
+     "leverage": {
+      "type": "cross",
+      "value": 5
+     },
+     "entryPx": "73054.4",
+     "positionValue": "104.4762",
+     "unrealizedPnl": "15.33304",
+     "returnOnEquity": "0.6398938846",
+     "liquidationPx": "246442.6835290575",
+     "marginUsed": "20.89524",
+     "maxLeverage": 40,
+     "cumFunding": {
+      "allTime": "1.048639",
+      "sinceOpen": "1.048639",
+      "sinceChange": "2.724646"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "ETH",
+     "szi": "-0.0268",
+     "leverage": {
+      "type": "cross",
+      "value": 5
+     },
+     "entryPx": "1814.9",
+     "positionValue": "48.47316",
+     "unrealizedPnl": "0.16628",
+     "returnOnEquity": "0.0170931244",
+     "liquidationPx": "12908.9313359672",
+     "marginUsed": "9.694632",
+     "maxLeverage": 25,
+     "cumFunding": {
+      "allTime": "1.48963",
+      "sinceOpen": "1.48963",
+      "sinceChange": "0.606364"
+     }
+    }
+   }
+  ],
+  "time": 1794744564400
+ },
+ "clearinghouseState_dex_test": {
+  "marginSummary": {
+   "accountValue": "0.0",
+   "totalNtlPos": "0.0",
+   "totalRawUsd": "0.0",
+   "totalMarginUsed": "0.0"
+  },
+  "crossMarginSummary": {
+   "accountValue": "0.0",
+   "totalNtlPos": "0.0",
+   "totalRawUsd": "0.0",
+   "totalMarginUsed": "0.0"
+  },
+  "crossMaintenanceMarginUsed": "0.0",
+  "withdrawable": "0.0",
+  "assetPositions": [],
+  "time": 1794744689965
+ },
+ "spotClearinghouseState": {
+  "balances": [
+   {
+    "coin": "HYPE",
+    "token": 1105,
+    "total": "0.00494",
+    "hold": "0.0",
+    "entryNtl": "5.453266"
+   }
+  ]
+ },
+ "extraAgents": [
+  {
+   "name": "strategy",
+   "address": "0x6d2b4d11a1b7cecdddb7a897b1874f3ac2739a92",
+   "validUntil": 1802221063394
+  }
+ ],
+ "userRole_apiWallet": {
+  "role": "agent",
+  "data": {
+   "user": "0x688dd654bdbde2bf8b6154685437f3f9db2eaabd"
+  }
+ },
+ "userAbstraction": "disabled",
+ "perpDexs_first6": [
+  null,
+  "test",
+  "unit",
+  "scam",
+  "felix",
+  "volmex"
+ ]
+}

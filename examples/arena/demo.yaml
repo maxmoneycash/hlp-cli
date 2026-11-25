@@ -1,0 +1,24 @@
+# Demo arena: the one recorded in docs/tapes/arena.tape.
+# Two local models on the same prompt, against a Pine trend follower and a plain thesis.
+# Paper only: every entrant is a simulated ledger filled against the live order book.
+#
+#   ollama pull qwen3:8b && ollama pull llama3.1:8b
+#   hlp arena examples/arena/demo.yaml
+#
+# Paths are relative to this file. Run it for at least 48 hours before recording so the
+# leaderboard has history (see the storyboard's "resume" requirement).
+name: Launch arena
+capital: 10000
+interval: 1h
+entrants:
+  - name: Qwen3 8B
+    llm: ../../../examples/llm/macro-trader.yaml
+    model: ollama:qwen3:8b
+  - name: Llama 3.1 8B
+    llm: ../../../examples/llm/macro-trader.yaml
+    model: ollama:llama3.1:8b
+  - name: Supertrend HYPE
+    pine: ../../../examples/pine/supertrend.pine
+    coin: HYPE
+  - name: Long S&P / Short memes
+    thesis: ../../../examples/thesis/long-spy-short-memes.yaml

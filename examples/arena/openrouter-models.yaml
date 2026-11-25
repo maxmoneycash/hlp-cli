@@ -1,0 +1,27 @@
+# Model vs model on one OpenRouter key: the same scout -> decide bot on four
+# vendors' models, same capital, same live feed, paper only. Each entrant's
+# vsBench is its growth relative to buy-and-hold of the coins the entrants trade.
+#
+#   export OPENROUTER_API_KEY=...
+#   hlp arena models claude                 # ids and price per 1M tokens
+#   hlp arena examples/arena/openrouter-models.yaml --llm --max-llm-calls 200
+#
+# The run prints its estimated calls per hour and list-price cost first and
+# stops calling models after --max-llm-calls (shared by all entrants).
+name: OpenRouter models
+capital: 10000
+interval: 1h
+bench: ew
+entrants:
+  - name: Claude Sonnet 5
+    llm: ../llm/scout.yaml
+    model: openrouter/anthropic/claude-sonnet-5
+  - name: GPT-5
+    llm: ../llm/scout.yaml
+    model: openrouter/openai/gpt-5
+  - name: Gemini 4 Carbon
+    llm: ../llm/scout.yaml
+    model: openrouter/google/gemini-4-carbon
+  - name: Llama 4 Maverick
+    llm: ../llm/scout.yaml
+    model: openrouter/meta-llama/llama-4-maverick

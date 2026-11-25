@@ -1,0 +1,49 @@
+{
+ "channel": "clearinghouseState",
+ "data": {
+  "dex": "",
+  "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+  "clearinghouseState": {
+   "marginSummary": {
+    "accountValue": "1670533.27189",
+    "totalNtlPos": "1220004.379458",
+    "totalRawUsd": "670227.9296640001",
+    "totalMarginUsed": "406668.126479"
+   },
+   "crossMarginSummary": {
+    "accountValue": "1670533.27189",
+    "totalNtlPos": "1220004.379458",
+    "totalRawUsd": "670227.9296640001",
+    "totalMarginUsed": "406668.126479"
+   },
+   "crossMaintenanceMarginUsed": "51395.099876",
+   "withdrawable": "1226100.1544290001",
+   "assetPositions": [
+    {
+     "type": "oneWay",
+     "position": {
+      "coin": "BTC",
+      "szi": "11.56572",
+      "leverage": {
+       "type": "cross",
+       "value": 3
+      },
+      "entryPx": "65633.7",
+      "positionValue": "757022.63688",
+      "unrealizedPnl": "-2079.244568",
+      "returnOnEquity": "-0.008217255",
+      "liquidationPx": null,
+      "marginUsed": "252340.87896",
+      "maxLeverage": 40,
+      "cumFunding": {
+       "allTime": "-22408.635148",
+       "sinceOpen": "15.0813",
+       "sinceChange": "0.0"
+      }
+     }
+    }
+   ],
+   "time": 1794735535719
+  }
+ }
+}

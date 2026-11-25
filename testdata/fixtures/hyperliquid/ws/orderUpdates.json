@@ -1,0 +1,47 @@
+{
+ "channel": "orderUpdates",
+ "data": [
+  {
+   "order": {
+    "coin": "HYPE",
+    "side": "B",
+    "limitPx": "67.787",
+    "sz": "114.81",
+    "oid": 605972027586,
+    "timestamp": 1794735535797,
+    "origSz": "114.81",
+    "cloid": "0x13c8790b4cbf83f8b287d4aa244771ff"
+   },
+   "status": "badAloPxRejected",
+   "statusTimestamp": 1794735535797
+  },
+  {
+   "order": {
+    "coin": "SOL",
+    "side": "B",
+    "limitPx": "71.954",
+    "sz": "16.25",
+    "oid": 605972027744,
+    "timestamp": 1794735535797,
+    "origSz": "16.25",
+    "cloid": "0xa929de1b0a43690d0555e4fae9e5ea75"
+   },
+   "status": "open",
+   "statusTimestamp": 1794735535797
+  },
+  {
+   "order": {
+    "coin": "ZEC",
+    "side": "A",
+    "limitPx": "912.45",
+    "sz": "2.53",
+    "oid": 605972027889,
+    "timestamp": 1794735535797,
+    "origSz": "2.53",
+    "cloid": "0x2096c365c9764b69800ac8d424753a35"
+   },
+   "status": "open",
+   "statusTimestamp": 1794735535797
+  }
+ ]
+}

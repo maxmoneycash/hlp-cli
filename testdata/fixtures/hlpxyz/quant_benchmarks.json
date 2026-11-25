@@ -1,0 +1,46 @@
+{
+ "t0": "2016-01-01",
+ "asOf": "2026-11-14",
+ "series": {
+  "spy": {
+   "label": "S&P 500",
+   "note": "SPY, dividends reinvested",
+   "from": "2016-01-01",
+   "values": [
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "nasdaq": {
+   "label": "Nasdaq-100",
+   "note": "QQQ, dividends reinvested",
+   "from": "2016-01-01",
+   "values": [
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "btc": {
+   "label": "Bitcoin",
+   "note": "spot price",
+   "from": "2016-01-01",
+   "values": [
+    1.0,
+    0.9979,
+    0.99
+   ]
+  },
+  "hype": {
+   "label": "HYPE",
+   "note": "Hyperliquid perp price, from Dec 2024",
+   "from": "2024-12-05",
+   "values": [
+    null,
+    null,
+    null
+   ]
+  }
+ }
+}

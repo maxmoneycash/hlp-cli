@@ -1,0 +1,55 @@
+//@version=5
+// hlp research sample 04 (MIT, written for hlp). Snap-back stop orders:
+// when the close returns inside a standard-deviation band after a bar
+// outside it, a stop order rests beyond that bar's extreme for a few bars,
+// in a one-cancels-all group with the opposite setup. Positions close at
+// the far band. Exercises resting stop entries, OCA groups, strategy.cancel
+// and var counters.
+strategy("Band snap-back stops", overlay = true, initial_capital = 10000,
+     default_qty_type = strategy.percent_of_equity, default_qty_value = 100)
+
+n     = input.int(20, "Length", minval = 1)
+width = input.float(2.0, "Width (std devs)", minval = 0.001, maxval = 50)
+src   = input.source(close, "Source")
+wait  = input.int(3, "Bars an order rests", minval = 1)
+
+centre = ta.sma(src, n)
+spread = width * ta.stdev(src, n)
+top    = centre + spread
+bottom = centre - spread
+
+var int longBars = 0
+var int shortBars = 0
+var float longTrigger = na
+var float shortTrigger = na
+
+if src[1] < bottom[1] and src > bottom
+    longBars := wait
+    longTrigger := high
+if src[1] > top[1] and src < top
+    shortBars := wait
+    shortTrigger := low
+
+if longBars > 0 and strategy.position_size <= 0
+    strategy.entry("Snap L", strategy.long, stop = longTrigger, oca_name = "snap", oca_type = strategy.oca.cancel)
+    longBars := longBars - 1
+else
+    strategy.cancel("Snap L")
+    longBars := 0
+
+if shortBars > 0 and strategy.position_size >= 0
+    strategy.entry("Snap S", strategy.short, stop = shortTrigger, oca_name = "snap", oca_type = strategy.oca.cancel)
+    shortBars := shortBars - 1
+else
+    strategy.cancel("Snap S")
+    shortBars := 0
+
+if strategy.position_size > 0 and src > top
+    strategy.close("Snap L", comment = "far band")
+if strategy.position_size < 0 and src < bottom
+    strategy.close("Snap S", comment = "far band")
+
+upper = plot(top, "Top", color.new(color.teal, 30))
+lower = plot(bottom, "Bottom", color.new(color.teal, 30))
+plot(centre, "Centre", color.orange)
+fill(upper, lower, color.new(color.teal, 92))

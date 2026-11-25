@@ -1,0 +1,28 @@
+//@version=5
+// hlp research sample 07 (clean-room, MIT). The ubiquitous 50/200 "golden
+// cross" with the two extras most public versions add: a higher-timeframe
+// trend filter through request.security and a backtest date window built
+// with input.time and timestamp(). Both extras are OUTSIDE hlp's P0 subset;
+// this sample exists to test the error messages and the P1 work.
+strategy("Golden cross + HTF filter", overlay = true, initial_capital = 10000,
+     default_qty_type = strategy.percent_of_equity, default_qty_value = 100)
+
+fastLen = input.int(50, "Fast SMA")
+slowLen = input.int(200, "Slow SMA")
+htf     = input.timeframe("D", "Filter timeframe")
+htfLen  = input.int(20, "Filter EMA")
+start   = input.time(timestamp("2024-01-01T00:00:00"), "Start")
+
+inWindow = time >= start
+htfEma   = request.security(syminfo.tickerid, htf, ta.ema(close, htfLen)[1], lookahead = barmerge.lookahead_on)
+fast     = ta.sma(close, fastLen)
+slow     = ta.sma(close, slowLen)
+
+if inWindow and ta.crossover(fast, slow) and close > htfEma
+    strategy.entry("GC", strategy.long)
+if ta.crossunder(fast, slow)
+    strategy.close("GC")
+
+plot(fast, "Fast", color.teal)
+plot(slow, "Slow", color.orange)
+plot(htfEma, "HTF EMA", color.new(color.purple, 30))

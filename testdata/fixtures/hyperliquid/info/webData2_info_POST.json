@@ -1,0 +1,179 @@
+{
+  "clearinghouseState": {
+    "marginSummary": {
+      "accountValue": "1670431.495297",
+      "totalNtlPos": "1148664.76566",
+      "totalRawUsd": "594317.707549",
+      "totalMarginUsed": "382888.255212"
+    },
+    "crossMarginSummary": {
+      "accountValue": "1670431.495297",
+      "totalNtlPos": "1148664.76566",
+      "totalRawUsd": "594317.707549",
+      "totalMarginUsed": "382888.255212"
+    },
+    "crossMaintenanceMarginUsed": "47142.47829",
+    "withdrawable": "1282963.747548",
+    "assetPositions": [
+      {
+        "type": "oneWay",
+        "position": {
+          "coin": "BTC",
+          "szi": "11.45136",
+          "leverage": {
+            "type": "cross",
+            "value": 3
+          },
+          "entryPx": "65641.5",
+          "positionValue": "748701.36816",
+          "unrealizedPnl": "-2983.451931",
+          "returnOnEquity": "-0.0119070594",
+          "liquidationPx": null,
+          "marginUsed": "249567.12272",
+          "maxLeverage": 40,
+          "cumFunding": {
+            "allTime": "-22408.635148",
+            "sinceOpen": "15.0813",
+            "sinceChange": "0.0"
+          }
+        }
+      }
+    ],
+    "time": 1794735432024
+  },
+  "leadingVaults": [],
+  "totalVaultEquity": "0.0",
+  "openOrders": [
+    {
+      "coin": "ZEC",
+      "side": "B",
+      "limitPx": "908.5",
+      "sz": "2.54",
+      "oid": 605970741721,
+      "timestamp": 1794735432024,
+      "triggerCondition": "N/A",
+      "isTrigger": false,
+      "triggerPx": "0.0",
+      "children": [],
+      "isPositionTpsl": false,
+      "reduceOnly": false,
+      "orderType": "Limit",
+      "origSz": "2.54",
+      "tif": "Alo",
+      "cloid": "0xad2a0bb2971cb7171906cdd65f9daad1"
+    }
+  ],
+  "agentAddress": "0x410a9adfe54a68ddc4a6c250b864dcfbd7cbd031",
+  "agentValidUntil": 1795929396380,
+  "cumLedger": "1699773.8799999999",
+  "meta": {
+    "universe": [
+      {
+        "szDecimals": 5,
+        "name": "BTC",
+        "maxLeverage": 40,
+        "marginTableId": 56
+      },
+      {
+        "szDecimals": 4,
+        "name": "ETH",
+        "maxLeverage": 25,
+        "marginTableId": 55
+      }
+    ],
+    "marginTables": [
+      [
+        50,
+        {
+          "description": "",
+          "marginTiers": [
+            {
+              "lowerBound": "0.0",
+              "maxLeverage": 50
+            }
+          ]
+        }
+      ]
+    ],
+    "collateralToken": 0
+  },
+  "assetCtxs": [
+    {
+      "funding": "0.0000125",
+      "openInterest": "38956.2114999999",
+      "prevDayPx": "67133.0",
+      "dayNtlVlm": "7914078367.4374551773",
+      "premium": "-0.0005046257",
+      "oraclePx": "65395.0",
+      "markPx": "65381.0",
+      "midPx": "65361.5",
+      "impactPxs": [
+        "65361.0",
+        "65362.0"
+      ],
+      "dayBaseVlm": "122485.1289599999"
+    },
+    {
+      "funding": "0.0000125",
+      "openInterest": "609570.4894000004",
+      "prevDayPx": "1907.8",
+      "dayNtlVlm": "2350207721.0528879166",
+      "premium": "-0.0006464762",
+      "oraclePx": "1825.28",
+      "markPx": "1824.5",
+      "midPx": "1824.05",
+      "impactPxs": [
+        "1824.0",
+        "1824.1"
+      ],
+      "dayBaseVlm": "1302176.6289000018"
+    }
+  ],
+  "serverTime": 1794735432024,
+  "isVault": false,
+  "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+  "twapStates": [],
+  "spotState": {
+    "balances": [
+      {
+        "coin": "USDC",
+        "token": 0,
+        "total": "2522.459339",
+        "hold": "0.0",
+        "entryNtl": "0.0"
+      }
+    ]
+  },
+  "spotAssetCtxs": [
+    {
+      "prevDayPx": "0.092061",
+      "dayNtlVlm": "2088159.631141999",
+      "markPx": "0.082076",
+      "midPx": "0.0821025",
+      "circulatingSupply": "594634631.2945300341",
+      "coin": "PURR/USDC",
+      "totalSupply": "594634642.6010500193",
+      "dayBaseVlm": "25205086.0"
+    },
+    {
+      "prevDayPx": "10.69",
+      "dayNtlVlm": "109973.596232",
+      "markPx": "10.135",
+      "midPx": "10.148",
+      "circulatingSupply": "995699.99052031",
+      "coin": "@1",
+      "totalSupply": "995700.04134647",
+      "dayBaseVlm": "10746.06"
+    }
+  ],
+  "perpsAtOpenInterestCap": [
+    "CANTO",
+    "FTM",
+    "JELLY",
+    "LOOM",
+    "RLB",
+    "SAGA",
+    "VINE",
+    "ZEREBRO"
+  ]
+}

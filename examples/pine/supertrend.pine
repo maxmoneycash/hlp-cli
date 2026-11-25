@@ -1,0 +1,22 @@
+//@version=5
+// Original example for hlp (MIT). Supertrend trend follower: always in the
+// market, flipping long/short when price closes through the ATR band.
+//   hlp pine run examples/pine/supertrend.pine HYPE 1h
+strategy("Supertrend", overlay=true, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=100)
+
+atrLen = input.int(10, "ATR length")
+factor = input.float(3.0, "Factor", step=0.1)
+
+[st, dir] = ta.supertrend(factor, atrLen)
+
+flipUp   = dir < 0 and dir[1] > 0
+flipDown = dir > 0 and dir[1] < 0
+
+if flipUp
+    strategy.entry("Long", strategy.long)
+if flipDown
+    strategy.entry("Short", strategy.short)
+
+plot(st, "Supertrend", color=dir < 0 ? color.teal : color.red)
+plotshape(flipUp, "Flip up", style=shape.labelup, location=location.belowbar, text="UP")
+plotshape(flipDown, "Flip down", style=shape.labeldown, location=location.abovebar, text="DN")

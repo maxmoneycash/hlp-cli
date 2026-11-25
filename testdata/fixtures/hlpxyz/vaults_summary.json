@@ -1,0 +1,237 @@
+{
+ "count": 88,
+ "vaults": [
+  {
+   "address": "0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7",
+   "name": "BredoStrategy",
+   "desc": "https://t.me/DoCryptoBred\n\nprevious vault = https://app.hyperliquid.xyz/vaults/0x8e5105883613cb8b29ab2223830a60ef52c4fb19 \nlast time I was lucky, this time I'll lose everything",
+   "equity": 2953606.617736,
+   "returnYtd": 291.21712124126486,
+   "returnAll": 266.77940182384975,
+   "maxDD": -58.557393489266964,
+   "sharpe": 2.195218225468226,
+   "perfSeries": [
+    {
+     "date": "2026-02-18T23:12:00.139Z",
+     "sharePrice": 0.9375341259608516,
+     "equity": 974184.706906
+    },
+    {
+     "date": "2026-02-25T23:33:24.103Z",
+     "sharePrice": 1.0175700581496887,
+     "equity": 1544414.434694
+    },
+    {
+     "date": "2026-03-04T23:12:00.035Z",
+     "sharePrice": 1.1127653975575997,
+     "equity": 1540682.61259
+    },
+    {
+     "date": "2026-09-16T02:45:34.057Z",
+     "sharePrice": 3.6648866611494597,
+     "equity": 2955399.993761
+    },
+    {
+     "date": "2026-09-16T03:03:45.063Z",
+     "sharePrice": 3.6515625728158385,
+     "equity": 2944731.466295
+    },
+    {
+     "date": "2026-09-16T04:33:07.116Z",
+     "sharePrice": 3.6677940182384976,
+     "equity": 2953606.617736
+    }
+   ],
+   "isClosed": false,
+   "closedAt": null,
+   "allowDeposits": true,
+   "ageDays": 211,
+   "maxGross": 10287543.01151,
+   "maxGrossLev": 5.814151426062652,
+   "avgGrossLev": 3.3723249010774334,
+   "avgNetLev": 3.3723249010774334,
+   "netFlows": 1245685.000527,
+   "tradesCount": 134878,
+   "maxGrossLevBy": {
+    "day": 3.1672000472554793,
+    "week": 3.1672000472554793,
+    "month": 3.555045581993392,
+    "3month": 3.814393176743754,
+    "6month": 5.814151426062652,
+    "ytd": 5.814151426062652,
+    "year": 5.814151426062652,
+    "all": 5.814151426062652
+   },
+   "curLongNtl": 9253571.805232998,
+   "curShortNtl": 9.313225746154785e-10,
+   "curCash": 269846.30683400016,
+   "curBookTs": 1789533715361,
+   "dataStart": 1771286400000,
+   "dataEnd": 1789531965730,
+   "lastUpdated": 1789533716668,
+   "baseSPDay": 4.014397985455599,
+   "baseSPWeek": 4.5879457549977145,
+   "baseSPMonth": 1.6858177365094107,
+   "baseSP3Month": 1.8395903794059432,
+   "baseSP6Month": 1.235739106486336,
+   "baseSPYtd": 0.9375341259608516,
+   "baseSPYear": 0.9375341259608516,
+   "baseSPAll": 1
+  },
+  {
+   "address": "0xac26cf5f3c46b5e102048c65b977d2551b72a9c7",
+   "name": "Long HYPE & BTC | Short Garbage",
+   "desc": "70% HYPE 30% BTC long\nShort portfolio may change but will always include a basket of at least 10+ high FDV high emission coins. Short side will be about 60% of notional",
+   "equity": 2689834.743324,
+   "returnYtd": 400.09781527361605,
+   "returnAll": 439.1672223709815,
+   "maxDD": -52.039784388994526,
+   "sharpe": 1.1122778655646866,
+   "perfSeries": [
+    {
+     "date": "2025-04-09T22:17:38.325Z",
+     "sharePrice": 1.0059552697233765,
+     "equity": 189602.333957
+    },
+    {
+     "date": "2025-04-23T23:26:32.770Z",
+     "sharePrice": 1.0952429180608618,
+     "equity": 948844.76345
+    },
+    {
+     "date": "2025-05-07T23:08:00.030Z",
+     "sharePrice": 1.1577762310883417,
+     "equity": 1774753.673324
+    },
+    {
+     "date": "2026-11-14T19:13:27.340Z",
+     "sharePrice": 5.420786486727351,
+     "equity": 2704413.19657
+    },
+    {
+     "date": "2026-11-14T21:18:00.027Z",
+     "sharePrice": 5.226094012522156,
+     "equity": 2606401.747056
+    },
+    {
+     "date": "2026-11-14T22:45:10.801Z",
+     "sharePrice": 5.391672223709815,
+     "equity": 2689834.743324
+    }
+   ],
+   "isClosed": false,
+   "closedAt": null,
+   "allowDeposits": false,
+   "ageDays": 584,
+   "maxGross": 6860853.775191,
+   "maxGrossLev": 2.5081623126670416,
+   "avgGrossLev": 1.9855595673010096,
+   "avgNetLev": 0.31569544452053955,
+   "netFlows": 181703.33096201005,
+   "tradesCount": 60423,
+   "maxGrossLevBy": {
+    "day": 1.8252198479464798,
+    "week": 2.153917124652324,
+    "month": 2.5081623126670416,
+    "3month": 2.5081623126670416,
+    "6month": 2.5081623126670416,
+    "ytd": 2.5081623126670416,
+    "year": 2.5081623126670416,
+    "all": 2.5081623126670416
+   },
+   "curLongNtl": 2436039.86721,
+   "curShortNtl": 2138524.995483,
+   "curCash": 2224801.377188,
+   "curBookTs": 1794692738498,
+   "dataStart": 1744156800000,
+   "dataEnd": 1794683607340,
+   "lastUpdated": 1794696315078,
+   "baseSPDay": 5.647711310243913,
+   "baseSPWeek": 5.485575377617369,
+   "baseSPMonth": 4.95969442231379,
+   "baseSP3Month": 4.283374094371988,
+   "baseSP6Month": 3.3550992199088943,
+   "baseSPYtd": 1.0781235308456398,
+   "baseSPYear": 1.300872667249514,
+   "baseSPAll": 1
+  },
+  {
+   "address": "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
+   "name": "Hyperliquidity Provider (HLP)",
+   "desc": "This community-owned vault provides liquidity to Hyperliquid through multiple market making strategies, performs liquidations, and accrues platform fees.",
+   "equity": 358192719.30325,
+   "returnYtd": 6.330122116526438,
+   "returnAll": 187.30146159524764,
+   "maxDD": -8.136441979729184,
+   "sharpe": 1.9404366470046885,
+   "perfSeries": [
+    {
+     "date": "2023-05-10T23:45:00.034Z",
+     "sharePrice": 1.0476821698453251,
+     "equity": 82331.181599
+    },
+    {
+     "date": "2023-05-17T23:45:00.059Z",
+     "sharePrice": 1.1192828172836653,
+     "equity": 120596.774808
+    },
+    {
+     "date": "2023-05-24T23:45:00.302Z",
+     "sharePrice": 1.146223362648308,
+     "equity": 571933.361253
+    },
+    {
+     "date": "2026-04-28T03:37:58.535Z",
+     "sharePrice": 2.863364816871839,
+     "equity": 358202660.375082
+    },
+    {
+     "date": "2026-04-28T04:19:16.001Z",
+     "sharePrice": 2.8633623471212144,
+     "equity": 358202351.412969
+    },
+    {
+     "date": "2026-04-28T05:22:20.345Z",
+     "sharePrice": 2.8730146159524765,
+     "equity": 358192719.30325
+    }
+   ],
+   "isClosed": false,
+   "closedAt": null,
+   "allowDeposits": true,
+   "ageDays": 1090,
+   "dataStart": 1683243596849,
+   "dataEnd": 1715981743928,
+   "lastUpdated": 1777353823507,
+   "baseSPDay": 2.8730146159524765,
+   "baseSPWeek": 2.864563472105338,
+   "baseSPMonth": 2.888700051560802,
+   "baseSP3Month": 2.711631827831799,
+   "baseSP6Month": 2.722329715788079,
+   "baseSPYtd": 2.7019762215677323,
+   "baseSPYear": 2.404751599519644,
+   "baseSPAll": 1,
+   "maxGross": null,
+   "maxGrossLev": null,
+   "avgGrossLev": null,
+   "avgNetLev": null,
+   "netFlows": 269809616.25639564,
+   "tradesCount": 0,
+   "curLongNtl": null,
+   "curShortNtl": null,
+   "curCash": null,
+   "curBookTs": null,
+   "maxGrossLevBy": {
+    "day": null,
+    "week": null,
+    "month": null,
+    "3month": null,
+    "6month": null,
+    "ytd": null,
+    "year": null,
+    "all": null
+   }
+  }
+ ],
+ "_note": "trimmed: 3 of 88 vaults, perfSeries head/tail 3"
+}

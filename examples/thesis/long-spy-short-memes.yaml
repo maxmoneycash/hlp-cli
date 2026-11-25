@@ -1,0 +1,20 @@
+# The owner's example thesis vault, as a backtestable spec.
+# Mirrors hlp.xyz's live "spxmeme" quant strategy: long S&P 500 (HIP-3, TradeXYZ
+# dex) at 1.5x, short a basket of memecoins.
+#
+#   hlp backtest examples/thesis/long-spy-short-memes.yaml
+#
+# Note: xyz:SP500 is a HIP-3 market, so this thesis cannot run inside a legacy
+# HyperCore vault (validator perps only). It needs a HyperEVM strategy vault.
+name: Long SPY / Short memes
+interval: 1d
+rebalance: 1w
+leverage: 1.95
+long:
+  - coin: xyz:SP500
+    weight: 1.5
+short:
+  - basket: memes
+    weight: 0.45
+baskets:
+  memes: [DOGE, FARTCOIN, TRUMP, PUMP, CASHCAT, PONS]

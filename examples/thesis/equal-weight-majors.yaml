@@ -1,0 +1,10 @@
+# The benchmark every crypto vault should beat: equal-weight majors, 1x,
+# rebalanced monthly (calendar months, UTC).
+#
+#   hlp backtest examples/thesis/equal-weight-majors.yaml
+name: Equal-weight majors
+interval: 1d
+rebalance: 1M
+leverage: 1
+long:
+  - basket: majors

@@ -1,0 +1,81 @@
+{
+ "trades": [],
+ "funding": [],
+ "deps": [
+  {
+   "time": "11/10/2025 - 05:18:08",
+   "_ts": 1762751888837,
+   "accountValueChange": 243.03
+  },
+  {
+   "time": "11/10/2025 - 05:19:02",
+   "_ts": 1762751942381,
+   "accountValueChange": 2.5
+  },
+  {
+   "time": "11/10/2025 - 05:23:09",
+   "_ts": 1762752189153,
+   "accountValueChange": -245.53
+  }
+ ],
+ "portfolio": {
+  "snapshots": [
+   {
+    "ts": 1762983120068,
+    "av": 0,
+    "pnl": 0,
+    "raw": true,
+    "perp": true
+   },
+   {
+    "ts": 1762986720068,
+    "av": 0.007547,
+    "pnl": 12.047547,
+    "raw": true,
+    "perp": true
+   },
+   {
+    "ts": 1763592720050,
+    "av": 0.007547,
+    "pnl": 12.047547,
+    "raw": true,
+    "perp": true
+   }
+  ],
+  "flows": [
+   {
+    "time": 1762751888837,
+    "amount": 243.03
+   },
+   {
+    "time": 1762751942381,
+    "amount": 2.5
+   },
+   {
+    "time": 1762752189153,
+    "amount": -245.53
+   }
+  ]
+ },
+ "vaultInfo": {
+  "name": "0xdb29...4bd4",
+  "desc": "Trader account loaded from Hyperliquid API",
+  "leader": "0xdb29db01b9f8f7c3c855a19942da9f1b2b374bd4"
+ },
+ "leverage": [],
+ "_light": true,
+ "meta": {
+  "lastUpdated": 1782446357441,
+  "dataStart": 1762732800000,
+  "dataEnd": 1781654542821,
+  "cached": true,
+  "stale": true,
+  "tradesCount": 7317,
+  "fundingCount": 520,
+  "ledgerCount": 12,
+  "snapshotCount": 264,
+  "isClosed": false,
+  "closedAt": null,
+  "allowDeposits": true
+ }
+}

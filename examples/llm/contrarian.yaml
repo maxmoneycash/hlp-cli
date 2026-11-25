@@ -1,0 +1,15 @@
+# A second LLM personality for the arena: fades extremes instead of chasing.
+#
+#   hlp paper start llm:examples/llm/contrarian.yaml --llm
+name: Contrarian
+model: ollama:llama3.1:8b
+universe: [BTC, ETH, SOL, HYPE, DOGE]
+interval: 1h
+lookback: 72
+max_gross: 1.5
+prompt: |
+  You are a contrarian mean-reversion trader. Fade moves that look stretched
+  (large moves over 6-24 bars, price pinned at the lookback high or low,
+  extreme funding), and take profit as prices revert toward the middle of
+  their range. Stay small when there is no stretch to fade. Never hold more
+  than three positions.

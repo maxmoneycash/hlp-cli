@@ -1,0 +1,46 @@
+//@version=6
+// hlp research sample 09 (MIT, written for hlp). Stochastic RSI %K/%D cross in
+// the oversold/overbought zones with percent bracket exits from the average
+// entry price and a manual ratcheting stop held in var state, the common
+// "Stoch RSI strategy" layout.
+strategy("Stoch RSI bracket", overlay = false, initial_capital = 10000,
+     default_qty_type = strategy.percent_of_equity, default_qty_value = 100)
+
+rsiLen   = input.int(14, "RSI length", minval = 1)
+rangeLen = input.int(14, "Stochastic window", minval = 1)
+kSmooth  = input.int(3, "%K smoothing", minval = 1)
+dSmooth  = input.int(3, "%D smoothing", minval = 1)
+lo      = input.float(20, "Oversold")
+hi      = input.float(80, "Overbought")
+tpPct   = input.float(4.0, "Take profit %", step = 0.5) / 100
+slPct   = input.float(2.0, "Stop loss %", step = 0.5) / 100
+
+// Where the RSI sits inside its own recent range, 0-100, then smoothed.
+momentum = ta.rsi(close, rsiLen)
+position = ta.stoch(momentum, momentum, momentum, rangeLen)
+k = ta.sma(position, kSmooth)
+d = ta.sma(k, dSmooth)
+
+longCond  = ta.crossover(k, d) and k < lo
+shortCond = ta.crossunder(k, d) and k > hi
+
+if longCond
+    strategy.entry("SR L", strategy.long)
+if shortCond
+    strategy.entry("SR S", strategy.short)
+
+var float trail = na
+avg = strategy.position_avg_price
+if strategy.position_size > 0
+    trail := math.max(nz(trail, avg * (1 - slPct)), close * (1 - slPct))
+    strategy.exit("SR L x", from_entry = "SR L", limit = avg * (1 + tpPct), stop = trail)
+else if strategy.position_size < 0
+    trail := math.min(nz(trail, avg * (1 + slPct)), close * (1 + slPct))
+    strategy.exit("SR S x", from_entry = "SR S", limit = avg * (1 - tpPct), stop = trail)
+else
+    trail := na
+
+plot(k, "K", color.teal)
+plot(d, "D", color.orange)
+hline(hi, "Overbought")
+hline(lo, "Oversold")

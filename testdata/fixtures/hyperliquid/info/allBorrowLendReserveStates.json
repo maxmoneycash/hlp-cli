@@ -1,0 +1,28 @@
+[
+  [
+    0,
+    {
+      "borrowYearlyRate": "0.05",
+      "supplyYearlyRate": "0.0270960107",
+      "balance": "255029954.9773746431",
+      "utilization": "0.6021335706",
+      "oraclePx": "1.0",
+      "ltv": "0.0",
+      "totalSupplied": "640993615.5440136194",
+      "totalBorrowed": "385963774.4476109743"
+    }
+  ],
+  [
+    150,
+    {
+      "borrowYearlyRate": "0.05",
+      "supplyYearlyRate": "0.0",
+      "balance": "14658234.6547971703",
+      "utilization": "0.0",
+      "oraclePx": "67.874",
+      "ltv": "0.65",
+      "totalSupplied": "14658234.6547971703",
+      "totalBorrowed": "0.0"
+    }
+  ]
+]

@@ -1,0 +1,11 @@
+{
+  "followerState": {
+    "user": "0x029fa9d9a10ea5c8187bfe9fa6a428792cc3a945",
+    "vaultEquity": "316665.2324851519",
+    "pnl": "66665.2324841519",
+    "allTimePnl": "74118.0869711519",
+    "daysFollowing": 693,
+    "vaultEntryTime": 1734786976034,
+    "lockupUntil": 1747658825285
+  }
+}

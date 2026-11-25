@@ -1,0 +1,57 @@
+{
+ "channel": "userNonFundingLedgerUpdates",
+ "data": {
+  "isSnapshot": true,
+  "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+  "nonFundingLedgerUpdates": [
+   {
+    "time": 1789379283680,
+    "hash": "0x086d2d60a369029709e60444602faf0202d300463e6c2169ac35d8b3626cdc81",
+    "delta": {
+     "type": "spotTransfer",
+     "token": "USDC",
+     "amount": "100.0",
+     "usdcValue": "100.0",
+     "user": "0x661eaf85d9a1f05358372c229c10058b14da62de",
+     "destination": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+     "fee": "0.0",
+     "nativeTokenFee": "0.0",
+     "nonce": 0,
+     "feeToken": ""
+    }
+   },
+   {
+    "time": 1789379284823,
+    "hash": "0x2cb0c5179ed2cdff2e2a0444602fbf02045200fd39d5ecd1d079706a5dd6a7e9",
+    "delta": {
+     "type": "spotTransfer",
+     "token": "USDC",
+     "amount": "100.0",
+     "usdcValue": "100.0",
+     "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+     "destination": "0x46921f6961bdb411b756c9712f6bdb58fbd9164f",
+     "fee": "0.0",
+     "nativeTokenFee": "0.0",
+     "nonce": 0,
+     "feeToken": ""
+    }
+   },
+   {
+    "time": 1789379317278,
+    "hash": "0x86d1257efe855c4e884a0444603160020320006499887b202a99d0d1bd893639",
+    "delta": {
+     "type": "spotTransfer",
+     "token": "USDC",
+     "amount": "99900.0",
+     "usdcValue": "99900.0",
+     "user": "0x661eaf85d9a1f05358372c229c10058b14da62de",
+     "destination": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+     "fee": "0.0",
+     "nativeTokenFee": "0.0",
+     "nonce": 0,
+     "feeToken": ""
+    }
+   }
+  ]
+ }
+}

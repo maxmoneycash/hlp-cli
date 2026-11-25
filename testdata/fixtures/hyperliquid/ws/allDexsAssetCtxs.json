@@ -1,0 +1,59 @@
+{
+ "channel": "allDexsAssetCtxs",
+ "data": {
+  "ctxs": [
+   [
+    "",
+    [
+     {
+      "funding": "0.0000125",
+      "openInterest": "38936.7924399999",
+      "prevDayPx": "67133.0",
+      "dayNtlVlm": "7916632502.5398139954",
+      "premium": "-0.0000794281",
+      "oraclePx": "65468.0",
+      "markPx": "65454.0",
+      "midPx": "65457.5",
+      "impactPxs": [
+       "65457.0",
+       "65462.8"
+      ],
+      "dayBaseVlm": "122524.0313299997"
+     },
+     {
+      "funding": "0.0000125",
+      "openInterest": "609562.8156000007",
+      "prevDayPx": "1907.8",
+      "dayNtlVlm": "2350615906.4080882072",
+      "premium": "-0.0003828693",
+      "oraclePx": "1828.3",
+      "markPx": "1827.5",
+      "midPx": "1827.55",
+      "impactPxs": [
+       "1827.5",
+       "1827.6"
+      ],
+      "dayBaseVlm": "1302399.4375000012"
+     }
+    ]
+   ],
+   [
+    "abcd",
+    [
+     {
+      "funding": "0.0",
+      "openInterest": "0.0",
+      "prevDayPx": "6980.0",
+      "dayNtlVlm": "0.0",
+      "premium": null,
+      "oraclePx": "6980.0",
+      "markPx": "6980.0",
+      "midPx": null,
+      "impactPxs": null,
+      "dayBaseVlm": "0.0"
+     }
+    ]
+   ]
+  ]
+ }
+}

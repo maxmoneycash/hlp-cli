@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "file": "script.pine",
+  "diagnostics": [
+    {
+      "code": "parse",
+      "severity": "error",
+      "message": "no viable alternative at input 'x = )'",
+      "line": 3,
+      "column": 4,
+      "file": "script.pine"
+    },
+    {
+      "code": "E001",
+      "severity": "error",
+      "message": "Syntax error: no viable alternative at input 'x = )'",
+      "line": 3,
+      "column": 4,
+      "file": "script.pine"
+    }
+  ]
+}

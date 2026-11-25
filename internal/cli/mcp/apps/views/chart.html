@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hlp chart</title>
+<style>
+:root{--bg:#0e0f0f;--surface:#121212;--line:#232526;--text:#f4f3ef;--muted:#8a8a8f;--accent:#97fce4;--up:#3ddc97;--down:#ff5c7a;
+  font:13px/1.35 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark}
+:root[data-theme=light]{--bg:#f7f6f2;--surface:#ffffff;--line:#e3e1da;--text:#16171a;--muted:#6d6a62;--accent:#127a63;--up:#14895a;--down:#c0362c;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text)}
+.card{padding:12px 12px 10px}
+.head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.mkt{font-weight:650;letter-spacing:.01em}
+.iv{color:var(--muted)}
+.last{font:600 20px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+.chg{font:500 12px ui-monospace,SFMono-Regular,Menlo,monospace}
+.chg.up{color:var(--up)}.chg.down{color:var(--down)}
+.tf{margin-left:auto;display:flex;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:2px}
+.tf button{all:unset;cursor:pointer;padding:3px 9px;border-radius:5px;color:var(--muted);font:500 12px ui-monospace,Menlo,monospace}
+.tf button[aria-pressed=true]{background:var(--line);color:var(--text)}
+.tf button:disabled{cursor:default;opacity:.5}
+.plot{position:relative;border-radius:8px;overflow:hidden;line-height:0}
+.plot svg{width:100%;height:auto;display:block}
+.cross{position:absolute;inset:0;pointer-events:none}
+.cross i{position:absolute;background:var(--muted);opacity:.55}
+.cross .v{top:0;bottom:0;width:1px}.cross .h{left:0;right:0;height:1px}
+.read{min-height:18px;margin-top:6px;color:var(--muted);font:12px ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;display:flex;gap:12px;flex-wrap:wrap}
+.read b{color:var(--text);font-weight:500}
+.foot{margin-top:4px;color:var(--muted);font-size:11px}
+.stale{color:var(--down)}
+.empty{padding:28px 12px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="card" id="app"><div class="empty">Waiting for chart data…</div></div>
+<script>
+/*@BRIDGE@*/
+(() => {
+  const { el, fmt } = hlp;
+  const app = document.getElementById("app");
+  let args = {}, busy = false;
+
+  function render(result) {
+    const { data = {}, meta = {} } = hlp.env(result);
+    const s = data.summary || {};
+    const iv = data.interval || args.interval || "";
+    const up = (s.change || 0) >= 0;
+    const tf = el("div", { class: "tf", role: "group", "aria-label": "Timeframe" },
+      ["15m", "1h", "4h", "1d"].map((t) => el("button", {
+        "aria-pressed": String(t === iv), disabled: !hlp.canCallTools() || busy,
+        onclick: () => switchTo(t),
+      }, t)));
+    const plot = el("div", { class: "plot" });
+    const svg = hlp.svg(data.svg);
+    if (svg) plot.append(svg);
+    else plot.append(el("div", { class: "empty" }, "This host sent no chart image; the summary is above."));
+    const read = el("div", { class: "read" });
+    const foot = el("div", { class: "foot" },
+      meta.source ? "source " + meta.source + " · " : "", meta.asOf ? fmt.ago(meta.asOf) : "",
+      meta.stale ? el("span", { class: "stale" }, " · stale") : "");
+    app.replaceChildren(
+      el("div", { class: "head" },
+        el("span", { class: "mkt" }, data.coin || args.coin || ""), el("span", { class: "iv" }, iv),
+        el("span", { class: "last" }, fmt.px(s.last)),
+        el("span", { class: "chg " + (up ? "up" : "down") }, fmt.pct(s.change, 2)),
+        tf),
+      plot, read, foot);
+    if (svg) crosshair(plot, svg, data.candles || [], read);
+  }
+
+  // Hover: map x to the candle slot the SVG declares; y to price.
+  function crosshair(plot, svg, candles, read) {
+    const d = svg.dataset, x0 = +d.x0, slot = +d.slot, n = +d.n;
+    const top = +d.top, bot = +d.bottom, hi = +d.hi, lo = +d.lo;
+    const vb = svg.viewBox.baseVal;
+    const layer = el("div", { class: "cross", hidden: true }, el("i", { class: "v" }), el("i", { class: "h" }));
+    plot.append(layer);
+    const [v, h] = layer.children;
+    plot.addEventListener("pointermove", (e) => {
+      const r = svg.getBoundingClientRect(), k = vb.width / r.width;
+      const x = (e.clientX - r.left) * k, y = (e.clientY - r.top) * k;
+      const i = Math.round((x - x0) / slot);
+      if (i < 0 || i >= n || y < top || y > bot) { layer.hidden = true; return; }
+      layer.hidden = false;
+      v.style.left = ((x0 + i * slot) / k) + "px";
+      h.style.top = (y / k) + "px";
+      const p = hi - (y - top) / (bot - top) * (hi - lo);
+      const c = candles.length === n ? candles[i] : null; // compaction may have cut rows
+      read.replaceChildren(...(c ? [
+        el("span", null, new Date(c.t).toISOString().slice(5, 16).replace("T", " "), " UTC"),
+        el("span", null, "O ", el("b", null, fmt.px(c.o))), el("span", null, "H ", el("b", null, fmt.px(c.h))),
+        el("span", null, "L ", el("b", null, fmt.px(c.l))), el("span", null, "C ", el("b", null, fmt.px(c.c))),
+      ] : []), el("span", null, "@ ", el("b", null, fmt.px(p))));
+    });
+    plot.addEventListener("pointerleave", () => { layer.hidden = true; read.replaceChildren(); });
+  }
+
+  async function switchTo(iv) {
+    if (busy) return;
+    busy = true;
+    try {
+      const r = await hlp.callTool("get_candles", Object.assign({}, args, { interval: iv }));
+      args.interval = iv;
+      render(r);
+      const s = (hlp.env(r).data || {}).summary || {};
+      hlp.tellModel(`User switched the ${args.coin} chart to ${iv}: last ${s.last}, change ${(s.change * 100).toFixed(2)}% over the window.`);
+    } catch (e) {
+      app.append(el("div", { class: "foot stale" }, (e.code || "ERROR") + ": " + e.message));
+    } finally { busy = false; }
+  }
+
+  hlp.on("input", (a) => { args = Object.assign({}, a); });
+  hlp.on("result", render);
+  hlp.init({ name: "hlp-chart", version: "1" });
+})();
+</script>
+</body>
+</html>

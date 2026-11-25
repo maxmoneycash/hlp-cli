@@ -1,0 +1,9 @@
+  FILLS                                                                            +$426  REALIZED
+  FEES $2.85   4 FILLS
+  TIME          COIN    SIZE       PX      PNL  DIR           FEE
+  Nov 15 09:37  SOL    +3.93    71.76        -  Open Long   $0.04
+  Nov 15 09:37  NEAR    +1.5   3.1483        -  Open Long   $0.00
+  Nov 15 09:37  INIT  -1,105  0.13095  +$14.06  Close Long  $0.00
+  Nov 15 08:37  ETH       -2  3,120.5    +$412  Close Long  $2.81
+
+  SOURCE Hyperliquid   AS OF Nov 15 14:02:11

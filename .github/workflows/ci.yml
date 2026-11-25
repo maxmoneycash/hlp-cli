@@ -1,0 +1,84 @@
+# CI: gofmt + vet + unit tests (make check) on Linux and macOS, a cross-compile
+# of every release target, a vulnerability and licence scan, plus a static
+# check of the release files. Unit tests never touch the network (fixtures
+# only), so this needs no secrets.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: make check (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - name: make check
+        run: make check GO=go
+      - name: build
+        run: make build GO=go
+      - name: smoke
+        run: ./bin/hlp --help
+
+  cross:
+    name: cross-compile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - name: build all release targets
+        run: make cross GO=go
+      - name: vet for windows
+        run: GOOS=windows go vet ./...
+
+  supply-chain:
+    name: vulnerabilities and licences
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - name: govulncheck
+        run: make vuln GO=go
+      - name: licences are all permissive (PLAN D2)
+        run: make license-check GO=go
+
+  release-files:
+    name: release files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: shellcheck install.sh and scripts
+        run: shellcheck -s sh install.sh scripts/*.sh
+      - name: install.sh parses under dash
+        run: sh -n install.sh
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - name: goreleaser check
+        uses: goreleaser/goreleaser-action@v6
+        with:
+          distribution: goreleaser
+          # Pinned so a new deprecation cannot turn CI red overnight. Keep in
+          # step with release.yml.
+          version: "v2.20.2"
+          args: check

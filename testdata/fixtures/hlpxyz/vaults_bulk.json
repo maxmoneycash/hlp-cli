@@ -1,0 +1,78 @@
+{
+ "count": 175,
+ "vaults": [
+  {
+   "address": "0xac26cf5f3c46b5e102048c65b977d2551b72a9c7",
+   "meta": {
+    "isClosed": false,
+    "closedAt": null,
+    "allowDeposits": true
+   },
+   "data": {
+    "trades": [],
+    "funding": [],
+    "deps": [
+     {
+      "time": "04/09/2025 - 19:35:38",
+      "_ts": 1744227338023,
+      "accountValueChange": 40000
+     },
+     {
+      "time": "04/09/2025 - 19:54:05",
+      "_ts": 1744228445616,
+      "accountValueChange": 50000
+     },
+     {
+      "time": "04/09/2025 - 20:02:37",
+      "_ts": 1744228957912,
+      "accountValueChange": 9967.19
+     }
+    ],
+    "portfolio": {
+     "snapshots": [
+      {
+       "ts": 1744233458325,
+       "av": 0,
+       "pnl": 0,
+       "raw": true
+      },
+      {
+       "ts": 1744237058325,
+       "av": 189602.333957,
+       "pnl": 1122.448555,
+       "raw": true
+      },
+      {
+       "ts": 1744847104628,
+       "av": 1214207.557071,
+       "pnl": 86017.876984,
+       "raw": true
+      }
+     ],
+     "flows": [
+      {
+       "time": 1744227338023,
+       "amount": 40000
+      },
+      {
+       "time": 1744228445616,
+       "amount": 50000
+      },
+      {
+       "time": 1744228957912,
+       "amount": 9967.19
+      }
+     ]
+    },
+    "vaultInfo": {
+     "name": "Long HYPE & BTC | Short Garbage",
+     "desc": "70% HYPE 30% BTC long\nShort portfolio may change but will always include a basket of at least 10+ high FDV high emission coins. Short side will be about 60% of notional",
+     "leader": "0xa380444a9299df2a15bddf949dd493bb6d30d939",
+     "profitShare": 0.1
+    },
+    "leverage": []
+   }
+  }
+ ],
+ "_note": "trimmed: 1 of 175 vaults, all arrays to 3"
+}

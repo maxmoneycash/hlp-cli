@@ -1,0 +1,69 @@
+{
+ "meta": {
+  "accountIndex": 281474976710654,
+  "accountType": 3,
+  "name": "Lighter Liquidity Provider (LLP)",
+  "l1Address": "0x0000000000000000000000000000000000000000",
+  "operatorFee": 0,
+  "createdAt": 1737098583000,
+  "lastUpdated": 1794702633899,
+  "dataStart": 1737158400000,
+  "dataEnd": 1794702633000,
+  "navPoints": 668,
+  "assets": [
+   {
+    "symbol": "ETH",
+    "asset_id": 1,
+    "balance": "432.7069564676",
+    "locked_balance": "0.00000000",
+    "margin_mode": "disabled",
+    "margin_balance": "432.7069564676",
+    "multiplier": "1.000000000000000000"
+   },
+   {
+    "symbol": "USDC",
+    "asset_id": 3,
+    "balance": "10089323.121712426276",
+    "locked_balance": "0.000000",
+    "margin_mode": "disabled",
+    "margin_balance": "93317313.317006809568",
+    "multiplier": "1.000000000000000000"
+   }
+  ],
+  "reconcilePct": 2.2074153694752954
+ },
+ "nav": [
+  {
+   "ts": 1737158400000,
+   "equity": 35025.989225525,
+   "shares": 34848153,
+   "sharePrice": 0.0010051031750671262,
+   "cumPnl": 776.9912096193897,
+   "spIndex": 1
+  },
+  {
+   "ts": 1737244800000,
+   "equity": 99234.91809703973,
+   "shares": 99205787,
+   "sharePrice": 0.0010002936431222477,
+   "cumPnl": 400.73129774331625,
+   "spIndex": 0.995214887322829
+  },
+  {
+   "ts": 1794700800000,
+   "equity": 93412291.8342101,
+   "shares": 26023524100,
+   "sharePrice": 0.003589532742577709,
+   "cumPnl": 26332080.885184765,
+   "spIndex": 3.571307733992563
+  },
+  {
+   "ts": 1794702633000,
+   "equity": 93419079.56826404,
+   "shares": 26026444924,
+   "sharePrice": 0.003589390707838037,
+   "cumPnl": 26328379.735226788,
+   "spIndex": 3.5711664204008886
+  }
+ ]
+}

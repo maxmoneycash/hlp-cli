@@ -1,0 +1,117 @@
+{
+ "generated": "2026-11-15",
+ "rules": [
+  "Every recipe names its design years and its test years before anything is run.",
+  "Design years can be looked at and tuned on freely."
+ ],
+ "published": [
+  {
+   "id": "trend",
+   "name": "Six-Market Trend",
+   "blurb": "Buys what is rising across crypto, stocks, metals and oil. Steps aside when a trend breaks.",
+   "live": true
+  }
+ ],
+ "families": [
+  {
+   "family": "trend",
+   "about": "Buy markets that are rising, sized by how calm they are, and step aside when the trend breaks.",
+   "variants": [
+    {
+     "n": 1,
+     "id": null,
+     "what": "Sign of 1/3/6/12-month return, long-only, six markets, dial 0.20",
+     "added": "2026-11-12",
+     "dial": null,
+     "design": {
+      "cagr": 0.279,
+      "sharpe": 0.9,
+      "maxDD": -0.434
+     },
+     "test": {
+      "cagr": 0.167,
+      "sharpe": 0.6,
+      "maxDD": -0.38
+     },
+     "test_scored": null,
+     "published": null,
+     "legacy": true,
+     "verdict": "Replaced: same result, three times the trading",
+     "note": null
+    },
+    {
+     "n": 2,
+     "id": null,
+     "what": "Breakout trend, long-only, six markets, dial 0.20 (the round-1 pick)",
+     "added": "2026-11-12",
+     "dial": null,
+     "design": {
+      "cagr": 0.294,
+      "sharpe": 0.92,
+      "maxDD": -0.458
+     },
+     "test": {
+      "cagr": 0.174,
+      "sharpe": 0.61,
+      "maxDD": -0.349
+     },
+     "test_scored": null,
+     "published": null,
+     "legacy": true,
+     "verdict": "Passed; superseded by the higher dial the owner chose",
+     "note": null
+    }
+   ]
+  },
+  {
+   "family": "nasdaq-200-day",
+   "about": "Hold the Nasdaq-100 with borrowing while it is above its 200-day average.",
+   "variants": [
+    {
+     "n": 1,
+     "id": null,
+     "what": "2x above the 200-day average",
+     "added": "2026-11-12",
+     "dial": null,
+     "design": {
+      "cagr": 0.108,
+      "sharpe": 0.49,
+      "maxDD": -0.442
+     },
+     "test": {
+      "cagr": 0.22,
+      "sharpe": 0.75,
+      "maxDD": -0.306
+     },
+     "test_scored": null,
+     "published": null,
+     "legacy": true,
+     "verdict": "Looks fine since 2016; over 1987-2022 it made 8% a year with an 81% fall",
+     "note": null
+    },
+    {
+     "n": 2,
+     "id": null,
+     "what": "3x above the 200-day average",
+     "added": "2026-11-12",
+     "dial": null,
+     "design": {
+      "cagr": 0.162,
+      "sharpe": 0.56,
+      "maxDD": -0.587
+     },
+     "test": {
+      "cagr": 0.324,
+      "sharpe": 0.8,
+      "maxDD": -0.412
+     },
+     "test_scored": null,
+     "published": null,
+     "legacy": true,
+     "verdict": "Same weakness, deeper falls",
+     "note": null
+    }
+   ]
+  }
+ ]
+}

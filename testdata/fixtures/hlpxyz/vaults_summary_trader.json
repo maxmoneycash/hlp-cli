@@ -1,0 +1,119 @@
+{
+ "count": 14,
+ "vaults": [
+  {
+   "address": "0xdb29db01b9f8f7c3c855a19942da9f1b2b374bd4",
+   "name": "0xdb29...4bd4",
+   "desc": "Trader account loaded from Hyperliquid API",
+   "equity": 990.215119,
+   "returnYtd": -71.02042390433357,
+   "returnAll": -71.02042390433357,
+   "maxDD": -71.02042390433357,
+   "sharpe": -1.9343291021468512,
+   "perfSeries": [
+    {
+     "date": "2025-11-12T22:32:00.068Z",
+     "sharePrice": 1,
+     "equity": 0.007547
+    },
+    {
+     "date": "2025-11-19T22:52:00.050Z",
+     "sharePrice": 1,
+     "equity": 0.007547
+    },
+    {
+     "date": "2026-06-16T23:52:00.015Z",
+     "sharePrice": 0.28979576095666426,
+     "equity": 990.215119
+    },
+    {
+     "date": "2026-06-17",
+     "sharePrice": 0.28979576095666426,
+     "equity": 0
+    }
+   ],
+   "isClosed": true,
+   "closedAt": null,
+   "allowDeposits": true,
+   "ageDays": 228,
+   "dataStart": 1762732800000,
+   "dataEnd": 1781654542821,
+   "lastUpdated": 1782446357441,
+   "baseSPDay": 0.28979576095666426,
+   "baseSPWeek": 0.28979576095666426,
+   "baseSPMonth": 1,
+   "baseSP3Month": 1,
+   "baseSP6Month": 1,
+   "baseSPYtd": 1,
+   "baseSPYear": 1,
+   "baseSPAll": 1
+  },
+  {
+   "address": "0x007d76eec0ba411ce873a8819df50dd443d967a0",
+   "name": "0x007d...67a0",
+   "desc": "Trader account loaded from Hyperliquid API",
+   "equity": 962678.642422,
+   "returnYtd": -99.99999966000455,
+   "returnAll": -99.99999999950879,
+   "maxDD": -99.99999999971185,
+   "sharpe": 0.534130362598433,
+   "perfSeries": [
+    {
+     "date": "2025-01-01T23:02:43.799Z",
+     "sharePrice": 1,
+     "equity": 2800000
+    },
+    {
+     "date": "2025-01-15T22:00:00.101Z",
+     "sharePrice": 0.9993067833525602,
+     "equity": 0
+    },
+    {
+     "date": "2026-10-29T02:50:00.017Z",
+     "sharePrice": 4.918765914355086e-12,
+     "equity": 953838.313134
+    },
+    {
+     "date": "2026-10-29T03:11:06.462Z",
+     "sharePrice": 4.912175344719353e-12,
+     "equity": 962678.642422
+    }
+   ],
+   "isClosed": false,
+   "closedAt": null,
+   "allowDeposits": true,
+   "ageDays": 693,
+   "maxGross": 34120410.54463,
+   "maxGrossLev": 14.397258926737445,
+   "avgGrossLev": 7.101137072488118,
+   "avgNetLev": -4.969197436528683,
+   "netFlows": -36308836.87108801,
+   "tradesCount": 176387,
+   "maxGrossLevBy": {
+    "day": 9.690442706673306,
+    "week": 9.690442706673306,
+    "month": 9.690442706673306,
+    "3month": 11.686839288337168,
+    "6month": 14.397258926737445,
+    "ytd": 14.397258926737445,
+    "year": 14.397258926737445,
+    "all": 14.397258926737445
+   },
+   "curLongNtl": 6925200,
+   "curShortNtl": 793509.9274899997,
+   "curCash": 440169.1083019999,
+   "curBookTs": 1793243471997,
+   "dataStart": 1733322758492,
+   "dataEnd": 1792998000045,
+   "lastUpdated": 1793243473969,
+   "baseSPDay": 4.918765914355086e-12,
+   "baseSPWeek": 1.3192994613876852e-11,
+   "baseSPMonth": 7.394617493945705e-12,
+   "baseSP3Month": 6.1416448102316115e-12,
+   "baseSP6Month": 0.0014942825422689717,
+   "baseSPYtd": 0.0014447767778088586,
+   "baseSPYear": 0.0009203697387069875,
+   "baseSPAll": 1
+  }
+ ]
+}

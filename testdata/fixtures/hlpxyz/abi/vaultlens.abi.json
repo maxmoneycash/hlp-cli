@@ -1,0 +1,336 @@
+[
+ {
+  "type": "function",
+  "name": "epochRange",
+  "inputs": [
+   {
+    "name": "v",
+    "type": "address",
+    "internalType": "contract ProtocolVault"
+   },
+   {
+    "name": "from",
+    "type": "uint64",
+    "internalType": "uint64"
+   },
+   {
+    "name": "to",
+    "type": "uint64",
+    "internalType": "uint64"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "out",
+    "type": "tuple[]",
+    "internalType": "struct ProtocolVault.EpochData[]",
+    "components": [
+     {
+      "name": "settledAt",
+      "type": "uint64",
+      "internalType": "uint64"
+     },
+     {
+      "name": "sharePrice",
+      "type": "uint128",
+      "internalType": "uint128"
+     },
+     {
+      "name": "totalAssetsAfter",
+      "type": "uint128",
+      "internalType": "uint128"
+     },
+     {
+      "name": "totalSupplyAfter",
+      "type": "uint128",
+      "internalType": "uint128"
+     },
+     {
+      "name": "depositAssets",
+      "type": "uint128",
+      "internalType": "uint128"
+     },
+     {
+      "name": "depositShares",
+      "type": "uint128",
+      "internalType": "uint128"
+     },
+     {
+      "name": "redeemSharesPending",
+      "type": "uint128",
+      "internalType": "uint128"
+     },
+     {
+      "name": "redeemSharesFulfilled",
+      "type": "uint128",
+      "internalType": "uint128"
+     },
+     {
+      "name": "redeemAssets",
+      "type": "uint128",
+      "internalType": "uint128"
+     },
+     {
+      "name": "feeShares",
+      "type": "uint128",
+      "internalType": "uint128"
+     }
+    ]
+   }
+  ],
+  "stateMutability": "view"
+ },
+ {
+  "type": "function",
+  "name": "userState",
+  "inputs": [
+   {
+    "name": "v",
+    "type": "address",
+    "internalType": "contract ProtocolVault"
+   },
+   {
+    "name": "user",
+    "type": "address",
+    "internalType": "address"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "s",
+    "type": "tuple",
+    "internalType": "struct VaultLens.UserState",
+    "components": [
+     {
+      "name": "shares",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "pendingDepositAssets",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "claimableShares",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "pendingRedeemShares",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "claimableAssets",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "mayDeposit",
+      "type": "bool",
+      "internalType": "bool"
+     }
+    ]
+   }
+  ],
+  "stateMutability": "view"
+ },
+ {
+  "type": "function",
+  "name": "vaultState",
+  "inputs": [
+   {
+    "name": "v",
+    "type": "address",
+    "internalType": "contract ProtocolVault"
+   }
+  ],
+  "outputs": [
+   {
+    "name": "s",
+    "type": "tuple",
+    "internalType": "struct VaultLens.VaultState",
+    "components": [
+     {
+      "name": "epoch",
+      "type": "uint64",
+      "internalType": "uint64"
+     },
+     {
+      "name": "phase",
+      "type": "uint8",
+      "internalType": "enum ProtocolVault.Phase"
+     },
+     {
+      "name": "cutoffAt",
+      "type": "uint64",
+      "internalType": "uint64"
+     },
+     {
+      "name": "settleDeadline",
+      "type": "uint64",
+      "internalType": "uint64"
+     },
+     {
+      "name": "totalAssets",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "totalSupply",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "sharePrice",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "highWaterMark",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "totalPendingDeposits",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "totalPendingRedeemShares",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "redeemReserve",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "idleAssets",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "coreSpot",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "corePerpEquity",
+      "type": "int256",
+      "internalType": "int256"
+     },
+     {
+      "name": "corePerpWithdrawable",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "inFlightToCore",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "pendingKind",
+      "type": "uint8",
+      "internalType": "enum ProtocolVault.TransferKind"
+     },
+     {
+      "name": "pendingAmount",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "pendingAction",
+      "type": "uint8",
+      "internalType": "uint8"
+     },
+     {
+      "name": "pendingSentAt",
+      "type": "uint64",
+      "internalType": "uint64"
+     },
+     {
+      "name": "coreAccountExists",
+      "type": "bool",
+      "internalType": "bool"
+     },
+     {
+      "name": "coreLinkProven",
+      "type": "bool",
+      "internalType": "bool"
+     },
+     {
+      "name": "deployLimit",
+      "type": "uint256",
+      "internalType": "uint256"
+     },
+     {
+      "name": "quotaMode",
+      "type": "bool",
+      "internalType": "bool"
+     },
+     {
+      "name": "paused",
+      "type": "bool",
+      "internalType": "bool"
+     },
+     {
+      "name": "apiWallet",
+      "type": "address",
+      "internalType": "address"
+     },
+     {
+      "name": "manager",
+      "type": "address",
+      "internalType": "address"
+     },
+     {
+      "name": "managerShares",
+      "type": "uint256",
+      "internalType": "uint256"
+     }
+    ]
+   }
+  ],
+  "stateMutability": "view"
+ },
+ {
+  "type": "error",
+  "name": "HLConversions__InvalidToken",
+  "inputs": [
+   {
+    "name": "token",
+    "type": "uint64",
+    "internalType": "uint64"
+   }
+  ]
+ },
+ {
+  "type": "error",
+  "name": "PrecompileLib__AccountMarginSummaryPrecompileFailed",
+  "inputs": []
+ },
+ {
+  "type": "error",
+  "name": "PrecompileLib__CoreUserExistsPrecompileFailed",
+  "inputs": []
+ },
+ {
+  "type": "error",
+  "name": "PrecompileLib__SpotBalancePrecompileFailed",
+  "inputs": []
+ },
+ {
+  "type": "error",
+  "name": "PrecompileLib__TokenInfoPrecompileFailed",
+  "inputs": []
+ },
+ {
+  "type": "error",
+  "name": "PrecompileLib__WithdrawablePrecompileFailed",
+  "inputs": []
+ }
+]

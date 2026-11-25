@@ -1,0 +1,283 @@
+[
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "allMids"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "allMids",
+    "dex": "xyz"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "l2Book",
+    "coin": "BTC",
+    "nSigFigs": null,
+    "mantissa": null,
+    "fast": false
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "l2Book",
+    "coin": "BTC",
+    "nSigFigs": 3,
+    "mantissa": null,
+    "fast": false
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "trades",
+    "coin": "BTC"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "candle",
+    "interval": "1m",
+    "coin": "BTC"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "candle",
+    "interval": "1m",
+    "coin": "xyz:NVDA"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "bbo",
+    "coin": "BTC"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "activeAssetCtx",
+    "coin": "BTC"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "activeAssetCtx",
+    "coin": "@107"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "activeAssetData",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+    "coin": "BTC"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "userEvents",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "userFills",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+    "aggregateByTime": false
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "orderUpdates",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "userFundings",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "userNonFundingLedgerUpdates",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "webData3",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "clearinghouseState",
+    "dex": "",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "openOrders",
+    "dex": "",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "notification",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "userTwapSliceFills",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "userTwapHistory",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "twapStates",
+    "dex": "",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "spotState",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+    "ignorePortfolioMargin": false
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "allDexsClearinghouseState",
+    "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "allDexsAssetCtxs"
+   }
+  }
+ },
+ {
+  "channel": "subscriptionResponse",
+  "data": {
+   "method": "subscribe",
+   "subscription": {
+    "type": "explorerBlock"
+   }
+  }
+ }
+]

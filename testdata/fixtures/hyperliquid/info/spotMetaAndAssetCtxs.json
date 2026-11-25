@@ -1,0 +1,86 @@
+[
+  {
+    "tokens": [
+      {
+        "name": "USDC",
+        "szDecimals": 8,
+        "weiDecimals": 8,
+        "index": 0,
+        "tokenId": "0x6d1e7cde53ba9467b783cb7c530ce054",
+        "isCanonical": true,
+        "evmContract": {
+          "address": "0x6b9e773128f453f5c2c60935ee2de2cbc5390a24",
+          "evm_extra_wei_decimals": -2
+        },
+        "fullName": null,
+        "deployerTradingFeeShare": "0.0"
+      },
+      {
+        "name": "PURR",
+        "szDecimals": 0,
+        "weiDecimals": 5,
+        "index": 1,
+        "tokenId": "0xc1fb593aeffbeb02f85e0308e9956a90",
+        "isCanonical": true,
+        "evmContract": {
+          "address": "0x9b498c3c8a0b8cd8ba1d9851d40d186f1872b44e",
+          "evm_extra_wei_decimals": 13
+        },
+        "fullName": null,
+        "deployerTradingFeeShare": "0.0"
+      }
+    ],
+    "universe": [
+      {
+        "tokens": [
+          1,
+          0
+        ],
+        "name": "PURR/USDC",
+        "index": 0,
+        "isCanonical": true
+      },
+      {
+        "tokens": [
+          2,
+          0
+        ],
+        "name": "@1",
+        "index": 1,
+        "isCanonical": false
+      }
+    ]
+  },
+  [
+    {
+      "prevDayPx": "0.092061",
+      "dayNtlVlm": "2087411.9704699989",
+      "markPx": "0.08215",
+      "midPx": "0.0821645",
+      "circulatingSupply": "594634632.536640048",
+      "coin": "PURR/USDC",
+      "totalSupply": "594634643.8431600332",
+      "dayBaseVlm": "25195998.0"
+    },
+    {
+      "prevDayPx": "10.69",
+      "dayNtlVlm": "109958.356232",
+      "markPx": "10.16",
+      "midPx": "10.1605",
+      "circulatingSupply": "995699.9910843",
+      "coin": "@1",
+      "totalSupply": "995700.04191046",
+      "dayBaseVlm": "10744.56"
+    },
+    {
+      "prevDayPx": "0.00004961",
+      "dayNtlVlm": "2.39958609",
+      "markPx": "0.00004961",
+      "midPx": "0.00004968",
+      "circulatingSupply": "4869867788.5679702759",
+      "coin": "@2",
+      "totalSupply": "6867873581.875120163",
+      "dayBaseVlm": "48369.0"
+    }
+  ]
+]

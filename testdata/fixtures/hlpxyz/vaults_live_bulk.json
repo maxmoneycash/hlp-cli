@@ -1,0 +1,18 @@
+{
+ "vaults": [
+  {
+   "address": "0xac26cf5f3c46b5e102048c65b977d2551b72a9c7",
+   "sharePrice": 5.578482837536576,
+   "totalEquity": 2783296.090273,
+   "recentAv": null,
+   "depositCapacity": null
+  },
+  {
+   "address": "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
+   "sharePrice": 2.9467194911978782,
+   "totalEquity": 151318485.70641,
+   "recentAv": null,
+   "depositCapacity": null
+  }
+ ]
+}

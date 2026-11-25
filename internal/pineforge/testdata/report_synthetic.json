@@ -1,0 +1,15 @@
+{
+  "engine": "pineforge",
+  "input": {"ohlcv": "/in/ohlcv.csv", "bars": 4, "first_ts": 1735689600000, "last_ts": 1735700400000},
+  "applied_inputs": {},
+  "applied_overrides": {},
+  "summary": {"total_trades": 2, "wins": 1, "losses": 1, "win_rate_pct": 50.0, "net_pnl": 1.5, "avg_trade": 0.75, "best_trade": 3.0, "worst_trade": -1.5, "max_drawdown": -1.5, "bars_processed": 4},
+  "diagnostics": {"run_profile": "unjailed"},
+  "trades": [
+    {"n": 1, "side": "long", "entry_time": 1735693200000, "exit_time": 1735696800000, "entry_price": 100.0, "exit_price": 103.0, "qty": 1.0, "pnl": 3.0, "pnl_pct": 3.0, "max_runup": 3.5, "max_drawdown": 0.5, "commission": 0.0, "entry_bar_index": 1, "exit_bar_index": 2, "open_at_end": false, "entry_incarnation": 1},
+    {"n": 2, "side": "short", "entry_time": 1735696800000, "exit_time": 1735700400000, "entry_price": 103.0, "exit_price": 104.5, "qty": 1.0, "pnl": -1.5, "pnl_pct": -1.4563, "max_runup": 0.2, "max_drawdown": 1.5, "commission": 0.0, "entry_bar_index": 2, "exit_bar_index": 3, "open_at_end": true, "entry_incarnation": 2}
+  ],
+  "metrics": {"all": {"num_trades": 2}},
+  "equity_curve": [{"time_ms": 1735689600000, "equity": 1000.0, "open_profit": 0.0}, {"time_ms": 1735700400000, "equity": 1001.5, "open_profit": 0.0}],
+  "fingerprint": {"token": "synthetic"}
+}

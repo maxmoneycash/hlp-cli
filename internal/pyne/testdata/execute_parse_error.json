@@ -1,0 +1,35 @@
+{
+  "ok": false,
+  "error": "Parse Error: SyntaxError: no viable alternative at input 'x = ta.sma(close,\\nplot(x)\\n\\n// ---- appended by hlp (PYNE result export; not part of the script) ----\\nvar'\n  File \"<unknown>\", line 7\n    var int hlpPyneSeen = 0\n    ^",
+  "kind": "parse",
+  "file": "script.pine",
+  "extras": {
+    "error_kind": "parse",
+    "error_type": "SyntaxError",
+    "logs": [],
+    "profile": {
+      "total_ms": 1337.434,
+      "bars": 50,
+      "mode": "interpret",
+      "phases": {
+        "parse_ms": 1316.212,
+        "eval_ms": 0.0
+      },
+      "lines": []
+    },
+    "meta": {
+      "logs": [],
+      "profile": {
+        "total_ms": 1337.434,
+        "bars": 50,
+        "mode": "interpret",
+        "phases": {
+          "parse_ms": 1316.212,
+          "eval_ms": 0.0
+        },
+        "lines": []
+      }
+    }
+  },
+  "elapsed_ms": 1337.57
+}

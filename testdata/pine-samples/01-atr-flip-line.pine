@@ -1,0 +1,44 @@
+//@version=5
+// hlp research sample 01 (MIT, written for hlp). A volatility
+// stop-and-reverse spelled out by hand: one line trails the close by a
+// multiple of the average range, only ever moves in the trade's favour, and
+// the position flips when a close crosses it. Exercises var state, nz() on
+// history, nested if blocks, a bool input and math.max/math.min.
+strategy("ATR flip line", overlay = true, initial_capital = 10000,
+     default_qty_type = strategy.percent_of_equity, default_qty_value = 100,
+     commission_type = strategy.commission.percent, commission_value = 0.045)
+
+rangeLen = input.int(14, "Range length", minval = 1)
+mult     = input.float(2.5, "Range multiple", step = 0.1)
+plainAvg = input.bool(false, "Average the true range with SMA (off = RMA)")
+
+avgRange = plainAvg ? ta.sma(ta.tr, rangeLen) : ta.atr(rangeLen)
+gap      = mult * avgRange
+
+var int side = 1
+var float line = na
+carried = nz(line[1], side == 1 ? close - gap : close + gap)
+
+if side == 1
+    line := math.max(carried, close - gap)
+    if close < carried
+        side := -1
+        line := close + gap
+else
+    line := math.min(carried, close + gap)
+    if close > carried
+        side := 1
+        line := close - gap
+
+turnedUp   = side == 1 and side[1] == -1
+turnedDown = side == -1 and side[1] == 1
+
+if turnedUp
+    strategy.entry("Up", strategy.long)
+if turnedDown
+    strategy.entry("Down", strategy.short)
+
+plot(line, "Flip line", side == 1 ? color.teal : color.red, 2)
+plotshape(turnedUp, "Turned up", shape.triangleup, location.belowbar, color.teal)
+plotshape(turnedDown, "Turned down", shape.triangledown, location.abovebar, color.red)
+alertcondition(turnedUp, "Flip line up", "The flip line turned up")

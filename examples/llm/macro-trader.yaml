@@ -1,0 +1,27 @@
+# An LLM vault bot ("AI vault"), paper only. One decision per hour: the model
+# sees an OHLCV digest, funding and its own book, and returns target weights
+# as JSON. Invalid replies keep the book; every decision is logged with the
+# model's one-line reason.
+#
+#   hlp paper start llm:examples/llm/macro-trader.yaml --llm
+#   hlp backtest llm:examples/llm/macro-trader.yaml --days 7 --llm   # --llm confirms the call estimate
+#
+# Local first: the model below runs on Ollama (`ollama pull qwen3:8b`).
+# Remote models (anthropic:..., openai:...) need an API key in your
+# environment and are capped at max_calls per run so a backtest cannot run up
+# a bill.
+name: Macro trader
+model: ollama:qwen3:8b
+universe: [BTC, ETH, SOL, HYPE, xyz:SP500]
+interval: 1h
+lookback: 48          # bars of context per coin
+max_gross: 2          # sum of |weights| is clamped to this
+temperature: 0.2
+max_calls: 0          # 0 = unlimited for local models, 500 for remote ones
+prompt: |
+  You run a small crypto macro book on Hyperliquid perps, with the S&P 500
+  perp (xyz:SP500) as the risk-on/risk-off gauge. Lean long the strongest
+  majors when equities and crypto trend up together, rotate into shorts or
+  cash when they diverge or sell off. Prefer 2-4 positions, avoid flipping
+  more than once a day, and keep gross leverage under 1.5x unless trends
+  are strong and volatility is falling.

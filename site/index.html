@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hlp: the Hyperliquid vault terminal</title>
+<meta name="description" content="Rank every Hyperliquid vault, read its tearsheet and backtest your thesis from the terminal. Open source, one binary, no keys.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#131315">
+<meta property="og:title" content="hlp: the Hyperliquid vault terminal">
+<meta property="og:description" content="Vault analytics, candlestick charts, backtests and an AI paper arena in your terminal. MIT.">
+<meta property="og:image" content="assets/chart-hero-terminal.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M0 0h24l8 8v24H8l-8-8z' fill='%23131315'/%3E%3Crect x='9' y='9' width='5' height='14' fill='%23f4f3ef'/%3E%3Crect x='18' y='6' width='5' height='11' fill='%23ff4b3e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&amp;family=Big+Shoulders+Display:wght@800;900&amp;family=Geist+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="plate brand" href="#" aria-label="hlp home"><span class="brand-face">HLP</span></a>
+    <nav class="nav label" aria-label="Sections">
+      <a href="#charts">Charts</a>
+      <a href="#agents">Agents</a>
+      <a href="#safety">Safety</a>
+      <a href="#install">Install</a>
+    </nav>
+    <a class="plate gh" href="https://github.com/maxmoneycash/hlp"><span>GitHub</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 id="hero-h" class="display">Read any <span class="hot">vault.</span></h1>
+        <p class="lede">Rank every Hyperliquid vault and backtest your thesis from the terminal.</p>
+
+        <div class="lockon">
+          <div class="plate"><div class="install">
+            <code><span class="p" aria-hidden="true">$ </span>curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp/main/install.sh | sh</code>
+            <button class="keycap" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp/main/install.sh | sh" aria-label="Copy install command"><span>Copy</span></button>
+          </div></div>
+        </div>
+        <p class="label fine">MIT <i aria-hidden="true">·</i> No keys <i aria-hidden="true">·</i> No sign-up</p>
+      </div>
+
+      <figure class="hero-shot plate">
+        <img src="assets/chart-hero-terminal.png" width="1000" height="720"
+             alt="hlp drawing a BTC 15-minute candlestick chart in a terminal: white up candles, red down candles, a target and a stop zone, and price tags on the right axis">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Split-flap strip: commands that ship today, one at a time. -->
+  <div class="strip" aria-label="Commands">
+    <div class="wrap strip-row">
+      <span class="label strip-k" aria-hidden="true">Run</span>
+      <span class="flap" id="flap" role="text" aria-live="off">/chart btc 15m</span>
+    </div>
+  </div>
+
+  <section class="section" id="charts" aria-labelledby="charts-h">
+    <div class="wrap">
+      <p class="label idx">01 <i aria-hidden="true">/</i> Charts</p>
+      <h2 id="charts-h" class="statement">Any market.</h2>
+      <p class="say">Perps, spot and HIP-3 in candles, with 31 themes to choose from.</p>
+      <ul class="swatches">
+        <li class="plate"><div class="face"><img src="assets/chart-theme-blueprint.png" width="1000" height="720" loading="lazy" alt="BTC chart in the blueprint theme"><span class="label">Blueprint</span></div></li>
+        <li class="plate"><div class="face"><img src="assets/chart-theme-amber.png" width="1000" height="720" loading="lazy" alt="BTC chart in the amber theme"><span class="label">Amber</span></div></li>
+        <li class="plate"><div class="face"><img src="assets/chart-theme-mint.png" width="1000" height="720" loading="lazy" alt="BTC chart in the mint theme"><span class="label">Mint</span></div></li>
+        <li class="plate"><div class="face"><img src="assets/chart-theme-crt.png" width="1000" height="720" loading="lazy" alt="BTC chart in the CRT theme"><span class="label">CRT</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="vaults" aria-labelledby="vaults-h">
+    <div class="wrap split">
+      <div>
+        <p class="label idx">02 <i aria-hidden="true">/</i> Vaults</p>
+        <h2 id="vaults-h" class="statement">One binary.</h2>
+        <p class="say">A screener, a tearsheet against HLP, BTC and HYPE, and backtests with fees.</p>
+      </div>
+      <div class="plate term" role="region" aria-label="Example commands" tabindex="0">
+<pre><code><span class="ln"><span class="p">$</span> hlp vaults --sort sharpe</span><span class="ln"><span class="p">$</span> hlp vault hlp</span><span class="ln"><span class="p">$</span> hlp vault compare hlp "Long HYPE &amp; BTC"</span><span class="ln"><span class="p">$</span> hlp backtest --days 90 \</span><span class="ln cont">--thesis "long BTC, short DOGE"</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="agents" aria-labelledby="agents-h">
+    <div class="wrap split">
+      <div>
+        <p class="label idx">03 <i aria-hidden="true">/</i> Agents</p>
+        <h2 id="agents-h" class="statement">Built for agents.</h2>
+        <p class="say">25 read-only tools over MCP, and JSON whenever you pipe it.</p>
+      </div>
+      <div class="plate term"><div class="term-row">
+        <code><span class="p" aria-hidden="true">$ </span>claude mcp add hlp -- hlp mcp</code>
+        <button class="copy" type="button" data-copy="claude mcp add hlp -- hlp mcp" aria-label="Copy MCP command">Copy</button>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="section" id="safety" aria-labelledby="safety-h">
+    <div class="wrap">
+      <p class="label idx">04 <i aria-hidden="true">/</i> Safety</p>
+      <h2 id="safety-h" class="statement">Paper by default.</h2>
+      <p class="say">This build cannot send orders: trading is dry-run and strategies run on paper.</p>
+      <ul class="marks label">
+        <li><span aria-hidden="true">■</span>No keys</li>
+        <li><span aria-hidden="true">■</span>Dry-run</li>
+        <li><span aria-hidden="true">■</span>No telemetry</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section last" id="install" aria-labelledby="install-h">
+    <div class="wrap split">
+      <div>
+        <p class="label idx">05 <i aria-hidden="true">/</i> Install</p>
+        <h2 id="install-h" class="statement">Your turn.</h2>
+        <p class="say">A checksummed script, or Go 1.27.</p>
+      </div>
+      <div class="plate term" role="region" aria-label="Install commands" tabindex="0">
+<pre><code><span class="ln"><span class="p">$</span> curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp/main/install.sh | sh</span><span class="ln"><span class="p">$</span> go install github.com/maxmoneycash/hlp/cmd/hlp@latest</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <p>MIT. Data from <a href="https://hyperliquid.xyz">Hyperliquid</a>'s public API. Not financial advice.</p>
+      <p><a href="https://www.hlp.xyz">hlp.xyz</a></p>
+    </div>
+    <p class="mark" aria-hidden="true">HLP</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    // Copy buttons. The Clipboard API needs a secure context; fall back to a hidden textarea.
+    document.querySelectorAll('[data-copy]').forEach(function (b) {
+      var face = b.querySelector('span') || b;
+      b.addEventListener('click', function () {
+        var text = b.getAttribute('data-copy');
+        var done = function () {
+          face.textContent = 'Copied'; b.dataset.done = '';
+          setTimeout(function () { face.textContent = 'Copy'; delete b.dataset.done; }, 1600);
+        };
+        var legacy = function () {
+          var ta = document.createElement('textarea');
+          ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select();
+          var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+          document.body.removeChild(ta); b.focus();
+          if (ok) done();
+        };
+        if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, legacy);
+        else legacy();
+      });
+    });
+
+    // Split-flap: one cell per character. Only changed cells flip, 180 ms each, 22 ms stagger,
+    // every 2.6 s. Nothing runs under reduced motion, in a hidden tab, or off screen.
+    var el = document.getElementById('flap');
+    var words = ['/chart btc 15m', '/vaults', '/vault hlp', '/backtest', '/arena', '/pine check', '/account'];
+    var W = 14;
+    function pad(s) { while (s.length < W) s += ' '; return s; }
+    var cells = [];
+    el.textContent = '';
+    el.setAttribute('aria-label', words[0]);
+    pad(words[0]).split('').forEach(function (ch) {
+      var c = document.createElement('span');
+      c.className = 'cell'; c.textContent = ch;
+      el.appendChild(c); cells.push(c);
+    });
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduce && reduce.matches) return;
+    var i = 0, visible = true;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(el);
+    }
+    setInterval(function () {
+      if (document.hidden || !visible || (reduce && reduce.matches)) return;
+      i = (i + 1) % words.length;
+      var next = pad(words[i]), k = 0;
+      el.setAttribute('aria-label', words[i]);
+      cells.forEach(function (c, j) {
+        var ch = next[j];
+        if (c.textContent === ch) return;
+        var delay = (k++) * 22;
+        if (!c.animate) { c.textContent = ch; return; }
+        // One fold per cell: shut, swap the character at the fold, open. No fill is kept.
+        c.animate([{ transform: 'scaleY(1)' }, { transform: 'scaleY(0)', offset: 0.5 }, { transform: 'scaleY(1)' }],
+          { duration: 180, delay: delay, easing: 'ease-in-out' });
+        setTimeout(function () { c.textContent = ch; }, delay + 90);
+      });
+    }, 2600);
+  })();
+</script>
+</body>
+</html>

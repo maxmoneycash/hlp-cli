@@ -1,0 +1,34 @@
+{
+ "snapshotCoinCount": 1850,
+ "snapshotSample": {
+  "#237381": {
+   "markPx": "0.86327",
+   "midPx": "0.85903"
+  },
+  "io:EWY": {
+   "markPx": "139.95",
+   "midPx": "139.825"
+  }
+ },
+ "snapshotXyz": {
+  "xyz:GBP": {
+   "markPx": "1.3207",
+   "midPx": "1.32075"
+  }
+ },
+ "deltaCoinCount": 154,
+ "deltaSample": {
+  "BCH": {
+   "markPx": "208.33",
+   "midPx": "208.345"
+  },
+  "ARB": {
+   "markPx": "0.13439"
+  },
+  "#237381": {
+   "markPx": "0.86324",
+   "midPx": "0.859"
+  }
+ },
+ "msgsIn10s": 11
+}

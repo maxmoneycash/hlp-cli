@@ -1,0 +1,135 @@
+{
+ "name": "Hyperliquidity Provider (HLP)",
+ "vaultAddress": "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
+ "leader": "0x677d831aef5328190852e24f13c46cac05f984e7",
+ "description": "This community-owned vault provides liquidity to Hyperliquid through multiple market making strategies, performs liquidations, and accrues platform fees.",
+ "portfolio": [
+  [
+   "day",
+   {
+    "accountValueHistory": [
+     [
+      1794649154662,
+      "150783849.9005959928"
+     ],
+     [
+      1794650755295,
+      "150784452.8475370109"
+     ],
+     [
+      1794735479939,
+      "151318508.2735570073"
+     ],
+     [
+      1794735856272,
+      "151318433.6771399975"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1794649154662,
+      "0.0"
+     ],
+     [
+      1794650755295,
+      "568.496941"
+     ],
+     [
+      1794735479939,
+      "46930.752961"
+     ],
+     [
+      1794735856272,
+      "46856.156544"
+     ]
+    ],
+    "vlm": "0.0"
+   }
+  ],
+  [
+   "week",
+   {
+    "accountValueHistory": [
+     [
+      1794126449217,
+      "148341974.5212639868"
+     ],
+     [
+      1794137642237,
+      "148339044.6378180087"
+     ],
+     [
+      1794735479939,
+      "151318508.2735570073"
+     ],
+     [
+      1794735856272,
+      "151318433.6771399975"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1794126449217,
+      "0.0"
+     ],
+     [
+      1794137642237,
+      "1067.286554"
+     ],
+     [
+      1794735479939,
+      "2211712.4722930002"
+     ],
+     [
+      1794735856272,
+      "2211637.8758760002"
+     ]
+    ],
+    "vlm": "0.0"
+   }
+  ]
+ ],
+ "apr": 0.2215617786898384,
+ "followerState": null,
+ "leaderFraction": 0.0024293423133562022,
+ "leaderCommission": 0.0,
+ "followers": [
+  {
+   "user": "0x029fa9d9a10ea5c8187bfe9fa6a428792cc3a945",
+   "vaultEquity": "316665.1094328712",
+   "pnl": "66665.1094318712",
+   "allTimePnl": "74117.9639188712",
+   "daysFollowing": 693,
+   "vaultEntryTime": 1734786976034,
+   "lockupUntil": 1747658825285
+  },
+  {
+   "user": "0x03e161499870b0a37549b16a5d33e0582fe1255e",
+   "vaultEquity": "614522.2346111264",
+   "pnl": "90387.4307991263",
+   "allTimePnl": "166412.7913131263",
+   "daysFollowing": 695,
+   "vaultEntryTime": 1734650428028,
+   "lockupUntil": 1770680880422
+  }
+ ],
+ "maxDistributable": 11244784.936283,
+ "maxWithdrawable": 0.0,
+ "isClosed": false,
+ "relationship": {
+  "type": "parent",
+  "data": {
+   "childAddresses": [
+    "0x010461c14e146ac35fe42271bdc1134ee31c703a",
+    "0x2e3d94f0562703b25c83308a05046ddaf9a8dd14",
+    "0x2ed5c4484ea3ff8b57d5f2fb152a40d9f2b68308",
+    "0x31ca8395cf837de08b24da3f660e77761dfb974b",
+    "0x469f690213c467c39a23efacfd2816896009d7d8",
+    "0x5e177e5e39c0f4e421f5865a6d8beed8d921cb70",
+    "0xb0a55f13d22f66e6d495ac98113841b2326e9540"
+   ]
+  }
+ },
+ "allowDeposits": true,
+ "alwaysCloseOnWithdraw": false
+}

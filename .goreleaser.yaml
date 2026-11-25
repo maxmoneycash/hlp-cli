@@ -1,0 +1,82 @@
+# GoReleaser config for hlp. https://goreleaser.com
+#
+# Local dry run (no publishing, no tokens):
+#   goreleaser check
+#   goreleaser release --snapshot --clean      # builds into ./dist
+#
+# Real releases run from .github/workflows/release.yml on a v* tag and are
+# published immediately, because install.sh downloads from the latest release.
+# Review a release with `goreleaser release --snapshot --clean` before tagging.
+version: 2
+
+project_name: hlp
+
+before:
+  hooks:
+    - go mod download
+    # Third-party licence and NOTICE files for every linked module (all OSes)
+    # plus Go's own LICENSE, into ./third_party_licenses (gitignored).
+    - sh scripts/licenses.sh
+    # Shell completions for the archives (gitignored).
+    - sh scripts/completions.sh
+
+builds:
+  - id: hlp
+    main: ./cmd/hlp
+    binary: hlp
+    env:
+      - CGO_ENABLED=0
+    goos: [darwin, linux, windows]
+    goarch: [amd64, arm64]
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+      - -X main.version={{ .Version }}
+      - -X main.commit={{ .ShortCommit }}
+      - -X main.date={{ .CommitDate }}
+    # Reproducible builds: file times come from the commit, not the clock.
+    mod_timestamp: "{{ .CommitTimestamp }}"
+
+archives:
+  - id: hlp
+    ids: [hlp]
+    # install.sh depends on this exact name: hlp_<version>_<os>_<arch>.tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    files:
+      - LICENSE
+      - README.md
+      - third_party_licenses/**/*
+      - completions/*
+
+checksum:
+  name_template: checksums.txt
+  algorithm: sha256
+
+snapshot:
+  version_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  use: github
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+      - "^ci:"
+
+release:
+  github:
+    owner: maxmoneycash
+    name: hlp
+  draft: false
+  prerelease: auto
+  name_template: "hlp {{ .Tag }}"
+  footer: |
+    Install: `curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp/main/install.sh | sh`
+    or `go install github.com/maxmoneycash/hlp/cmd/hlp@{{ .Tag }}`. Verify downloads against `checksums.txt`.

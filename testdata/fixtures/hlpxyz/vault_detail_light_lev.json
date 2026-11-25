@@ -1,0 +1,113 @@
+{
+ "trades": [],
+ "funding": [],
+ "deps": [
+  {
+   "time": "04/09/2025 - 19:35:38",
+   "_ts": 1744227338023,
+   "accountValueChange": 40000
+  },
+  {
+   "time": "04/09/2025 - 19:54:05",
+   "_ts": 1744228445616,
+   "accountValueChange": 50000
+  },
+  {
+   "time": "04/09/2025 - 20:02:37",
+   "_ts": 1744228957912,
+   "accountValueChange": 9967.19
+  }
+ ],
+ "portfolio": {
+  "snapshots": [
+   {
+    "ts": 1744233458325,
+    "av": 0,
+    "pnl": 0,
+    "raw": true
+   },
+   {
+    "ts": 1744237058325,
+    "av": 189602.333957,
+    "pnl": 1122.448555,
+    "raw": true
+   },
+   {
+    "ts": 1794691080027,
+    "av": 2606401.747056,
+    "pnl": 2508249.59808418,
+    "raw": false
+   },
+   {
+    "ts": 1794696310801,
+    "av": 2689834.743324,
+    "pnl": 2508122.173324,
+    "raw": true
+   }
+  ],
+  "flows": [
+   {
+    "time": 1744227338023,
+    "amount": 40000
+   },
+   {
+    "time": 1744228445616,
+    "amount": 50000
+   },
+   {
+    "time": 1744228957912,
+    "amount": 9967.19
+   }
+  ]
+ },
+ "vaultInfo": {
+  "name": "Long HYPE & BTC | Short Garbage",
+  "desc": "70% HYPE 30% BTC long\nShort portfolio may change but will always include a basket of at least 10+ high FDV high emission coins. Short side will be about 60% of notional",
+  "leader": "0xa380444a9299df2a15bddf949dd493bb6d30d939",
+  "profitShare": 0.1
+ },
+ "leverage": [
+  {
+   "ts": 1776496523195,
+   "leverage": 1.056875794867195,
+   "netLeverage": 0.5612072061292008,
+   "accountValue": 2168921.112365,
+   "totalNtlPos": 2292280.224635,
+   "netNtlPos": 1217214.157785,
+   "totalMarginUsed": 233156.495644
+  },
+  {
+   "ts": 1776559155741,
+   "leverage": 1.040730326907714,
+   "netLeverage": 0.5551809637594761,
+   "accountValue": 2139151.415097,
+   "totalNtlPos": 2226279.751539,
+   "netNtlPos": 1187616.1442609997,
+   "totalMarginUsed": 226711.67035
+  },
+  {
+   "ts": 1776644300815,
+   "leverage": 1.3780015092632263,
+   "netLeverage": 0.18217108484155606,
+   "accountValue": 2077273.471721,
+   "totalNtlPos": 2862485.979184,
+   "netNtlPos": 378419.161856,
+   "totalMarginUsed": 259466.692948
+  }
+ ],
+ "_light": true,
+ "meta": {
+  "lastUpdated": 1794696315078,
+  "dataStart": 1744156800000,
+  "dataEnd": 1794683607340,
+  "cached": true,
+  "stale": true,
+  "tradesCount": 60423,
+  "fundingCount": 723,
+  "ledgerCount": 7584,
+  "snapshotCount": 3147,
+  "isClosed": false,
+  "closedAt": null,
+  "allowDeposits": false
+ }
+}

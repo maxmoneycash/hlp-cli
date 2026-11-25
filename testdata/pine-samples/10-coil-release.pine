@@ -1,0 +1,30 @@
+//@version=5
+// hlp research sample 10 (MIT, written for hlp). Volatility coil and
+// release: while the Bollinger band is narrower than an ATR channel of the
+// same length the market is coiled; the first bar it widens back out is
+// traded in the direction of the linear-regression slope, and the trade
+// closes when the slope turns against it. Uses ta.linreg with an offset.
+strategy("Coil release", overlay = false, initial_capital = 10000,
+     default_qty_type = strategy.percent_of_equity, default_qty_value = 100)
+
+n    = input.int(20, "Length")
+bbK  = input.float(2.0, "Bollinger multiple")
+chK  = input.float(1.5, "Channel multiple (x ATR)")
+
+[mid, bbTop, bbBottom] = ta.bb(close, n, bbK)
+channel = 2 * chK * ta.atr(n)
+coiled  = bbTop - bbBottom < channel
+slope   = ta.linreg(close, n, 0) - ta.linreg(close, n, 1)
+
+released = coiled[1] and not coiled
+if released and slope > 0
+    strategy.entry("Coil L", strategy.long)
+if released and slope < 0
+    strategy.entry("Coil S", strategy.short)
+if strategy.position_size > 0 and slope < 0
+    strategy.close("Coil L")
+if strategy.position_size < 0 and slope > 0
+    strategy.close("Coil S")
+
+plot(slope, "Slope", slope >= 0 ? color.teal : color.red, style = plot.style_histogram, linewidth = 3)
+plot(coiled ? 1 : 0, "Coiled", color.gray, style = plot.style_stepline)

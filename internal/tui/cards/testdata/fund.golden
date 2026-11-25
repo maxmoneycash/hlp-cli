@@ -1,0 +1,17 @@
+  STRATEGY VAULT  [TESTNET]  0x688d…AABd                                              $350  1.0288
+  CHAIN        HyperEVM 998 (testnet)
+  PHASE        open · cutoff in 9m3s
+  IDLE         $42.33
+  PENDING      $0.00 in · 0.00 shares out
+  CORE EQUITY  $308 · withdrawable $273
+  BOT          live · gross 0.50x
+  AGENT        87 days left
+  KEEPER       ran Nov 15 09:40
+
+  BOOK  DIR    UNITS     MARK     STOP      TARGET
+  BTC   SHORT      3   63,632   68,147  -0.0016779
+  ETH   SHORT      3  1,806.8  1,929.4   -0.026357
+  SOL   SHORT      2   64.541   72.291    -0.31496
+  HYPE  FLAT       0   71.083        -           -
+
+  SOURCE hlp.xyz   AS OF Nov 15 14:02:11   TESTNET

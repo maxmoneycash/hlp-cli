@@ -1,0 +1,894 @@
+# hlp curated vault registry (research draft)
+#
+# Generated 2026-11-15 from read-only public endpoints:
+#   www.hlp.xyz/api/vaults?action=summary | v6status | idxList&all=1
+#   www.hlp.xyz/api/quant?id=<id>, /assets/quant/<id>.json, /api/pvault?action=status
+#   stats-data.hyperliquid.xyz/Mainnet/vaults, api.hyperliquid.xyz/info vaultDetails(HLP)
+#
+# [vault.snapshot] tables are a point-in-time record of why each entry was picked.
+# They are NOT a data source: the CLI must always show live numbers (v6status, /live,
+# vaultDetails) and may ignore snapshot entirely.
+
+schema_version = 1
+generated_at = "2026-11-15T11:55:00Z"
+snapshot_model = "hlpxyz-v6 returns/sharpe/maxDD (percent); TVL from Hyperliquid stats-data"
+
+
+# ======================================================================
+# HLP and its sub-vaults (HyperCore)
+# ======================================================================
+
+[[vault]]
+id = "hlp"
+name = "Hyperliquidity Provider (HLP)"
+kind = "hypercore"
+address = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+chain = "hypercore-mainnet"
+relationship = "parent"
+leader = "0x677d831aef5328190852e24f13c46cac05f984e7"
+created = "2023-05-04"
+description = "Hyperliquid's protocol vault. Community-owned; provides liquidity through several market-making strategies, takes over liquidations and accrues platform fees. Capital is spread across seven child sub-vaults."
+tags = ["protocol", "market-making", "liquidations", "flagship"]
+selected_for = ["hlp"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+analytics_url = "https://www.hlp.xyz/vaults/0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+notes = "Never read HLP from hlp.xyz action=summary (stale since 2026-04-28, shows ~$358M). Use /api/vault/<addr>/live for TVL and v6status for returns. 4-day lockup. No deposit cap (capacity = unlimited)."
+[vault.snapshot]
+tvl_usd = 151314638
+tvl_source = "hyperliquid"
+ret_1y_pct = 10.37
+ret_3m_pct = 2.28
+ret_all_pct = 158.29
+sharpe_1y = 4.0
+max_dd_pct = -5.77
+accuracy_pct = 0.058
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "hlp-strategy-a"
+name = "HLP Strategy A"
+kind = "hypercore"
+address = "0x010461c14e146ac35fe42271bdc1134ee31c703a"
+chain = "hypercore-mainnet"
+relationship = "child"
+parent = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+leader = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+created = "2023-05-04"
+description = "HLP sub-vault running one of HLP's market-making strategies; capital is allocated by the parent, not by depositors."
+tags = ["protocol", "hlp-child", "market-making"]
+selected_for = ["hlp"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x010461c14e146ac35fe42271bdc1134ee31c703a"
+analytics_url = "https://www.hlp.xyz/vaults/0x010461c14e146ac35fe42271bdc1134ee31c703a"
+notes = "Child of HLP: users cannot deposit directly; its leader is the HLP vault address. Discover the live list from vaultDetails(HLP).relationship.data.childAddresses rather than trusting this list."
+[vault.snapshot]
+tvl_usd = 3226314
+
+[[vault]]
+id = "hlp-strategy-b"
+name = "HLP Strategy B"
+kind = "hypercore"
+address = "0x31ca8395cf837de08b24da3f660e77761dfb974b"
+chain = "hypercore-mainnet"
+relationship = "child"
+parent = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+leader = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+created = "2023-05-04"
+description = "HLP sub-vault running one of HLP's market-making strategies; capital is allocated by the parent, not by depositors."
+tags = ["protocol", "hlp-child", "market-making"]
+selected_for = ["hlp"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x31ca8395cf837de08b24da3f660e77761dfb974b"
+analytics_url = "https://www.hlp.xyz/vaults/0x31ca8395cf837de08b24da3f660e77761dfb974b"
+notes = "Child of HLP: users cannot deposit directly; its leader is the HLP vault address. Discover the live list from vaultDetails(HLP).relationship.data.childAddresses rather than trusting this list."
+[vault.snapshot]
+tvl_usd = 2987080
+
+[[vault]]
+id = "hlp-strategy-x"
+name = "HLP Strategy X"
+kind = "hypercore"
+address = "0x469f690213c467c39a23efacfd2816896009d7d8"
+chain = "hypercore-mainnet"
+relationship = "child"
+parent = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+leader = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+created = "2025-12-20"
+description = "Largest HLP sub-vault (about two thirds of HLP's capital in this snapshot); market-making book allocated by the parent."
+tags = ["protocol", "hlp-child", "market-making"]
+selected_for = ["hlp"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x469f690213c467c39a23efacfd2816896009d7d8"
+analytics_url = "https://www.hlp.xyz/vaults/0x469f690213c467c39a23efacfd2816896009d7d8"
+notes = "Child of HLP: users cannot deposit directly; its leader is the HLP vault address. Discover the live list from vaultDetails(HLP).relationship.data.childAddresses rather than trusting this list."
+[vault.snapshot]
+tvl_usd = 100860897
+
+[[vault]]
+id = "hlp-liquidator"
+name = "HLP Liquidator"
+kind = "hypercore"
+address = "0x2e3d94f0562703b25c83308a05046ddaf9a8dd14"
+chain = "hypercore-mainnet"
+relationship = "child"
+parent = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+leader = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+created = "2023-08-09"
+description = "HLP sub-vault that absorbs positions from the liquidation engine (backstop liquidator)."
+tags = ["protocol", "hlp-child", "liquidations"]
+selected_for = ["hlp"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x2e3d94f0562703b25c83308a05046ddaf9a8dd14"
+analytics_url = "https://www.hlp.xyz/vaults/0x2e3d94f0562703b25c83308a05046ddaf9a8dd14"
+notes = "Child of HLP: users cannot deposit directly; its leader is the HLP vault address. Discover the live list from vaultDetails(HLP).relationship.data.childAddresses rather than trusting this list."
+[vault.snapshot]
+tvl_usd = 999999
+
+[[vault]]
+id = "hlp-liquidator-2"
+name = "HLP Liquidator 2"
+kind = "hypercore"
+address = "0xb0a55f13d22f66e6d495ac98113841b2326e9540"
+chain = "hypercore-mainnet"
+relationship = "child"
+parent = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+leader = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+created = "2025-04-20"
+description = "HLP backstop-liquidator sub-vault; the most heavily funded liquidator account in this snapshot."
+tags = ["protocol", "hlp-child", "liquidations"]
+selected_for = ["hlp"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xb0a55f13d22f66e6d495ac98113841b2326e9540"
+analytics_url = "https://www.hlp.xyz/vaults/0xb0a55f13d22f66e6d495ac98113841b2326e9540"
+notes = "Child of HLP: users cannot deposit directly; its leader is the HLP vault address. Discover the live list from vaultDetails(HLP).relationship.data.childAddresses rather than trusting this list."
+[vault.snapshot]
+tvl_usd = 30000000
+
+[[vault]]
+id = "hlp-liquidator-3"
+name = "HLP Liquidator 3"
+kind = "hypercore"
+address = "0x5e177e5e39c0f4e421f5865a6d8beed8d921cb70"
+chain = "hypercore-mainnet"
+relationship = "child"
+parent = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+leader = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+created = "2025-11-15"
+description = "HLP backstop-liquidator sub-vault."
+tags = ["protocol", "hlp-child", "liquidations"]
+selected_for = ["hlp"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x5e177e5e39c0f4e421f5865a6d8beed8d921cb70"
+analytics_url = "https://www.hlp.xyz/vaults/0x5e177e5e39c0f4e421f5865a6d8beed8d921cb70"
+notes = "Child of HLP: users cannot deposit directly; its leader is the HLP vault address. Discover the live list from vaultDetails(HLP).relationship.data.childAddresses rather than trusting this list."
+[vault.snapshot]
+tvl_usd = 1000006
+
+[[vault]]
+id = "hlp-liquidator-4"
+name = "HLP Liquidator 4"
+kind = "hypercore"
+address = "0x2ed5c4484ea3ff8b57d5f2fb152a40d9f2b68308"
+chain = "hypercore-mainnet"
+relationship = "child"
+parent = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+leader = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
+created = "2025-11-15"
+description = "HLP backstop-liquidator sub-vault."
+tags = ["protocol", "hlp-child", "liquidations"]
+selected_for = ["hlp"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x2ed5c4484ea3ff8b57d5f2fb152a40d9f2b68308"
+analytics_url = "https://www.hlp.xyz/vaults/0x2ed5c4484ea3ff8b57d5f2fb152a40d9f2b68308"
+notes = "Child of HLP: users cannot deposit directly; its leader is the HLP vault address. Discover the live list from vaultDetails(HLP).relationship.data.childAddresses rather than trusting this list."
+[vault.snapshot]
+tvl_usd = 1000000
+
+
+# ======================================================================
+# Notable user vaults (HyperCore): top by TVL, 1y return and Sharpe
+# ======================================================================
+
+[[vault]]
+id = "growi-hf"
+name = "Growi HF"
+kind = "hypercore"
+address = "0x1e37a337ed460039d1b15bd3bc489de789768d5e"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x7789450871fb1315fa982ccb8039cb34e8f2f60d"
+created = "2024-07-08"
+description = "Fully automated quantitative mean-reversion across all listed perps with a risk overlay; targets over 50% a year and claims live results match a 7-year backtest."
+tags = ["mean-reversion", "systematic", "multi-asset"]
+selected_for = ["tvl"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x1e37a337ed460039d1b15bd3bc489de789768d5e"
+analytics_url = "https://www.hlp.xyz/vaults/0x1e37a337ed460039d1b15bd3bc489de789768d5e"
+[vault.snapshot]
+tvl_usd = 12298998
+ret_1y_pct = 20.9
+ret_3m_pct = 0.37
+ret_all_pct = 76.87
+sharpe_1y = 1.11
+max_dd_pct = -18.67
+accuracy_pct = 0.1
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "systemic-ls-grids"
+name = "[ Systemic Strategies ] L/S Grids"
+kind = "hypercore"
+address = "0x07fd993f0fa3a185f7207adccd29f7a87404689d"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x2b804617c6f63c040377e95bb276811747006f4b"
+created = "2025-01-23"
+description = "Grid trading that leans long low-inflation / low-unlock tokens and short high-inflation / heavy-unlock tokens."
+tags = ["grid", "long-short", "unlocks", "systematic"]
+selected_for = ["tvl", "return"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x07fd993f0fa3a185f7207adccd29f7a87404689d"
+analytics_url = "https://www.hlp.xyz/vaults/0x07fd993f0fa3a185f7207adccd29f7a87404689d"
+[vault.snapshot]
+tvl_usd = 6769791
+ret_1y_pct = 41.36
+ret_3m_pct = -4.12
+ret_all_pct = 207.25
+sharpe_1y = 1.25
+max_dd_pct = -35.92
+accuracy_pct = 0.075
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "systemic-hypergrowth"
+name = "[ Systemic Strategies ] ♾️ HyperGrowth ♾️"
+kind = "hypercore"
+address = "0xd6e56265890b76413d1d527eb9b75e334c0c5b42"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x2b804617c6f63c040377e95bb276811747006f4b"
+created = "2025-08-29"
+description = "Second Systemic Strategies vault (same leader as L/S Grids); a growth-oriented long/short book. Strongest 1-year return among the large vaults in this snapshot."
+tags = ["long-short", "systematic", "momentum"]
+selected_for = ["tvl", "return", "sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xd6e56265890b76413d1d527eb9b75e334c0c5b42"
+analytics_url = "https://www.hlp.xyz/vaults/0xd6e56265890b76413d1d527eb9b75e334c0c5b42"
+notes = "Vault description is only a social link; thesis inferred from the leader's other vault and its balanced long/short book."
+[vault.snapshot]
+tvl_usd = 5765980
+ret_1y_pct = 117.17
+ret_3m_pct = 0.84
+ret_all_pct = 199.38
+sharpe_1y = 2.1
+max_dd_pct = -52.1
+accuracy_pct = 0.364
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "doubletop"
+name = "DOUBLETOP Vault"
+kind = "hypercore"
+address = "0x53f8f390fd4f70941c5d160a964f6893c8dbceff"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0xfb9c70230c93856c2429384f875d9a896d33d388"
+created = "2026-06-17"
+description = "Community-run (Ukrainian DOUBLETOP community) discrete long-horizon positional strategy; expects to be wrong for weeks before being right."
+tags = ["discretionary", "positional", "community"]
+selected_for = ["tvl"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x53f8f390fd4f70941c5d160a964f6893c8dbceff"
+analytics_url = "https://www.hlp.xyz/vaults/0x53f8f390fd4f70941c5d160a964f6893c8dbceff"
+notes = "Young vault (about 85 days at snapshot); long-only book."
+[vault.snapshot]
+tvl_usd = 5412695
+ret_1y_pct = -9.52
+ret_3m_pct = -14.32
+ret_all_pct = -9.52
+sharpe_1y = -0.38
+max_dd_pct = -36.36
+accuracy_pct = 0.117
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "bredo-strategy"
+name = "BredoStrategy"
+kind = "hypercore"
+address = "0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0xf5f569a7006860e6e17c92ba9d5959090acf0336"
+created = "2026-02-17"
+description = "Concentrated, high-leverage discretionary long book (average gross leverage above 3x); the leader openly warns depositors they may lose everything."
+tags = ["discretionary", "high-leverage", "high-risk"]
+selected_for = ["tvl"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7"
+analytics_url = "https://www.hlp.xyz/vaults/0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7"
+notes = "Max drawdown about -70%. Show a risk badge."
+[vault.snapshot]
+tvl_usd = 4571023
+ret_1y_pct = 1.08
+ret_3m_pct = 26.88
+ret_all_pct = 1.08
+sharpe_1y = 0.66
+max_dd_pct = -70.44
+accuracy_pct = 1.195
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "long-hype-btc-short-garbage"
+name = "Long HYPE & BTC | Short Garbage"
+kind = "hypercore"
+address = "0xac26cf5f3c46b5e102048c65b977d2551b72a9c7"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0xa380444a9299df2a15bddf949dd493bb6d30d939"
+created = "2025-04-09"
+description = "Long 70% HYPE / 30% BTC against a short basket of 10+ high-FDV, high-emission tokens; short side about 60% of notional."
+tags = ["long-short", "memes", "unlocks", "hype"]
+selected_for = ["tvl", "return", "sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xac26cf5f3c46b5e102048c65b977d2551b72a9c7"
+analytics_url = "https://www.hlp.xyz/vaults/0xac26cf5f3c46b5e102048c65b977d2551b72a9c7"
+notes = "The on-chain analogue of hlp.xyz's 'bluechip' quant strategy."
+[vault.snapshot]
+tvl_usd = 2786894
+ret_1y_pct = 333.93
+ret_3m_pct = 26.78
+ret_all_pct = 679.96
+sharpe_1y = 2.64
+max_dd_pct = -50.65
+accuracy_pct = 1.948
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "orbit-value"
+name = "Orbit Value Strategies"
+kind = "hypercore"
+address = "0x115849ce84370f25cadcf0d348510d73837e1aa5"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0xf292b42e6167e0d591449ebd67d2e989a3479edf"
+created = "2025-12-15"
+description = "Systematic value capture across digital assets with a near market-neutral (balanced long/short) book."
+tags = ["value", "market-neutral", "systematic"]
+selected_for = ["tvl"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x115849ce84370f25cadcf0d348510d73837e1aa5"
+analytics_url = "https://www.hlp.xyz/vaults/0x115849ce84370f25cadcf0d348510d73837e1aa5"
+[vault.snapshot]
+tvl_usd = 1478511
+ret_1y_pct = 3.7
+ret_3m_pct = -5.29
+ret_all_pct = 3.7
+sharpe_1y = 0.31
+max_dd_pct = -23.5
+accuracy_pct = 0.071
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "btc-ma-long-short"
+name = "Bitcoin Moving Average Long/Short"
+kind = "hypercore"
+address = "0xb1505ad1a4c7755e0eb236aa2f4327bfc3474768"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x1fa1b4c4cda61b3c1ce805ae82e64a90d8821d08"
+created = "2025-10-02"
+description = "Bitcoin long/short driven by a moving-average signal: classic single-asset trend following."
+tags = ["trend", "btc", "systematic"]
+selected_for = ["tvl"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xb1505ad1a4c7755e0eb236aa2f4327bfc3474768"
+analytics_url = "https://www.hlp.xyz/vaults/0xb1505ad1a4c7755e0eb236aa2f4327bfc3474768"
+notes = "Not tracked by hlp.xyz (absent from summary/v6status); analytics only from Hyperliquid's own vaultDetails and /live, which works for untracked vaults."
+[vault.snapshot]
+tvl_usd = 2193723
+
+[[vault]]
+id = "elsewhere"
+name = "Elsewhere"
+kind = "hypercore"
+address = "0x8fc7c0442e582bca195978c5a4fdec2e7c5bb0f7"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0xf5d0308ac17a33e666326df43788afaa4100b9eb"
+created = "2024-07-05"
+description = "Discretionary, value-oriented long/short; currently net short."
+tags = ["discretionary", "value", "long-short"]
+selected_for = ["return", "sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x8fc7c0442e582bca195978c5a4fdec2e7c5bb0f7"
+analytics_url = "https://www.hlp.xyz/vaults/0x8fc7c0442e582bca195978c5a4fdec2e7c5bb0f7"
+notes = "Very high all-time return but a -93% max drawdown in its history and a low-accuracy share price (±3.4%)."
+[vault.snapshot]
+tvl_usd = 827720
+ret_1y_pct = 164.03
+ret_3m_pct = 86.63
+ret_all_pct = 727.86
+sharpe_1y = 2.59
+max_dd_pct = -92.79
+accuracy_pct = 3.366
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "jade-lotus"
+name = "Jade Lotus Capital"
+kind = "hypercore"
+address = "0xbc5bf88fd012612ba92c5bd96e183955801b7fdc"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x10cd85d0257e666fa74de7c03965a6ec9383e171"
+created = "2025-05-26"
+description = "Self-described crypto hedge fund; discretionary, currently long-only."
+tags = ["discretionary", "long-only"]
+selected_for = ["return"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xbc5bf88fd012612ba92c5bd96e183955801b7fdc"
+analytics_url = "https://www.hlp.xyz/vaults/0xbc5bf88fd012612ba92c5bd96e183955801b7fdc"
+notes = "Best 3-month return among $100k+ vaults at snapshot."
+[vault.snapshot]
+tvl_usd = 758182
+ret_1y_pct = 93.85
+ret_3m_pct = 93.28
+ret_all_pct = 580.01
+sharpe_1y = 1.33
+max_dd_pct = -43.03
+accuracy_pct = 0.38
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "convexity"
+name = "+convexity"
+kind = "hypercore"
+address = "0x5661a070eb13c7c55ac3210b2447d4bea426cbf5"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0xc6fd7c7bc701c802cf2e75fa19cacd5e4c55af9c"
+created = "2025-08-23"
+description = "Low-leverage book seeking convex payoffs; currently net short with small drawdowns."
+tags = ["short-bias", "convexity", "low-leverage"]
+selected_for = ["return", "sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x5661a070eb13c7c55ac3210b2447d4bea426cbf5"
+analytics_url = "https://www.hlp.xyz/vaults/0x5661a070eb13c7c55ac3210b2447d4bea426cbf5"
+notes = "Vault description is just '+convexity'; thesis inferred from its name and book."
+[vault.snapshot]
+tvl_usd = 1232886
+ret_1y_pct = 85.72
+ret_3m_pct = 32.76
+ret_all_pct = 81.89
+sharpe_1y = 2.61
+max_dd_pct = -12.15
+accuracy_pct = 0.028
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "value-token-strategy"
+name = "Value token strategy"
+kind = "hypercore"
+address = "0x36dc8d4188c57008b7ddbc21662ef28a88a9c684"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x349bd094209d50280dfaca12779576c748395c15"
+created = "2026-02-12"
+description = "Buys tokens with low P/E (fees or revenue against market cap), intended to be market-neutral, rebalanced periodically."
+tags = ["value", "fundamental", "market-neutral"]
+selected_for = ["return", "sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x36dc8d4188c57008b7ddbc21662ef28a88a9c684"
+analytics_url = "https://www.hlp.xyz/vaults/0x36dc8d4188c57008b7ddbc21662ef28a88a9c684"
+[vault.snapshot]
+tvl_usd = 245316
+ret_1y_pct = 99.91
+ret_3m_pct = 32.25
+ret_all_pct = 99.91
+sharpe_1y = 1.99
+max_dd_pct = -29.49
+accuracy_pct = 0.11
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "22cap"
+name = "22Cap"
+kind = "hypercore"
+address = "0xba939edf38c0ae0cc689c98b492e0535f43e4550"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0xa7fd61557cd0a61073566766839d5f851a8e92ef"
+created = "2023-11-25"
+description = "One of the oldest vaults (Nov 2023); very low-leverage personal trading vault with a long, smooth record."
+tags = ["discretionary", "low-leverage", "veteran"]
+selected_for = ["sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xba939edf38c0ae0cc689c98b492e0535f43e4550"
+analytics_url = "https://www.hlp.xyz/vaults/0xba939edf38c0ae0cc689c98b492e0535f43e4550"
+[vault.snapshot]
+tvl_usd = 209731
+ret_1y_pct = 13.65
+ret_3m_pct = 0.96
+ret_all_pct = 633.68
+sharpe_1y = 2.72
+max_dd_pct = -22.92
+accuracy_pct = 0.024
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "crypto-trading-channel"
+name = "Crypto Trading Channel"
+kind = "hypercore"
+address = "0x51b62b4bf8df6f2795b3da30cb46aa47f9f230a8"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x8c8290ebf5d157b236948b9f66d09d426503f198"
+created = "2024-12-01"
+description = "Run by a crypto trading YouTube/X channel; low-leverage discretionary book, currently short."
+tags = ["discretionary", "low-leverage", "community"]
+selected_for = ["sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x51b62b4bf8df6f2795b3da30cb46aa47f9f230a8"
+analytics_url = "https://www.hlp.xyz/vaults/0x51b62b4bf8df6f2795b3da30cb46aa47f9f230a8"
+[vault.snapshot]
+tvl_usd = 267767
+ret_1y_pct = 33.48
+ret_3m_pct = 10.34
+ret_all_pct = 40.61
+sharpe_1y = 2.64
+max_dd_pct = -13.57
+accuracy_pct = 0.061
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "hyperneutral-1"
+name = "HyperNeutral #1"
+kind = "hypercore"
+address = "0x8bb033130be354eed1110ce7228d7095f001d9fe"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0xc6a06131c84c0c9d2d4c293c349be0c6d5112893"
+created = "2025-07-01"
+description = "Market-neutral strategy with balanced long and short notional and shallow drawdowns."
+tags = ["market-neutral", "systematic"]
+selected_for = ["sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x8bb033130be354eed1110ce7228d7095f001d9fe"
+analytics_url = "https://www.hlp.xyz/vaults/0x8bb033130be354eed1110ce7228d7095f001d9fe"
+[vault.snapshot]
+tvl_usd = 112955
+ret_1y_pct = 29.48
+ret_3m_pct = 5.96
+ret_all_pct = 42.17
+sharpe_1y = 2.36
+max_dd_pct = -7.84
+accuracy_pct = 0.622
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "futurai-labs"
+name = "FuturAI Labs - High Sharpe, Low Volatility"
+kind = "hypercore"
+address = "0xb65dd7c56afbf3b272ab5fc49be44b47dca18003"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x92f33bee92dd86db292e3bc8500ffc5619d50430"
+created = "2026-02-26"
+description = "Systematic, long-only volatility harvesting: buys dips and sells rebounds continuously, max 1.5x leverage."
+tags = ["ai", "mean-reversion", "long-only", "low-leverage"]
+selected_for = ["sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xb65dd7c56afbf3b272ab5fc49be44b47dca18003"
+analytics_url = "https://www.hlp.xyz/vaults/0xb65dd7c56afbf3b272ab5fc49be44b47dca18003"
+[vault.snapshot]
+tvl_usd = 496820
+ret_1y_pct = 9.97
+ret_3m_pct = 5.08
+ret_all_pct = 9.97
+sharpe_1y = 1.97
+max_dd_pct = -5.51
+accuracy_pct = 0.012
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "quant-market-neutral"
+name = "Quantitative Market Neutral Strategy"
+kind = "hypercore"
+address = "0x14ecb3f4932522b8d508fa6e237e2746a4999feb"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0xb6a866e483e5566dfbd7324bc552f11dbed87e7a"
+created = "2026-04-09"
+description = "Fully systematic market-neutral quant strategies aiming for uncorrelated returns."
+tags = ["market-neutral", "systematic"]
+selected_for = ["sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0x14ecb3f4932522b8d508fa6e237e2746a4999feb"
+analytics_url = "https://www.hlp.xyz/vaults/0x14ecb3f4932522b8d508fa6e237e2746a4999feb"
+[vault.snapshot]
+tvl_usd = 728828
+ret_1y_pct = 9.78
+ret_3m_pct = 2.25
+ret_all_pct = 9.78
+sharpe_1y = 1.66
+max_dd_pct = -4.53
+accuracy_pct = 0.041
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "citadel-ken"
+name = "Citadel"
+kind = "hypercore"
+address = "0xda51323fe9800c8365646ad5c7ade0dd17fdc167"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x92d3acdf0484a6a8baf6fe3676b23af7cdbdbc98"
+created = "2023-11-17"
+description = "Meme-named personal vault (not affiliated with Citadel); one of the oldest vaults, low-leverage long book."
+tags = ["discretionary", "veteran", "low-leverage"]
+selected_for = ["sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xda51323fe9800c8365646ad5c7ade0dd17fdc167"
+analytics_url = "https://www.hlp.xyz/vaults/0xda51323fe9800c8365646ad5c7ade0dd17fdc167"
+notes = "On-chain name is 'Citadel'. Display it, but never imply affiliation with the real firm."
+[vault.snapshot]
+tvl_usd = 648899
+ret_1y_pct = 52.08
+ret_3m_pct = -0.36
+ret_all_pct = 270.2
+sharpe_1y = 1.87
+max_dd_pct = -51.39
+accuracy_pct = 0.061
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "69-jump-street"
+name = "69 Jump Street"
+kind = "hypercore"
+address = "0xa844d7ac9fa3424c4fd38a25baa23e460ec3e802"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x84803dc3df988d5493d9be2ee75e36f0043ee272"
+created = "2025-01-17"
+description = "Small, low-leverage long/short book with a high all-time Sharpe and single-digit drawdowns."
+tags = ["long-short", "low-leverage"]
+selected_for = ["sharpe"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xa844d7ac9fa3424c4fd38a25baa23e460ec3e802"
+analytics_url = "https://www.hlp.xyz/vaults/0xa844d7ac9fa3424c4fd38a25baa23e460ec3e802"
+[vault.snapshot]
+tvl_usd = 306987
+ret_1y_pct = 11.6
+ret_3m_pct = 8.93
+ret_all_pct = 108.83
+sharpe_1y = 1.06
+max_dd_pct = -9.2
+accuracy_pct = 0.109
+model = "hlpxyz-v6"
+
+[[vault]]
+id = "fc-genesis-quantum"
+name = "FC Genesis - Quantum"
+kind = "hypercore"
+address = "0xa6a34f0bf2ccea9a1ddf9e9a973f17c498dc5e40"
+chain = "hypercore-mainnet"
+relationship = "normal"
+leader = "0x3d32e286bb737ba348e28823863f02308768cfec"
+created = "2025-09-12"
+description = "Fully systematic vault driven by machine learning on high-frequency data with institutional-style risk management."
+tags = ["ai", "systematic", "ml"]
+selected_for = ["tvl"]
+source_url = "https://app.hyperliquid.xyz/vaults/0xa6a34f0bf2ccea9a1ddf9e9a973f17c498dc5e40"
+analytics_url = "https://www.hlp.xyz/vaults/0xa6a34f0bf2ccea9a1ddf9e9a973f17c498dc5e40"
+notes = "Included as the largest ML/AI-branded vault, not for performance (negative 1-year return)."
+[vault.snapshot]
+tvl_usd = 1957357
+ret_1y_pct = -16.47
+ret_3m_pct = -9.4
+ret_all_pct = -24.41
+sharpe_1y = -2.56
+max_dd_pct = -24.97
+accuracy_pct = 0.323
+model = "hlpxyz-v6"
+
+
+# ======================================================================
+# HyperEVM strategy vaults (pvault protocol)
+# ======================================================================
+
+[[vault]]
+id = "trend-pyramid"
+name = "Trend Pyramid"
+kind = "hyperevm"
+address = "0x688dD654bDbDE2BF8b6154685437f3F9dB2eAABd"
+chain = "hyperevm-testnet"
+chain_id = 998
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+description = "hlp.xyz's prototype strategy vault (pvault, ERC-7540-style async deposits). Trend-following on BTC, ETH, SOL and HYPE perps: buys breakouts in the direction of the larger trend, risks about 0.5% of the fund per position, pyramids into winners and trails a stop. Run by a keeper plus a bot holding an API wallet; deposits and redemptions settle once per epoch."
+tags = ["trend", "testnet", "protocol", "pyramiding", "unaudited"]
+selected_for = ["protocol"]
+source_url = "https://www.hlp.xyz/api/pvault?action=status"
+analytics_url = "https://www.hlp.xyz/api/pvault?action=history&chain=998&vault=0x688dD654bDbDE2BF8b6154685437f3F9dB2eAABd"
+lens = "0xBe615AB094039EeaE9dbfa5512b5EB6ADC248Be2"
+notes = "TESTNET ONLY (chain 998, testnet USDC). Leader here is hlp.xyz's operator wallet (fund-operator allowlist); the on-chain manager() is authoritative, read it via the lens. The vault contract address is also its own HyperCore account, so testnet clearinghouseState works on it. Contracts unaudited. Not listed in stats-data."
+[vault.snapshot]
+nav_usd = 349.06
+share_price = 1.0259
+phase = "OPEN"
+model = "pvault-lens"
+
+
+# ======================================================================
+# hlp.xyz indexes (vault baskets)
+# ======================================================================
+
+[[vault]]
+id = "idx-mavericks"
+name = "Mavericks"
+kind = "index"
+slug = "mavericks"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "active"
+description = "Official hlp.xyz index: each month buys the 8 vaults with the best trailing 30-day Calmar ratio (age >= 60 days, TVL >= $100k, 30-day drawdown < 20%), equal-weighted."
+tags = ["index", "momentum", "calmar"]
+selected_for = ["index"]
+source_url = "https://www.hlp.xyz/api/vaults?action=idxGet&slug=mavericks"
+analytics_url = "https://www.hlp.xyz/index/mavericks"
+notes = "A basket, not a vault: there is no pooled address. Each leg is a real vaultTransfer into the underlying HyperCore vault owned by the investor. Constituents come from idxGet(...).allocs[-1].weights."
+
+[[vault]]
+id = "idx-top-20-trailing-12mo-a7wq2"
+name = "Stillwater Cove"
+kind = "index"
+slug = "top-20-trailing-12mo-a7wq2"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "active"
+description = "Official hlp.xyz index and its stated vault benchmark: the 20 vaults with the best trailing 12-month return (TVL >= $10k), equal-weighted, re-selected and rebalanced quarterly."
+tags = ["index", "benchmark", "return"]
+selected_for = ["index"]
+source_url = "https://www.hlp.xyz/api/vaults?action=idxGet&slug=top-20-trailing-12mo-a7wq2"
+analytics_url = "https://www.hlp.xyz/index/top-20-trailing-12mo-a7wq2"
+notes = "A basket, not a vault: there is no pooled address. Each leg is a real vaultTransfer into the underlying HyperCore vault owned by the investor. Constituents come from idxGet(...).allocs[-1].weights."
+
+[[vault]]
+id = "idx-hlp20"
+name = "HLP 20"
+kind = "index"
+slug = "hlp20"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "archived"
+description = "S&P 500-style blue-chip index: the 20 largest vaults (age >= 180 days, TVL >= $100k, actively trading, profitable over the trailing quarter), AUM-weighted with a 10% cap, quarterly. Excludes HLP itself."
+tags = ["index", "blue-chip", "tvl-weighted"]
+selected_for = ["index"]
+source_url = "https://www.hlp.xyz/api/vaults?action=idxGet&slug=hlp20"
+analytics_url = "https://www.hlp.xyz/index/hlp20"
+notes = "A basket, not a vault: there is no pooled address. Each leg is a real vaultTransfer into the underlying HyperCore vault owned by the investor. Constituents come from idxGet(...).allocs[-1].weights. Archived on hlp.xyz (only listed with idxList&all=1)."
+
+[[vault]]
+id = "idx-stillwater"
+name = "Stillwater Cove (30d Sharpe)"
+kind = "index"
+slug = "stillwater"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "archived"
+description = "Earlier Stillwater: the 20 vaults with the best trailing 30-day Sharpe (TVL >= $100k, 30-day drawdown < 15%), equal-weighted, monthly."
+tags = ["index", "sharpe", "low-drawdown"]
+selected_for = ["index"]
+source_url = "https://www.hlp.xyz/api/vaults?action=idxGet&slug=stillwater"
+analytics_url = "https://www.hlp.xyz/index/stillwater"
+notes = "A basket, not a vault: there is no pooled address. Each leg is a real vaultTransfer into the underlying HyperCore vault owned by the investor. Constituents come from idxGet(...).allocs[-1].weights. Archived on hlp.xyz (only listed with idxList&all=1)."
+
+
+# ======================================================================
+# hlp.xyz quant strategies (paper, live target book)
+# ======================================================================
+
+[[vault]]
+id = "quant-spxmeme"
+name = "Long SPY, Short Memecoins"
+kind = "strategy"
+slug = "spxmeme"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "backtest"
+description = "Holds the S&P 500 (TradeXYZ HIP-3 perp xyz:SP500, about 1.5x) with borrowed money and shorts a basket of memecoins that are already falling (DOGE, FARTCOIN, TRUMP, PUMP, CASHCAT, PONS)."
+tags = ["equities", "memes", "long-short", "hip3"]
+selected_for = ["strategy"]
+source_url = "https://www.hlp.xyz/api/quant?id=spxmeme"
+analytics_url = "https://www.hlp.xyz/assets/quant/spxmeme.json"
+notes = "Paper/backtest strategy with a live target book; no vault address and no deposits yet. Natural arena entrant and the first candidate for a strategy vault on the pvault protocol."
+[vault.snapshot]
+oos_start = "2025-07-01"
+oos_cagr_pct = 49.84
+oos_sharpe = 1.37
+oos_max_dd_pct = -19.06
+liquidations = 0
+model = "backtest"
+
+[[vault]]
+id = "quant-trend"
+name = "Six-Market Trend"
+kind = "strategy"
+slug = "trend"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "backtest"
+description = "Multi-lookback (21/63/126/252-day) trend following across BTC, ETH, the XYZ100 equity index, gold, silver and crude oil, vol-targeted; steps aside when a trend breaks."
+tags = ["trend", "equities", "commodities", "hip3", "multi-asset"]
+selected_for = ["strategy"]
+source_url = "https://www.hlp.xyz/api/quant?id=trend"
+analytics_url = "https://www.hlp.xyz/assets/quant/trend.json"
+notes = "Paper/backtest strategy with a live target book; no vault address and no deposits yet. Natural arena entrant and the first candidate for a strategy vault on the pvault protocol."
+[vault.snapshot]
+oos_start = "2023-01-01"
+oos_cagr_pct = 24.61
+oos_sharpe = 0.67
+oos_max_dd_pct = -48.86
+liquidations = 0
+model = "backtest"
+
+[[vault]]
+id = "quant-bluechip"
+name = "Long HYPE & BTC, Short Memecoins"
+kind = "strategy"
+slug = "bluechip"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "backtest"
+description = "Holds BTC and HYPE, shorts falling memecoins; the hlp.xyz model of the 'Long HYPE & BTC | Short Garbage' vault thesis."
+tags = ["long-short", "memes", "hype"]
+selected_for = ["strategy"]
+source_url = "https://www.hlp.xyz/api/quant?id=bluechip"
+analytics_url = "https://www.hlp.xyz/assets/quant/bluechip.json"
+notes = "Paper/backtest strategy with a live target book; no vault address and no deposits yet. Natural arena entrant and the first candidate for a strategy vault on the pvault protocol."
+[vault.snapshot]
+oos_start = "2025-07-01"
+oos_cagr_pct = 57.38
+oos_sharpe = 1.28
+oos_max_dd_pct = -28.86
+liquidations = 0
+model = "backtest"
+
+[[vault]]
+id = "quant-dilution"
+name = "Token Unlocks"
+kind = "strategy"
+slug = "dilution"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "backtest"
+description = "Shorts tokens about to release a lot of insider supply (e.g. MON, STRK, TRUMP, XPL, ZRO) and holds BTC against them."
+tags = ["unlocks", "long-short", "event-driven"]
+selected_for = ["strategy"]
+source_url = "https://www.hlp.xyz/api/quant?id=dilution"
+analytics_url = "https://www.hlp.xyz/assets/quant/dilution.json"
+notes = "Paper/backtest strategy with a live target book; no vault address and no deposits yet. Natural arena entrant and the first candidate for a strategy vault on the pvault protocol."
+[vault.snapshot]
+oos_start = "2025-07-01"
+oos_cagr_pct = 24.97
+oos_sharpe = 0.76
+oos_max_dd_pct = -31.54
+liquidations = 0
+model = "backtest"
+
+[[vault]]
+id = "quant-memeshort"
+name = "OnlyShorts on Memecoins"
+kind = "strategy"
+slug = "memeshort"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "backtest"
+description = "Shorts memecoins that are already falling; nothing else."
+tags = ["memes", "short-bias"]
+selected_for = ["strategy"]
+source_url = "https://www.hlp.xyz/api/quant?id=memeshort"
+analytics_url = "https://www.hlp.xyz/assets/quant/memeshort.json"
+notes = "Paper/backtest strategy with a live target book; no vault address and no deposits yet. Natural arena entrant and the first candidate for a strategy vault on the pvault protocol."
+[vault.snapshot]
+oos_start = "2025-07-01"
+oos_cagr_pct = 30.65
+oos_sharpe = 0.76
+oos_max_dd_pct = -38.89
+liquidations = 0
+model = "backtest"
+
+[[vault]]
+id = "quant-lotto"
+name = "Lotto Tickets"
+kind = "strategy"
+slug = "lotto"
+chain = "hypercore-mainnet"
+leader = "0xad0a5685c11d247df112544e58ed4afd4124cc67"
+status = "backtest"
+description = "Many small, highly leveraged breakout bets across crypto, equity index and commodities perps; most are wiped out, a few pay many times over."
+tags = ["trend", "high-leverage", "high-risk", "hip3"]
+selected_for = ["strategy"]
+source_url = "https://www.hlp.xyz/api/quant?id=lotto"
+analytics_url = "https://www.hlp.xyz/assets/quant/lotto.json"
+notes = "Paper/backtest strategy with a live target book; no vault address and no deposits yet. Natural arena entrant and the first candidate for a strategy vault on the pvault protocol."
+[vault.snapshot]
+oos_start = "2023-01-01"
+oos_cagr_pct = 88.9
+oos_sharpe = 1.24
+oos_max_dd_pct = -47.9
+liquidations = 28
+model = "backtest"

@@ -1,0 +1,43 @@
+# Release: runs GoReleaser when a v* tag is pushed and PUBLISHES the GitHub
+# release immediately (not a draft; see .goreleaser.yaml for why). Review with
+# `goreleaser release --snapshot --clean` before tagging. Needs no secrets
+# beyond the built-in GITHUB_TOKEN.
+#
+# Third-party actions are pinned to a major tag. This job holds contents:write,
+# so consider pinning each one to a full commit SHA before the first tag.
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+  # Signed build provenance for the archives and checksums.txt
+  # (verify with `gh attestation verify <file> -R maxmoneycash/hlp`).
+  id-token: write
+  attestations: write
+
+jobs:
+  goreleaser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - name: make check
+        run: make check GO=go
+      - uses: goreleaser/goreleaser-action@v6
+        with:
+          distribution: goreleaser
+          version: "v2.20.2" # keep in step with ci.yml
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: attest build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: "dist/*.tar.gz, dist/*.zip, dist/checksums.txt"

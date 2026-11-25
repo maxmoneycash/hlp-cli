@@ -1,0 +1,21 @@
+{
+ "channel": "activeAssetCtx",
+ "data": {
+  "coin": "BTC",
+  "ctx": {
+   "funding": "0.0000125",
+   "openInterest": "38936.6894599999",
+   "prevDayPx": "67133.0",
+   "dayNtlVlm": "7916629102.2673635483",
+   "premium": "-0.0000794281",
+   "oraclePx": "65468.0",
+   "markPx": "65454.0",
+   "midPx": "65457.5",
+   "impactPxs": [
+    "65457.0",
+    "65462.8"
+   ],
+   "dayBaseVlm": "122523.9795399997"
+  }
+ }
+}

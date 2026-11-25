@@ -1,0 +1,26 @@
+{
+ "brokerages": [
+  {
+   "slug": "AJ-BELL",
+   "name": "AJ Bell",
+   "logo": "https://passiv-brokerage-logos.s3.ca-central-1.amazonaws.com/ajbell-logo-square.jpg",
+   "wideLogo": "https://passiv-brokerage-logos.s3.ca-central-1.amazonaws.com/ajbell-logo.png",
+   "url": "https://www.ajbell.com/",
+   "trading": false,
+   "type": "Traditional Brokerage",
+   "maintenance": false,
+   "degraded": false
+  },
+  {
+   "slug": "BANK-OF-AMERICA",
+   "name": "Bank of America",
+   "logo": "https://passiv-brokerage-logos.s3.ca-central-1.amazonaws.com/bank-of-america-logo-square.png",
+   "wideLogo": "https://passiv-brokerage-logos.s3.ca-central-1.amazonaws.com/bank-of-america-logo-landscape.png",
+   "url": "https://www.bankofamerica.com/",
+   "trading": false,
+   "type": "Traditional Brokerage",
+   "maintenance": false,
+   "degraded": false
+  }
+ ]
+}

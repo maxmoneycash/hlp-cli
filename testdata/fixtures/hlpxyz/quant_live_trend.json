@@ -1,0 +1,110 @@
+{
+ "id": "trend",
+ "source": "live",
+ "computedAt": 1794735956040,
+ "asOf": 1794700800000,
+ "params": {
+  "lookbacks": [
+   21,
+   63,
+   126,
+   252
+  ],
+  "volSpan": 30,
+  "dial": 0.3,
+  "cap": 3,
+  "grossCap": 5
+ },
+ "gross": 0.2487938514422547,
+ "scaled": false,
+ "positions": [
+  {
+   "coin": "BTC",
+   "label": "Bitcoin",
+   "weight": 0,
+   "score": 0,
+   "vol": 0.48387307736256635,
+   "lastBar": 1794614400000,
+   "bars": 900
+  },
+  {
+   "coin": "ETH",
+   "label": "Ethereum",
+   "weight": 0,
+   "score": 0,
+   "vol": 0.6459665666261452,
+   "lastBar": 1794614400000,
+   "bars": 900
+  },
+  {
+   "coin": "xyz:XYZ100",
+   "label": "Nasdaq-100",
+   "weight": 0,
+   "score": 0,
+   "vol": 0.4087825143957957,
+   "lastBar": 1794528000000,
+   "bars": 902
+  },
+  {
+   "coin": "xyz:GOLD",
+   "label": "Gold",
+   "weight": 0,
+   "score": 0,
+   "vol": 0.29625203103309505,
+   "lastBar": 1794528000000,
+   "bars": 902
+  }
+ ],
+ "recipeHash": "0682d64aa544",
+ "paper": {
+  "inception": "2026-11-13",
+  "rows": [
+   [
+    "2026-11-13",
+    0.9995,
+    0.9995,
+    0.2405
+   ],
+   [
+    "2026-11-14",
+    0.999041,
+    0.999041,
+    0.2402
+   ]
+  ],
+  "last": {
+   "v": 2,
+   "d": "2026-11-14",
+   "nav": 0.999040756788886,
+   "q": {
+    "BTC": 0,
+    "ETH": 0,
+    "xyz:XYZ100": 0,
+    "xyz:GOLD": 0,
+    "xyz:SILVER": 0,
+    "xyz:CL": 0.002745485128037605
+   },
+   "px": {
+    "BTC": 64122,
+    "ETH": 1768,
+    "xyz:XYZ100": 27550,
+    "xyz:GOLD": 3815.3,
+    "xyz:SILVER": 47.324,
+    "xyz:CL": 87.408
+   },
+   "tgt": {
+    "BTC": 0,
+    "ETH": 0,
+    "xyz:XYZ100": 0,
+    "xyz:GOLD": 0,
+    "xyz:SILVER": 0,
+    "xyz:CL": 0.2487938514422547
+   },
+   "cost": 0,
+   "fund": 1.4474162720763966e-05,
+   "traded": 0,
+   "at": 1794703941486
+  },
+  "pending": null
+ }
+}

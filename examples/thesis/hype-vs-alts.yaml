@@ -1,0 +1,11 @@
+# Relative value: HYPE outperforms the L1/L2 alt complex. Long HYPE 1x,
+# short an equal-weight alt basket 1x, rebalanced daily on 4h bars.
+#
+#   hlp backtest examples/thesis/hype-vs-alts.yaml
+name: HYPE vs alts
+interval: 4h
+rebalance: 1d
+long:
+  - coin: HYPE
+short:
+  - basket: alts     # SOL AVAX SUI APT ARB OP TIA SEI

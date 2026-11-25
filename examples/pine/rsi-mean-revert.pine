@@ -1,0 +1,28 @@
+//@version=5
+// Original example for hlp (MIT). RSI mean reversion: buy washed-out dips in
+// an uptrend, sell into strength. Long only, with a hard stop.
+//   hlp pine check examples/pine/rsi-mean-revert.pine
+//   hlp backtest examples/pine/rsi-mean-revert.pine --coin ETH --interval 1h
+strategy("RSI Mean Revert", overlay=false, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=100)
+
+rsiLen    = input.int(14, "RSI length", minval=2)
+oversold  = input.float(30, "Oversold")
+exitLevel = input.float(55, "Exit level")
+trendLen  = input.int(200, "Trend filter (SMA)")
+stopPct   = input.float(4.0, "Stop loss %", minval=0.1)
+
+r     = ta.rsi(close, rsiLen)
+trend = ta.sma(close, trendLen)
+upTrend = close > trend
+
+if ta.crossover(r, oversold) and upTrend and strategy.position_size == 0
+    strategy.entry("Dip", strategy.long)
+
+if strategy.position_size > 0
+    strategy.exit("Stop", from_entry="Dip", stop=strategy.position_avg_price * (1 - stopPct / 100))
+
+if ta.crossover(r, exitLevel)
+    strategy.close("Dip", comment="RSI exit")
+
+plot(r, "RSI", color=color.purple)
+plotshape(ta.crossover(r, oversold) and upTrend, "Oversold bounce", style=shape.triangleup, location=location.belowbar)

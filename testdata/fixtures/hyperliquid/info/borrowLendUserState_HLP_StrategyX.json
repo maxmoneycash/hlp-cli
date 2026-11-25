@@ -1,0 +1,19 @@
+{
+  "tokenToState": [
+    [
+      0,
+      {
+        "borrow": {
+          "basis": "0.0",
+          "value": "0.0"
+        },
+        "supply": {
+          "basis": "100011000.0",
+          "value": "100859337.9991511256"
+        }
+      }
+    ]
+  ],
+  "health": "healthy",
+  "healthFactor": null
+}

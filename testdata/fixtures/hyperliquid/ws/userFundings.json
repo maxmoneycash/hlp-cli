@@ -1,0 +1,25 @@
+{
+ "channel": "userFundings",
+ "data": {
+  "isSnapshot": true,
+  "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+  "fundings": [
+   {
+    "time": 1794722400076,
+    "coin": "VVV",
+    "usdc": "0.068089",
+    "szi": "-242.99",
+    "fundingRate": "0.0000143209",
+    "nSamples": null
+   },
+   {
+    "time": 1794722400076,
+    "coin": "PAXG",
+    "usdc": "-0.016424",
+    "szi": "0.344",
+    "fundingRate": "0.0000125",
+    "nSamples": null
+   }
+  ]
+ }
+}

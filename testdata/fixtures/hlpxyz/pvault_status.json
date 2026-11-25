@@ -1,0 +1,98 @@
+{
+ "configured": true,
+ "chainId": 998,
+ "vault": "0x688dD654bDbDE2BF8b6154685437f3F9dB2eAABd",
+ "keeper": true,
+ "bot": true,
+ "paper": false,
+ "lastKeeperRun": {
+  "at": 1794735622,
+  "ran": true,
+  "ms": 1155,
+  "action": {
+   "type": "wait",
+   "reason": "nothing to do"
+  },
+  "steps": [
+   {
+    "action": {
+     "type": "wait",
+     "reason": "nothing to do"
+    }
+   }
+  ],
+  "delivery": {
+   "ran": false,
+   "reason": "nothing is waiting to be delivered",
+   "delivered": []
+  },
+  "warnings": [],
+  "state": {
+   "phase": "OPEN",
+   "secondsToCutoff": 543,
+   "nav": 350.022138,
+   "idle": 42.330677,
+   "pendingDeposits": 0,
+   "pendingRedeemShares": 0,
+   "sharePrice": 1.0287741627212308,
+   "coreSpot": 0,
+   "corePerpEquity": 307.691461,
+   "coreWithdrawable": 272.976453,
+   "pending": "none",
+   "coreLinkProven": true,
+   "deployLimit": 174.366791
+  }
+ },
+ "lastBotRun": {
+  "at": 1794735423,
+  "paper": false,
+  "navUsd": 350.125582,
+  "grossX": 0.4990085275349957,
+  "notes": [],
+  "book": [
+   {
+    "coin": "BTC",
+    "dir": -1,
+    "units": 3,
+    "stop": 68146.77036495491,
+    "target": -0.0016778720896871168,
+    "current": -0.00164,
+    "mark": 63632
+   },
+   {
+    "coin": "ETH",
+    "dir": -1,
+    "units": 3,
+    "stop": 1929.4184081562084,
+    "target": -0.026356811893940076,
+    "current": -0.0268,
+    "mark": 1806.8
+   },
+   {
+    "coin": "SOL",
+    "dir": -1,
+    "units": 2,
+    "stop": 72.29131529665406,
+    "target": -0.31495958515070793,
+    "current": -0.32,
+    "mark": 64.541
+   },
+   {
+    "coin": "HYPE",
+    "dir": 0,
+    "units": 0,
+    "stop": 0,
+    "target": 0,
+    "current": 0,
+    "mark": 71.083
+   }
+  ],
+  "orders": [],
+  "agent": {
+   "registered": true,
+   "validUntil": 1802221063394,
+   "daysLeft": 86.63935621527777,
+   "usable": true
+  }
+ }
+}

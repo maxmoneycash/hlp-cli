@@ -1,0 +1,45 @@
+{
+ "channel": "userFills",
+ "data": {
+  "isSnapshot": true,
+  "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+  "fills": [
+   {
+    "coin": "XRP",
+    "px": "0.96484",
+    "sz": "21.0",
+    "side": "B",
+    "time": 1794735526520,
+    "startPosition": "-10488.0",
+    "dir": "Close Short",
+    "closedPnl": "-0.01638",
+    "hash": "0x6bd975bb1ccb57c26d530448d6bfa502028b00a0b7ce76940fa2210ddbcf31ad",
+    "oid": 605971924806,
+    "crossed": true,
+    "fee": "0.002917",
+    "tid": 569219687123662,
+    "cloid": "0xc5e8e97fb06e4494de3ffa7b8785c17e",
+    "feeToken": "USDC",
+    "twapId": null
+   },
+   {
+    "coin": "XRP",
+    "px": "0.96485",
+    "sz": "12.0",
+    "side": "B",
+    "time": 1794735526520,
+    "startPosition": "-10467.0",
+    "dir": "Close Short",
+    "closedPnl": "-0.00948",
+    "hash": "0x6bd975bb1ccb57c26d530448d6bfa502028b00a0b7ce76940fa2210ddbcf31ad",
+    "oid": 605971924806,
+    "crossed": true,
+    "fee": "0.001667",
+    "tid": 415611193276607,
+    "cloid": "0xc5e8e97fb06e4494de3ffa7b8785c17e",
+    "feeToken": "USDC",
+    "twapId": null
+   }
+  ]
+ }
+}

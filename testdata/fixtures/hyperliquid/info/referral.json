@@ -1,0 +1,25 @@
+{
+  "referredBy": {
+    "referrer": "0x6c65dec9057bcf01f3059e6dbefa3f9387cc403b",
+    "code": "REF8888GO"
+  },
+  "cumVlm": "81962551224.9600067139",
+  "unclaimedRewards": "0.0",
+  "claimedRewards": "0.0",
+  "builderRewards": "0.0",
+  "referrerState": {
+    "stage": "needToCreateCode"
+  },
+  "rewardHistory": [],
+  "tokenToState": [
+    [
+      0,
+      {
+        "cumVlm": "81962551224.9600067139",
+        "unclaimedRewards": "0.0",
+        "claimedRewards": "0.0",
+        "builderRewards": "0.0"
+      }
+    ]
+  ]
+}

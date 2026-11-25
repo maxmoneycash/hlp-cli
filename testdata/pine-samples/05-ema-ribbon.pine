@@ -1,0 +1,49 @@
+//@version=6
+// hlp research sample 05 (clean-room, MIT). An EMA-ribbon trend follower in
+// the style of popular "MA ribbon" scripts: selectable MA type through a
+// helper with a switch, eight ribbon lines, entry when the whole ribbon is
+// stacked, exit when the fastest line crosses the slowest.
+strategy("EMA ribbon stack", overlay = true, initial_capital = 10000,
+     default_qty_type = strategy.percent_of_equity, default_qty_value = 100)
+
+maType = input.string("EMA", "MA type", options = ["EMA", "SMA", "WMA", "RMA"])
+base   = input.int(8, "First length", minval = 1)
+stepN  = input.int(8, "Step", minval = 1)
+
+ma(src, len, kind) =>
+    switch kind
+        "SMA" => ta.sma(src, len)
+        "WMA" => ta.wma(src, len)
+        "RMA" => ta.rma(src, len)
+        => ta.ema(src, len)
+
+m1 = ma(close, base + 0 * stepN, maType)
+m2 = ma(close, base + 1 * stepN, maType)
+m3 = ma(close, base + 2 * stepN, maType)
+m4 = ma(close, base + 3 * stepN, maType)
+m5 = ma(close, base + 4 * stepN, maType)
+m6 = ma(close, base + 5 * stepN, maType)
+m7 = ma(close, base + 6 * stepN, maType)
+m8 = ma(close, base + 7 * stepN, maType)
+
+bullStack = m1 > m2 and m2 > m3 and m3 > m4 and m4 > m5 and m5 > m6 and m6 > m7 and m7 > m8
+bearStack = m1 < m2 and m2 < m3 and m3 < m4 and m4 < m5 and m5 < m6 and m6 < m7 and m7 < m8
+
+if bullStack and strategy.position_size <= 0
+    strategy.entry("Ribbon L", strategy.long)
+if bearStack and strategy.position_size >= 0
+    strategy.entry("Ribbon S", strategy.short)
+if strategy.position_size > 0 and ta.crossunder(m1, m8)
+    strategy.close("Ribbon L")
+if strategy.position_size < 0 and ta.crossover(m1, m8)
+    strategy.close("Ribbon S")
+
+ribbonColor = bullStack ? color.teal : bearStack ? color.red : color.gray
+plot(m1, "MA1", ribbonColor)
+plot(m2, "MA2", ribbonColor)
+plot(m3, "MA3", ribbonColor)
+plot(m4, "MA4", ribbonColor)
+plot(m5, "MA5", ribbonColor)
+plot(m6, "MA6", ribbonColor)
+plot(m7, "MA7", ribbonColor)
+plot(m8, "MA8", ribbonColor)

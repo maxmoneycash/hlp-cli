@@ -1,0 +1,32 @@
+{
+ "channel": "webData3",
+ "data": {
+  "userState": {
+   "agentAddress": "0x410a9adfe54a68ddc4a6c250b864dcfbd7cbd031",
+   "agentValidUntil": 1795929396380,
+   "cumLedger": "1699773.8799999999",
+   "serverTime": 1794735535719,
+   "isVault": false,
+   "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+   "abstraction": "disabled"
+  },
+  "perpDexStates": [
+   {
+    "totalVaultEquity": "0.0",
+    "perpsAtOpenInterestCap": [
+     "CANTO",
+     "FTM",
+     "JELLY",
+     "LOOM",
+     "RLB",
+     "SAGA",
+     "VINE",
+     "ZEREBRO"
+    ]
+   },
+   {
+    "totalVaultEquity": "0.0"
+   }
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+//@version=5
+// hlp research sample 06 (clean-room, MIT). Turtle-style Donchian breakout
+// (system 1 rules as published in the public-domain "Way of the Turtle"
+// literature): 20-bar breakout entry, 10-bar opposite exit, 2N stop, unit
+// size = 1% of equity per N, add a unit every 0.5N up to 4 units.
+strategy("Donchian turtle", overlay = true, initial_capital = 10000,
+     pyramiding = 4, default_qty_type = strategy.fixed, default_qty_value = 1)
+
+entryLen = input.int(20, "Entry channel")
+exitLen  = input.int(10, "Exit channel")
+nLen     = input.int(20, "N (ATR) length")
+riskPct  = input.float(1.0, "Risk per unit (% equity)", step = 0.1)
+stopN    = input.float(2.0, "Stop (x N)")
+addN     = input.float(0.5, "Add every (x N)")
+maxUnits = input.int(4, "Max units", minval = 1, maxval = 4)
+
+upperE = ta.highest(high, entryLen)[1]
+lowerE = ta.lowest(low, entryLen)[1]
+upperX = ta.highest(high, exitLen)[1]
+lowerX = ta.lowest(low, exitLen)[1]
+N      = ta.rma(ta.tr(true), nLen)
+
+unitQty = strategy.equity * riskPct / 100 / (N * syminfo.pointvalue)
+
+var float lastFill = na
+var int units = 0
+if strategy.position_size == 0
+    units := 0
+    lastFill := na
+
+if strategy.position_size == 0 and high > upperE
+    strategy.entry("T1 L", strategy.long, qty = unitQty, stop = upperE)
+if strategy.position_size == 0 and low < lowerE
+    strategy.entry("T1 S", strategy.short, qty = unitQty, stop = lowerE)
+
+if strategy.position_size > 0 and units < maxUnits and close >= nz(lastFill, strategy.position_avg_price) + addN * N
+    strategy.entry("T1 L", strategy.long, qty = unitQty)
+    units += 1
+    lastFill := close
+if strategy.position_size < 0 and units < maxUnits and close <= nz(lastFill, strategy.position_avg_price) - addN * N
+    strategy.entry("T1 S", strategy.short, qty = unitQty)
+    units += 1
+    lastFill := close
+
+if strategy.position_size > 0
+    strategy.exit("T1 L x", "T1 L", stop = math.max(lowerX, strategy.position_avg_price - stopN * N))
+if strategy.position_size < 0
+    strategy.exit("T1 S x", "T1 S", stop = math.min(upperX, strategy.position_avg_price + stopN * N))
+
+plot(upperE, "Entry high", color.teal, style = plot.style_stepline)
+plot(lowerE, "Entry low", color.red, style = plot.style_stepline)
+plot(upperX, "Exit high", color.new(color.gray, 50), style = plot.style_stepline)
+plot(lowerX, "Exit low", color.new(color.gray, 50), style = plot.style_stepline)

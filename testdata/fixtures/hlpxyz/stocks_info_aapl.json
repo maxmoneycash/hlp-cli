@@ -1,0 +1,61 @@
+{
+ "symbol": "AAPL",
+ "fundamentals": {
+  "name": "Apple Inc.",
+  "currency": "USD",
+  "price": 356.27,
+  "prevClose": 354.8800059925284,
+  "changePct": 0.39168,
+  "marketCap": 5177380481140,
+  "sharesOutstanding": 14532182000,
+  "trailingPE": 39.541620421753606,
+  "forwardPE": null,
+  "priceToSales": 10.812488031342804,
+  "eps": 9.01,
+  "dividendYield": 0.00300334,
+  "beta": 1.089,
+  "fiftyTwoWeekLow": 243.42,
+  "fiftyTwoWeekHigh": 360.83,
+  "sector": "Technology",
+  "industry": "Consumer Electronics",
+  "quarterly": [
+   {
+    "date": "2026-09-26",
+    "revenue": 114477000000,
+    "netIncome": 30711000000
+   },
+   {
+    "date": "2026-06-27",
+    "revenue": 109417000000,
+    "netIncome": 29789000000
+   }
+  ]
+ },
+ "quote": {
+  "at": 1794735989,
+  "symbol": "AAPL",
+  "name": "Apple Inc.",
+  "currency": "USD",
+  "marketState": null,
+  "price": 356.27,
+  "prevClose": 354.88,
+  "changePct": 0.39168169522092455,
+  "spark": [
+   354.88,
+   359.2550048828125,
+   359.69000244140625
+  ],
+  "volume": 39099985,
+  "ext": {
+   "kind": "post",
+   "price": 355.3849,
+   "changePct": -0.2484351755690839,
+   "t": 1794617980000
+  }
+ },
+ "volume": {
+  "today": 39985300,
+  "avg": 44142276.666666664,
+  "days": 30
+ }
+}

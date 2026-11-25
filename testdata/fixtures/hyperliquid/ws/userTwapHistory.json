@@ -1,0 +1,8 @@
+{
+ "channel": "userTwapHistory",
+ "data": {
+  "isSnapshot": true,
+  "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+  "history": []
+ }
+}

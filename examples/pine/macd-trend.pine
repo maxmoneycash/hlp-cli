@@ -1,0 +1,24 @@
+//@version=5
+// Original example for hlp (MIT). MACD signal-line crosses, filtered by the
+// zero line so it only trades with the trend.
+//   hlp backtest examples/pine/macd-trend.pine --coin ETH --interval 4h
+strategy("MACD Trend", overlay=false, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=100)
+
+fastLen = input.int(12, "Fast")
+slowLen = input.int(26, "Slow")
+sigLen  = input.int(9, "Signal")
+
+[macdLine, signalLine, hist] = ta.macd(close, fastLen, slowLen, sigLen)
+
+if ta.crossover(macdLine, signalLine) and macdLine > 0
+    strategy.entry("MACD L", strategy.long)
+if ta.crossunder(macdLine, signalLine) and macdLine < 0
+    strategy.entry("MACD S", strategy.short)
+if ta.crossunder(macdLine, signalLine) and strategy.position_size > 0
+    strategy.close("MACD L")
+if ta.crossover(macdLine, signalLine) and strategy.position_size < 0
+    strategy.close("MACD S")
+
+plot(macdLine, "MACD", color=color.blue)
+plot(signalLine, "Signal", color=color.orange)
+plot(hist, "Histogram", color=color.gray, style=plot.style_histogram)

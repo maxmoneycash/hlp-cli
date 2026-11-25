@@ -1,0 +1,13 @@
+# Market-neutral-ish: long the majors, short the memecoin basket, equal
+# gross on each side. Validator perps only, so it fits a legacy HyperCore
+# vault as well as a HyperEVM one.
+#
+#   hlp backtest examples/thesis/long-majors-short-memes.yaml
+name: Long majors / Short memes
+interval: 1d
+rebalance: 1w
+leverage: 2          # 1x long + 1x short
+long:
+  - basket: majors   # BTC ETH SOL HYPE, equal weight
+short:
+  - basket: memes    # DOGE FARTCOIN TRUMP PUMP kPEPE WIF kBONK

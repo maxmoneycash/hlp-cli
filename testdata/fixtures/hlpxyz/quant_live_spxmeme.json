@@ -1,0 +1,35 @@
+{
+ "id": "spxmeme",
+ "source": "live",
+ "asOf": 1794700800000,
+ "computedAt": 1794735957859,
+ "gross": 1.95,
+ "positions": [
+  {
+   "coin": "DOGE",
+   "label": "Dogecoin",
+   "weight": -0.075
+  },
+  {
+   "coin": "FARTCOIN",
+   "label": "Fartcoin",
+   "weight": -0.075
+  },
+  {
+   "coin": "TRUMP",
+   "label": "TRUMP",
+   "weight": -0.075
+  },
+  {
+   "coin": "PUMP",
+   "label": "Pump.fun",
+   "weight": -0.075
+  }
+ ],
+ "paper": {
+  "inception": "2026-11-15",
+  "rows": [],
+  "last": null,
+  "pending": null
+ }
+}

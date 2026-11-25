@@ -1,0 +1,50 @@
+{
+ "quotes": {
+  "AAPL": {
+   "at": 1794735659,
+   "symbol": "AAPL",
+   "name": "Apple Inc.",
+   "currency": "USD",
+   "marketState": null,
+   "price": 356.27,
+   "prevClose": 354.88,
+   "changePct": 0.39168169522092455,
+   "spark": [
+    354.88,
+    359.2550048828125,
+    359.69000244140625,
+    358.63018798828125
+   ],
+   "volume": 39099985,
+   "ext": {
+    "kind": "post",
+    "price": 355.3849,
+    "changePct": -0.2484351755690839,
+    "t": 1794617980000
+   }
+  },
+  "NVDA": {
+   "at": 1794735659,
+   "symbol": "NVDA",
+   "name": "NVIDIA Corporation",
+   "currency": "USD",
+   "marketState": null,
+   "price": 162.85,
+   "prevClose": 166.19,
+   "changePct": -2.009747878933754,
+   "spark": [
+    166.19,
+    165.44000244140625,
+    162.28500366210938,
+    162.10000610351562
+   ],
+   "volume": 362490337,
+   "ext": {
+    "kind": "post",
+    "price": 161.01,
+    "changePct": -1.129874117285845,
+    "t": 1794617996000
+   }
+  }
+ }
+}

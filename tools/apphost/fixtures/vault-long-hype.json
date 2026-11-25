@@ -1,0 +1,314 @@
+{
+ "tool": "get_vault",
+ "uri": "ui://hlp/vault.html",
+ "arguments": {
+  "vault": "Long HYPE"
+ },
+ "result": {
+  "_meta": {
+   "contract": "4",
+   "io.modelcontextprotocol/serverInfo": {
+    "description": "Hyperliquid and hlp.xyz vault research tools; agent contract 4",
+    "name": "hlp",
+    "title": "hlp: Hyperliquid vaults",
+    "version": "fixture"
+   }
+  },
+  "content": [
+   {
+    "type": "text",
+    "text": "{\"data\":{\"capacityUsd\":1000000,\"composition\":[{\"byCoin\":{\"BTC\":198127.70612,\"ETH\":-1087893.8148,\"HYPE\":2917394.42688,\"Other\":-480744.106173,\"SOL\":-518438.1762,\"SUI\":-166195.76736,\"WLD\":-401946.78295},\"equity\":2438761.279484,\"t\":1792170036511},{\"byCoin\":{\"BTC\":196907.5944,\"ETH\":-1051013.21913,\"HYPE\":2830407.22068,\"Other\":-446454.88318700006,\"SOL\":-504575.6268,\"SUI\":-154900.349524,\"WLD\":-365289.376388},\"equity\":2480786.804263,\"t\":1792357236767},{\"byCoin\":{\"BTC\":201316.75835,\"ETH\":-1092709.49805,\"HYPE\":2985414.97958,\"Other\":-488991.42406000005,\"SOL\":-527176.7186,\"SUI\":-167297.95291,\"WLD\":-470279.556087},\"equity\":2415318.945733,\"t\":1792557934154}],\"lockupDays\":1,\"meta\":{\"asOf\":\"2026-11-15T09:40:00Z\",\"network\":\"mainnet\",\"source\":\"hyperliquid+hlp.xyz\",\"stale\":false},\"sharePrice\":8.824847687850994,\"sharePriceModel\":\"hlpxyz-v6\",\"summary\":{\"accuracyPct\":1.948,\"address\":\"0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"ageDays\":220,\"allowDeposits\":true,\"apr\":0.9,\"closed\":false,\"createdAt\":\"2025-04-09T21:17:38.325Z\",\"curated\":true,\"kind\":\"hypercore\",\"leader\":\"0xa380444a9299df2a15bddf949dd493bb6d30d939\",\"maxDD\":-0.25,\"name\":\"Long HYPE \\u0026 BTC | Short Garbage\",\"profitShare\":0.1,\"relationship\":\"normal\",\"returns\":{\"1m\":0.1234,\"all\":7.9},\"returnsModel\":\"twr\",\"sharePriceModel\":\"hlpxyz-v6\",\"sharpe\":2.2,\"sources\":[\"stats-data\",\"hlp.xyz\"],\"spark\":[{\"t\":1,\"v\":1},{\"t\":2,\"v\":1.1}],\"stale\":false,\"tvl\":2780000,\"updatedAt\":\"0001-01-01T00:00:00Z\"},\"tearsheet\":{\"benchmarks\":[{\"beta\":0,\"corr\":0,\"metrics\":{\"bestMonth\":0.060765249373949004,\"cagr\":0.8663295392894637,\"calmar\":427.55280746939013,\"days\":118,\"end\":1794649200000,\"maxDD\":-0.002026251551047263,\"sharpe\":20.349559420849797,\"sortino\":217.92677490239382,\"start\":1784454000000,\"totalReturn\":0.22350905009829258,\"vol\":0.03071192240363466,\"worstMonth\":0.0031970136869869936},\"name\":\"HLP\"},{\"beta\":2.1497027854988615,\"corr\":0.05449095719125553,\"metrics\":{\"bestMonth\":0.18520476017006193,\"cagr\":0.3900783645034742,\"calmar\":2.521268911140748,\"days\":399,\"end\":1794700800000,\"maxDD\":-0.15471509714010764,\"sharpe\":2.6461495577679095,\"sortino\":4.264542205355669,\"start\":1760227200000,\"totalReturn\":0.43338709853081503,\"vol\":0.12758943197615644,\"worstMonth\":-0.1177952828292046},\"name\":\"BTC\"},{\"beta\":2.149702785498861,\"corr\":0.054490957191255525,\"metrics\":{\"bestMonth\":0.18520476017006193,\"cagr\":0.3900783645034742,\"calmar\":2.5212689111407496,\"days\":399,\"end\":1794700800000,\"maxDD\":-0.15471509714010753,\"sharpe\":2.6461495577679126,\"sortino\":4.264542205355673,\"start\":1760227200000,\"totalReturn\":0.43338709853081503,\"vol\":0.12758943197615644,\"worstMonth\":-0.11779528282920437},\"name\":\"HYPE\"}],\"checklist\":[{\"detail\":\"-0.3%\",\"id\":\"max_dd\",\"label\":\"Max drawdown\",\"status\":\"pass\"},{\"detail\":\"220 days\",\"id\":\"age\",\"label\":\"Track record\",\"status\":\"pass\"},{\"detail\":\"$2.8M\",\"id\":\"tvl\",\"label\":\"TVL\",\"status\":\"pass\"},{\"detail\":\"leader share unknown\",\"id\":\"leader_skin\",\"label\":\"Leader stake\",\"status\":\"n/a\"},{\"detail\":\"$1.0M before the leader hits 5%\",\"id\":\"capacity\",\"label\":\"Deposit room\",\"status\":\"pass\"},{\"detail\":\"top 10 depositors hold 179.9% (warns over 80%)\",\"id\":\"concentration\",\"label\":\"Concentration\",\"status\":\"warn\"},{\"detail\":\"no leverage history\",\"id\":\"leverage\",\"label\":\"Peak leverage\",\"status\":\"n/a\"},{\"detail\":\"accepting deposits\",\"id\":\"deposits_open\",\"label\":\"Deposits\",\"status\":\"pass\"},{\"detail\":\"fresh\",\"id\":\"data_fresh\",\"label\":\"Freshness\",\"status\":\"pass\"},{\"detail\":\"0.83 vs 20.35 Sharpe\",\"id\":\"sharpe_vs_hlp\",\"label\":\"vs HLP\",\"status\":\"warn\"}],\"drawdown\":[{\"t\":1744233458325,\"v\":0},{\"t\":1744237058325,\"v\":0},{\"t\":1744847104628,\"v\":0},{\"t\":1794722280049,\"v\":0},{\"t\":1794729480061,\"v\":-0.0034595668737606696},{\"t\":1794735534712,\"v\":0}],\"meta\":{\"asOf\":\"2026-11-15T09:40:00Z\",\"network\":\"mainnet\",\"source\":\"hyperliquid+hlp.xyz\",\"stale\":false},\"metrics\":{\"bestMonth\":5.262701068689498,\"cagr\":2.6043366318317585,\"calmar\":752.7926838427476,\"days\":584.5147729976852,\"end\":1794735534712,\"maxDD\":-0.0034595668737606696,\"sharpe\":0.8257452573963576,\"sortino\":0,\"start\":1744233458325,\"totalReturn\":6.793021322580472,\"vol\":4.161121362114144,\"winRate\":1,\"worstMonth\":0.2443546701505268},\"monthly\":[{\"month\":4,\"ret\":0.2443546701505268,\"year\":2025},{\"month\":11,\"ret\":5.262701068689498,\"year\":2026}],\"title\":\"Long HYPE \\u0026 BTC | Short Garbage\"}},\"meta\":{\"source\":\"hyperliquid+hlp.xyz\",\"asOf\":\"2026-11-15T09:40:00Z\",\"stale\":false,\"network\":\"mainnet\",\"warnings\":[\"compacted for agents: dropped data.equity, data.nav, data.pnl, data.tearsheet.benchmarks[].curve, data.tearsheet.curve (pass series:true to keep them)\"],\"truncated\":true}}"
+   }
+  ],
+  "structuredContent": {
+   "data": {
+    "capacityUsd": 1000000,
+    "composition": [
+     {
+      "byCoin": {
+       "BTC": 198127.70612,
+       "ETH": -1087893.8148,
+       "HYPE": 2917394.42688,
+       "Other": -480744.106173,
+       "SOL": -518438.1762,
+       "SUI": -166195.76736,
+       "WLD": -401946.78295
+      },
+      "equity": 2438761.279484,
+      "t": 1792170036511
+     },
+     {
+      "byCoin": {
+       "BTC": 196907.5944,
+       "ETH": -1051013.21913,
+       "HYPE": 2830407.22068,
+       "Other": -446454.88318700006,
+       "SOL": -504575.6268,
+       "SUI": -154900.349524,
+       "WLD": -365289.376388
+      },
+      "equity": 2480786.804263,
+      "t": 1792357236767
+     },
+     {
+      "byCoin": {
+       "BTC": 201316.75835,
+       "ETH": -1092709.49805,
+       "HYPE": 2985414.97958,
+       "Other": -488991.42406000005,
+       "SOL": -527176.7186,
+       "SUI": -167297.95291,
+       "WLD": -470279.556087
+      },
+      "equity": 2415318.945733,
+      "t": 1792557934154
+     }
+    ],
+    "lockupDays": 1,
+    "meta": {
+     "asOf": "2026-11-15T09:40:00Z",
+     "network": "mainnet",
+     "source": "hyperliquid+hlp.xyz",
+     "stale": false
+    },
+    "sharePrice": 8.824847687850994,
+    "sharePriceModel": "hlpxyz-v6",
+    "sparkSvg": "\u003csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 120\" width=\"560\" height=\"120\" role=\"img\" preserveAspectRatio=\"none\"\u003e\u003cline x1=\"0\" x2=\"560\" y1=\"117\" y2=\"117\" stroke=\"#8a8a8f\" stroke-dasharray=\"2 3\"/\u003e\u003cdefs\u003e\u003clinearGradient id=\"sg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"\u003e\u003cstop offset=\"0\" stop-color=\"#42c86c\" stop-opacity=\"0.28\"/\u003e\u003cstop offset=\"1\" stop-color=\"#42c86c\" stop-opacity=\"0\"/\u003e\u003c/linearGradient\u003e\u003c/defs\u003e\u003cpath d=\"M3 117L3 117L9.7 112.9L556.9 5.5L556.9 5.9L557 3L557 120L3 120Z\" fill=\"url(#sg)\"/\u003e\u003cpath d=\"M3 117L3 117L9.7 112.9L556.9 5.5L556.9 5.9L557 3\" fill=\"none\" stroke=\"#42c86c\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/\u003e\u003c/svg\u003e",
+    "summary": {
+     "accuracyPct": 1.948,
+     "address": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+     "ageDays": 220,
+     "allowDeposits": true,
+     "apr": 0.9,
+     "closed": false,
+     "createdAt": "2025-04-09T21:17:38.325Z",
+     "curated": true,
+     "kind": "hypercore",
+     "leader": "0xa380444a9299df2a15bddf949dd493bb6d30d939",
+     "maxDD": -0.25,
+     "name": "Long HYPE \u0026 BTC | Short Garbage",
+     "profitShare": 0.1,
+     "relationship": "normal",
+     "returns": {
+      "1m": 0.1234,
+      "all": 7.9
+     },
+     "returnsModel": "twr",
+     "sharePriceModel": "hlpxyz-v6",
+     "sharpe": 2.2,
+     "sources": [
+      "stats-data",
+      "hlp.xyz"
+     ],
+     "spark": [
+      {
+       "t": 1,
+       "v": 1
+      },
+      {
+       "t": 2,
+       "v": 1.1
+      }
+     ],
+     "stale": false,
+     "tvl": 2780000,
+     "updatedAt": "0001-01-01T00:00:00Z"
+    },
+    "tearsheet": {
+     "benchmarks": [
+      {
+       "beta": 0,
+       "corr": 0,
+       "metrics": {
+        "bestMonth": 0.060765249373949004,
+        "cagr": 0.8663295392894637,
+        "calmar": 427.55280746939013,
+        "days": 118,
+        "end": 1794649200000,
+        "maxDD": -0.002026251551047263,
+        "sharpe": 20.349559420849797,
+        "sortino": 217.92677490239382,
+        "start": 1784454000000,
+        "totalReturn": 0.22350905009829258,
+        "vol": 0.03071192240363466,
+        "worstMonth": 0.0031970136869869936
+       },
+       "name": "HLP"
+      },
+      {
+       "beta": 2.1497027854988615,
+       "corr": 0.05449095719125553,
+       "metrics": {
+        "bestMonth": 0.18520476017006193,
+        "cagr": 0.3900783645034742,
+        "calmar": 2.521268911140748,
+        "days": 399,
+        "end": 1794700800000,
+        "maxDD": -0.15471509714010764,
+        "sharpe": 2.6461495577679095,
+        "sortino": 4.264542205355669,
+        "start": 1760227200000,
+        "totalReturn": 0.43338709853081503,
+        "vol": 0.12758943197615644,
+        "worstMonth": -0.1177952828292046
+       },
+       "name": "BTC"
+      },
+      {
+       "beta": 2.149702785498861,
+       "corr": 0.054490957191255525,
+       "metrics": {
+        "bestMonth": 0.18520476017006193,
+        "cagr": 0.3900783645034742,
+        "calmar": 2.5212689111407496,
+        "days": 399,
+        "end": 1794700800000,
+        "maxDD": -0.15471509714010753,
+        "sharpe": 2.6461495577679126,
+        "sortino": 4.264542205355673,
+        "start": 1760227200000,
+        "totalReturn": 0.43338709853081503,
+        "vol": 0.12758943197615644,
+        "worstMonth": -0.11779528282920437
+       },
+       "name": "HYPE"
+      }
+     ],
+     "checklist": [
+      {
+       "detail": "-0.3%",
+       "id": "max_dd",
+       "label": "Max drawdown",
+       "status": "pass"
+      },
+      {
+       "detail": "220 days",
+       "id": "age",
+       "label": "Track record",
+       "status": "pass"
+      },
+      {
+       "detail": "$2.8M",
+       "id": "tvl",
+       "label": "TVL",
+       "status": "pass"
+      },
+      {
+       "detail": "leader share unknown",
+       "id": "leader_skin",
+       "label": "Leader stake",
+       "status": "n/a"
+      },
+      {
+       "detail": "$1.0M before the leader hits 5%",
+       "id": "capacity",
+       "label": "Deposit room",
+       "status": "pass"
+      },
+      {
+       "detail": "top 10 depositors hold 179.9% (warns over 80%)",
+       "id": "concentration",
+       "label": "Concentration",
+       "status": "warn"
+      },
+      {
+       "detail": "no leverage history",
+       "id": "leverage",
+       "label": "Peak leverage",
+       "status": "n/a"
+      },
+      {
+       "detail": "accepting deposits",
+       "id": "deposits_open",
+       "label": "Deposits",
+       "status": "pass"
+      },
+      {
+       "detail": "fresh",
+       "id": "data_fresh",
+       "label": "Freshness",
+       "status": "pass"
+      },
+      {
+       "detail": "0.83 vs 20.35 Sharpe",
+       "id": "sharpe_vs_hlp",
+       "label": "vs HLP",
+       "status": "warn"
+      }
+     ],
+     "drawdown": [
+      {
+       "t": 1744233458325,
+       "v": 0
+      },
+      {
+       "t": 1744237058325,
+       "v": 0
+      },
+      {
+       "t": 1744847104628,
+       "v": 0
+      },
+      {
+       "t": 1794722280049,
+       "v": 0
+      },
+      {
+       "t": 1794729480061,
+       "v": -0.0034595668737606696
+      },
+      {
+       "t": 1794735534712,
+       "v": 0
+      }
+     ],
+     "meta": {
+      "asOf": "2026-11-15T09:40:00Z",
+      "network": "mainnet",
+      "source": "hyperliquid+hlp.xyz",
+      "stale": false
+     },
+     "metrics": {
+      "bestMonth": 5.262701068689498,
+      "cagr": 2.6043366318317585,
+      "calmar": 752.7926838427476,
+      "days": 584.5147729976852,
+      "end": 1794735534712,
+      "maxDD": -0.0034595668737606696,
+      "sharpe": 0.8257452573963576,
+      "sortino": 0,
+      "start": 1744233458325,
+      "totalReturn": 6.793021322580472,
+      "vol": 4.161121362114144,
+      "winRate": 1,
+      "worstMonth": 0.2443546701505268
+     },
+     "monthly": [
+      {
+       "month": 4,
+       "ret": 0.2443546701505268,
+       "year": 2025
+      },
+      {
+       "month": 11,
+       "ret": 5.262701068689498,
+       "year": 2026
+      }
+     ],
+     "title": "Long HYPE \u0026 BTC | Short Garbage"
+    }
+   },
+   "meta": {
+    "asOf": "2026-11-15T09:40:00Z",
+    "network": "mainnet",
+    "source": "hyperliquid+hlp.xyz",
+    "stale": false,
+    "truncated": true,
+    "warnings": [
+     "compacted for agents: dropped data.equity, data.nav, data.pnl, data.tearsheet.benchmarks[].curve, data.tearsheet.curve (pass series:true to keep them)"
+    ]
+   }
+  },
+  "resultType": "complete"
+ }
+}

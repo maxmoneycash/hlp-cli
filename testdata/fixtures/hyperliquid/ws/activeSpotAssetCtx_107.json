@@ -1,0 +1,16 @@
+{
+ "channel": "activeSpotAssetCtx",
+ "data": {
+  "coin": "@107",
+  "ctx": {
+   "prevDayPx": "69.181",
+   "dayNtlVlm": "216712342.0600800216",
+   "markPx": "67.833",
+   "midPx": "67.8245",
+   "circulatingSupply": "301634081.8414242268",
+   "coin": "@107",
+   "totalSupply": "998738401.3488408327",
+   "dayBaseVlm": "3353689.6700000064"
+  }
+ }
+}

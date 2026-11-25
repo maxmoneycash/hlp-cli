@@ -1,0 +1,247 @@
+{
+ "id": "spxmeme",
+ "name": "Long SPY, Short Memecoins",
+ "status": "backtest",
+ "asOf": "2026-11-14",
+ "generated": "2026-11-15",
+ "split": "2025-07-01",
+ "blurb": "Holds the S&P 500 with borrowed money. Shorts memecoins that are already falling.",
+ "markets": [
+  {
+   "coin": "DOGE",
+   "label": "Dogecoin",
+   "venue": "Hyperliquid"
+  },
+  {
+   "coin": "FARTCOIN",
+   "label": "Fartcoin",
+   "venue": "Hyperliquid"
+  },
+  {
+   "coin": "TRUMP",
+   "label": "TRUMP",
+   "venue": "Hyperliquid"
+  }
+ ],
+ "periods": {
+  "all": {
+   "start": "2023-12-01",
+   "end": "2026-11-14",
+   "cagr": 0.5311,
+   "vol": 0.3621,
+   "sharpe": 1.36,
+   "maxDD": -0.3024,
+   "calmar": 1.76,
+   "worstDay": -0.1086,
+   "worstMonth": -0.1612,
+   "liquidations": 0
+  },
+  "is": {
+   "start": "2023-12-01",
+   "end": "2025-06-30",
+   "cagr": 0.5267,
+   "vol": 0.3815,
+   "sharpe": 1.3,
+   "maxDD": -0.2823,
+   "calmar": 1.87,
+   "worstDay": -0.1086,
+   "worstMonth": -0.1612,
+   "liquidations": 0
+  },
+  "oos": {
+   "start": "2025-07-01",
+   "end": "2026-11-14",
+   "cagr": 0.4984,
+   "vol": 0.338,
+   "sharpe": 1.37,
+   "maxDD": -0.1906,
+   "calmar": 2.61,
+   "worstDay": -0.0721,
+   "worstMonth": -0.09,
+   "liquidations": 0
+  }
+ },
+ "years": [
+  {
+   "year": 2023,
+   "strategy": 0.0606,
+   "partial": true
+  },
+  {
+   "year": 2024,
+   "strategy": 0.2299,
+   "partial": false
+  },
+  {
+   "year": 2025,
+   "strategy": 0.7438,
+   "partial": false
+  }
+ ],
+ "nav": {
+  "t0": "2023-12-01",
+  "strategy": [
+   1.0,
+   1.0,
+   1.0
+  ]
+ },
+ "book": {
+  "asOf": "2026-11-14",
+  "gross": 1.95,
+  "positions": [
+   {
+    "coin": "DOGE",
+    "label": "Dogecoin",
+    "weight": -0.075
+   },
+   {
+    "coin": "FARTCOIN",
+    "label": "Fartcoin",
+    "weight": -0.075
+   },
+   {
+    "coin": "TRUMP",
+    "label": "TRUMP",
+    "weight": -0.075
+   }
+  ]
+ },
+ "costs": {
+  "fundingPerYear": 0.0436,
+  "feesPerYear": 0.0413,
+  "turnoverPerYear": 9.9,
+  "avgGross": 1.76,
+  "p95Gross": 2.1,
+  "maxGross": 2.39
+ },
+ "stress": [
+  {
+   "name": "Base case",
+   "cagr": 0.5311,
+   "maxDD": -0.3024,
+   "liquidations": 0,
+   "testCagr": 0.4984,
+   "testDD": -0.1906
+  },
+  {
+   "name": "Fees and slippage tripled",
+   "cagr": 0.4212,
+   "maxDD": -0.3383,
+   "liquidations": 0,
+   "testCagr": 0.3729,
+   "testDD": -0.2201
+  },
+  {
+   "name": "Every trade one day late",
+   "cagr": 0.4999,
+   "maxDD": -0.2841,
+   "liquidations": 0,
+   "testCagr": 0.4558,
+   "testDD": -0.168
+  }
+ ],
+ "bluechip": {
+  "size": 1.0,
+  "longX": 1.5,
+  "shortX": 0.5,
+  "longNames": "the S&P 500",
+  "proxy": "The S&P 500 perp only listed in March 2026. Before that the long side uses the index's own daily prices and an assumed funding cost of 5.5% a year.",
+  "sizes": [
+   {
+    "size": 0.5,
+    "isCagr": 0.2631,
+    "oosCagr": 0.2505,
+    "allDD": -0.1513,
+    "stressLiq": 0,
+    "stressCagr": 0.2646
+   },
+   {
+    "size": 0.75,
+    "isCagr": 0.3855,
+    "oosCagr": 0.3554,
+    "allDD": -0.2342,
+    "stressLiq": 0,
+    "stressCagr": 0.3835
+   },
+   {
+    "size": 1.0,
+    "isCagr": 0.5267,
+    "oosCagr": 0.4984,
+    "allDD": -0.3024,
+    "stressLiq": 0,
+    "stressCagr": 0.5311
+   }
+  ],
+  "legs": {
+   "long": {
+    "is": 0.2271,
+    "oos": 0.1907,
+    "all": 0.2091
+   },
+   "short": {
+    "is": 0.2067,
+    "oos": 0.2287,
+    "all": 0.2322
+   }
+  },
+  "junkListed": 44,
+  "junkEverShorted": 28,
+  "shortsAvg": 4.0,
+  "shortsMax": 13,
+  "daysNoShort": 0.258,
+  "nameCap": 0.075,
+  "variantsTried": 4,
+  "longSide": true,
+  "weekdays": [
+   {
+    "day": "Thursday",
+    "isCagr": 0.5267,
+    "oosCagr": 0.4984,
+    "allDD": -0.3024
+   },
+   {
+    "day": "Wednesday",
+    "isCagr": 0.4421,
+    "oosCagr": 0.3892,
+    "allDD": -0.3506
+   },
+   {
+    "day": "Tuesday",
+    "isCagr": 0.3261,
+    "oosCagr": 0.3142,
+    "allDD": -0.2858
+   }
+  ]
+ },
+ "expo": {
+  "t0": "2025-07-01",
+  "long": [
+   1.502,
+   1.592,
+   1.602
+  ],
+  "short": [
+   0.447,
+   0.554,
+   0.529
+  ]
+ },
+ "trades": [
+  [
+   "2025-07-01",
+   "DOGE",
+   "Dogecoin"
+  ],
+  [
+   "2025-07-01",
+   "kPEPE",
+   "Pepe"
+  ],
+  [
+   "2025-07-01",
+   "kBONK",
+   "Bonk"
+  ]
+ ]
+}

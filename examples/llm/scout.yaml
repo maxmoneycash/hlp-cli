@@ -1,0 +1,31 @@
+# A two-step LLM bot, paper only. Each hour a scout call nominates up to 4
+# coins from the pool below (crypto majors and HIP-3 equity perps), then a
+# decide call sees those plus any open position and answers with strict JSON:
+# an analysis, then BUY / SELL / CLOSE / HOLD trades with usd, leverage,
+# confidence, a reason and the evidence behind it. Limits are enforced in code: at most
+# max_leverage x equity per position, max_gross x equity in total, the $10
+# minimum and the exchange's own leverage and lot size. Every order and
+# decision is tagged with the model id. In paper and arena runs the bot also
+# sees prediction-market odds (`hlp macro`) as labelled context, never in
+# backtests.
+#
+#   export OPENROUTER_API_KEY=...        # one key, any OpenRouter model
+#   hlp paper start llm:examples/llm/scout.yaml --llm
+#   hlp backtest llm:examples/llm/scout.yaml --days 3 --llm --max-llm-calls 150
+name: Scout trader
+model: openrouter/anthropic/claude-sonnet-5
+universe: [BTC, ETH, SOL, HYPE, DOGE, xyz:SP500, xyz:XYZ100, xyz:NVDA]
+interval: 1h
+lookback: 48
+scout:
+  max: 4              # coins nominated per scout call
+  every: 1            # scout every decision bar
+max_gross: 2          # total |notional| <= 2x equity
+max_leverage: 3       # one position <= 3x equity
+min_confidence: 0.3   # decisions below this are dropped
+temperature: 0.2
+prompt: |
+  You trade crypto majors and US equity-index perps on a multi-hour horizon.
+  Follow strong, broad trends; fade only extreme funding. Size by conviction
+  and volatility, keep 1-3 positions, cut losers quickly, and stay flat when
+  there is no edge.

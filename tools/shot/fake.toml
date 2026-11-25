@@ -1,0 +1,6 @@
+# Config for the illustrative agent scenes (16b, 18): a local fake model
+# served by tools/shot/fakellm on 127.0.0.1:18765. No key, no cost.
+[llm]
+provider = "openai-compatible"
+base_url = "http://127.0.0.1:18765/v1"
+model = "fake-local"

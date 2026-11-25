@@ -1,0 +1,112 @@
+{
+ "tool": "preview_order",
+ "uri": "ui://hlp/order.html",
+ "arguments": {
+  "coin": "BTC",
+  "leverage": 3,
+  "side": "buy",
+  "usd": 100
+ },
+ "result": {
+  "_meta": {
+   "contract": "4",
+   "hlp/confirm": {
+    "expiresAt": "2026-11-15T09:41:00Z",
+    "token": "hlpc_3391be0282a3b0809f493e320e149937",
+    "tool": "confirm_order"
+   },
+   "io.modelcontextprotocol/serverInfo": {
+    "description": "Hyperliquid and hlp.xyz vault research tools; agent contract 4",
+    "name": "hlp",
+    "title": "hlp: Hyperliquid vaults",
+    "version": "fixture"
+   }
+  },
+  "content": [
+   {
+    "type": "text",
+    "text": "{\"data\":{\"action\":\"order\",\"blockers\":[\"trading_enabled\",\"agent_key\",\"mcp_trading\"],\"checks\":[{\"detail\":\"config trading.enabled\",\"id\":\"trading_enabled\",\"label\":\"Trading enabled\",\"status\":\"fail\"},{\"detail\":\"API wallet key in env/keychain (never the master key)\",\"id\":\"agent_key\",\"label\":\"Agent key present\",\"status\":\"fail\"},{\"detail\":\"config mcp.allow_trading and --allow-trading\",\"id\":\"mcp_trading\",\"label\":\"MCP trading allowed\",\"status\":\"fail\"},{\"detail\":\"0 sent in the last minute of 60 max\",\"id\":\"max_orders_per_min\",\"label\":\"Order rate\",\"status\":\"pass\"},{\"detail\":\"$99.72 of $1000.00 max\",\"id\":\"max_notional\",\"label\":\"Notional cap\",\"status\":\"pass\"},{\"detail\":\"3x of 5x max\",\"id\":\"max_leverage\",\"label\":\"Leverage cap\",\"status\":\"pass\"},{\"detail\":\"not tracked: set trading.account so today's fills can be read\",\"id\":\"daily_loss\",\"label\":\"Daily loss halt\",\"status\":\"warn\"}],\"coin\":\"BTC\",\"dryRun\":true,\"grouping\":\"na\",\"network\":\"mainnet\",\"notionalUsd\":99.7218,\"ok\":false,\"px\":\"73868\",\"riskBlockers\":[],\"setupBlockers\":[\"trading_enabled\",\"agent_key\",\"mcp_trading\"],\"side\":\"B\",\"size\":\"0.00135\",\"tradeOk\":true},\"meta\":{\"source\":\"preview\",\"asOf\":\"2026-11-15T09:40:00Z\",\"stale\":false,\"network\":\"mainnet\",\"warnings\":[\"blocked: trading_enabled, agent_key, mcp_trading\"]}}"
+   }
+  ],
+  "structuredContent": {
+   "data": {
+    "action": "order",
+    "blockers": [
+     "trading_enabled",
+     "agent_key",
+     "mcp_trading"
+    ],
+    "checks": [
+     {
+      "detail": "config trading.enabled",
+      "id": "trading_enabled",
+      "label": "Trading enabled",
+      "status": "fail"
+     },
+     {
+      "detail": "API wallet key in env/keychain (never the master key)",
+      "id": "agent_key",
+      "label": "Agent key present",
+      "status": "fail"
+     },
+     {
+      "detail": "config mcp.allow_trading and --allow-trading",
+      "id": "mcp_trading",
+      "label": "MCP trading allowed",
+      "status": "fail"
+     },
+     {
+      "detail": "0 sent in the last minute of 60 max",
+      "id": "max_orders_per_min",
+      "label": "Order rate",
+      "status": "pass"
+     },
+     {
+      "detail": "$99.72 of $1000.00 max",
+      "id": "max_notional",
+      "label": "Notional cap",
+      "status": "pass"
+     },
+     {
+      "detail": "3x of 5x max",
+      "id": "max_leverage",
+      "label": "Leverage cap",
+      "status": "pass"
+     },
+     {
+      "detail": "not tracked: set trading.account so today's fills can be read",
+      "id": "daily_loss",
+      "label": "Daily loss halt",
+      "status": "warn"
+     }
+    ],
+    "coin": "BTC",
+    "dryRun": true,
+    "grouping": "na",
+    "network": "mainnet",
+    "notionalUsd": 99.7218,
+    "ok": false,
+    "px": "73868",
+    "riskBlockers": [],
+    "setupBlockers": [
+     "trading_enabled",
+     "agent_key",
+     "mcp_trading"
+    ],
+    "side": "B",
+    "size": "0.00135",
+    "tradeOk": true
+   },
+   "meta": {
+    "asOf": "2026-11-15T09:40:00Z",
+    "network": "mainnet",
+    "source": "preview",
+    "stale": false,
+    "warnings": [
+     "blocked: trading_enabled, agent_key, mcp_trading"
+    ]
+   }
+  },
+  "resultType": "complete"
+ }
+}

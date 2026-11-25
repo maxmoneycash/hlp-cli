@@ -1,0 +1,170 @@
+{
+ "def": {
+  "slug": "mavericks",
+  "name": "Mavericks",
+  "description": "The high-octane index. Every month Mavericks buys the eight vaults with the best trailing 30-day return per unit of drawdown (Calmar ratio) — only vaults at least 60 days old, managing $100k or more, whose drawdown over those same 30 days stayed under 20%. It rides strong momentum while favoring vaults that earned it smoothly. Equal weighted; re-selected and rebalanced on the 1st of every month.",
+  "imageUrl": null,
+  "creator": "0xad0a5685c11d247df112544e58ed4afd4124cc67",
+  "official": true,
+  "inception": 1790640000000,
+  "createdAt": 1790652983296,
+  "updatedAt": 1791612741100,
+  "archived": false,
+  "hue": 350,
+  "rules": {
+   "version": 1,
+   "universe": {
+    "whitelist": [],
+    "blacklist": []
+   },
+   "selection": {
+    "mode": "rank",
+    "metric": "calmar",
+    "lookback": "30d",
+    "topN": 8,
+    "refVault": null,
+    "manual": []
+   },
+   "filters": {
+    "minAgeDays": 60,
+    "minTvl": 100000,
+    "frequency": [],
+    "minSharpe": null,
+    "maxDrawdownPct": 20,
+    "minReturnPct": null,
+    "maxAvgGrossLev": null
+   },
+   "weighting": {
+    "mode": "equal",
+    "maxWeightPct": null
+   },
+   "schedule": {
+    "reconstitute": "monthly",
+    "rebalance": "never",
+    "driftBandPct": null
+   },
+   "risk": {
+    "maxGrossLev": null,
+    "cashPct": 0
+   }
+  },
+  "kind": "rules",
+  "preAllocs": [
+   {
+    "ts": 1776496169777,
+    "kind": "inception",
+    "weights": {},
+    "scores": {
+     "0x49a648936441b22f28f069d3c088928682b277ae": 21.8785
+    },
+    "notes": [
+     "Only 1 eligible vault (< 4) — held in cash"
+    ]
+   }
+  ]
+ },
+ "allocs": [
+  {
+   "ts": 1790640000000,
+   "kind": "inception",
+   "weights": {
+    "0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7": 0.125,
+    "0x7178cc2d79160d524858c843e350ed8207de0854": 0.125,
+    "0x8b82d6e0b60e8a8cda97afcdf1aaae569e3747b8": 0.125,
+    "0x65aee08c9235025355ac6c5ad020fb167ecef4fe": 0.125,
+    "0x53f8f390fd4f70941c5d160a964f6893c8dbceff": 0.125,
+    "0x8231fdf9997c003a267374b45fb25c0455aa1dcb": 0.125,
+    "0xfdb03a2574e9e7d1c77d9ed752d99cdf25c3db25": 0.125,
+    "0x5a733b25a17dc0f26b862ca9e32b439801b1a8c7": 0.125
+   },
+   "scores": {
+    "0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7": 6407.5725,
+    "0x7178cc2d79160d524858c843e350ed8207de0854": 248.5939,
+    "0x8b82d6e0b60e8a8cda97afcdf1aaae569e3747b8": 158.3029,
+    "0x65aee08c9235025355ac6c5ad020fb167ecef4fe": 78.7717,
+    "0x53f8f390fd4f70941c5d160a964f6893c8dbceff": 76.3748,
+    "0x8231fdf9997c003a267374b45fb25c0455aa1dcb": 68.8182,
+    "0xfdb03a2574e9e7d1c77d9ed752d99cdf25c3db25": 67.6684,
+    "0x5a733b25a17dc0f26b862ca9e32b439801b1a8c7": 60.3957,
+    "0xa1b6d8efbcb2fb750a84dbc05649fa4968034f04": 34.3898,
+    "0x45e7014f092c5f9c39482caec131346f13ac5e73": 32.3209,
+    "0x49a648936441b22f28f069d3c088928682b277ae": 30.9858,
+    "0x060d01aa996003b3731a992462d7f0ba68bf3b04": 28.9016,
+    "0xbc5bf88fd012612ba92c5bd96e183955801b7fdc": 25.1517,
+    "0xa844d7ac9fa3424c4fd38a25baa23e460ec3e802": 22.8306,
+    "0x1e37a337ed460039d1b15bd3bc489de789768d5e": 19.4941,
+    "0xe67dbf2d051106b42104c1a6631af5e5a458b682": 18.5975,
+    "0xbbf7d7a9d0eaeab4115f022a6863450296112422": 18.4219,
+    "0xa6a34f0bf2ccea9a1ddf9e9a973f17c498dc5e40": 17.1852,
+    "0xc179e03922afe8fa9533d3f896338b9fb87ce0c8": 13.3672,
+    "0xb65dd7c56afbf3b272ab5fc49be44b47dca18003": 8.1823,
+    "0xd57c9295947b5a616a3933344ef03a1ad67318ea": 6.5723,
+    "0x9114a5161f18739ced233190861ea275c8b3a99b": 2.4791,
+    "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303": 2.3271,
+    "0xba939edf38c0ae0cc689c98b492e0535f43e4550": 0.7278,
+    "0x5661a070eb13c7c55ac3210b2447d4bea426cbf5": 0.3204,
+    "0xb7e7d0fdeff5473ed6ef8d3a762d096a040dbb18": 0.3057,
+    "0xda51323fe9800c8365646ad5c7ade0dd17fdc167": 0.061,
+    "0x7048b287889c5913d59f812795d7fd5d724be77a": -0.632,
+    "0x3b4f22366857da94f9346f88eac84718c8a8d48d": -1.9676,
+    "0x07fd993f0fa3a185f7207adccd29f7a87404689d": -4.1143,
+    "0x14ecb3f4932522b8d508fa6e237e2746a4999feb": -4.4786,
+    "0x115849ce84370f25cadcf0d348510d73837e1aa5": -5.419,
+    "0xd6e56265890b76413d1d527eb9b75e334c0c5b42": -5.6369,
+    "0x51b62b4bf8df6f2795b3da30cb46aa47f9f230a8": -6.1922,
+    "0x2431edfcb662e6ff6deab113cc91878a0b53fb0f": -6.6495
+   },
+   "notes": []
+  },
+  {
+   "ts": 1790812800000,
+   "kind": "reconstitute",
+   "weights": {
+    "0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7": 0.125,
+    "0x7178cc2d79160d524858c843e350ed8207de0854": 0.125,
+    "0x8b82d6e0b60e8a8cda97afcdf1aaae569e3747b8": 0.125,
+    "0xbc5bf88fd012612ba92c5bd96e183955801b7fdc": 0.125,
+    "0x8231fdf9997c003a267374b45fb25c0455aa1dcb": 0.125,
+    "0x53f8f390fd4f70941c5d160a964f6893c8dbceff": 0.125,
+    "0x65aee08c9235025355ac6c5ad020fb167ecef4fe": 0.125,
+    "0x5a733b25a17dc0f26b862ca9e32b439801b1a8c7": 0.125
+   },
+   "scores": {
+    "0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7": 13779.4866,
+    "0x7178cc2d79160d524858c843e350ed8207de0854": 280.1443,
+    "0x8b82d6e0b60e8a8cda97afcdf1aaae569e3747b8": 214.6567,
+    "0xbc5bf88fd012612ba92c5bd96e183955801b7fdc": 173.6958,
+    "0x8231fdf9997c003a267374b45fb25c0455aa1dcb": 83.0029,
+    "0x53f8f390fd4f70941c5d160a964f6893c8dbceff": 74.0277,
+    "0x65aee08c9235025355ac6c5ad020fb167ecef4fe": 65.5044,
+    "0x5a733b25a17dc0f26b862ca9e32b439801b1a8c7": 54.7591,
+    "0xc179e03922afe8fa9533d3f896338b9fb87ce0c8": 45.177,
+    "0xa1b6d8efbcb2fb750a84dbc05649fa4968034f04": 38.4473,
+    "0x49a648936441b22f28f069d3c088928682b277ae": 27.5394,
+    "0x45e7014f092c5f9c39482caec131346f13ac5e73": 26.4657,
+    "0x1e37a337ed460039d1b15bd3bc489de789768d5e": 24.3271,
+    "0xbbf7d7a9d0eaeab4115f022a6863450296112422": 23.7975,
+    "0x060d01aa996003b3731a992462d7f0ba68bf3b04": 19.8542,
+    "0xa6a34f0bf2ccea9a1ddf9e9a973f17c498dc5e40": 18.9813,
+    "0xa844d7ac9fa3424c4fd38a25baa23e460ec3e802": 17.3228,
+    "0xe67dbf2d051106b42104c1a6631af5e5a458b682": 10.4832,
+    "0xb65dd7c56afbf3b272ab5fc49be44b47dca18003": 7.9551,
+    "0xd57c9295947b5a616a3933344ef03a1ad67318ea": 6.7947,
+    "0x9114a5161f18739ced233190861ea275c8b3a99b": 4.0889,
+    "0x5661a070eb13c7c55ac3210b2447d4bea426cbf5": 1.8575,
+    "0xb7e7d0fdeff5473ed6ef8d3a762d096a040dbb18": 1.6596,
+    "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303": 1.571,
+    "0xda51323fe9800c8365646ad5c7ade0dd17fdc167": 0.0595,
+    "0xba939edf38c0ae0cc689c98b492e0535f43e4550": 0.0039,
+    "0x7048b287889c5913d59f812795d7fd5d724be77a": -0.6958,
+    "0x3b4f22366857da94f9346f88eac84718c8a8d48d": -2.2563,
+    "0x07fd993f0fa3a185f7207adccd29f7a87404689d": -4.3614,
+    "0x14ecb3f4932522b8d508fa6e237e2746a4999feb": -4.5528,
+    "0xd6e56265890b76413d1d527eb9b75e334c0c5b42": -4.8866,
+    "0x2431edfcb662e6ff6deab113cc91878a0b53fb0f": -5.3482,
+    "0x51b62b4bf8df6f2795b3da30cb46aa47f9f230a8": -5.9871,
+    "0x115849ce84370f25cadcf0d348510d73837e1aa5": -6.2972
+   }
+  }
+ ]
+}

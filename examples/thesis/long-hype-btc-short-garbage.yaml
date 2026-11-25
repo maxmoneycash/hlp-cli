@@ -1,0 +1,22 @@
+# Homage to one of Hyperliquid's biggest vaults by TVL, "Long HYPE & BTC |
+# Short Garbage". Our own reading of the idea, not that vault's actual book:
+# long HYPE and BTC, short a broad basket of low-quality coins, only the
+# ones in a downtrend.
+#
+#   hlp backtest examples/thesis/long-hype-btc-short-garbage.yaml
+#   hlp vault "Long HYPE & BTC"     # vet the real vault next to it
+name: Long HYPE & BTC / Short garbage
+interval: 1d
+rebalance: 1w
+leverage: 2
+long:
+  - coin: HYPE
+    weight: 0.6
+  - coin: BTC
+    weight: 0.4
+short:
+  - basket: garbage
+    filter: falling
+    lookback: 14
+baskets:
+  garbage: [DOGE, FARTCOIN, TRUMP, PUMP, kPEPE, WIF, kBONK, POPCAT, MOODENG, PENGU, SPX, APE, NOT, MEW]

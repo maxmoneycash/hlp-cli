@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Sub Account 1",
+    "subAccountUser": "0x90da2f893dd7a5bc75c7e60a8d8ec0a7ec8ce285",
+    "master": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+    "clearinghouseState": {
+      "marginSummary": {
+        "accountValue": "0.0",
+        "totalNtlPos": "0.0",
+        "totalRawUsd": "0.0",
+        "totalMarginUsed": "0.0"
+      },
+      "crossMarginSummary": {
+        "accountValue": "0.0",
+        "totalNtlPos": "0.0",
+        "totalRawUsd": "0.0",
+        "totalMarginUsed": "0.0"
+      },
+      "crossMaintenanceMarginUsed": "0.0",
+      "withdrawable": "0.0",
+      "assetPositions": [],
+      "time": 1794735427534
+    },
+    "spotState": {
+      "balances": [
+        {
+          "coin": "USDC",
+          "token": 0,
+          "total": "0.000444",
+          "hold": "0.0",
+          "entryNtl": "0.0"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1375 @@
+[
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x4f17a2fa",
+  "signature": "MAX_EPOCH_DURATION()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x9e628977",
+  "signature": "MAX_EXIT_FEE_BPS()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x3326ab9e",
+  "signature": "MAX_MANAGEMENT_FEE_BPS()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x8f41c562",
+  "signature": "MAX_MIN_IDLE_BPS()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xcb32509f",
+  "signature": "MAX_NAV_DEXES()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x999d55fb",
+  "signature": "MAX_PAUSE()",
+  "mutability": "view"
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x70889165",
+  "signature": "MAX_PERFORMANCE_FEE_BPS()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x84e75082",
+  "signature": "MAX_SETTLE_GRACE()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x3729e637",
+  "signature": "MAX_UNPROVEN_DEPLOY()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xfca32246",
+  "signature": "MIN_CORE_SETTLE_DELAY_BLOCKS()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x65cdce19",
+  "signature": "MIN_EPOCH_DURATION()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xd73f7421",
+  "signature": "MIN_SETTLE_GRACE()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xb5acb567",
+  "signature": "PAUSE_COOLDOWN()",
+  "mutability": "view"
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xa58dd109",
+  "signature": "TRANSFER_WRITE_OFF_DELAY()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x79ba5097",
+  "signature": "acceptOwnership()",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xc76c7fc2",
+  "signature": "addNavDex(uint32)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xdd62ed3e",
+  "signature": "allowance(address,address)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x57848ae9",
+  "signature": "apiWallet()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x840cabfb",
+  "signature": "apiWalletUsed(address)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x095ea7b3",
+  "signature": "approve(address,uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x38d52e0f",
+  "signature": "asset()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x70a08231",
+  "signature": "balanceOf(address)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xc0b568e1",
+  "signature": "cancelDepositRequest(uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xc3f0d30e",
+  "signature": "cancelRedeemRequest(uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x8b529854",
+  "signature": "cancelTransfer()",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xde56603c",
+  "signature": "claimDeposit(address)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x0c5cb572",
+  "signature": "claimRedeem(address)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xaff947c4",
+  "signature": "claimableDepositRequest(address)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x5baf0952",
+  "signature": "claimableDepositShares()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x0088d3e5",
+  "signature": "claimableRedeemRequest(address)",
+  "mutability": "view",
+  "inDeployedBytecode": true,
+  "_note": "selector 0x0088d3e5 is PUSH3 0x88d3e5 in bytecode (leading zero byte); present and callable"
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xbaa49301",
+  "signature": "confirmTransfer()",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x1fd58380",
+  "signature": "confirmedToCore()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xa3411e27",
+  "signature": "confirmedToEvm()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x12a7979c",
+  "signature": "coreLinkProven()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xec2d8586",
+  "signature": "coreSettleDelayBlocks()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x76671808",
+  "signature": "currentEpoch()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x56b6f88f",
+  "signature": "cutoffAt()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x313ce567",
+  "signature": "decimals()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x6ee0cf78",
+  "signature": "deployToCore(uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x90d6f21d",
+  "signature": "depositAllowlistEnabled()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xdbd5edc7",
+  "signature": "depositCap()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x329c29fb",
+  "signature": "depositorAllowed(address)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x8acd321d",
+  "signature": "epochData(uint64)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x4ff0876a",
+  "signature": "epochDuration()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x57b17a52",
+  "signature": "exitFeeBps()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x46904840",
+  "signature": "feeRecipient()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xaeea1f7b",
+  "signature": "forceSettle()",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x452a9320",
+  "signature": "guardian()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x1e8410da",
+  "signature": "highWaterMark()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xe16b03a3",
+  "signature": "idleAssets()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xaced1661",
+  "signature": "keeper()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xa0a89210",
+  "signature": "lastCoreActionBlock()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xbc0bdf50",
+  "signature": "lastFeeAccrual()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x5a05958b",
+  "signature": "lastSharePrice()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x3813c35a",
+  "signature": "managementFeeBps()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x481c6a75",
+  "signature": "manager()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xcf823c1a",
+  "signature": "maxDeploy()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x8326b184",
+  "signature": "maxPriceMoveBps()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x41b3d185",
+  "signature": "minDeposit()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x39a56673",
+  "signature": "minIdleBps()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xbff2e2b2",
+  "signature": "moveCore(uint32,uint32,uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x06fdde03",
+  "signature": "name()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x80cf9ab5",
+  "signature": "navDexCount()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xb5524ea4",
+  "signature": "navDexes(uint256)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x8da5cb5b",
+  "signature": "owner()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x8456cb59",
+  "signature": "pause()",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x5c975abb",
+  "signature": "paused()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xda748b10",
+  "signature": "pausedUntil()",
+  "mutability": "view"
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xc3702989",
+  "signature": "pendingDepositRequest(address)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xe30c3978",
+  "signature": "pendingOwner()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x53dc1dd3",
+  "signature": "pendingRedeemRequest(address)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xa6c5a6bc",
+  "signature": "pendingTransfer()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xb9d4e879",
+  "signature": "performanceFeeBps()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xb1c9fe6e",
+  "signature": "phase()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xf217017c",
+  "signature": "pinStandardMargin()",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x9f4cd252",
+  "signature": "quotaMode()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x5a111a5e",
+  "signature": "redeemReserve()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x715018a6",
+  "signature": "renounceOwnership()",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x29344f08",
+  "signature": "requestDeposit(uint256,address)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xaa2f892d",
+  "signature": "requestRedeem(uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xe5711e8b",
+  "signature": "rescueToken(address,address,uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xd9803a4e",
+  "signature": "returnToEvm(uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xa232a7bd",
+  "signature": "setApiWallet(address,string)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xfb3b2346",
+  "signature": "setConfig(uint32,uint32,uint16,uint16,uint16,uint128,uint128)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x09f3cbbf",
+  "signature": "setDeployLimits(uint128,bool)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xcbcc759a",
+  "signature": "setDepositAllowlist(bool)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x50df9425",
+  "signature": "setDepositorAllowed(address[],bool)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xe74b981b",
+  "signature": "setFeeRecipient(address)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x8a0dac4a",
+  "signature": "setGuardian(address)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x748747e6",
+  "signature": "setKeeper(address)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xd0ebdbe7",
+  "signature": "setManager(address)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x11da60b4",
+  "signature": "settle()",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x12ae6491",
+  "signature": "settleGrace()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x87269729",
+  "signature": "sharePrice()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x95d89b41",
+  "signature": "symbol()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xd6354c50",
+  "signature": "syncRedeem(address,uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x01e1d114",
+  "signature": "totalAssets()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x0a881082",
+  "signature": "totalPendingDeposits()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x8eff0106",
+  "signature": "totalPendingRedeemShares()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x18160ddd",
+  "signature": "totalSupply()",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xa9059cbb",
+  "signature": "transfer(address,uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x23b872dd",
+  "signature": "transferFrom(address,address,uint256)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0xf2fde38b",
+  "signature": "transferOwnership(address)",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "function",
+  "selector": "0x3f4ba83a",
+  "signature": "unpause()",
+  "mutability": "nonpayable",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xba0407ac7d42bb0ac62c715bcb85194b5c37df3d69c6bbdb08dc07b19f324d7d",
+  "signature": "ApiWalletSet(address,string)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+  "signature": "Approval(address,address,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x913d63c7abb373993833ead56d4c7cb220a8ca11cfe34a4e1ae905032a506517",
+  "signature": "ConfigSet(uint32,uint32,uint16,uint16,uint16,uint128,uint128)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x9d8906847ecae6b9e2ec89a99f104dc3e18897874a2e9862f011f5ebc43072c7",
+  "signature": "CoreMoved(uint32,uint32,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xfe35d3d1688f0c1107c72c8953ee9ad9f4965c71fec2c9b7d81258716d44a9f4",
+  "signature": "DeployLimitsSet(uint128,bool)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x95734bd1ba9cb65fb343aea156f15254187cc255f20ad0a9d4d7bfdd4830a8e2",
+  "signature": "DeployedToCore(uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x299cb3b408af241a8253685bf8f387fe70bc6f76d4894d54dd955ec130a7c2a1",
+  "signature": "DepositAllowlistSet(bool)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xe800e3ea37ded367af4fce9aa5ecaa72b693f315a2c3b6c7a3d07c84196515fb",
+  "signature": "DepositClaimed(address,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x8d94a02571d655cc127bbc351f32a64c4fe70bb77c34f66403db5244f18721a6",
+  "signature": "DepositRequestCancelled(address,uint64,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x84c6daae7d5825e1a3138371f73249b1e54c5dd8abe00579a7b0e3a7c2ed5c20",
+  "signature": "DepositRequested(address,address,uint64,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x94cb1d0bf337f4428c198ee8dcfbeda0bfc5929a982a1e0fee19fabf7ca8c9ac",
+  "signature": "DepositorAllowedSet(address,bool)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x0f7d52a34d77dd420e4508812910578096934cace48511de2f73d1afa149e777",
+  "signature": "EpochSettled(uint64,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xbf9a9534339a9d6b81696e05dcfb614b7dc518a31d48be3cfb757988381fb323",
+  "signature": "FeeRecipientSet(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xe6c09ffe4572dc9ceaa5ddde4ae41befa655d6fdfe8052077af0970f700e942e",
+  "signature": "GuardianSet(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xdc3dba1d64dd67c0dc8b12621edd0c6ca4303a9073c3a8fcac38115e73d67b6b",
+  "signature": "KeeperSet(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xb7b01c6792a141134b9a91639f7ec3d95ac7e10c5d97fb5e3896b2c602c790d7",
+  "signature": "LaunchCapitalIssued(address,uint256,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x60a0f5b9f9e81e98216071b85826681c796256fe3d1354ecb675580fba64fa69",
+  "signature": "ManagerSet(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x7db04caf1e84043388d369d9e5d6ce7ea5c43e8310b9a5f20dc6941239f80aed",
+  "signature": "NavDexAdded(uint32)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x38d16b8cac22d99fc7c124b9cd0de2d3fa1faef420bfe791d8c362d765e22700",
+  "signature": "OwnershipTransferStarted(address,address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+  "signature": "OwnershipTransferred(address,address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x8a28e5c0320c98a7369c776140335d42630ce2d10b257d233aba6dd8313f4141",
+  "signature": "Paused(address,uint64)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x9887148cd9a4ee7cd8c2e99ede63c41161da88f30be82a89c4a4e37835b288a2",
+  "signature": "RedeemClaimed(address,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xe32e7f60e781d2cdde1a1aa41f9278e5ebdfe5c3674484d18cad7820f683956e",
+  "signature": "RedeemRequestCancelled(address,uint64,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xfc66abfdc0865580869829250c2350cf388090b0a19ef9116a89796b8ea47b19",
+  "signature": "RedeemRequested(address,uint64,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x3ab76af4740c39e92d4cecbd3a8e1a3064b65bb5b1e7391b6dc07d49a05de53a",
+  "signature": "ReturnedToEvm(uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+  "signature": "Transfer(address,address,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0xdfad442c00f0b4c2594916679eab2f80723a98763a6cc481c37aea6c77588fdb",
+  "signature": "TransferCancelled(uint8,uint256,bool)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x5f6e7f461bb188e416da90d02b0597921b0fd874eaf5be823a02b85e0cb74938",
+  "signature": "TransferConfirmed(uint8,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "event",
+  "topic0": "0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa",
+  "signature": "Unpaused(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x46897dfd",
+  "signature": "ApiWalletReused()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x96ec8e54",
+  "signature": "BelowMinDeposit()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x306e6d85",
+  "signature": "CannotRescue()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xb59d76f6",
+  "signature": "CoreAccountMissing()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xec7cf42c",
+  "signature": "CoreLinkNotProven()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x3fc6aef6",
+  "signature": "CoreStateNotSettled()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x857ccb8e",
+  "signature": "CoreWriterLib__CoreAmountTooLarge(uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x45641ba2",
+  "signature": "CoreWriterLib__EvmAmountTooSmall(uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x5d7292dc",
+  "signature": "DeployTooLarge()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x935d630c",
+  "signature": "DepositCapExceeded()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xce99c54d",
+  "signature": "DexNotAllowed()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xfb8f41b2",
+  "signature": "ERC20InsufficientAllowance(address,uint256,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xe450d38c",
+  "signature": "ERC20InsufficientBalance(address,uint256,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xe602df05",
+  "signature": "ERC20InvalidApprover(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xec442f05",
+  "signature": "ERC20InvalidReceiver(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x96c6fd1e",
+  "signature": "ERC20InvalidSender(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x94280d62",
+  "signature": "ERC20InvalidSpender(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xd93c0665",
+  "signature": "EnforcedPause()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x4c39b1d5",
+  "signature": "EpochNotOpen()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xa993769a",
+  "signature": "EpochStillOpen()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x8dfc202b",
+  "signature": "ExpectedPause()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x0023afb4",
+  "signature": "HLConversions__InvalidToken(uint64)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xff669004",
+  "signature": "InsufficientIdle()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xb89c56c5",
+  "signature": "InsufficientRequest()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x35be3ac8",
+  "signature": "InvalidConfig()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xd5e80fb4",
+  "signature": "NoPendingTransfer()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x06fb10a9",
+  "signature": "NotAllowlisted()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xef6d0f02",
+  "signature": "NotGuardian()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xf512b278",
+  "signature": "NotKeeper()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x969bf728",
+  "signature": "NothingToClaim()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x1e4fbdf7",
+  "signature": "OwnableInvalidOwner(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x118cdaa7",
+  "signature": "OwnableUnauthorizedAccount(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x7ae90bc6",
+  "signature": "PauseCooldown()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x7cf4fff2",
+  "signature": "PrecompileLib__AccountMarginSummaryPrecompileFailed()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xafa95720",
+  "signature": "PrecompileLib__CoreUserExistsPrecompileFailed()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x062879da",
+  "signature": "PrecompileLib__SpotBalancePrecompileFailed()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xee6b81c5",
+  "signature": "PrecompileLib__TokenInfoPrecompileFailed()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x786c0592",
+  "signature": "PriceMoveTooLarge(uint256,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x3ee5aeb5",
+  "signature": "ReentrancyGuardReentrantCall()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x66eeda28",
+  "signature": "RequestsLocked()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x6dfcc650",
+  "signature": "SafeCastOverflowedUintDowncast(uint8,uint256)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x5274afe7",
+  "signature": "SafeERC20FailedOperation(address)"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xd10e849b",
+  "signature": "TransferNotArrived()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x5ee186e1",
+  "signature": "TransferNotCancellable()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x3a9c1084",
+  "signature": "TransferPending()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xd92e233d",
+  "signature": "ZeroAddress()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0x1f2a2005",
+  "signature": "ZeroAmount()"
+ },
+ {
+  "abi": "pvault",
+  "kind": "error",
+  "selector": "0xd205582d",
+  "signature": "ZeroSharesIssued()"
+ },
+ {
+  "abi": "vaultlens",
+  "kind": "function",
+  "selector": "0x9b9ce627",
+  "signature": "epochRange(address,uint64,uint64)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "vaultlens",
+  "kind": "function",
+  "selector": "0x7281fb33",
+  "signature": "userState(address,address)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "vaultlens",
+  "kind": "function",
+  "selector": "0x54e98549",
+  "signature": "vaultState(address)",
+  "mutability": "view",
+  "inDeployedBytecode": true
+ },
+ {
+  "abi": "vaultlens",
+  "kind": "error",
+  "selector": "0x0023afb4",
+  "signature": "HLConversions__InvalidToken(uint64)"
+ },
+ {
+  "abi": "vaultlens",
+  "kind": "error",
+  "selector": "0x7cf4fff2",
+  "signature": "PrecompileLib__AccountMarginSummaryPrecompileFailed()"
+ },
+ {
+  "abi": "vaultlens",
+  "kind": "error",
+  "selector": "0xafa95720",
+  "signature": "PrecompileLib__CoreUserExistsPrecompileFailed()"
+ },
+ {
+  "abi": "vaultlens",
+  "kind": "error",
+  "selector": "0x062879da",
+  "signature": "PrecompileLib__SpotBalancePrecompileFailed()"
+ },
+ {
+  "abi": "vaultlens",
+  "kind": "error",
+  "selector": "0xee6b81c5",
+  "signature": "PrecompileLib__TokenInfoPrecompileFailed()"
+ },
+ {
+  "abi": "vaultlens",
+  "kind": "error",
+  "selector": "0x70a5e2e6",
+  "signature": "PrecompileLib__WithdrawablePrecompileFailed()"
+ },
+ {
+  "abi": "deployed-only",
+  "kind": "event",
+  "topic0": "0x62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258",
+  "signature": "Paused(address)",
+  "_note": "OZ Pausable; account not indexed"
+ },
+ {
+  "abi": "deployed-only",
+  "kind": "event",
+  "topic0": "0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa",
+  "signature": "Unpaused(address)",
+  "_note": "OZ Pausable; deployed emits account NOT indexed, shipped ABI says indexed"
+ },
+ {
+  "abi": "CoreWriter",
+  "kind": "event",
+  "topic0": "0x8c7f585fb295f7eb1e6aeb8fba61b23a4fe60beda405f0045073b185c74412e3",
+  "signature": "RawAction(address,bytes)",
+  "_note": "emitted by 0x3333333333333333333333333333333333333333; user indexed"
+ }
+]

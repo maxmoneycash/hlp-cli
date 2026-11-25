@@ -1,0 +1,25 @@
+{
+ "channel": "user",
+ "data": {
+  "fills": [
+   {
+    "coin": "BTC",
+    "px": "65457.0",
+    "sz": "0.05149",
+    "side": "B",
+    "time": 1794735535797,
+    "startPosition": "11.56572",
+    "dir": "Open Long",
+    "closedPnl": "0.0",
+    "hash": "0xdafd10e874b68ff3dc760448d6c02e0206f500ce0fb9aec57ec5bc3b33ba69de",
+    "oid": 605971967047,
+    "crossed": false,
+    "fee": "-0.067407",
+    "tid": 707496891885577,
+    "cloid": "0xddfe93bbfa5f9723c49ee6ad0c8f5012",
+    "feeToken": "USDC",
+    "twapId": null
+   }
+  ]
+ }
+}

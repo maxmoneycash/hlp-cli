@@ -1,0 +1,6 @@
+[
+ {
+  "channel": "error",
+  "data": "Error parsing JSON into valid websocket request: {\"method\":\"subscribe\",\"subscription\":{\"type\":\"webData2\",\"user\":\"0xf5d81a135f756ca16544e53c20fc20643ec3ad53\"}}"
+ }
+]

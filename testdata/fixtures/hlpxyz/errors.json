@@ -1,0 +1,29 @@
+{
+ "unauthorized_user": {
+  "error": "Unauthorized — connect wallet and sign in"
+ },
+ "unauthorized_idxMine": {
+  "error": "Sign in to see your indexes"
+ },
+ "unauthorized_casa": {
+  "error": "Connect your wallet and sign in."
+ },
+ "invalid_user_action": {
+  "error": "Invalid action. Use ?action=record|recordClosure|transactions|portfolio|tax|taxcsv|fixLots|rebuildLots|perptxns|perf|v2portfolio|v2vault|v3vault|v4vault|v5vault|v6vault|gamelog|leaderboard|notifications|notificationsRead|notifSettings|manageGet|manageSave|manageUpload"
+ },
+ "invalid_stocks_action": {
+  "error": "Invalid action. Use GET ?action=pulse|search|quotes|chart|flows|news|ohlcv|info|financials|valuation|lists|terminal or POST ?action=perf|save|chartsave"
+ },
+ "invalid_thirteenf_action": {
+  "error": "Invalid action. Use GET ?action=search|list|data|holding|strategies|strategy or POST ?action=add|poll|recompute|reimport"
+ },
+ "invalid_benchmark_symbol": {
+  "error": "Invalid symbol. Valid: SPY, NQ, DOW, NVDA, BTC, ETH, SOL, HYPE"
+ },
+ "unknown_idx_action": {
+  "error": "Unknown index action"
+ },
+ "vault_not_found_live": {
+  "error": "Vault not found"
+ }
+}

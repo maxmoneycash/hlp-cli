@@ -1,0 +1,19 @@
+//@version=5
+// Original example for hlp (MIT). Classic EMA crossover, long/short.
+//   hlp pine check examples/pine/ema-cross.pine
+//   hlp backtest examples/pine/ema-cross.pine --coin HYPE --interval 1h
+strategy("EMA Cross", overlay=true, initial_capital=10000, default_qty_type=strategy.percent_of_equity, default_qty_value=100)
+
+fastLen = input.int(9, "Fast EMA")
+slowLen = input.int(21, "Slow EMA")
+
+fast = ta.ema(close, fastLen)
+slow = ta.ema(close, slowLen)
+
+if ta.crossover(fast, slow)
+    strategy.entry("Long", strategy.long)
+if ta.crossunder(fast, slow)
+    strategy.entry("Short", strategy.short)
+
+plot(fast, "Fast", color=color.orange)
+plot(slow, "Slow", color=color.purple)

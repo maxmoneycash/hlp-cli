@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hlp order preview</title>
+<style>
+:root{--bg:#0e0f0f;--surface:#121212;--line:#232526;--text:#f4f3ef;--muted:#8a8a8f;--accent:#97fce4;--up:#3ddc97;--down:#ff5c7a;--warn:#f5b84a;
+  font:13px/1.35 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark}
+:root[data-theme=light]{--bg:#f7f6f2;--surface:#ffffff;--line:#e3e1da;--text:#16171a;--muted:#6d6a62;--accent:#127a63;--up:#14895a;--down:#c0362c;--warn:#a2650b;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text)}
+.card{padding:14px 12px 12px}
+.top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.net{font:600 10.5px ui-monospace,Menlo,monospace;letter-spacing:.06em;padding:2px 7px;border-radius:5px}
+.net.mainnet{background:var(--down);color:#07090f}.net.testnet{background:var(--line);color:var(--muted)}
+.dry{color:var(--muted);font-size:12px}
+.title{font-size:20px;font-weight:650;margin:10px 0 2px;font-variant-numeric:tabular-nums}
+.buy{color:var(--up)}.sell{color:var(--down)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin:12px 0}
+.lbl{color:var(--muted);font-size:11px;margin-bottom:3px}
+.v{font:500 14px ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+ul{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+li{display:grid;grid-template-columns:18px 1fr;gap:4px 8px;padding:8px 10px;background:var(--surface)}
+li+li{border-top:1px solid var(--line)}
+.mark{font:700 12px ui-monospace,Menlo,monospace;line-height:1.35}
+.pass .mark{color:var(--up)}.warn .mark{color:var(--warn)}.fail .mark{color:var(--down)}
+.detail{grid-column:2;color:var(--muted);font-size:12px}
+.act{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+button{all:unset;cursor:pointer;padding:8px 16px;border-radius:7px;background:var(--accent);color:#07090f;font-weight:650}
+button:disabled{cursor:default;background:var(--line);color:var(--muted)}
+.status{font-size:12px;color:var(--muted)}
+.status.bad{color:var(--down)}.status.good{color:var(--accent)}
+.empty{padding:28px 12px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="card" id="app"><div class="empty">Waiting for the order preview…</div></div>
+<script>
+/*@BRIDGE@*/
+(() => {
+  const { el, fmt } = hlp;
+  const app = document.getElementById("app");
+  // Button state machine:
+  // previewing → confirmable → sending → checked | rejected | unknown.
+  // unknown is terminal and locks the view; nothing here says "filled".
+  let state = "previewing", note = "", preview = null, token = null, expires = 0;
+
+  function onResult(result) {
+    if (state === "sending" || state === "unknown") return;
+    const { data = {} } = hlp.env(result);
+    preview = data;
+    const c = (result._meta || {})["hlp/confirm"];
+    token = c && c.token; expires = c ? Date.parse(c.expiresAt) : 0;
+    state = token && data.tradeOk && hlp.canCallTools() ? "confirmable" : "previewing";
+    note = !token ? "Confirm needs an MCP Apps host; preview only."
+      : !data.tradeOk ? "Blocked by the risk checks below."
+      : !hlp.canCallTools() ? "This host cannot call tools from the view." : "";
+    render();
+  }
+
+  function render() {
+    const p = preview || {};
+    const side = sideWord(p.side);
+    const confirmable = state === "confirmable" && Date.now() < expires;
+    if (state === "confirmable" && !confirmable) note = "Preview expired. Ask for a new preview.";
+    app.replaceChildren(
+      el("div", { class: "top" },
+        el("span", { class: "net " + (p.network || "testnet") }, String(p.network || "").toUpperCase()),
+        el("span", { class: "dry" }, "dry-run · nothing is signed or sent in this build")),
+      el("div", { class: "title" }, el("span", { class: side }, side.toUpperCase()), " ", p.size || "", " ", p.coin || "", p.px ? " @ " + p.px : " at market"),
+      el("div", { class: "facts" },
+        fact("notional", fmt.usd(p.notionalUsd)), fact("price", p.px || "market"),
+        p.vault ? fact("vault", p.vaultName || p.vault) : null,
+        ...(p.triggers || []).map((t) => fact(t.kind.toUpperCase(), t.triggerPx))),
+      el("ul", null, (p.checks || []).map((c) => el("li", { class: c.status },
+        el("span", { class: "mark", "aria-label": c.status }, c.status === "pass" ? "✓" : c.status === "warn" ? "!" : "✕"),
+        el("span", null, c.label || c.id), c.detail ? el("span", { class: "detail" }, c.detail) : null))),
+      el("div", { class: "act" },
+        el("button", { disabled: !confirmable, onclick: confirm }, state === "sending" ? "Checking…" : "Confirm"),
+        el("span", { class: "status " + (state === "rejected" || state === "unknown" ? "bad" : state === "checked" ? "good" : "") }, note)));
+  }
+  // domain.Side is the wire letter: B buys, A sells.
+  const sideWord = (s) => (s === "B" || s === "buy" ? "buy" : s === "A" || s === "sell" ? "sell" : String(s || ""));
+  const fact = (k, v) => el("div", null, el("div", { class: "lbl" }, k), el("div", { class: "v" }, v));
+
+  async function confirm() {
+    if (state !== "confirmable") return;
+    const tok = token; token = null; // single use, even if the call fails
+    state = "sending"; note = "Re-running the risk checks…"; render();
+    try {
+      const r = await hlp.callTool("confirm_order", { confirmToken: tok });
+      const d = hlp.env(r).data || {};
+      if (d.preview) preview = d.preview;
+      state = d.status === "checked" ? "checked" : "rejected";
+      note = d.message || "";
+      hlp.tellModel(`User pressed Confirm on the ${sideWord(preview.side)} ${preview.size} ${preview.coin} preview. ` +
+        `Result: ${d.status}. ${d.message} Nothing was signed or sent (dry-run build).`, { status: d.status, sent: false });
+    } catch (e) {
+      // A tool error carries hlp's string code; anything else (a numeric
+      // JSON-RPC or transport error) means we cannot know what happened.
+      const tool = typeof e.code === "string";
+      state = tool ? "rejected" : "unknown";
+      note = (tool ? e.code + ": " : "Unknown outcome: ") + e.message;
+      hlp.tellModel(`User pressed Confirm; the confirm call failed (${note}). Treat the order as not placed and do not retry automatically.`);
+    }
+    render();
+  }
+
+  hlp.on("result", onResult);
+  setInterval(() => { if (state === "confirmable" && Date.now() >= expires) render(); }, 1000);
+  hlp.init({ name: "hlp-order", version: "1" });
+})();
+</script>
+</body>
+</html>

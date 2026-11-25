@@ -1,0 +1,19 @@
+# LLM vs LLM, paper mode: the same thesis prompt on two local models, same
+# capital, same live feed, one leaderboard. A fair model comparison: only
+# the model differs.
+#
+#   ollama pull qwen3:8b && ollama pull llama3.1:8b
+#   hlp arena examples/arena/llm-vs-llm.yaml --llm
+#
+# Nothing here trades real money: every entrant is a simulated ledger that
+# fills against the live order book.
+name: LLM vs LLM
+capital: 10000
+interval: 1h
+entrants:
+  - name: Qwen3 8B
+    llm: ../llm/macro-trader.yaml
+    model: ollama:qwen3:8b
+  - name: Llama 3.1 8B
+    llm: ../llm/macro-trader.yaml
+    model: ollama:llama3.1:8b

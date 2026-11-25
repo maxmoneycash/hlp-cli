@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.maxmoneycash/hlp",
+  "title": "hlp",
+  "description": "Read-only Hyperliquid and hlp.xyz vault research: candles, markets, vault tearsheets, accounts, order previews. Charts and tearsheets render as MCP Apps views.",
+  "version": "0.1.0",
+  "websiteUrl": "https://hlp.xyz",
+  "repository": {
+    "url": "https://github.com/maxmoneycash/hlp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/maxmoneycash/hlp/releases/download/v0.1.0/hlp-darwin-arm64.mcpb",
+      "version": "0.1.0",
+      "fileSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "HLP_CONFIG",
+          "description": "Path to config.toml (default ~/.config/hlp/config.toml)",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "filepath"
+        },
+        {
+          "name": "HLP_AGENT_KEY",
+          "description": "Optional Hyperliquid API-wallet (agent) key, only for dry-run trading previews. Never the master wallet key.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

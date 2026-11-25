@@ -1,0 +1,45 @@
+{
+ "channel": "openOrders",
+ "data": {
+  "dex": "",
+  "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+  "orders": [
+   {
+    "coin": "ZEC",
+    "side": "B",
+    "limitPx": "912.33",
+    "sz": "0.83",
+    "oid": 605972026630,
+    "timestamp": 1794735535670,
+    "triggerCondition": "N/A",
+    "isTrigger": false,
+    "triggerPx": "0.0",
+    "children": [],
+    "isPositionTpsl": false,
+    "reduceOnly": false,
+    "orderType": "Limit",
+    "origSz": "0.83",
+    "tif": "Alo",
+    "cloid": "0x7f5cd607dbc057f7e3487b360fd58177"
+   },
+   {
+    "coin": "ZEC",
+    "side": "A",
+    "limitPx": "912.47",
+    "sz": "2.88",
+    "oid": 605972026560,
+    "timestamp": 1794735535670,
+    "triggerCondition": "N/A",
+    "isTrigger": false,
+    "triggerPx": "0.0",
+    "children": [],
+    "isPositionTpsl": false,
+    "reduceOnly": false,
+    "orderType": "Limit",
+    "origSz": "2.88",
+    "tif": "Alo",
+    "cloid": "0xe2b420a0b3ee063e3a86144514d78969"
+   }
+  ]
+ }
+}

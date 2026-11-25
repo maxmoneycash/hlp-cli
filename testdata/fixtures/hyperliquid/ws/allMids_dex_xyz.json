@@ -1,0 +1,13 @@
+{
+ "channel": "allMids",
+ "data": {
+  "dex": "xyz",
+  "mids": {
+   "xyz:AAOI": "48.6285",
+   "xyz:AAPL": "356.895",
+   "xyz:ACN": "249.39",
+   "xyz:ALUMINIUM": "3080.0",
+   "xyz:AMAT": "362.645"
+  }
+ }
+}

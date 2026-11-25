@@ -1,0 +1,17 @@
+# The launch arena: two AI bots against a Pine trend follower and the
+# owner's long SPY / short memes thesis, all paper, one live feed.
+#
+#   hlp arena examples/arena/ai-vs-thesis.yaml --llm
+name: AI vs thesis
+capital: 10000
+interval: 1h
+entrants:
+  - name: Macro LLM
+    llm: ../llm/macro-trader.yaml
+  - name: Contrarian LLM
+    llm: ../llm/contrarian.yaml
+  - name: Supertrend HYPE
+    pine: ../pine/supertrend.pine
+    coin: HYPE
+  - name: Long SPY / Short memes
+    thesis: ../thesis/long-spy-short-memes.yaml

@@ -1,0 +1,32 @@
+//@version=5
+// hlp research sample 03 (clean-room, MIT). A short-period RSI pullback
+// strategy in the style of the widely published "RSI(2) above the 200 SMA"
+// mean-reversion system: buy deep oversold dips in an uptrend, exit on a
+// close above a short SMA, with an optional time stop.
+strategy("RSI2 pullback", overlay = true, initial_capital = 10000,
+     default_qty_type = strategy.percent_of_equity, default_qty_value = 50,
+     pyramiding = 0)
+
+rsiLen     = input.int(2, "RSI length", minval = 1)
+oversold   = input.float(10, "Oversold", minval = 0, maxval = 100)
+trendLen   = input.int(200, "Trend SMA")
+exitLen    = input.int(5, "Exit SMA")
+maxBars    = input.int(10, "Time stop (bars, 0 = off)", minval = 0)
+
+r       = ta.rsi(close, rsiLen)
+trendMa = ta.sma(close, trendLen)
+exitMa  = ta.sma(close, exitLen)
+
+var int entryBar = na
+longCond = close > trendMa and r < oversold and strategy.position_size == 0
+if longCond
+    strategy.entry("RSI2 L", strategy.long)
+    entryBar := bar_index
+
+timeUp = maxBars > 0 and not na(entryBar) and bar_index - entryBar >= maxBars
+if strategy.position_size > 0 and (close > exitMa or timeUp)
+    strategy.close("RSI2 L", comment = timeUp ? "time" : "exit MA")
+    entryBar := na
+
+plot(trendMa, "Trend SMA", color.orange)
+plot(exitMa, "Exit SMA", color.new(color.blue, 40))

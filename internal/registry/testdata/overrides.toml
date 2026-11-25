@@ -1,0 +1,38 @@
+# Fixture for overrides_test.go: the shape of ~/.config/hlp/vaults.toml.
+schema_version = 1
+
+# change one curated entry by id
+[[vault]]
+id = "hlp"
+add_tags = ["core"]
+remove_tags = ["flagship"]
+notes = "my note"
+
+# change one curated entry by address
+[[vault]]
+address = "0xA844D7AC9FA3424C4FD38A25BAA23E460EC3E802"
+name = "Jump"
+
+# hide one
+[[vault]]
+id = "idx-hlp20"
+hide = true
+
+# add my own vault
+[[vault]]
+name = "My Grid Bot"
+address = "0x1111111111111111111111111111111111111111"
+description = "Mine."
+tags = ["grid", "my-picks"]
+aliases = ["mgb"]
+
+# invalid: an index without a slug -> warning, skipped
+[[vault]]
+id = "broken"
+name = "Broken"
+kind = "index"
+
+# hide something that does not exist -> warning
+[[vault]]
+id = "nope"
+hide = true

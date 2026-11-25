@@ -1,0 +1,25 @@
+# The owner's live thesis vault, closer to how hlp.xyz actually runs it.
+# hlp.xyz's "spxmeme" quant strategy: hold the S&P 500 at 1.5x with borrowed
+# money and short memecoins THAT ARE ALREADY FALLING, 0.075 of equity per
+# name (its backtest averaged ~4 shorts, up to 13). Rebalanced weekly; Unix
+# weeks start Thursday 00:00 UTC, the same weekday hlp.xyz rebalances on.
+#
+#   hlp backtest examples/thesis/spxmeme-falling.yaml --bench HLP,BTC
+#   hlp paper start examples/thesis/spxmeme-falling.yaml
+#   hlp strat spxmeme          # compare with hlp.xyz's live book
+#
+# xyz:SP500 is a HIP-3 market (TradeXYZ dex): run this in a HyperEVM
+# strategy vault, not a legacy HyperCore vault.
+name: Long SPY / Short falling memes
+interval: 1d
+rebalance: 1w
+long:
+  - coin: xyz:SP500
+    weight: 1.5
+short:
+  - basket: memes
+    filter: falling      # only names with a negative return over the lookback
+    lookback: 30         # bars (days here)
+    per_name: 0.075      # fixed size per short, like hlp.xyz's name cap
+baskets:
+  memes: [DOGE, FARTCOIN, TRUMP, PUMP, CASHCAT, PONS, kPEPE, kBONK, WIF, POPCAT, MOODENG, SPX, PENGU]

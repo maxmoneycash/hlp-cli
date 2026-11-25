@@ -1,0 +1,50 @@
+{
+  "outcomes": [
+    {
+      "outcome": 33713,
+      "name": "template:sportsContestWinner",
+      "description": "competition:NBA|contestType:Game|countedPlay:the full game including overtime|officialSource:National Basketball Association (NBA)|participantA:Washington Wizards|participantB:Houston Rockets|resolutionDeadline:20261123-0000|scheduledStart:20261116-0000|season:2026/27|shortNameA:WAS|shortNameB:HOU|sport:Basketball|stage:Regular Season",
+      "sideSpecs": [
+        {
+          "name": "template:{shortNameA}"
+        },
+        {
+          "name": "template:{shortNameB}"
+        }
+      ],
+      "quoteToken": "USDC",
+      "venue": "out",
+      "deployerFeeScale": "1.0"
+    },
+    {
+      "outcome": 34924,
+      "name": "template:binaryPrice",
+      "description": "perp:xyz:XYZ100|priceDescription:the Hyperliquid xyz:XYZ100 perp trade|seconds:90|threshold:28455|time:20261120-2100",
+      "sideSpecs": [
+        {
+          "name": "template:Yes"
+        },
+        {
+          "name": "template:No"
+        }
+      ],
+      "quoteToken": "USDC",
+      "venue": "skew",
+      "deployerFeeScale": "1.0"
+    }
+  ],
+  "questions": [
+    {
+      "question": 647,
+      "name": "template:sportsContestResult",
+      "description": "competition:UEFA Nations League|contestType:Match|countedPlay:regulation time, 90 minutes plus stoppage time|officialSource:Union of European Football Associations|participantA:Ireland|participantB:Kosovo|resolutionDeadline:20261124-1945|scheduledStart:20261117-1945|season:2026/27|sport:Soccer|stage:B, Matchday 6",
+      "fallbackOutcome": 35430,
+      "namedOutcomes": [
+        35431,
+        35432,
+        35433
+      ],
+      "settledNamedOutcomes": []
+    }
+  ]
+}

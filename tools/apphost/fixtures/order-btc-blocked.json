@@ -1,0 +1,122 @@
+{
+ "tool": "preview_order",
+ "uri": "ui://hlp/order.html",
+ "arguments": {
+  "coin": "BTC",
+  "side": "sell",
+  "usd": 5
+ },
+ "result": {
+  "_meta": {
+   "contract": "4",
+   "hlp/confirm": {
+    "expiresAt": "2026-11-15T09:41:00Z",
+    "token": "hlpc_cb195a2f6b111f06b2a5afd5a8e0ffc1",
+    "tool": "confirm_order"
+   },
+   "io.modelcontextprotocol/serverInfo": {
+    "description": "Hyperliquid and hlp.xyz vault research tools; agent contract 4",
+    "name": "hlp",
+    "title": "hlp: Hyperliquid vaults",
+    "version": "fixture"
+   }
+  },
+  "content": [
+   {
+    "type": "text",
+    "text": "{\"data\":{\"action\":\"order\",\"blockers\":[\"min_notional\",\"trading_enabled\",\"agent_key\",\"mcp_trading\",\"max_leverage\"],\"checks\":[{\"detail\":\"$4.39 of $10 minimum; size at least 0.00014\",\"id\":\"min_notional\",\"label\":\"Hyperliquid minimum\",\"status\":\"fail\"},{\"detail\":\"config trading.enabled\",\"id\":\"trading_enabled\",\"label\":\"Trading enabled\",\"status\":\"fail\"},{\"detail\":\"API wallet key in env/keychain (never the master key)\",\"id\":\"agent_key\",\"label\":\"Agent key present\",\"status\":\"fail\"},{\"detail\":\"config mcp.allow_trading and --allow-trading\",\"id\":\"mcp_trading\",\"label\":\"MCP trading allowed\",\"status\":\"fail\"},{\"detail\":\"0 sent in the last minute of 60 max\",\"id\":\"max_orders_per_min\",\"label\":\"Order rate\",\"status\":\"pass\"},{\"detail\":\"$4.39 of $1000.00 max\",\"id\":\"max_notional\",\"label\":\"Notional cap\",\"status\":\"pass\"},{\"detail\":\"20x (set before the order) of 5x max\",\"id\":\"max_leverage\",\"label\":\"Leverage cap\",\"status\":\"fail\"},{\"detail\":\"not tracked: set trading.account so today's fills can be read\",\"id\":\"daily_loss\",\"label\":\"Daily loss halt\",\"status\":\"warn\"}],\"coin\":\"BTC\",\"dryRun\":true,\"grouping\":\"na\",\"network\":\"mainnet\",\"notionalUsd\":4.38792,\"ok\":false,\"px\":\"73132\",\"riskBlockers\":[\"min_notional\",\"max_leverage\"],\"setupBlockers\":[\"trading_enabled\",\"agent_key\",\"mcp_trading\"],\"side\":\"A\",\"size\":\"0.00006\",\"tradeOk\":false},\"meta\":{\"source\":\"preview\",\"asOf\":\"2026-11-15T09:40:00Z\",\"stale\":false,\"network\":\"mainnet\",\"warnings\":[\"blocked: min_notional, trading_enabled, agent_key, mcp_trading, max_leverage\"]}}"
+   }
+  ],
+  "structuredContent": {
+   "data": {
+    "action": "order",
+    "blockers": [
+     "min_notional",
+     "trading_enabled",
+     "agent_key",
+     "mcp_trading",
+     "max_leverage"
+    ],
+    "checks": [
+     {
+      "detail": "$4.39 of $10 minimum; size at least 0.00014",
+      "id": "min_notional",
+      "label": "Hyperliquid minimum",
+      "status": "fail"
+     },
+     {
+      "detail": "config trading.enabled",
+      "id": "trading_enabled",
+      "label": "Trading enabled",
+      "status": "fail"
+     },
+     {
+      "detail": "API wallet key in env/keychain (never the master key)",
+      "id": "agent_key",
+      "label": "Agent key present",
+      "status": "fail"
+     },
+     {
+      "detail": "config mcp.allow_trading and --allow-trading",
+      "id": "mcp_trading",
+      "label": "MCP trading allowed",
+      "status": "fail"
+     },
+     {
+      "detail": "0 sent in the last minute of 60 max",
+      "id": "max_orders_per_min",
+      "label": "Order rate",
+      "status": "pass"
+     },
+     {
+      "detail": "$4.39 of $1000.00 max",
+      "id": "max_notional",
+      "label": "Notional cap",
+      "status": "pass"
+     },
+     {
+      "detail": "20x (set before the order) of 5x max",
+      "id": "max_leverage",
+      "label": "Leverage cap",
+      "status": "fail"
+     },
+     {
+      "detail": "not tracked: set trading.account so today's fills can be read",
+      "id": "daily_loss",
+      "label": "Daily loss halt",
+      "status": "warn"
+     }
+    ],
+    "coin": "BTC",
+    "dryRun": true,
+    "grouping": "na",
+    "network": "mainnet",
+    "notionalUsd": 4.38792,
+    "ok": false,
+    "px": "73132",
+    "riskBlockers": [
+     "min_notional",
+     "max_leverage"
+    ],
+    "setupBlockers": [
+     "trading_enabled",
+     "agent_key",
+     "mcp_trading"
+    ],
+    "side": "A",
+    "size": "0.00006",
+    "tradeOk": false
+   },
+   "meta": {
+    "asOf": "2026-11-15T09:40:00Z",
+    "network": "mainnet",
+    "source": "preview",
+    "stale": false,
+    "warnings": [
+     "blocked: min_notional, trading_enabled, agent_key, mcp_trading, max_leverage"
+    ]
+   }
+  },
+  "resultType": "complete"
+ }
+}

@@ -1,0 +1,119 @@
+{
+ "count": 32,
+ "vaults": [
+  {
+   "address": "281474976710654",
+   "accountIndex": 281474976710654,
+   "accountType": 3,
+   "name": "Lighter Liquidity Provider (LLP)",
+   "desc": "Operator-run public pool",
+   "l1Address": "0x0000000000000000000000000000000000000000",
+   "operatorFee": 0,
+   "equity": 93419079.56826404,
+   "totalShares": 26026444924,
+   "sharePrice": 0.003589390707838037,
+   "totalPerpsValue": 93419079.568264,
+   "totalSpotValue": 2062506.483414,
+   "returnYtd": 10.29301329366261,
+   "returnAll": 257.11664204008883,
+   "maxDD": -7.965384863548286,
+   "sharpe": 3.8580363901072214,
+   "perfSeries": [
+    {
+     "date": "2025-01-18T00:00:00.000Z",
+     "sharePrice": 1,
+     "equity": 35025.989225525
+    },
+    {
+     "date": "2025-01-19T00:00:00.000Z",
+     "sharePrice": 0.995214887322829,
+     "equity": 99234.91809703973
+    },
+    {
+     "date": "2026-11-15T00:00:00.000Z",
+     "sharePrice": 3.571307733992563,
+     "equity": 93412291.8342101
+    },
+    {
+     "date": "2026-11-15T00:30:33.000Z",
+     "sharePrice": 3.5711664204008886,
+     "equity": 93419079.56826404
+    }
+   ],
+   "baseSPDay": 3.5637204905700735,
+   "baseSPWeek": 3.5529342628782166,
+   "baseSPMonth": 3.5352469210670394,
+   "baseSP3Month": 3.417429069165078,
+   "baseSP6Month": 3.3404297003877605,
+   "baseSPYtd": 3.238372866509434,
+   "baseSPYear": 3.199194976958102,
+   "baseSPAll": 1,
+   "isClosed": false,
+   "allowDeposits": true,
+   "createdAt": 1737098583000,
+   "ageDays": 666,
+   "dataStart": 1737158400000,
+   "dataEnd": 1794702633000,
+   "lastUpdated": 1794702633973,
+   "reconcilePct": 2.2074153694752954,
+   "anomalyNegPoints": 0
+  },
+  {
+   "address": "281474976688087",
+   "accountIndex": 281474976688087,
+   "accountType": 2,
+   "name": "Edge & Hedge (L/S Factors)",
+   "desc": "Strategy pool",
+   "l1Address": "0x42623454883485FC818082DF6187f60ec980Af8c",
+   "operatorFee": 20,
+   "equity": 1711039.065708,
+   "totalShares": 1197495273,
+   "sharePrice": 0.0014288482838194887,
+   "totalPerpsValue": 1711039.065708,
+   "totalSpotValue": 0,
+   "returnYtd": 12.178310011879901,
+   "returnAll": 41.125584062589816,
+   "maxDD": -26.43846884834199,
+   "sharpe": 0.9515180470396718,
+   "perfSeries": [
+    {
+     "date": "2025-09-19T00:00:00.000Z",
+     "sharePrice": 1,
+     "equity": 149604.2571037056
+    },
+    {
+     "date": "2025-09-20T00:00:00.000Z",
+     "sharePrice": 1.0183466643671644,
+     "equity": 160675.14551187868
+    },
+    {
+     "date": "2026-11-15T00:00:00.000Z",
+     "sharePrice": 1.4103131453448319,
+     "equity": 1709896.1202501107
+    },
+    {
+     "date": "2026-11-15T00:30:33.000Z",
+     "sharePrice": 1.4112558406258982,
+     "equity": 1711039.065708
+    }
+   ],
+   "baseSPDay": 1.4351312238017178,
+   "baseSPWeek": 1.380631708686862,
+   "baseSPMonth": 1.4285930725099707,
+   "baseSP3Month": 1.3782370833093474,
+   "baseSP6Month": 1.337106294102431,
+   "baseSPYtd": 1.2640339869240207,
+   "baseSPYear": 1.159285882382712,
+   "baseSPAll": 1,
+   "isClosed": false,
+   "allowDeposits": true,
+   "createdAt": 1758178783000,
+   "ageDays": 422,
+   "dataStart": 1758240000000,
+   "dataEnd": 1794702633000,
+   "lastUpdated": 1794702633908,
+   "reconcilePct": 0.004169305624304228,
+   "anomalyNegPoints": 0
+  }
+ ]
+}

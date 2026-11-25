@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hlp apphost</title>
+<style>
+:root{--bg:#0b0c0c;--panel:#141515;--line:#262829;--text:#e9e8e3;--muted:#8a8a8f;--accent:#97fce4;
+  font:13px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+aside{border-right:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:14px}
+h1{font-size:14px;margin:0}
+label{display:flex;gap:8px;align-items:center;color:var(--muted)}
+select{width:100%;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px}
+button{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer}
+main{padding:24px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.frame{max-width:760px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000}
+iframe{display:block;width:100%;height:420px;border:0}
+.log{max-width:760px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:12px ui-monospace,Menlo,monospace;color:var(--muted);white-space:pre-wrap;max-height:260px;overflow:auto}
+.log b{color:var(--accent);font-weight:500}
+.note{color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<aside>
+  <h1>hlp apphost</h1>
+  <div class="note">Replays recorded tool results into hlp's MCP Apps views. No network, no MCP server.</div>
+  <label style="flex-direction:column;align-items:stretch">fixture<select id="fx"></select></label>
+  <label><input type="checkbox" id="dark" checked> dark theme</label>
+  <label><input type="checkbox" id="tools" checked> host proxies tools/call</label>
+  <label><input type="checkbox" id="slow"> slow tools/call (1.5 s)</label>
+  <label><input type="checkbox" id="fail"> tools/call transport failure</label>
+  <label style="flex-direction:column;align-items:stretch">width<select id="width"><option>760</option><option>560</option><option>358</option></select></label>
+  <button id="reload">Reload view</button>
+</aside>
+<main>
+  <div class="frame" id="frameBox"></div>
+  <div class="log" id="log"></div>
+</main>
+<script>
+(async () => {
+  const $ = (id) => document.getElementById(id);
+  const fixtures = await (await fetch("/fixtures")).json();
+  const names = Object.keys(fixtures).filter((n) => fixtures[n].uri);
+  for (const n of names) $("fx").append(new Option(n + "  (" + fixtures[n].tool + ")", n));
+  let frame = null;
+
+  function log(kind, msg) {
+    const line = document.createElement("div");
+    const b = document.createElement("b"); b.textContent = kind + " ";
+    line.append(b, typeof msg === "string" ? msg : JSON.stringify(msg));
+    $("log").prepend(line);
+  }
+  const send = (m) => frame && frame.contentWindow.postMessage(Object.assign({ jsonrpc: "2.0" }, m), "*");
+
+  // Fresh confirm token expiry: recorded fixtures carry the fixed test clock.
+  function replayable(result) {
+    const r = JSON.parse(JSON.stringify(result));
+    const c = r._meta && r._meta["hlp/confirm"];
+    if (c) c.expiresAt = new Date(Date.now() + 60000).toISOString();
+    return r;
+  }
+
+  // Answer a view's tools/call from the fixtures.
+  function answer(name, args) {
+    if (name === "confirm_order") return fixtures["confirm-btc-ok"] && fixtures["confirm-btc-ok"].result;
+    if (name === "get_candles") {
+      const f = fixtures["chart-btc-" + (args.interval || "15m")];
+      if (f) return f.result;
+      return { isError: true, content: [{ type: "text", text: JSON.stringify({ error: { code: "NOT_FOUND", message: "no " + args.interval + " fixture (15m and 1d are recorded)" } }) }] };
+    }
+    const f = Object.values(fixtures).find((x) => x.tool === name);
+    return f ? f.result : { isError: true, content: [{ type: "text", text: JSON.stringify({ error: { code: "NOT_FOUND", message: "no fixture for " + name } }) }] };
+  }
+
+  window.addEventListener("message", async (ev) => {
+    if (!frame || ev.source !== frame.contentWindow) return;
+    const m = ev.data;
+    if (!m || m.jsonrpc !== "2.0") return;
+    const fx = fixtures[$("fx").value];
+    switch (m.method) {
+      case "ui/initialize":
+        log("←", "ui/initialize " + JSON.stringify(m.params.appInfo));
+        send({ id: m.id, result: {
+          protocolVersion: "2026-01-26",
+          hostInfo: { name: "hlp-apphost", version: "1" },
+          hostCapabilities: $("tools").checked ? { serverTools: {}, openLinks: {} } : {},
+          hostContext: { theme: $("dark").checked ? "dark" : "light", displayMode: "inline" },
+        } });
+        break;
+      case "ui/notifications/initialized":
+        log("←", "initialized; replaying " + $("fx").value);
+        send({ method: "ui/notifications/tool-input", params: { arguments: fx.arguments } });
+        send({ method: "ui/notifications/tool-result", params: replayable(fx.result) });
+        break;
+      case "ui/notifications/size-changed":
+        frame.style.height = Math.max(120, Math.min(1400, m.params.height)) + "px";
+        break;
+      case "tools/call":
+        log("←", "tools/call " + m.params.name + " " + JSON.stringify(m.params.arguments));
+        if (!$("tools").checked) { send({ id: m.id, error: { code: -32601, message: "tools/call not supported by this host" } }); break; }
+        if ($("slow").checked) await new Promise((r) => setTimeout(r, 1500));
+        if ($("fail").checked) { send({ id: m.id, error: { code: -32000, message: "connection lost" } }); break; }
+        send({ id: m.id, result: replayable(answer(m.params.name, m.params.arguments || {})) });
+        break;
+      case "ui/update-model-context":
+        log("model ←", (m.params.content || []).map((c) => c.text).join(" "));
+        send({ id: m.id, result: {} });
+        break;
+      case "ui/open-link":
+        log("←", "open-link " + m.params.url + " (not opened)");
+        send({ id: m.id, result: { isError: true } });
+        break;
+      default:
+        if (m.id != null) send({ id: m.id, error: { code: -32601, message: "method not found" } });
+    }
+  });
+
+  function load() {
+    const fx = fixtures[$("fx").value];
+    $("frameBox").style.maxWidth = $("width").value + "px";
+    frame = document.createElement("iframe");
+    frame.setAttribute("sandbox", "allow-scripts"); // like a real host: opaque origin
+    frame.src = "/view?uri=" + encodeURIComponent(fx.uri);
+    $("frameBox").replaceChildren(frame);
+    log("→", "load " + fx.uri);
+  }
+  $("fx").onchange = load; $("reload").onclick = load; $("width").onchange = load;
+  $("dark").onchange = () => send({ method: "ui/notifications/host-context-changed", params: { theme: $("dark").checked ? "dark" : "light" } });
+  $("tools").onchange = load;
+  load();
+})();
+</script>
+</body>
+</html>

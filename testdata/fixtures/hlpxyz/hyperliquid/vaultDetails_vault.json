@@ -1,0 +1,124 @@
+{
+ "name": "Long HYPE & BTC | Short Garbage",
+ "vaultAddress": "0xac26cf5f3c46b5e102048c65b977d2551b72a9c7",
+ "leader": "0xa380444a9299df2a15bddf949dd493bb6d30d939",
+ "description": "70% HYPE 30% BTC long\nShort portfolio may change but will always include a basket of at least 10+ high FDV high emission coins. Short side will be about 60% of notional",
+ "portfolio": [
+  [
+   "day",
+   {
+    "accountValueHistory": [
+     [
+      1794647880032,
+      "2774340.8000050001"
+     ],
+     [
+      1794656280065,
+      "2749628.4387360001"
+     ],
+     [
+      1794729480061,
+      "2721281.7755450001"
+     ],
+     [
+      1794735856632,
+      "2790525.9511910002"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1794647880032,
+      "0.0"
+     ],
+     [
+      1794656280065,
+      "-24712.361269"
+     ],
+     [
+      1794729480061,
+      "-29997.15446"
+     ],
+     [
+      1794735856632,
+      "39247.021186"
+     ]
+    ],
+    "vlm": "43367.86"
+   }
+  ],
+  [
+   "week",
+   {
+    "accountValueHistory": [
+     [
+      1794125880016,
+      "2733126.0422729999"
+     ],
+     [
+      1794133080024,
+      "2730005.378457"
+     ],
+     [
+      1794729480061,
+      "2721281.7755450001"
+     ],
+     [
+      1794735856632,
+      "2790525.9511910002"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1794125880016,
+      "0.0"
+     ],
+     [
+      1794133080024,
+      "-3120.663816"
+     ],
+     [
+      1794729480061,
+      "12657.143272"
+     ],
+     [
+      1794735856632,
+      "81901.318918"
+     ]
+    ],
+    "vlm": "248960.15"
+   }
+  ]
+ ],
+ "apr": 1.5051661092687336,
+ "followerState": null,
+ "leaderFraction": 0.5285022996750101,
+ "leaderCommission": 0.1,
+ "followers": [
+  {
+   "user": "0x01fc6ee647918f9f4b2b40944090267a9966ba6a",
+   "vaultEquity": "1636.7031756423",
+   "pnl": "1265.4031756423",
+   "allTimePnl": "1265.4031756423",
+   "daysFollowing": 563,
+   "vaultEntryTime": 1746067725196,
+   "lockupUntil": 1749918570125
+  },
+  {
+   "user": "0x0260ef0cdb2f34f59d076d0d67b4daa9d24e270b",
+   "vaultEquity": "21275.1613858798",
+   "pnl": "11275.1613858798",
+   "allTimePnl": "11275.1613858798",
+   "daysFollowing": 247,
+   "vaultEntryTime": 1773344064697,
+   "lockupUntil": 1773430465340
+  }
+ ],
+ "maxDistributable": 2243079.257085,
+ "maxWithdrawable": 0.0,
+ "isClosed": false,
+ "relationship": {
+  "type": "normal"
+ },
+ "allowDeposits": false,
+ "alwaysCloseOnWithdraw": true
+}

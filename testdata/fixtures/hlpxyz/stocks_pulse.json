@@ -1,0 +1,31 @@
+{
+ "asOf": 1794735658340,
+ "tiles": [
+  {
+   "symbol": "^GSPC",
+   "label": "S&P 500",
+   "kind": "equity",
+   "unit": "points",
+   "price": 7561.67,
+   "changePct": -0.4047468521152675,
+   "spark": [
+    7592.4,
+    7601.2998046875,
+    7574.5498046875,
+    7543.58984375
+   ]
+  },
+  {
+   "symbol": "CL=F",
+   "label": "CL",
+   "kind": "commodity",
+   "unit": "price",
+   "price": 88.56,
+   "changePct": -0.20283975659228792,
+   "spark": []
+  }
+ ],
+ "tone": "risk-off",
+ "headline": "Risk off",
+ "detail": "S&P −0.40% · VIX 19.3 +3.2% · 10Y 5.15%"
+}

@@ -1,0 +1,97 @@
+{
+  "dailyUserVlm": [
+    {
+      "date": "2026-11-01",
+      "userCross": "143060913.4199999869",
+      "userAdd": "135768867.6800000072",
+      "exchange": "2522459853.4699997902"
+    },
+    {
+      "date": "2026-11-02",
+      "userCross": "588400082.3300000429",
+      "userAdd": "227182253.8100000024",
+      "exchange": "6888770628.6000003815"
+    }
+  ],
+  "feeSchedule": {
+    "cross": "0.00045",
+    "add": "0.00015",
+    "spotCross": "0.0007",
+    "spotAdd": "0.0004",
+    "tiers": {
+      "vip": [
+        {
+          "ntlCutoff": "5000000.0",
+          "cross": "0.0004",
+          "add": "0.00012",
+          "spotCross": "0.0006",
+          "spotAdd": "0.0003"
+        },
+        {
+          "ntlCutoff": "25000000.0",
+          "cross": "0.00035",
+          "add": "0.00008",
+          "spotCross": "0.0005",
+          "spotAdd": "0.0002"
+        }
+      ],
+      "mm": [
+        {
+          "makerFractionCutoff": "0.005",
+          "add": "-0.00001"
+        },
+        {
+          "makerFractionCutoff": "0.015",
+          "add": "-0.00002"
+        }
+      ]
+    },
+    "referralDiscount": "0.04",
+    "stakingDiscountTiers": [
+      {
+        "bpsOfMaxSupply": "0.0",
+        "discount": "0.0"
+      },
+      {
+        "bpsOfMaxSupply": "0.0001",
+        "discount": "0.05"
+      },
+      {
+        "bpsOfMaxSupply": "0.001",
+        "discount": "0.1"
+      },
+      {
+        "bpsOfMaxSupply": "0.01",
+        "discount": "0.15"
+      },
+      {
+        "bpsOfMaxSupply": "0.1",
+        "discount": "0.2"
+      },
+      {
+        "bpsOfMaxSupply": "1.0",
+        "discount": "0.3"
+      },
+      {
+        "bpsOfMaxSupply": "5.0",
+        "discount": "0.4"
+      }
+    ]
+  },
+  "userCrossRate": "0.000144",
+  "userAddRate": "-0.00002",
+  "userSpotCrossRate": "0.00015",
+  "userSpotAddRate": "-0.00002",
+  "activeReferralDiscount": "0.0",
+  "trial": null,
+  "feeTrialEscrow": "0.0",
+  "nextTrialAvailableTimestamp": null,
+  "stakingLink": {
+    "type": "tradingUser",
+    "stakingUser": "0x423d7f725ae7056f03f7ef57f9d0303f91c62e06"
+  },
+  "activeStakingDiscount": {
+    "bpsOfMaxSupply": "5.0750439908",
+    "discount": "0.4"
+  }
+}

@@ -1,0 +1,315 @@
+{
+ "id": "trend",
+ "name": "Six-Market Trend",
+ "blurb": "Buys what is rising across crypto, stocks, metals and oil. Steps aside when a trend breaks.",
+ "status": "backtest",
+ "asOf": "2026-11-14",
+ "generated": "2026-11-15",
+ "dial": 0.3,
+ "grossCap": 5.0,
+ "split": "2023-01-01",
+ "markets": [
+  {
+   "coin": "BTC",
+   "label": "Bitcoin",
+   "venue": "Hyperliquid"
+  },
+  {
+   "coin": "ETH",
+   "label": "Ethereum",
+   "venue": "Hyperliquid"
+  },
+  {
+   "coin": "xyz:XYZ100",
+   "label": "Nasdaq-100",
+   "venue": "TradeXYZ"
+  }
+ ],
+ "periods": {
+  "all": {
+   "start": "2016-01-01",
+   "end": "2026-11-14",
+   "cagr": 0.4071,
+   "vol": 0.5387,
+   "sharpe": 0.91,
+   "maxDD": -0.702,
+   "calmar": 0.58,
+   "worstDay": -0.2102,
+   "worstMonth": -0.3484,
+   "liquidations": 0
+  },
+  "is": {
+   "start": "2016-01-01",
+   "end": "2022-12-31",
+   "cagr": 0.5052,
+   "vol": 0.5163,
+   "sharpe": 1.05,
+   "maxDD": -0.6153,
+   "calmar": 0.82,
+   "worstDay": -0.1878,
+   "worstMonth": -0.3484,
+   "liquidations": 0
+  },
+  "oos": {
+   "start": "2023-01-01",
+   "end": "2026-11-14",
+   "cagr": 0.2461,
+   "vol": 0.5773,
+   "sharpe": 0.67,
+   "maxDD": -0.4886,
+   "calmar": 0.5,
+   "worstDay": -0.2102,
+   "worstMonth": -0.2571,
+   "liquidations": 0
+  }
+ },
+ "years": [
+  {
+   "year": 2016,
+   "strategy": 0.5546,
+   "partial": false
+  },
+  {
+   "year": 2017,
+   "strategy": 1.784,
+   "partial": false
+  },
+  {
+   "year": 2018,
+   "strategy": -0.373,
+   "partial": false
+  }
+ ],
+ "nav": {
+  "t0": "2016-01-01",
+  "strategy": [
+   1.0,
+   0.9986,
+   0.9956
+  ],
+  "bench": [
+   1.0,
+   0.9993,
+   0.9976
+  ]
+ },
+ "book": {
+  "asOf": "2026-11-14",
+  "gross": 0.24,
+  "positions": [
+   {
+    "coin": "BTC",
+    "label": "Bitcoin",
+    "weight": 0.0
+   },
+   {
+    "coin": "ETH",
+    "label": "Ethereum",
+    "weight": 0.0
+   },
+   {
+    "coin": "xyz:XYZ100",
+    "label": "Nasdaq-100",
+    "weight": 0.0
+   }
+  ]
+ },
+ "costs": {
+  "fundingPerYear": 0.2392,
+  "feesPerYear": 0.0249,
+  "turnoverPerYear": 35.7,
+  "avgGross": 2.96,
+  "p95Gross": 4.93,
+  "maxGross": 5.71
+ },
+ "stress": [
+  {
+   "name": "Base case",
+   "cagr": 0.4071,
+   "maxDD": -0.702,
+   "liquidations": 0
+  },
+  {
+   "name": "TradeXYZ fees at the full rate",
+   "cagr": 0.3804,
+   "maxDD": -0.7082,
+   "liquidations": 0
+  },
+  {
+   "name": "Fees and slippage tripled",
+   "cagr": 0.3361,
+   "maxDD": -0.7238,
+   "liquidations": 0
+  }
+ ],
+ "dials": [
+  {
+   "dial": 0.1,
+   "avgGross": 1.01,
+   "isCagr": 0.1767,
+   "isDD": -0.2591,
+   "oosCagr": 0.1139,
+   "oosDD": -0.1949,
+   "allCagr": 0.1539,
+   "allDD": -0.3028,
+   "liquidations": 0
+  },
+  {
+   "dial": 0.15,
+   "avgGross": 1.51,
+   "isCagr": 0.2618,
+   "isDD": -0.3637,
+   "oosCagr": 0.1572,
+   "oosDD": -0.2806,
+   "allCagr": 0.2234,
+   "allDD": -0.4261,
+   "liquidations": 0
+  },
+  {
+   "dial": 0.2,
+   "avgGross": 2.02,
+   "isCagr": 0.3446,
+   "isDD": -0.4584,
+   "oosCagr": 0.1891,
+   "oosDD": -0.3483,
+   "allCagr": 0.2869,
+   "allDD": -0.5359,
+   "liquidations": 0
+  }
+ ],
+ "recipe": {
+  "data": "proxy",
+  "universe": {
+   "type": "fixed",
+   "markets": [
+    "BTC",
+    "ETH",
+    "xyz:XYZ100"
+   ]
+  },
+  "signal": {
+   "type": "breakout",
+   "lookbacks": [
+    21,
+    63,
+    126
+   ],
+   "side": "long"
+  },
+  "sizing": {
+   "type": "inverse_vol",
+   "dial": 0.3,
+   "vol_span": 30,
+   "cap": 3.0,
+   "gross_cap": 5.0
+  },
+  "split": {
+   "start": "2016-01-01",
+   "test_from": "2023-01-01"
+  }
+ },
+ "lab": {
+  "family": "trend",
+  "variant": 12,
+  "variantsInFamily": 14,
+  "hash": "0682d64aa544",
+  "testScored": "2026-11-12",
+  "scoredTest": {
+   "cagr": 0.2312,
+   "sharpe": 0.65,
+   "maxDD": -0.4888
+  },
+  "legacy": true
+ },
+ "bench": {
+  "name": "The same markets held in equal amounts, no borrowing",
+  "periods": {
+   "all": {
+    "start": "2016-01-01",
+    "end": "2026-11-14",
+    "cagr": 0.2116,
+    "vol": 0.2749,
+    "sharpe": 0.84,
+    "maxDD": -0.5375,
+    "calmar": 0.39,
+    "worstDay": -0.1581,
+    "worstMonth": -0.2109,
+    "liquidations": 0
+   },
+   "is": {
+    "start": "2016-01-01",
+    "end": "2022-12-31",
+    "cagr": 0.2373,
+    "vol": 0.2956,
+    "sharpe": 0.87,
+    "maxDD": -0.5375,
+    "calmar": 0.44,
+    "worstDay": -0.1581,
+    "worstMonth": -0.2109,
+    "liquidations": 0
+   },
+   "oos": {
+    "start": "2023-01-01",
+    "end": "2026-11-14",
+    "cagr": 0.1664,
+    "vol": 0.233,
+    "sharpe": 0.78,
+    "maxDD": -0.2545,
+    "calmar": 0.65,
+    "worstDay": -0.0842,
+    "worstMonth": -0.1567,
+    "liquidations": 0
+   }
+  }
+ },
+ "expo": {
+  "t0": "2023-01-01",
+  "long": [
+   1.177,
+   1.178,
+   1.309
+  ],
+  "short": [
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "trades": [
+  [
+   "2023-01-01",
+   "xyz:GOLD",
+   "Gold"
+  ],
+  [
+   "2023-01-01",
+   "xyz:SILVER",
+   "Silver"
+  ],
+  [
+   "2023-01-09",
+   "BTC",
+   "Bitcoin"
+  ]
+ ],
+ "boot": {
+  "all": {
+   "medCagr": 0.4076,
+   "p5Cagr": -0.1569,
+   "medDD": -0.5266,
+   "p95DD": -0.7582,
+   "pDD50": 0.5827,
+   "pDD70": 0.1115,
+   "pLoss": 0.1465
+  },
+  "oos": {
+   "medCagr": 0.2112,
+   "p5Cagr": -0.2439,
+   "medDD": -0.5598,
+   "p95DD": -0.791,
+   "pDD50": 0.669,
+   "pDD70": 0.167,
+   "pLoss": 0.2602
+  }
+ }
+}

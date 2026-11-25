@@ -1,0 +1,22 @@
+[
+  {
+    "coin": "SOL",
+    "side": "A",
+    "limitPx": "71.89",
+    "sz": "18.0",
+    "oid": 605976652399,
+    "timestamp": 1794735960951,
+    "origSz": "18.0",
+    "cloid": "0x2ba0024ae2c2358b2514c887aef2cb7c"
+  },
+  {
+    "coin": "FARTCOIN",
+    "side": "B",
+    "limitPx": "0.09369",
+    "sz": "4136.4",
+    "oid": 605976651687,
+    "timestamp": 1794735960951,
+    "origSz": "4136.4",
+    "cloid": "0x447832e4f3a422dd1f25242ffb21c99f"
+  }
+]

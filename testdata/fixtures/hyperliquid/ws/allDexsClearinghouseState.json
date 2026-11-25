@@ -1,0 +1,74 @@
+{
+ "channel": "allDexsClearinghouseState",
+ "data": {
+  "user": "0xf5d81a135f756ca16544e53c20fc20643ec3ad53",
+  "clearinghouseStates": [
+   [
+    "",
+    {
+     "marginSummary": {
+      "accountValue": "1670533.1848269999",
+      "totalNtlPos": "1223374.605918",
+      "totalRawUsd": "666857.6161409999",
+      "totalMarginUsed": "407791.535299"
+     },
+     "crossMarginSummary": {
+      "accountValue": "1670533.1848269999",
+      "totalNtlPos": "1223374.605918",
+      "totalRawUsd": "666857.6161409999",
+      "totalMarginUsed": "407791.535299"
+     },
+     "crossMaintenanceMarginUsed": "51437.227706",
+     "withdrawable": "1224407.6836620001",
+     "assetPositions": [
+      {
+       "type": "oneWay",
+       "position": {
+        "coin": "BTC",
+        "szi": "11.61721",
+        "leverage": {
+         "type": "cross",
+         "value": 3
+        },
+        "entryPx": "65632.9",
+        "positionValue": "760392.86334",
+        "unrealizedPnl": "-2079.399038",
+        "returnOnEquity": "-0.0081815397",
+        "liquidationPx": null,
+        "marginUsed": "253464.28778",
+        "maxLeverage": 40,
+        "cumFunding": {
+         "allTime": "-22408.635148",
+         "sinceOpen": "15.0813",
+         "sinceChange": "0.0"
+        }
+       }
+      }
+     ],
+     "time": 1794735535797
+    }
+   ],
+   [
+    "abcd",
+    {
+     "marginSummary": {
+      "accountValue": "0.0",
+      "totalNtlPos": "0.0",
+      "totalRawUsd": "0.0",
+      "totalMarginUsed": "0.0"
+     },
+     "crossMarginSummary": {
+      "accountValue": "0.0",
+      "totalNtlPos": "0.0",
+      "totalRawUsd": "0.0",
+      "totalMarginUsed": "0.0"
+     },
+     "crossMaintenanceMarginUsed": "0.0",
+     "withdrawable": "0.0",
+     "assetPositions": [],
+     "time": 1794735535797
+    }
+   ]
+  ]
+ }
+}
