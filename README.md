@@ -1,6 +1,6 @@
 <div align="center">
 
-# hlp
+# hlp cli
 
 **The Hyperliquid terminal for vaults.**
 
