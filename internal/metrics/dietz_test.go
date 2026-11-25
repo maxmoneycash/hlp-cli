@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // growingVault simulates a vault that earns exactly r per week on its

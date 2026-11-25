@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/pvault"
-	"github.com/maxmoneycash/hlp/internal/tui/glyph"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/pvault"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/glyph"
 )
 
 // Strategy-vault (HyperEVM pvault) cards. Until the integrator adds

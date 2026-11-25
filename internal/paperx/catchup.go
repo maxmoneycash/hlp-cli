@@ -5,7 +5,7 @@ import (
 
 	"github.com/shopspring/decimal"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Catch-up: a one-shot CLI process has no feed attached between commands.

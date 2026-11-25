@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // basePrompt is the static part of the system prompt. It stays byte-stable

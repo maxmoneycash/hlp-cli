@@ -14,8 +14,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
 )
 
 // Leg is one coin or basket with a relative weight (default 1).

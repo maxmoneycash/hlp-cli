@@ -156,7 +156,7 @@ func (f *fakeServer) client(mod ...func(*Options)) *Client {
 		RatePerMinute: 60000,
 		Now:           func() time.Time { return fixtureNow },
 		LoadingRetry:  time.Millisecond,
-		UserAgent:     "hlp-cli/test (+https://github.com/maxmoneycash/hlp)",
+		UserAgent:     "hlp-cli/test (+https://github.com/maxmoneycash/hlp-cli)",
 	}
 	for _, m := range mod {
 		m(&o)

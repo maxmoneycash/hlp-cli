@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Typed /info calls. Each is a thin wrapper over Client.Info with the exact

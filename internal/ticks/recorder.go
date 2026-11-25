@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // seenWindow bounds the tids remembered for dedupe (a reconnect snapshot

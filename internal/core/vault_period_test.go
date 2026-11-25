@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
 )
 
 type periodXYZ struct {

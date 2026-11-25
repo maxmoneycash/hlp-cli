@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
 )
 
 const testKey = "sk-test-SUPERSECRET-0123456789abcdef"

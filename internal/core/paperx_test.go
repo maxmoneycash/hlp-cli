@@ -4,10 +4,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/paperx"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/paperx"
 )
 
 // The fixture BTC book: bids 73499x1 73498x2 73497x3, asks 73501x1

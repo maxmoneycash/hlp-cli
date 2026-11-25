@@ -16,7 +16,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // ErrCapacity leaves incoming trades in the recorder's bounded memory window.

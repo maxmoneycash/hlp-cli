@@ -14,8 +14,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
 	"github.com/pelletier/go-toml/v2"
 )
 
@@ -742,7 +742,7 @@ func Save(path string, cfg Config) error {
 	return nil
 }
 
-const fileHeader = `# hlp configuration. https://github.com/maxmoneycash/hlp
+const fileHeader = `# hlp configuration. https://github.com/maxmoneycash/hlp-cli
 # Keys never go in this file: use HLP_AGENT_KEY / your LLM key env var, or the
 # OS keychain via ` + "`hlp auth`" + `. Unknown keys are an error.
 

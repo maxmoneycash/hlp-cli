@@ -12,10 +12,10 @@ import (
 	xterm "github.com/charmbracelet/x/term"
 	"github.com/spf13/cobra"
 
-	"github.com/maxmoneycash/hlp/internal/config"
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid/exchange"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid/exchange"
 )
 
 // AuthStatus is `hlp auth status` output. The key itself is never shown:

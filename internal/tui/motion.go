@@ -9,8 +9,8 @@ import (
 	tea "charm.land/bubbletea/v2"
 	"charm.land/lipgloss/v2"
 
-	"github.com/maxmoneycash/hlp/internal/tui/cards"
-	"github.com/maxmoneycash/hlp/internal/tui/glyph"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/cards"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/glyph"
 )
 
 // Motion with a cause (DESIGN.md section 7). Only two things move: the

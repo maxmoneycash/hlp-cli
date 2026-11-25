@@ -9,8 +9,8 @@ import (
 
 	"github.com/charmbracelet/colorprofile"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // G-T1: a thin level under a wall prints a non-zero size, and the order

@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy"
-	"github.com/maxmoneycash/hlp/internal/strategy/sim"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/sim"
 )
 
 // builtin is a Pine function implemented in Go.

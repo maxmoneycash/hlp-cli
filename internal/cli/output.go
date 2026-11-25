@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Mode is the resolved output mode for one invocation.

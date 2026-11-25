@@ -2,7 +2,7 @@
 # hlp installer: downloads a release binary, verifies its SHA-256 against the
 # release's checksums.txt, and installs it.
 #
-#   curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp/main/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.sh | sh
 #   curl -fsSL .../install.sh | sh -s -- --version v0.1.0 --dir /usr/local/bin
 #
 # Options (flags win over env):
@@ -16,10 +16,10 @@
 # `gh attestation verify` (needs the GitHub CLI) and refuses on failure.
 #
 # Advanced: HLP_INSTALL_BASE_URL overrides the download base (a mirror); the
-# script appends /<tag>/<file>. Default https://github.com/maxmoneycash/hlp/releases/download
+# script appends /<tag>/<file>. Default https://github.com/maxmoneycash/hlp-cli/releases/download
 set -eu
 
-REPO="maxmoneycash/hlp"
+REPO="maxmoneycash/hlp-cli"
 BIN="hlp"
 BASE_URL="${HLP_INSTALL_BASE_URL:-https://github.com/${REPO}/releases/download}"
 VERSION="${HLP_VERSION:-latest}"

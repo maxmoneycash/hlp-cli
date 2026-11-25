@@ -11,10 +11,10 @@ import (
 
 	"github.com/sahilm/fuzzy"
 
-	"github.com/maxmoneycash/hlp/internal/chart"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid/ws"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid/ws"
 )
 
 // ---- markets ----

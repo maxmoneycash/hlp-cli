@@ -7,8 +7,8 @@ import (
 
 	"github.com/charmbracelet/colorprofile"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 var axisLabel = regexp.MustCompile(`\s[0-9][0-9,]*(\.[0-9]+)?\s*$`)

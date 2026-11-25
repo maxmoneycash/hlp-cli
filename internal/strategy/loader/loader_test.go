@@ -7,11 +7,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/llm"
-	"github.com/maxmoneycash/hlp/internal/strategy"
-	"github.com/maxmoneycash/hlp/internal/strategy/internal/testkit"
-	"github.com/maxmoneycash/hlp/internal/strategy/loader"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/llm"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/internal/testkit"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/loader"
 )
 
 type fakeLLM struct{ name string }

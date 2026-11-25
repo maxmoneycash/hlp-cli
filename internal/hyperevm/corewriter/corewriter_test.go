@@ -10,7 +10,7 @@ import (
 
 	"golang.org/x/crypto/sha3"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
 )
 
 func hexb(t *testing.T, s string) []byte {

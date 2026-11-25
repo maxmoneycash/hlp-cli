@@ -8,9 +8,9 @@ import (
 
 	"github.com/charmbracelet/x/ansi"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/tui/glyph"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/glyph"
 )
 
 // indexCard renders hlp.xyz vault indexes: the list (name, slug, kind), or

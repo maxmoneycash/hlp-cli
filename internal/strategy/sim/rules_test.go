@@ -4,8 +4,8 @@ import (
 	"math"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
 )
 
 func dogeEngine(capital float64) *Engine {

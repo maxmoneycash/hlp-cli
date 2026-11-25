@@ -10,8 +10,8 @@ import (
 
 	"github.com/charmbracelet/colorprofile"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // Style is the candle glyph technique, including the setup-rush styles.

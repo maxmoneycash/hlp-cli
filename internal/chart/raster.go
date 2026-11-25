@@ -10,7 +10,7 @@ import (
 	"golang.org/x/image/font/basicfont"
 	"golang.org/x/image/math/fixed"
 
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // boxSpec describes a box-drawing glyph: stroke weight per arm (up, right,

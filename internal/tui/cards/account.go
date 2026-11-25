@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/tui/glyph"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/glyph"
 )
 
 // accountCard: equity is the focal number; one line of balances; the

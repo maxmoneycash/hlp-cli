@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
 )
 
 // TestHumanErrorStripsControls: a shared arena file names an entrant path

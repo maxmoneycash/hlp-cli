@@ -17,7 +17,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
 )
 
 // Address is the CoreWriter system contract on HyperEVM (both chains).

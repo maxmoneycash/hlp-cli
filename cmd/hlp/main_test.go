@@ -4,7 +4,7 @@ import (
 	"runtime/debug"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/cli"
+	"github.com/maxmoneycash/hlp-cli/internal/cli"
 )
 
 func TestFromBuildInfo(t *testing.T) {

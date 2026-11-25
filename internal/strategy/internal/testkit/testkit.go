@@ -14,7 +14,7 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // RepoRoot returns the repository root (located from this file).

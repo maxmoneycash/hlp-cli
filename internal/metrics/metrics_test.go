@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 const fixtures = "../../testdata/fixtures/hlpxyz"

@@ -7,8 +7,8 @@
 Rank every vault, read its tearsheet, backtest your own thesis or Pine script, and watch AI
 strategies trade on paper. Candlestick charts, a JSON CLI and an MCP server included.
 
-[![release](https://img.shields.io/github/v/release/maxmoneycash/hlp?sort=semver&include_prereleases)](https://github.com/maxmoneycash/hlp/releases)
-[![ci](https://github.com/maxmoneycash/hlp/actions/workflows/ci.yml/badge.svg)](https://github.com/maxmoneycash/hlp/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/maxmoneycash/hlp-cli?sort=semver&include_prereleases)](https://github.com/maxmoneycash/hlp-cli/releases)
+[![ci](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 <img src="docs/screenshots/after/02-chart-btc-15m-inline.png" alt="The hlp shell: a live BTC 15m chart with the price as big digits, hollow up candles, moving averages and volume" width="880">
@@ -16,7 +16,7 @@ strategies trade on paper. Candlestick charts, a JSON CLI and an MCP server incl
 </div>
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.sh | sh
 ```
 
 No keys, no account, no sign-up. Everything reads public data until you opt in.
@@ -28,13 +28,13 @@ No keys, no account, no sign-up. Everything reads public data until you opt in.
 ## Install
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp/main/install.sh | sh  # macOS and Linux, verifies SHA-256
-go install github.com/maxmoneycash/hlp/cmd/hlp@latest                               # Go 1.27+
+curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.sh | sh  # macOS and Linux, verifies SHA-256
+go install github.com/maxmoneycash/hlp-cli/cmd/hlp@latest                               # Go 1.27+
 ```
 
-Or download a binary from [Releases](https://github.com/maxmoneycash/hlp/releases) and check it against
+Or download a binary from [Releases](https://github.com/maxmoneycash/hlp-cli/releases) and check it against
 `checksums.txt`. Every release archive also carries signed build provenance:
-`gh attestation verify hlp_<version>_<os>_<arch>.tar.gz -R maxmoneycash/hlp`, or run `install.sh` with
+`gh attestation verify hlp_<version>_<os>_<arch>.tar.gz -R maxmoneycash/hlp-cli`, or run `install.sh` with
 `HLP_INSTALL_VERIFY=1` to have it check that for you. Archives include shell completions
 (`completions/`) and the licences of every bundled dependency (`third_party_licenses/`).
 
@@ -44,7 +44,7 @@ quarantine flag (it removes one if a mirror or wrapper set it, and says so). The
 From source:
 
 ```sh
-git clone https://github.com/maxmoneycash/hlp && cd hlp
+git clone https://github.com/maxmoneycash/hlp-cli && cd hlp
 make build          # writes bin/hlp
 ./bin/hlp --help
 ```

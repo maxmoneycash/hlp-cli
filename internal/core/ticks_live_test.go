@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/ticks"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/ticks"
 )
 
 // TestLiveTickCandles streams real BTC trades for a few seconds into a

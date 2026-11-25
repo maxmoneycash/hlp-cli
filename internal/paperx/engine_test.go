@@ -11,8 +11,8 @@ import (
 
 	"github.com/shopspring/decimal"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
 )
 
 func d(s string) decimal.Decimal { return decimal.RequireFromString(s) }

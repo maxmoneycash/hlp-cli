@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // Named is one series on a line chart.

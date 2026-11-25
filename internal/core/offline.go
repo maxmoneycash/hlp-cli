@@ -15,8 +15,8 @@ import (
 
 	"github.com/sahilm/fuzzy"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
 )
 
 // FixtureReader is an offline hyperliquid.Reader backed by JSON files in a

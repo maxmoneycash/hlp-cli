@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/metrics"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/metrics"
 )
 
 // Expected values come from the reviewed original public ne/wt functions,

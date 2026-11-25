@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/evm"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
 )
 
 // Telemetry is hlp.xyz's /api/pvault (keeper and bot state, history).

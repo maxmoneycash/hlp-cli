@@ -14,7 +14,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
 )
 
 // snapshotRPC is a JSON-RPC server answering eth_call from

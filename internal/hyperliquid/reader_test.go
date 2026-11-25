@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 func near(a, b, tol float64) bool { return math.Abs(a-b) <= tol }

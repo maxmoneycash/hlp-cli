@@ -4,7 +4,7 @@ import (
 	"math"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Wire -> domain mappers. Exported so ws can reuse them for stream frames.

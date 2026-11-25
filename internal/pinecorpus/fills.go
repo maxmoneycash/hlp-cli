@@ -4,7 +4,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // FillsToTrades rebuilds TradingView-style trades from a fill list (hlp's

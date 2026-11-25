@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Feed1m is the corpus's only committed feed: Binance ETH-USDT perp 1m bars

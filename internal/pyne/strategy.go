@@ -8,8 +8,8 @@ import (
 	"regexp"
 	"sort"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
 )
 
 // This file adapts PYNE to strategy.Strategy, the interface hlp's builtin

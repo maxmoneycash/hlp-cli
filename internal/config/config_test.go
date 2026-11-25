@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 func noEnv(string) string { return "" }

@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 var t0 = time.Date(2025, 4, 1, 0, 0, 0, 0, time.UTC)

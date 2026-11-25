@@ -9,11 +9,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy"
-	"github.com/maxmoneycash/hlp/internal/strategy/internal/testkit"
-	"github.com/maxmoneycash/hlp/internal/strategy/paper"
-	"github.com/maxmoneycash/hlp/internal/strategy/thesis"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/internal/testkit"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/paper"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/thesis"
 )
 
 // feed is a fake paper.Feed: history from a testkit.Source, live bars pushed

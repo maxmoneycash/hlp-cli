@@ -16,12 +16,12 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/maxmoneycash/hlp/internal/config"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/llm"
-	"github.com/maxmoneycash/hlp/internal/strategy"
-	"github.com/maxmoneycash/hlp/internal/strategy/pine"
-	"github.com/maxmoneycash/hlp/internal/strategy/thesis"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/llm"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/pine"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/thesis"
 )
 
 // Kinds of strategy references.

@@ -4,7 +4,7 @@ import (
 	"math"
 	"sort"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // IndexWebsiteStatistics identifies the public client's ne/wt formula, applied

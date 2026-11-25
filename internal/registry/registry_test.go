@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 const hlpAddr = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"

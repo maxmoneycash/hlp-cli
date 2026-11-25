@@ -13,11 +13,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/config"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/evm"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 const hlFixtures = "../../testdata/fixtures/hyperliquid/info"

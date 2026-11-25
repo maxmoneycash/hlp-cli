@@ -7,11 +7,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/evm"
-	"github.com/maxmoneycash/hlp/internal/pvault"
-	"github.com/maxmoneycash/hlp/internal/tui/cards"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/pvault"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/cards"
 )
 
 // pvault commands: read-only HyperEVM strategy vaults (the hlp.xyz pvault

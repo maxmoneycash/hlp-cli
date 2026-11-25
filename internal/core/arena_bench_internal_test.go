@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy"
-	"github.com/maxmoneycash/hlp/internal/strategy/paper"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/paper"
 )
 
 type decidingStrat struct{ name string }

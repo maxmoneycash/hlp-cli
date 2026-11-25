@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/config"
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Intent is a normalized mutating action, checked before anything is signed.

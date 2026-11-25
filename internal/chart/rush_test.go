@@ -8,8 +8,8 @@ import (
 
 	"github.com/charmbracelet/colorprofile"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // TestRushGolden pins every setup-rush style on three skins at card and pane

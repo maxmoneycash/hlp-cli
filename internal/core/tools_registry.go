@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/registry"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/registry"
 )
 
 // CardDiscover renders `hlp vaults discover`. Data: *registry.Discovery.

@@ -11,9 +11,9 @@ import (
 
 	"github.com/shopspring/decimal"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
-	"github.com/maxmoneycash/hlp/internal/paperx"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/paperx"
 )
 
 // Manual paper trading on the live-book paper exchange (internal/paperx):

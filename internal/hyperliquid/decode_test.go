@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // TestDecodeInfoFixtures decodes every info fixture into its wire type. A

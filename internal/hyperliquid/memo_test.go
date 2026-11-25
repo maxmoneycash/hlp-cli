@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 func TestAllMidsSharedAcrossConcurrentCallers(t *testing.T) {

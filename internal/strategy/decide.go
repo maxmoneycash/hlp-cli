@@ -17,8 +17,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/llm"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/llm"
 )
 
 // macroRule tells the model how to treat the PREDICTION_MARKETS block.

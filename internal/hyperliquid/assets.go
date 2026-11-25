@@ -14,7 +14,7 @@ import (
 
 	"github.com/sahilm/fuzzy"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Registry maps user input to markets and asset ids:

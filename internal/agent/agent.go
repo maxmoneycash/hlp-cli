@@ -12,8 +12,8 @@ import (
 
 	"github.com/google/jsonschema-go/jsonschema"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/llm"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/llm"
 )
 
 // EventKind classifies agent progress events for the TUI.

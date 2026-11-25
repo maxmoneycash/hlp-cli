@@ -9,9 +9,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
 )
 
 func tool(t *testing.T, name string) Tool {

@@ -3,7 +3,7 @@ package cards
 import (
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
 )
 
 // priceCard is the quote card of get_price. One coin: the mid is the one

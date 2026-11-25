@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
 )
 
 // Role of a message.
@@ -119,7 +119,7 @@ const (
 // openRouterHeaders are OpenRouter's optional app-attribution headers. They
 // identify the app, never the user.
 var openRouterHeaders = map[string]string{
-	"HTTP-Referer": "https://github.com/maxmoneycash/hlp",
+	"HTTP-Referer": "https://github.com/maxmoneycash/hlp-cli",
 	"X-Title":      "hlp",
 }
 

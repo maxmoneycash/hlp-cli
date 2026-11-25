@@ -19,7 +19,7 @@ import (
 	"golang.org/x/image/font/opentype"
 	"golang.org/x/image/math/fixed"
 
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // shot renders a Grid the way a GPU terminal (Ghostty, Kitty, WezTerm)

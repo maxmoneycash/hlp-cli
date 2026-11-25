@@ -13,7 +13,7 @@ import (
 	"github.com/charmbracelet/colorprofile"
 	"github.com/charmbracelet/x/ansi"
 
-	"github.com/maxmoneycash/hlp/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
 )
 
 // TestDumpScreens renders real frames against core's offline fixture env

@@ -11,7 +11,7 @@ import (
 	tea "charm.land/bubbletea/v2"
 	"github.com/charmbracelet/x/ansi"
 
-	"github.com/maxmoneycash/hlp/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
 )
 
 // The rush shell chrome (DESIGN.md sections 4 to 7).

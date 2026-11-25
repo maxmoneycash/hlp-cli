@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/maxmoneycash/hlp/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
 )
 
 // OpenAIOptions configure an OpenAI-compatible Chat Completions provider

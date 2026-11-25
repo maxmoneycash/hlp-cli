@@ -8,7 +8,7 @@ import (
 	"github.com/charmbracelet/colorprofile"
 	"github.com/charmbracelet/x/ansi"
 
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // Layer orders paint priority: a higher layer may overwrite a lower one.

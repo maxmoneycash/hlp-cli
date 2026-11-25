@@ -78,5 +78,5 @@ release:
   prerelease: auto
   name_template: "hlp cli {{ .Tag }}"
   footer: |
-    Install: `curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp/main/install.sh | sh`
-    or `go install github.com/maxmoneycash/hlp/cmd/hlp@{{ .Tag }}`. Verify downloads against `checksums.txt`.
+    Install: `curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.sh | sh`
+    or `go install github.com/maxmoneycash/hlp-cli/cmd/hlp@{{ .Tag }}`. Verify downloads against `checksums.txt`.

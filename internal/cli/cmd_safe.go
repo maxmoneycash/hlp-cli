@@ -10,11 +10,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/evm"
-	"github.com/maxmoneycash/hlp/internal/hyperevm/safe"
-	"github.com/maxmoneycash/hlp/internal/pvault"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperevm/safe"
+	"github.com/maxmoneycash/hlp-cli/internal/pvault"
 )
 
 // safe commands: read-only contract-account (Safe) support for HyperCore

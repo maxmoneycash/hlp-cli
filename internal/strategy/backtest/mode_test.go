@@ -5,11 +5,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy"
-	"github.com/maxmoneycash/hlp/internal/strategy/backtest"
-	"github.com/maxmoneycash/hlp/internal/strategy/internal/testkit"
-	"github.com/maxmoneycash/hlp/internal/strategy/sim"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/backtest"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/internal/testkit"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/sim"
 )
 
 func holdOnce(size float64) *funcStrategy {

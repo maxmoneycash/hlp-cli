@@ -4,7 +4,7 @@ import (
 	"math"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
 )
 
 // Chart entry points, indirected so card-layout golden tests stay stable

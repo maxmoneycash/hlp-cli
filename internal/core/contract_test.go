@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 func TestClosePosition(t *testing.T) {

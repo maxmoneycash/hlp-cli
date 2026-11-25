@@ -14,9 +14,9 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/maxmoneycash/hlp/internal/config"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/llm"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/llm"
 )
 
 // LLMConfig configures an LLM-driven strategy (an "AI vault" bot).

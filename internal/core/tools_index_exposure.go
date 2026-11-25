@@ -4,7 +4,7 @@ import (
 	"context"
 	"sort"
 
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
 )
 
 type indexExposureSource interface {

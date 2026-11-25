@@ -5,6 +5,11 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-24
+
+### Changed
+- The repository and Go module moved to `github.com/maxmoneycash/hlp-cli`.
+
 ## [0.1.0] - 2026-11-24
 
 ### Added

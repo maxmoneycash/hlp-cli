@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
 )
 
 // Audit S1: a shared bot/arena YAML must not pick the endpoint or the env

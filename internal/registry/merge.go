@@ -3,7 +3,7 @@ package registry
 import (
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Row is a registry entry joined with live data from the vault universe

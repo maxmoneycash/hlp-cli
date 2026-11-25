@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
 )
 
 type analyticsXYZ struct {

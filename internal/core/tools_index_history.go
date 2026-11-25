@@ -6,9 +6,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/metrics"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/metrics"
 )
 
 // IndexHistory is an explicitly labeled local allocation replay, not an

@@ -8,8 +8,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	hlpskill "github.com/maxmoneycash/hlp/skills/hlp"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	hlpskill "github.com/maxmoneycash/hlp-cli/skills/hlp"
 )
 
 // skillDirs are where each agent reads user-level skills, relative to $HOME.

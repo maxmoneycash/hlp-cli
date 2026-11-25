@@ -15,9 +15,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/chart"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // Geometry from setup-rush core.js (AXIS_W, AXIS_H) and candle-paint.js.

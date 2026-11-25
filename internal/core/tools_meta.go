@@ -8,11 +8,11 @@ import (
 
 	"github.com/google/jsonschema-go/jsonschema"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/paperx"
-	"github.com/maxmoneycash/hlp/internal/pvault"
-	"github.com/maxmoneycash/hlp/internal/registry"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/paperx"
+	"github.com/maxmoneycash/hlp-cli/internal/pvault"
+	"github.com/maxmoneycash/hlp-cli/internal/registry"
 )
 
 // ToolSchema describes one tool for agents (`hlp schema <tool>`).

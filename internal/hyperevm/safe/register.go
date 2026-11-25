@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
-	"github.com/maxmoneycash/hlp/internal/hyperevm/corewriter"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperevm/corewriter"
 )
 
 // Agent validity bounds (days). HL parses the expiry from the name suffix;

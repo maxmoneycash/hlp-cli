@@ -15,7 +15,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Endpoints for one network.
@@ -53,7 +53,7 @@ const DefaultPenalty = 5 * time.Second
 const maxBody = 64 << 20
 
 // DefaultUserAgent is sent when Options.UserAgent is empty.
-const DefaultUserAgent = "hlp/dev (+https://github.com/maxmoneycash/hlp)"
+const DefaultUserAgent = "hlp/dev (+https://github.com/maxmoneycash/hlp-cli)"
 
 // Options configures a Client. Zero values pick safe defaults.
 type Options struct {
@@ -61,7 +61,7 @@ type Options struct {
 	Endpoints *Endpoints   // override (tests point this at httptest servers)
 	HTTP      *http.Client // default: 15s timeout
 	CacheDir  string       // on-disk cache for meta, perpDexs, stats vaults ("" = memory only)
-	UserAgent string       // default "hlp/<version> (+https://github.com/maxmoneycash/hlp)"
+	UserAgent string       // default "hlp/<version> (+https://github.com/maxmoneycash/hlp-cli)"
 	Limiter   *Limiter     // shared across clients in one process; default NewLimiter(1200, time.Minute)
 	Now       func() time.Time
 }

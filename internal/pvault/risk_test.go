@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
 )
 
 // A recorded live testnet vault: testnet positions, mainnet depth10 (p10)

@@ -9,10 +9,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/maxmoneycash/hlp/internal/chart"
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/ticks"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/ticks"
 )
 
 // renderTicks draws get_tick_candles for a terminal or pipe: the shared

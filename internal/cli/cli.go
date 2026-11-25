@@ -22,15 +22,15 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 
-	"github.com/maxmoneycash/hlp/internal/agent"
-	"github.com/maxmoneycash/hlp/internal/chart"
-	"github.com/maxmoneycash/hlp/internal/cli/mcp"
-	"github.com/maxmoneycash/hlp/internal/config"
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/llm"
-	"github.com/maxmoneycash/hlp/internal/tui"
-	"github.com/maxmoneycash/hlp/internal/tui/cards"
+	"github.com/maxmoneycash/hlp-cli/internal/agent"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/cli/mcp"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/llm"
+	"github.com/maxmoneycash/hlp-cli/internal/tui"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/cards"
 )
 
 // BuildInfo is injected by main via -ldflags.

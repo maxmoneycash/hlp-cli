@@ -14,7 +14,7 @@ on:
 permissions:
   contents: write
   # Signed build provenance for the archives and checksums.txt
-  # (verify with `gh attestation verify <file> -R maxmoneycash/hlp`).
+  # (verify with `gh attestation verify <file> -R maxmoneycash/hlp-cli`).
   id-token: write
   attestations: write
 

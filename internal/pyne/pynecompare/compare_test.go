@@ -20,10 +20,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/pyne"
-	"github.com/maxmoneycash/hlp/internal/strategy/backtest"
-	"github.com/maxmoneycash/hlp/internal/strategy/pine"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/pyne"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/backtest"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/pine"
 )
 
 func repoRoot() string {

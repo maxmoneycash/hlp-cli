@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // UnmarshalJSON accepts the columnar "t1" object and also the array form

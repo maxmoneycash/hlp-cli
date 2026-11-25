@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/evm"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
-	"github.com/maxmoneycash/hlp/internal/pvault"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/pvault"
 )
 
 // D-T6 / AGENT-UX #4: a name search ranks the live namesake first and

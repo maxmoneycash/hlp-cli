@@ -8,9 +8,9 @@ import (
 
 	sdk "github.com/modelcontextprotocol/go-sdk/mcp"
 
-	"github.com/maxmoneycash/hlp/internal/cli/mcp/apps"
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/cli/mcp/apps"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
 )
 
 // uiClient declares MCP Apps support the way Claude Desktop does.

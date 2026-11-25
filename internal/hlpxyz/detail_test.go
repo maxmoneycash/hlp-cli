@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 func TestDecodeT1Fixture(t *testing.T) {
@@ -409,7 +409,7 @@ func TestLiveHLPXYZ(t *testing.T) {
 		t.Skip("set HLP_LIVE=1 to run against www.hlp.xyz")
 	}
 	c := New(Options{
-		UserAgent: "hlp-cli/test (+https://github.com/maxmoneycash/hlp)",
+		UserAgent: "hlp-cli/test (+https://github.com/maxmoneycash/hlp-cli)",
 		HTTP:      &http.Client{Timeout: 30 * time.Second, Transport: logTransport{t}},
 	})
 	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)

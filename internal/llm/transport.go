@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
 )
 
 // Error is an upstream provider failure. It never contains the API key or

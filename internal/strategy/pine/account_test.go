@@ -9,11 +9,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy/backtest"
-	"github.com/maxmoneycash/hlp/internal/strategy/internal/testkit"
-	"github.com/maxmoneycash/hlp/internal/strategy/pine"
-	"github.com/maxmoneycash/hlp/internal/strategy/sim"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/backtest"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/internal/testkit"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/pine"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/sim"
 )
 
 func runOn(t *testing.T, src, coin string, cs []domain.Candle, o backtest.Options, po pine.Options) *backtest.Result {

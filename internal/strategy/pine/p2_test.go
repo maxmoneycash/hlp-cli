@@ -4,9 +4,9 @@ import (
 	"math"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy/backtest"
-	"github.com/maxmoneycash/hlp/internal/strategy/pine"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/backtest"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/pine"
 )
 
 // B8: v5 const int / const int truncates; v6 returns the quotient.

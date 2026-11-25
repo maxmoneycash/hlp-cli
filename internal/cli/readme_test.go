@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
 )
 
 // readmeCommands returns every `hlp …` line inside the README's sh code

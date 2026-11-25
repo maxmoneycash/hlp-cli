@@ -26,7 +26,7 @@ import (
 
 	sdk "github.com/modelcontextprotocol/go-sdk/mcp"
 
-	"github.com/maxmoneycash/hlp/internal/cli/mcp/apps"
+	"github.com/maxmoneycash/hlp-cli/internal/cli/mcp/apps"
 )
 
 //go:embed index.html fixtures/*.json

@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
-	hlpskill "github.com/maxmoneycash/hlp/skills/hlp"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
+	hlpskill "github.com/maxmoneycash/hlp-cli/skills/hlp"
 )
 
 // agentsTools reads the tool table of AGENTS.md: rows of

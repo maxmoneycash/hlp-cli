@@ -3,7 +3,7 @@ package chart
 import (
 	"math"
 
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // BarsOpts configures BarsWith.

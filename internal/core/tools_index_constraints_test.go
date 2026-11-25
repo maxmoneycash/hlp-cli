@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
 )
 
 type constraintSourceStub struct {

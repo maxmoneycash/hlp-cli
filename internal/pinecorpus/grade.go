@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Engine is anything that can backtest a corpus probe: hlp's builtin

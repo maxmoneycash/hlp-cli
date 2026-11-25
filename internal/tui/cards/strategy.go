@@ -14,12 +14,12 @@ import (
 	gstyles "charm.land/glamour/v2/styles"
 	"charm.land/lipgloss/v2"
 
-	"github.com/maxmoneycash/hlp/internal/chart"
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/theme"
-	"github.com/maxmoneycash/hlp/internal/tui/glyph"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/glyph"
 )
 
 // backtestCard: total return as the focal number, equity vs benchmarks,

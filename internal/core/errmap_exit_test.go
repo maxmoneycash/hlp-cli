@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
 )
 
 // TestAsErrorExitCodes locks the exit-code contract: 4 (retryable, with

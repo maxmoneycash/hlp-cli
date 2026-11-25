@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
 )
 
 func TestOpenRouterPreset(t *testing.T) {
@@ -46,7 +46,7 @@ func TestOpenRouterPreset(t *testing.T) {
 	if err != nil || msg.Content != `{"ok":true}` {
 		t.Fatalf("chat %q %v", msg.Content, err)
 	}
-	if got.Get("Authorization") != "Bearer "+testKey || got.Get("X-Title") != "hlp" || !strings.Contains(got.Get("HTTP-Referer"), "github.com/maxmoneycash/hlp") {
+	if got.Get("Authorization") != "Bearer "+testKey || got.Get("X-Title") != "hlp" || !strings.Contains(got.Get("HTTP-Referer"), "github.com/maxmoneycash/hlp-cli") {
 		t.Fatalf("headers %v", got)
 	}
 	if !strings.Contains(body, `"model":"anthropic/claude-sonnet-5"`) || !strings.Contains(body, `"json_object"`) {

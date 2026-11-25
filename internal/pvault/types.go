@@ -3,7 +3,7 @@ package pvault
 import (
 	"strconv"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
 )
 
 // Decimals and fixed-point scales used by the strategy-vault contracts.

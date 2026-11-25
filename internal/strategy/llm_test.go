@@ -11,11 +11,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/llm"
-	"github.com/maxmoneycash/hlp/internal/strategy"
-	"github.com/maxmoneycash/hlp/internal/strategy/backtest"
-	"github.com/maxmoneycash/hlp/internal/strategy/internal/testkit"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/llm"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/backtest"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/internal/testkit"
 )
 
 // fakeLLM replays canned replies and records requests. No network.

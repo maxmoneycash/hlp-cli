@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/pineforge"
-	"github.com/maxmoneycash/hlp/internal/pyne"
+	"github.com/maxmoneycash/hlp-cli/internal/pineforge"
+	"github.com/maxmoneycash/hlp-cli/internal/pyne"
 )
 
 // Pine engine selection (`--engine builtin|pyne|pineforge|auto`).

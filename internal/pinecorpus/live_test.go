@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/pinecorpus"
-	"github.com/maxmoneycash/hlp/internal/strategy/pine"
+	"github.com/maxmoneycash/hlp-cli/internal/pinecorpus"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/pine"
 )
 
 // These tests read a real corpus checkout and skip without one:

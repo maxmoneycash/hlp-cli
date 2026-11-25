@@ -12,8 +12,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
 )
 
 // isolate keeps tests away from the user's config, cache and keychain env.

@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid/ws"
-	"github.com/maxmoneycash/hlp/internal/paperx"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid/ws"
+	"github.com/maxmoneycash/hlp-cli/internal/paperx"
 )
 
 func shortAddr(a string) string {

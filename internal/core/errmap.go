@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
-	"github.com/maxmoneycash/hlp/internal/registry"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/registry"
 )
 
 // AsError maps any error to a structured *Error with a stable Code, so every

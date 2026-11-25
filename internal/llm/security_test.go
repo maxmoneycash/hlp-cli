@@ -8,7 +8,7 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
 )
 
 const agentKeyValue = "0xdeadbeefTRADINGKEY0000000000000000000000000000000000000000000000"

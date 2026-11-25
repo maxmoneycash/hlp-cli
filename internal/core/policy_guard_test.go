@@ -11,10 +11,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/config"
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Policy checks: network allowlist, trading expiry, allowed vaults, order

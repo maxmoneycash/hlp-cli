@@ -10,9 +10,9 @@ import (
 
 	"charm.land/lipgloss/v2"
 
-	"github.com/maxmoneycash/hlp/internal/chart"
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // rowLimit picks how many table rows fit: compact 5 (DESIGN.md section 5.1

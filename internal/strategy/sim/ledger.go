@@ -13,7 +13,7 @@ import (
 	"math"
 	"sort"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Pos is one net perp position.

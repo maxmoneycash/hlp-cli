@@ -3,7 +3,7 @@ package core
 import (
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 func TestVaultDirectoryFiltersAreExplicit(t *testing.T) {

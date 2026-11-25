@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 func TestMarketCtx(t *testing.T) {

@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/strategy/sim"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/sim"
 )
 
 // This file keeps the strategy's trade list from FILLS (spec A1, B6): the

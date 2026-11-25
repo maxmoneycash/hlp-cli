@@ -4,7 +4,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
 )
 
 // TestChartNamesInSync keeps the chart.style and chart.theme enumerations

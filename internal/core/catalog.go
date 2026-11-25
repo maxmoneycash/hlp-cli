@@ -3,7 +3,7 @@ package core
 import (
 	"slices"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Input structs: the public, versioned contract of every command. Field json

@@ -3,8 +3,8 @@ package chart
 import (
 	"math"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // lowerBlocks[k] fills the bottom k/8 of a cell (index 0 = blank).

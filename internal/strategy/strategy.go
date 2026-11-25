@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Spec declares what a strategy needs.

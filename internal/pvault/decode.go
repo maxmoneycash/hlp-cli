@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
 )
 
 // Struct sizes in words. Any other length is rejected: a future struct

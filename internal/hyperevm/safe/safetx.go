@@ -16,7 +16,7 @@ import (
 
 	"golang.org/x/crypto/sha3"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
 )
 
 // Operation is a Safe transaction's call type.

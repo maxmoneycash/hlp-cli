@@ -1,6 +1,6 @@
 package pvault
 
-import "github.com/maxmoneycash/hlp/internal/evm"
+import "github.com/maxmoneycash/hlp-cli/internal/evm"
 
 // Function selectors of the strategy-vault contracts. Each one is checked
 // against keccak256(signature)[:4] in selectors_test.go.

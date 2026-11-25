@@ -3,7 +3,7 @@ package pvault
 import (
 	"math/big"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
 )
 
 var (

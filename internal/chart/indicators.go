@@ -3,7 +3,7 @@ package chart
 import (
 	"math"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Closes returns the close of every candle.

@@ -24,13 +24,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/pinecorpus"
-	"github.com/maxmoneycash/hlp/internal/pineforge"
-	"github.com/maxmoneycash/hlp/internal/pyne"
-	"github.com/maxmoneycash/hlp/internal/strategy"
-	"github.com/maxmoneycash/hlp/internal/strategy/backtest"
-	"github.com/maxmoneycash/hlp/internal/strategy/pine"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/pinecorpus"
+	"github.com/maxmoneycash/hlp-cli/internal/pineforge"
+	"github.com/maxmoneycash/hlp-cli/internal/pyne"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/backtest"
+	"github.com/maxmoneycash/hlp-cli/internal/strategy/pine"
 )
 
 // ---- builtin ----

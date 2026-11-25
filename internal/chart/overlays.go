@@ -4,8 +4,8 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // Overlay lines only ever paint (and read out) the visible window, so MAs

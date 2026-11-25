@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/metrics"
+	"github.com/maxmoneycash/hlp-cli/internal/metrics"
 )
 
 // IndexCapacityPoint is an actual daily idxCap observation, not an interpolated

@@ -6,10 +6,10 @@ import (
 	"charm.land/lipgloss/v2"
 	"github.com/charmbracelet/colorprofile"
 
-	"github.com/maxmoneycash/hlp/internal/config"
-	"github.com/maxmoneycash/hlp/internal/theme"
-	"github.com/maxmoneycash/hlp/internal/tui/cards"
-	"github.com/maxmoneycash/hlp/internal/tui/glyph"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/cards"
+	"github.com/maxmoneycash/hlp-cli/internal/tui/glyph"
 )
 
 // chrome is the shell's resolved style set. Everything in the shell takes

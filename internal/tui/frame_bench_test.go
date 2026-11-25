@@ -3,8 +3,8 @@ package tui
 import (
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // idleModel is a 140x42 shell with three cards and nothing moving: the

@@ -4,7 +4,7 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // This file is the Hyperliquid account model of the simulator (pine-subset

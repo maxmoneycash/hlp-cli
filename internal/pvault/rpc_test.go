@@ -16,8 +16,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
 )
 
 // rpcProxy is a JSON-RPC endpoint for chain 998 that answers eth_call and

@@ -1,18 +1,18 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.maxmoneycash/hlp",
+  "name": "io.github.maxmoneycash/hlp-cli",
   "title": "hlp",
   "description": "Read-only Hyperliquid and hlp.xyz vault research: candles, markets, vault tearsheets, accounts, order previews. Charts and tearsheets render as MCP Apps views.",
   "version": "0.1.0",
   "websiteUrl": "https://hlp.xyz",
   "repository": {
-    "url": "https://github.com/maxmoneycash/hlp",
+    "url": "https://github.com/maxmoneycash/hlp-cli",
     "source": "github"
   },
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/maxmoneycash/hlp/releases/download/v0.1.0/hlp-darwin-arm64.mcpb",
+      "identifier": "https://github.com/maxmoneycash/hlp-cli/releases/download/v0.1.0/hlp-darwin-arm64.mcpb",
       "version": "0.1.0",
       "fileSha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "transport": { "type": "stdio" },

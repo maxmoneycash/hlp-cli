@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
-	"github.com/maxmoneycash/hlp/internal/hyperevm/corewriter"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperevm/corewriter"
 )
 
 func TestSelectorsMatchKeccak(t *testing.T) {

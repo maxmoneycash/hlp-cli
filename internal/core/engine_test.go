@@ -9,10 +9,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
-	"github.com/maxmoneycash/hlp/internal/pineforge"
-	"github.com/maxmoneycash/hlp/internal/pyne"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/pineforge"
+	"github.com/maxmoneycash/hlp-cli/internal/pyne"
 )
 
 // The engine tests run stand-in binaries (shell scripts) for pyne and the

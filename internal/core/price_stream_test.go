@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/core"
-	"github.com/maxmoneycash/hlp/internal/core/coretest"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid/ws"
+	"github.com/maxmoneycash/hlp-cli/internal/core"
+	"github.com/maxmoneycash/hlp-cli/internal/core/coretest"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid/ws"
 )
 
 type priceFeed struct{ contexts, books chan ws.Event }

@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // SparseGapMs is the median sample spacing above which Compute estimates

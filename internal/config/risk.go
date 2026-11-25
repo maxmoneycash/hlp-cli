@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // Hard ceilings for risk caps. A config may tighten them, never exceed them.

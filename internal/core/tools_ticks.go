@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/chart"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid/ws"
-	"github.com/maxmoneycash/hlp/internal/ticks"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid/ws"
+	"github.com/maxmoneycash/hlp-cli/internal/ticks"
 )
 
 // CardTicks renders tick, volume and range bars. Data: *TickChartData.

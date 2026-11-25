@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // TestFixturesDecode decodes every hlp.xyz fixture into its wire type.

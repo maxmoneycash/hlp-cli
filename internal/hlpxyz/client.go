@@ -14,14 +14,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // DefaultBaseURL: call www directly (bare hlp.xyz 307-redirects).
 const DefaultBaseURL = "https://www.hlp.xyz"
 
 // DefaultUserAgent identifies CLI traffic to the hlp.xyz owner.
-const DefaultUserAgent = "hlp-cli/dev (+https://github.com/maxmoneycash/hlp)"
+const DefaultUserAgent = "hlp-cli/dev (+https://github.com/maxmoneycash/hlp-cli)"
 
 // HLPAddress is the Hyperliquidity Provider (HLP) parent vault.
 const HLPAddress = "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303"
@@ -43,7 +43,7 @@ var ErrBadAddress = errors.New("not a 0x address")
 type Options struct {
 	BaseURL   string       // default DefaultBaseURL
 	HTTP      *http.Client // default 20s timeout
-	UserAgent string       // "hlp-cli/<version> (+https://github.com/maxmoneycash/hlp)" so the owner can identify CLI traffic
+	UserAgent string       // "hlp-cli/<version> (+https://github.com/maxmoneycash/hlp-cli)" so the owner can identify CLI traffic
 	// RatePerMinute keeps us well under the server's 120/window limit.
 	// Default 90. 429 -> honor x-ratelimit-reset.
 	RatePerMinute int

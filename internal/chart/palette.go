@@ -4,7 +4,7 @@ import (
 	"math"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // Palette is a chart skin ported from setup-rush (game/core.js THEMES and

@@ -10,8 +10,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
 )
 
 const websiteDay = int64(86400000)

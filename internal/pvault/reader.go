@@ -7,7 +7,7 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/evm"
+	"github.com/maxmoneycash/hlp-cli/internal/evm"
 )
 
 // MaxEpochsPerCall is the epochRange page size (100 worked live).

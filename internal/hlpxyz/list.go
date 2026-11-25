@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 // StaleAfter is how old a vault's freshest figures may be before the row is

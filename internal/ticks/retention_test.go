@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
 )
 
 func TestSharedCapacityIncludesActiveDayAndConcurrentWriters(t *testing.T) {

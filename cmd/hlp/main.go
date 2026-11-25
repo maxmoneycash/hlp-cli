@@ -8,7 +8,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/maxmoneycash/hlp/internal/cli"
+	"github.com/maxmoneycash/hlp-cli/internal/cli"
 )
 
 // Set by -ldflags "-X main.version=... -X main.commit=... -X main.date=...".

@@ -1,4 +1,4 @@
-module github.com/maxmoneycash/hlp
+module github.com/maxmoneycash/hlp-cli
 
 go 1.27
 

@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/maxmoneycash/hlp/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
 )
 
 // AnthropicOptions configure the Anthropic Messages API provider.

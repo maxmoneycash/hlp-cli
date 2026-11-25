@@ -14,7 +14,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
 )
 
 // Price is a model's list price in USD per million tokens. A zero Price

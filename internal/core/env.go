@@ -12,17 +12,17 @@ import (
 	"sync"
 	"time"
 
-	"github.com/maxmoneycash/hlp/internal/chart"
-	"github.com/maxmoneycash/hlp/internal/config"
-	"github.com/maxmoneycash/hlp/internal/domain"
-	"github.com/maxmoneycash/hlp/internal/hlpxyz"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid/exchange"
-	"github.com/maxmoneycash/hlp/internal/hyperliquid/ws"
-	"github.com/maxmoneycash/hlp/internal/llm"
-	"github.com/maxmoneycash/hlp/internal/macro"
-	"github.com/maxmoneycash/hlp/internal/registry"
-	"github.com/maxmoneycash/hlp/internal/theme"
+	"github.com/maxmoneycash/hlp-cli/internal/chart"
+	"github.com/maxmoneycash/hlp-cli/internal/config"
+	"github.com/maxmoneycash/hlp-cli/internal/domain"
+	"github.com/maxmoneycash/hlp-cli/internal/hlpxyz"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid/exchange"
+	"github.com/maxmoneycash/hlp-cli/internal/hyperliquid/ws"
+	"github.com/maxmoneycash/hlp-cli/internal/llm"
+	"github.com/maxmoneycash/hlp-cli/internal/macro"
+	"github.com/maxmoneycash/hlp-cli/internal/registry"
+	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
 
 // HLPAddress is the Hyperliquidity Provider parent vault.
@@ -73,7 +73,7 @@ func newEnv(ctx context.Context, o EnvOptions) (*Env, error) {
 		version: o.Version,
 	}
 	env.Vaults, env.VaultWarnings = registry.LoadUser(registry.UserPath(paths.ConfigFile))
-	ua := "hlp-cli/" + version(o.Version) + " (+https://github.com/maxmoneycash/hlp)"
+	ua := "hlp-cli/" + version(o.Version) + " (+https://github.com/maxmoneycash/hlp-cli)"
 
 	fixtures := o.FixturesDir
 	if fixtures == "" && o.Offline {
