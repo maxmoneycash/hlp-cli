@@ -77,6 +77,18 @@ hlp vaults --select name,tvl,sharpe --limit 5 | jq
 Live mainnet data, no keys. The "Ask" shot uses a local fake model; its card data is real. More in
 [`docs/screenshots/after/`](docs/screenshots/after/INDEX.md).
 
+## On a full-size terminal
+
+hlp uses the whole window: a 200x56 terminal, live mainnet data, no keys.
+
+| | |
+|---|---|
+| <img src="docs/screenshots/desktop/d01-shell-session.png" alt="The shell at full size: a BTC chart, the top vaults and a price board stacked as cards, with a live ticker along the top" width="430"><br>**The shell** | <img src="docs/screenshots/desktop/d03-shell-watchlist.png" alt="A HYPE chart and the HLP vault card with the watchlist open on the right" width="430"><br>**Watchlist (ctrl+b)** |
+| <img src="docs/screenshots/desktop/d02-chart-btc-15m.png" alt="BTC 15m chart full screen with moving averages, volume and the crosshair on a past candle" width="430"><br>**Full-screen chart** | <img src="docs/screenshots/desktop/d05-vault-hlp-tearsheet.png" alt="HLP tearsheet full screen: return curve, drawdown, metrics against BTC and HYPE, checklist and monthly returns" width="430"><br>**Vault tearsheet** |
+| <img src="docs/screenshots/desktop/d04-vault-screener.png" alt="The vault screener full screen: fifty vaults with TVL, APR, returns, drawdown, Sharpe, age and trend" width="430"><br>**Vault screener** | <img src="docs/screenshots/desktop/d06-hlp-positioning.png" alt="What HLP holds right now across its parent and seven child vaults, with size, value, PnL, entry and mark" width="430"><br>**HLP positioning** |
+
+Reproduce them with `tools/shot/desktop.sh`.
+
 ## What you get
 
 | | |
