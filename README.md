@@ -70,24 +70,10 @@ hlp vaults --select name,tvl,sharpe --limit 5 | jq
 
 | | |
 |---|---|
-| <img src="docs/screenshots/after/03-chart-btc-15m-fullscreen-crosshair.png" alt="BTC chart full screen with the crosshair on a past candle" width="430"><br>**Full-screen chart** | <img src="docs/screenshots/after/08b-vault-hlp-tearsheet-fullscreen.png" alt="HLP tearsheet: return, curve against BTC and HYPE, drawdown, metrics and checklist" width="430"><br>**HLP vault tearsheet** |
-| <img src="docs/screenshots/after/06b-vaults-screener-fullscreen.png" alt="The vault screener full screen, sorted by TVL" width="430"><br>**Vault screener** | <img src="docs/screenshots/after/12-backtest-pine-ema-cross.png" alt="A 90-day Pine EMA cross backtest on BTC against HLP" width="430"><br>**Pine backtest** |
-| <img src="docs/screenshots/after/18-agent-chat-illustrative.png" alt="Illustrative: a question answered with a live vault card, from a local fake model" width="430"><br>**Ask (illustrative)** | |
-
-Live mainnet data, no keys. The "Ask" shot uses a local fake model; its card data is real. More in
-[`docs/screenshots/after/`](docs/screenshots/after/INDEX.md).
-
-## On a full-size terminal
-
-hlp uses the whole window: a 200x56 terminal, live mainnet data, no keys.
-
-| | |
-|---|---|
-| <img src="docs/screenshots/desktop/d01-shell-session.png" alt="The shell at full size: a BTC chart, the top vaults and a price board stacked as cards, with a live ticker along the top" width="430"><br>**The shell** | <img src="docs/screenshots/desktop/d03-shell-watchlist.png" alt="A HYPE chart and the HLP vault card with the watchlist open on the right" width="430"><br>**Watchlist (ctrl+b)** |
-| <img src="docs/screenshots/desktop/d02-chart-btc-15m.png" alt="BTC 15m chart full screen with moving averages, volume and the crosshair on a past candle" width="430"><br>**Full-screen chart** | <img src="docs/screenshots/desktop/d05-vault-hlp-tearsheet.png" alt="HLP tearsheet full screen: return curve, drawdown, metrics against BTC and HYPE, checklist and monthly returns" width="430"><br>**Vault tearsheet** |
-| <img src="docs/screenshots/desktop/d04-vault-screener.png" alt="The vault screener full screen: fifty vaults with TVL, APR, returns, drawdown, Sharpe, age and trend" width="430"><br>**Vault screener** | <img src="docs/screenshots/desktop/d06-hlp-positioning.png" alt="What HLP holds right now across its parent and seven child vaults, with size, value, PnL, entry and mark" width="430"><br>**HLP positioning** |
-
-Reproduce them with `tools/shot/desktop.sh`.
+| <img src="docs/screenshots/desktop/d01-shell-session.png" alt="The shell: a BTC chart, the top vaults and a price board as cards, with a live ticker" width="430"><br>**The shell** | <img src="docs/screenshots/desktop/d03-shell-watchlist.png" alt="A HYPE chart and the HLP vault card with the watchlist open" width="430"><br>**Watchlist** |
+| <img src="docs/screenshots/desktop/d02-chart-btc-15m.png" alt="BTC 15m chart full screen with moving averages, volume and the crosshair" width="430"><br>**Chart** | <img src="docs/screenshots/desktop/d05-vault-hlp-tearsheet.png" alt="HLP tearsheet: return curve, drawdown, metrics, checklist and monthly returns" width="430"><br>**Vault tearsheet** |
+| <img src="docs/screenshots/desktop/d04-vault-screener.png" alt="The vault screener: fifty vaults with TVL, APR, returns, drawdown, Sharpe and trend" width="430"><br>**Vault screener** | <img src="docs/screenshots/desktop/d06-hlp-positioning.png" alt="What HLP holds now across its parent and seven child vaults" width="430"><br>**HLP positioning** |
+| <img src="docs/screenshots/after/12-backtest-pine-ema-cross.png" alt="A 90-day Pine EMA cross backtest on BTC against HLP" width="430"><br>**Pine backtest** | <img src="docs/screenshots/after/18-agent-chat-illustrative.png" alt="Illustrative: a question answered with a live vault card, from a local fake model" width="430"><br>**Ask (illustrative)** |
 
 ## What you get
 
