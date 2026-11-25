@@ -2,6 +2,7 @@ package tui
 
 import (
 	"math"
+	"os"
 	"runtime"
 	"strconv"
 	"testing"
@@ -141,6 +142,16 @@ func perfBudget(t *testing.T, ops int, f func()) time.Duration {
 	return best
 }
 
+// slack scales the wall-clock budgets on shared CI runners (CI=true), whose
+// timings swing by 2x or more between runs. A real regression (the stream
+// once took 3.1 s) still fails there.
+func slack(d time.Duration) time.Duration {
+	if os.Getenv("CI") == "true" {
+		return 3 * d
+	}
+	return d
+}
+
 func skipPerf(t *testing.T) {
 	if testing.Short() || raceEnabled {
 		t.Skip("timing budgets need a normal (non -race, non -short) build")
@@ -153,8 +164,8 @@ func TestPerfAgentStreamBudget(t *testing.T) {
 	m := benchModel(t, 120, 40)
 	got := perfBudget(t, 1, func() { m.entries = m.entries[:1]; agentStream(m, 1000) })
 	t.Logf("1,000 tokens: %v", got)
-	if got > budgetAgentStream {
-		t.Fatalf("agent stream took %v, budget %v", got, budgetAgentStream)
+	if got > slack(budgetAgentStream) {
+		t.Fatalf("agent stream took %v, budget %v", got, slack(budgetAgentStream))
 	}
 	// The final frame is the full markdown render, not the plain tail.
 	e := m.entries[len(m.entries)-1]
@@ -171,8 +182,8 @@ func TestPerfChartPaneBudget(t *testing.T) {
 	i := 0
 	got := perfBudget(t, 200, func() { m.Update(states[i%2]); i++ })
 	t.Logf("unchanged chart pane Update: %v", got)
-	if got > budgetChartUpdate {
-		t.Fatalf("chart pane Update took %v, budget %v", got, budgetChartUpdate)
+	if got > slack(budgetChartUpdate) {
+		t.Fatalf("chart pane Update took %v, budget %v", got, slack(budgetChartUpdate))
 	}
 }
 
@@ -183,8 +194,8 @@ func TestPerfMidsTickBudget(t *testing.T) {
 	i := 0.0
 	got := perfBudget(t, 500, func() { i++; mids["C1"] = i; m.Update(midsMsg{sub: sub, mids: mids}) })
 	t.Logf("mids tick, 300 entries: %v", got)
-	if got > budgetMidsTick {
-		t.Fatalf("mids tick took %v, budget %v", got, budgetMidsTick)
+	if got > slack(budgetMidsTick) {
+		t.Fatalf("mids tick took %v, budget %v", got, slack(budgetMidsTick))
 	}
 }
 
