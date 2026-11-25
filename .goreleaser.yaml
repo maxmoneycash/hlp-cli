@@ -73,7 +73,7 @@ changelog:
 release:
   github:
     owner: maxmoneycash
-    name: hlp
+    name: hlp-cli
   draft: false
   prerelease: auto
   name_template: "hlp cli {{ .Tag }}"

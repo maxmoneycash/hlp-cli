@@ -5,6 +5,11 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-24
+
+### Fixed
+- Release uploads point at the renamed repository (v0.1.1 has no binaries).
+
 ## [0.1.1] - 2026-11-24
 
 ### Changed
