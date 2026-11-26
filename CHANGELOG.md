@@ -5,6 +5,14 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-11-25
+
+### Changed
+- The accent is Hyperliquid mint (#97fce4) instead of orange; the paper theme uses dark teal.
+
+### Fixed
+- Quant strategy cards no longer print colour codes inside market names.
+
 ## [0.1.2] - 2026-11-24
 
 ### Fixed
