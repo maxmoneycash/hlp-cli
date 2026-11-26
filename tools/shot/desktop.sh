@@ -63,6 +63,8 @@ SCENES=(
 	"d15|d15-macro|SHOT_WAIT=6 SHOT_MAX=30|/macro{Enter}{wait 12}{settle}{C-o}"
 	"d16|d16-order-preview|SHOT_WAIT=6|/preview buy BTC --usd 100{Enter}"
 	"d17|d17-thesis-backtest|SHOT_WAIT=6 SHOT_MAX=60|$THESIS{Enter}{wait 15}{settle}{C-o}"
+	"d18|d18-pine-backtest|SHOT_WAIT=6 SHOT_MAX=60|/backtest examples/pine/ema-cross.pine --coin BTC --days 90{Enter}{wait 12}{settle}{C-o}"
+	"d19|d19-vault-arena|SHOT_WAIT=6 SHOT_MAX=40|/arena --vaults hlp,growi,22cap,citadel{Enter}{wait 12}{settle}{C-o}"
 	"d21|d21-help|SHOT_WAIT=2|/help{Enter}"
 	"d22|d22-autocomplete|SHOT_WAIT=2|/va"
 	"d23|d23-palette|SHOT_WAIT=2|{C-k}"

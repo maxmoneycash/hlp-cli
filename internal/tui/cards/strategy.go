@@ -58,7 +58,8 @@ func (p *painter) backtestCard(r *core.Result) card {
 	}
 	if cs := mcs; len(cs) > 0 {
 		// The whole backtest window, not its last screen: merge bars so
-		// every fill lands on the chart.
+		// every fill lands on the chart, two columns per candle so they
+		// span the panel's width.
 		cs, per := fitCandles(cs, max((p.w-14)/2, 20))
 		pairs := [][2]string{{"", p.lbl(strings.TrimPrefix(coin, "xyz:"))}, {"", p.st.text.Render(strconv.Itoa(len(d.Fills))) + " " + p.lbl("fills")}}
 		if per > 1 {
@@ -66,7 +67,7 @@ func (p *painter) backtestCard(r *core.Result) card {
 		}
 		c.body = append(c.body, "", p.meta(pairs...))
 		g, _ := candlesFn(cs, chart.CandleOpts{
-			Width: p.w, Height: 14, Style: p.o.ChartStyle, Skin: p.o.ChartSkin, Zoom: 1, VolRows: 0, Cursor: -1,
+			Width: p.w, Height: 14, Style: p.o.ChartStyle, Skin: p.o.ChartSkin, Zoom: 2, VolRows: 0, Cursor: -1,
 			Markers: fillMarkers(cs, d.Fills, coin), Coin: coin, Location: p.o.Location,
 		}, p.th)
 		c.body = append(c.body, p.gridLines(g)...)
@@ -331,6 +332,12 @@ func (p *painter) arenaRace(es []core.ArenaEntrant, running func(core.ArenaEntra
 	h := 10
 	if p.o.Compact {
 		h = 8
+	}
+	if p.o.Height > 0 {
+		// Full screen: the race takes the room the leaderboard leaves
+		// (its header row, one row per entrant, the card's header and
+		// notes, and the legend and axis of the chart itself).
+		h = max(h, p.o.Height-len(es)-10)
 	}
 	g := lineFn(chart.LineOpts{Width: p.w, Height: h, Series: series, Percent: true, Baseline: 1,
 		Location: p.o.Location}, p.th)

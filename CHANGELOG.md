@@ -5,6 +5,12 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.4] - 2026-11-25
+
+### Fixed
+- Backtest price panels span the full width (two columns per candle).
+- The arena race chart fills a full-screen pane.
+
 ## [0.1.3] - 2026-11-25
 
 ### Changed

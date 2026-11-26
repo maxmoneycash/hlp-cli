@@ -719,7 +719,7 @@ func fillsHeight(r *core.Result) bool {
 		return false
 	}
 	switch r.Card {
-	case core.CardBook, core.CardTrades, core.CardMarkets, core.CardFills, core.CardFunding:
+	case core.CardBook, core.CardTrades, core.CardMarkets, core.CardFills, core.CardFunding, core.CardArena:
 		return true
 	}
 	return false
