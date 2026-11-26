@@ -2,69 +2,24 @@
 
 # hlp cli
 
-**The Hyperliquid terminal for vaults.**
+**The Hyperliquid terminal. Live charts, every vault, backtests and AI agents, in your shell.**
 
-Rank every vault, read its tearsheet, backtest your own thesis or Pine script, and watch AI
-strategies trade on paper. Candlestick charts, a JSON CLI and an MCP server included.
+[![release](https://img.shields.io/github/v/release/maxmoneycash/hlp-cli?sort=semver&include_prereleases&color=97fce4&labelColor=0f1a1f)](https://github.com/maxmoneycash/hlp-cli/releases)
+[![stars](https://img.shields.io/github/stars/maxmoneycash/hlp-cli?style=flat&color=97fce4&labelColor=0f1a1f)](https://github.com/maxmoneycash/hlp-cli/stargazers)
+[![ci](https://img.shields.io/github/actions/workflow/status/maxmoneycash/hlp-cli/ci.yml?branch=main&label=ci&color=97fce4&labelColor=0f1a1f)](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-97fce4?labelColor=0f1a1f)](LICENSE)
 
-[![release](https://img.shields.io/github/v/release/maxmoneycash/hlp-cli?sort=semver&include_prereleases)](https://github.com/maxmoneycash/hlp-cli/releases)
-[![ci](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml)
-[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
-<img src="docs/screenshots/desktop/01-dash-markets.png" alt="The markets dashboard: a live BTC chart, order book, trades, markets and funding filling the terminal" width="880">
-
-</div>
+<img src="docs/screenshots/hero.gif" alt="hlp in a terminal: the live markets dashboard for BTC, then tab through the vaults, HLP, strategies and research dashboards" width="100%">
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.sh | sh
 ```
 
-No keys, no account, no sign-up. Everything reads public data until you opt in.
+No keys. No account. No sign-up. Then run `hlp` and type `/dash`.
 
-> **Status: pre-release.** All market and vault data is live mainnet data. Trading is dry-run only in
-> this build: orders are built, risk-checked and previewed, never sent. Strategies, bots and the
-> arena run on **paper**.
+[Screenshots](#screenshots) · [Quick start](#quick-start-30-seconds) · [For AI agents](#ai-agent-and-mcp) · [Arena](#ai-vs-ai-arena) · [Safety](#safety)
 
-## Install
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.sh | sh  # macOS and Linux, verifies SHA-256
-go install github.com/maxmoneycash/hlp-cli/cmd/hlp@latest                               # Go 1.27+
-```
-
-Or download a binary from [Releases](https://github.com/maxmoneycash/hlp-cli/releases) and check it against
-`checksums.txt`. Every release archive also carries signed build provenance:
-`gh attestation verify hlp_<version>_<os>_<arch>.tar.gz -R maxmoneycash/hlp-cli`, or run `install.sh` with
-`HLP_INSTALL_VERIFY=1` to have it check that for you. Archives include shell completions
-(`completions/`) and the licences of every bundled dependency (`third_party_licenses/`).
-
-Binaries are not notarized yet. `install.sh` downloads with curl, which does not set the macOS
-quarantine flag (it removes one if a mirror or wrapper set it, and says so). The Windows `.exe` is unsigned, so SmartScreen may warn on its first run.
-
-From source:
-
-```sh
-git clone https://github.com/maxmoneycash/hlp-cli && cd hlp
-make build          # writes bin/hlp
-./bin/hlp --help
-```
-
-## Quick start (30 seconds)
-
-```sh
-hlp                                            # the shell: try /chart HYPE 15m, /vaults, /vault hlp
-hlp price btc eth                              # mid, bid/ask, mark, 24h change, funding
-hlp chart BTC 1h                               # candles, volume, MAs, 24h change, funding, OI
-hlp vaults --min-tvl 100k --sort sharpe        # every vault over $100k, ranked
-hlp vault "Long HYPE & BTC"                    # tearsheet vs HLP, BTC and HYPE, with a checklist
-hlp backtest --thesis "long BTC, short DOGE FARTCOIN, rebalance 1w" --days 90
-```
-
-Every command prints a card in a terminal and a JSON envelope in a pipe:
-
-```sh
-hlp vaults --select name,tvl,sharpe --limit 5 | jq
-```
+</div>
 
 ## Screenshots
 
@@ -86,6 +41,52 @@ hlp vaults --select name,tvl,sharpe --limit 5 | jq
 | [Pine import](#pine-import) | Paste a TradingView-style strategy, check it, run it on Hyperliquid candles |
 | [AI agent and MCP](#ai-agent-and-mcp) | Chat with your own model, or drive hlp from Claude Code, Cursor or Codex |
 | [AI vs AI arena](#ai-vs-ai-arena) | Local models, Pine scripts and theses on one live feed, on paper |
+
+## Install
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.sh | sh  # macOS and Linux, verifies SHA-256
+go install github.com/maxmoneycash/hlp-cli/cmd/hlp@latest                               # Go 1.27+
+```
+
+<details>
+<summary>Binaries, checksums and provenance</summary>
+
+Or download a binary from [Releases](https://github.com/maxmoneycash/hlp-cli/releases) and check it against
+`checksums.txt`. Every release archive also carries signed build provenance:
+`gh attestation verify hlp_<version>_<os>_<arch>.tar.gz -R maxmoneycash/hlp-cli`, or run `install.sh` with
+`HLP_INSTALL_VERIFY=1` to have it check that for you. Archives include shell completions
+(`completions/`) and the licences of every bundled dependency (`third_party_licenses/`).
+
+Binaries are not notarized yet. `install.sh` downloads with curl, which does not set the macOS
+quarantine flag (it removes one if a mirror or wrapper set it, and says so). The Windows `.exe` is unsigned, so SmartScreen may warn on its first run.
+
+</details>
+
+From source:
+
+```sh
+git clone https://github.com/maxmoneycash/hlp-cli && cd hlp-cli
+make build          # writes bin/hlp
+./bin/hlp --help
+```
+
+## Quick start (30 seconds)
+
+```sh
+hlp                                            # the shell: try /chart HYPE 15m, /vaults, /vault hlp
+hlp price btc eth                              # mid, bid/ask, mark, 24h change, funding
+hlp chart BTC 1h                               # candles, volume, MAs, 24h change, funding, OI
+hlp vaults --min-tvl 100k --sort sharpe        # every vault over $100k, ranked
+hlp vault "Long HYPE & BTC"                    # tearsheet vs HLP, BTC and HYPE, with a checklist
+hlp backtest --thesis "long BTC, short DOGE FARTCOIN, rebalance 1w" --days 90
+```
+
+Every command prints a card in a terminal and a JSON envelope in a pipe:
+
+```sh
+hlp vaults --select name,tvl,sharpe --limit 5 | jq
+```
 
 ## Charts
 
@@ -349,6 +350,10 @@ Sessions persist locally, so a stopped session keeps its ledger. LLM bots decide
 a remote model is your choice and your key.
 
 ## Safety
+
+**Status: pre-release.** All market and vault data is live mainnet data. Trading is dry-run only in
+this build: orders are built, risk-checked and previewed, never sent. Strategies, bots and the
+arena run on **paper**.
 
 - **Paper by default.** Backtests, paper sessions and the arena never place orders and need no keys.
 - **Read-only by default.** Reading any account or vault needs only its public address.

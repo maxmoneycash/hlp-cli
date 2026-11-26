@@ -30,6 +30,10 @@
 #   SHOT_MOTION=1  leave motion on (default: HLP_REDUCED_MOTION=1, so the
 #                flap ticker and cursor blink hold still and captures repeat)
 #   SHOT_BIN     prebuilt renderer (default: build ./tools/shot)
+#   SHOT_FILM    a directory: also capture the pane every SHOT_FILM_DT seconds
+#                (default 0.2) from the first key on, as NNNNN.ansi with the
+#                capture time in times.txt, and every key token in keys.txt
+#                (tools/shot/film.sh turns them into a GIF)
 #
 # hlp runs with a minimal environment (env -i): no API keys reach it, and by
 # default it gets an empty config and data dir, so shots show a first-run
@@ -140,12 +144,30 @@ settle() {
 }
 
 settle 1
+FILM_PID=""
+if [[ -n ${SHOT_FILM:-} ]]; then
+	mkdir -p "$SHOT_FILM"
+	: >"$SHOT_FILM/times.txt"
+	: >"$SHOT_FILM/keys.txt"
+	(
+		n=0
+		while :; do
+			cap >"$SHOT_FILM/$(printf %05d $n).ansi"
+			echo "$n $(perl -MTime::HiRes=time -e 'printf "%.3f", time')" >>"$SHOT_FILM/times.txt"
+			n=$((n + 1))
+			sleep "${SHOT_FILM_DT:-0.2}"
+		done
+	) &
+	FILM_PID=$!
+fi
+now() { perl -MTime::HiRes=time -e 'printf "%.3f", time'; }
 rest=$KEYS
 while [[ -n $rest ]]; do
 	if [[ $rest == \{* && $rest == *\}* ]]; then
 		tok=${rest%%\}*}
 		tok=${tok#\{}
 		rest=${rest#*\}}
+		[[ -n $FILM_PID ]] && echo "$(now) $tok" >>"$SHOT_FILM/keys.txt"
 		case $tok in
 		"wait "*) sleep "${tok#wait }" ;;
 		settle) settle 0 ;;
@@ -160,6 +182,7 @@ while [[ -n $rest ]]; do
 	fi
 done
 settle "${SHOT_WAIT:-4}"
+{ [[ -n $FILM_PID ]] && kill "$FILM_PID" 2>/dev/null && wait "$FILM_PID" 2>/dev/null; } || true
 
 cap >"$OUT/$SCENE.ansi"
 # shellcheck disable=SC2086
