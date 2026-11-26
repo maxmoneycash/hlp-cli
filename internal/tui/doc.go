@@ -36,9 +36,9 @@
 //     mark) and one at the bottom (a hairline and the prompt, with the
 //     context keys on its right). Panes trade the prompt for one key row.
 //   - One focal point per screen: the wordmark on the welcome, the newest
-//     card (marked by the orange corner reticle) in the transcript, big
+//     card (marked by the accent corner reticle) in the transcript, big
 //     digits in a pane, the keycap on a confirm.
-//   - Orange marks one thing at a time: the prompt, the reticle, the live
+//   - The accent marks one thing at a time: the prompt, the reticle, the live
 //     mark, the selection bar, the keycap. Gains are ink, losses red.
 //   - Restraint on words: labels are UPPERCASE and muted, no sentences in
 //     chrome, tips are shown once ever (<data dir>/seen.json).

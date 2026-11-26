@@ -11,7 +11,7 @@ strategies trade on paper. Candlestick charts, a JSON CLI and an MCP server incl
 [![ci](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-<img src="docs/screenshots/after/02-chart-btc-15m-inline.png" alt="The hlp shell: a live BTC 15m chart with the price as big digits, hollow up candles, moving averages and volume" width="880">
+<img src="docs/screenshots/desktop/d01-shell-session.png" alt="The hlp shell: a live BTC 15m chart, the top vaults and a price board as cards, with a live ticker along the top" width="880">
 
 </div>
 
@@ -70,10 +70,18 @@ hlp vaults --select name,tvl,sharpe --limit 5 | jq
 
 | | |
 |---|---|
-| <img src="docs/screenshots/desktop/d01-shell-session.png" alt="The shell: a BTC chart, the top vaults and a price board as cards, with a live ticker" width="430"><br>**The shell** | <img src="docs/screenshots/desktop/d03-shell-watchlist.png" alt="A HYPE chart and the HLP vault card with the watchlist open" width="430"><br>**Watchlist** |
-| <img src="docs/screenshots/desktop/d02-chart-btc-15m.png" alt="BTC 15m chart full screen with moving averages, volume and the crosshair" width="430"><br>**Chart** | <img src="docs/screenshots/desktop/d05-vault-hlp-tearsheet.png" alt="HLP tearsheet: return curve, drawdown, metrics, checklist and monthly returns" width="430"><br>**Vault tearsheet** |
-| <img src="docs/screenshots/desktop/d04-vault-screener.png" alt="The vault screener: fifty vaults with TVL, APR, returns, drawdown, Sharpe and trend" width="430"><br>**Vault screener** | <img src="docs/screenshots/desktop/d06-hlp-positioning.png" alt="What HLP holds now across its parent and seven child vaults" width="430"><br>**HLP positioning** |
-| <img src="docs/screenshots/after/12-backtest-pine-ema-cross.png" alt="A 90-day Pine EMA cross backtest on BTC against HLP" width="430"><br>**Pine backtest** | <img src="docs/screenshots/after/18-agent-chat-illustrative.png" alt="Illustrative: a question answered with a live vault card, from a local fake model" width="430"><br>**Ask (illustrative)** |
+| <img src="docs/screenshots/desktop/d02-chart-btc-15m.png" alt="BTC 15m chart full screen with moving averages, volume and the crosshair" width="430"><br>**Chart** | <img src="docs/screenshots/desktop/d03-shell-watchlist.png" alt="A HYPE chart and the HLP vault card with the watchlist open" width="430"><br>**Watchlist** |
+| <img src="docs/screenshots/desktop/d04-vault-screener.png" alt="The vault screener: fifty vaults with TVL, APR, returns, drawdown, Sharpe and trend" width="430"><br>**Vault screener** | <img src="docs/screenshots/desktop/d05-vault-hlp-tearsheet.png" alt="HLP tearsheet: return curve, drawdown, metrics, checklist and monthly returns" width="430"><br>**Vault tearsheet** |
+| <img src="docs/screenshots/desktop/d10-vault-compare.png" alt="HLP, Growi HF and 22Cap compared: curves, metrics and correlation" width="430"><br>**Compare vaults** | <img src="docs/screenshots/desktop/d06-hlp-positioning.png" alt="What HLP holds now across its parent and seven child vaults" width="430"><br>**HLP positioning** |
+| <img src="docs/screenshots/desktop/d07-book-and-trades.png" alt="The ETH order book and recent trades as live cards" width="430"><br>**Book and trades** | <img src="docs/screenshots/desktop/d08-markets.png" alt="Perps, HIP-3 and spot markets by volume" width="430"><br>**Markets** |
+| <img src="docs/screenshots/desktop/d09-funding.png" alt="Funding ranking: who pays longs and who pays shorts" width="430"><br>**Funding** | <img src="docs/screenshots/desktop/d15-macro.png" alt="Prediction-market odds from Polymarket, Kalshi and Hyperliquid" width="430"><br>**Macro odds** |
+| <img src="docs/screenshots/desktop/d17-thesis-backtest.png" alt="A plain-English thesis backtest against HLP, BTC and HYPE with fills on the chart" width="430"><br>**Thesis backtest** | <img src="docs/screenshots/desktop/d13-quant-strategy.png" alt="An hlp.xyz quant strategy: live target book and backtest stats" width="430"><br>**Quant strategy** |
+| <img src="docs/screenshots/desktop/d14-strategy-vault.png" alt="A HyperEVM strategy vault: NAV, epochs, fees and roles" width="430"><br>**Strategy vault** | <img src="docs/screenshots/desktop/d12-index.png" alt="A vault index and its allocation" width="430"><br>**Vault index** |
+| <img src="docs/screenshots/desktop/d11-discover.png" alt="Curated vaults by theme, style and risk" width="430"><br>**Discover** | <img src="docs/screenshots/desktop/d16-order-preview.png" alt="A dry-run order preview with every risk check" width="430"><br>**Order preview** |
+| <img src="docs/screenshots/desktop/d29-ask-illustrative.png" alt="Illustrative: a question answered with a live vault card, from a local fake model" width="430"><br>**Ask (illustrative)** | <img src="docs/screenshots/desktop/d23-palette.png" alt="The command palette" width="430"><br>**Palette** |
+| <img src="docs/screenshots/desktop/d22-autocomplete.png" alt="Slash-command completion" width="430"><br>**Completion** | <img src="docs/screenshots/desktop/d21-help.png" alt="Keys and commands" width="430"><br>**Help** |
+| <img src="docs/screenshots/desktop/d24-theme-hyperliquid.png" alt="The hyperliquid theme" width="430"><br>**Hyperliquid theme** | <img src="docs/screenshots/desktop/d25-theme-paper.png" alt="The paper theme" width="430"><br>**Paper theme** |
+| <img src="docs/screenshots/desktop/d26-heikin-ashi.png" alt="Heikin-Ashi candles" width="430"><br>**Heikin-Ashi** |  |
 
 ## What you get
 
@@ -112,7 +120,7 @@ In the shell, Enter on an empty prompt opens the newest card full screen. Chart 
 On the legacy Windows console (cmd.exe without Windows Terminal), braille and eighth blocks render
 badly: use `--style ascii` or `chart.style = "ascii"` in config.
 
-**Themes.** `rush` (default: ink on near-black, one orange accent), `paper`, `hlp`, `hyperliquid`,
+**Themes.** `rush` (default: ink on near-black, one Hyperliquid mint accent), `paper`, `hlp`, `hyperliquid`,
 `light`, `tokyonight`, `catppuccin`, `gruvbox`, `mono` and a `colorblind`-safe palette. `ctrl+t`
 cycles them; `--theme <name>` picks one.
 

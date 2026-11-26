@@ -27,8 +27,8 @@ var rushWant = map[string]struct {
 	"Text":       {"#f4f3ef", 255, 15},
 	"Muted":      {"#97979c", 246, 7},
 	"Dim":        {"#6b6b70", 242, 8},
-	"Accent":     {"#ff5a1f", 202, 3},
-	"AccentEdge": {"#a8360b", 130, -2},
+	"Accent":     {"#97fce4", 122, 14},
+	"AccentEdge": {"#2f7d6d", 30, -2},
 	"Up":         {"#f4f3ef", 255, 15},
 	"Down":       {"#ff4b3e", 203, 9},
 	"Warn":       {"#e9b949", 179, 11},
@@ -134,11 +134,11 @@ func hue(c RGB) (h, s float64) {
 	return h, s
 }
 
-// TestRushNoTealOrGreen: no rush token except the MA lines has a hue in
-// 140..200 degrees, at any saturation.
+// TestRushNoTealOrGreen: no rush token except the MA lines and the mint
+// accent has a hue in 140..200 degrees, so gains never read as green.
 func TestRushNoTealOrGreen(t *testing.T) {
 	for _, nc := range rush(t).Tokens() {
-		if strings.HasPrefix(nc.Name, "MA") {
+		if strings.HasPrefix(nc.Name, "MA") || strings.HasPrefix(nc.Name, "Accent") {
 			continue
 		}
 		if h, s := hue(nc.Color.True); s > 0 && h >= 140 && h <= 200 {
@@ -150,15 +150,15 @@ func TestRushNoTealOrGreen(t *testing.T) {
 	}
 }
 
-// TestRushAccentNotDown: automatic downsampling would turn the orange into
-// red 196; the hand picks keep Accent and Down apart at every profile.
+// TestRushAccentNotDown: the accent and the down color must never meet
+// after downsampling; the hand picks keep Accent and Down apart at every profile.
 func TestRushAccentNotDown(t *testing.T) {
 	th := rush(t)
-	if th.Accent.C256 != 202 || th.Down.C256 != 203 {
-		t.Errorf("256: Accent %d, Down %d; want 202 and 203", th.Accent.C256, th.Down.C256)
+	if th.Accent.C256 != 122 || th.Down.C256 != 203 {
+		t.Errorf("256: Accent %d, Down %d; want 122 and 203", th.Accent.C256, th.Down.C256)
 	}
-	if th.Accent.C16 != 3 || th.Down.C16 != 9 {
-		t.Errorf("16: Accent %d, Down %d; want 3 and 9", th.Accent.C16, th.Down.C16)
+	if th.Accent.C16 != 14 || th.Down.C16 != 9 {
+		t.Errorf("16: Accent %d, Down %d; want 14 and 9", th.Accent.C16, th.Down.C16)
 	}
 	if th.Warn.C16 == th.Accent.C16 {
 		t.Error("Warn and Accent collide at 16 colors")
@@ -179,14 +179,14 @@ func TestRushStyles(t *testing.T) {
 	if !reflect.DeepEqual(s.Label.GetForeground(), lipgloss.Color("#97979c")) || s.Label.GetBold() {
 		t.Errorf("Label: fg %v bold %v; want Muted, not bold", s.Label.GetForeground(), s.Label.GetBold())
 	}
-	if !reflect.DeepEqual(s.Reticle.GetForeground(), lipgloss.Color("#ff5a1f")) {
+	if !reflect.DeepEqual(s.Reticle.GetForeground(), lipgloss.Color("#97fce4")) {
 		t.Errorf("Reticle fg %v", s.Reticle.GetForeground())
 	}
-	if !reflect.DeepEqual(s.Keycap.GetBackground(), lipgloss.Color("#ff5a1f")) ||
+	if !reflect.DeepEqual(s.Keycap.GetBackground(), lipgloss.Color("#97fce4")) ||
 		!reflect.DeepEqual(s.Keycap.GetForeground(), lipgloss.Color("#131315")) || !s.Keycap.GetBold() {
 		t.Errorf("Keycap bg %v fg %v bold %v", s.Keycap.GetBackground(), s.Keycap.GetForeground(), s.Keycap.GetBold())
 	}
-	if !reflect.DeepEqual(s.KeycapEdge.GetForeground(), lipgloss.Color("#a8360b")) || !s.KeycapLip() {
+	if !reflect.DeepEqual(s.KeycapEdge.GetForeground(), lipgloss.Color("#2f7d6d")) || !s.KeycapLip() {
 		t.Errorf("KeycapEdge fg %v", s.KeycapEdge.GetForeground())
 	}
 	if !reflect.DeepEqual(s.FlapFace.GetBackground(), lipgloss.Color("#1a1a1d")) {
@@ -208,14 +208,14 @@ func TestRushStyles(t *testing.T) {
 
 	// 256 colors: hand picks.
 	s256 := th.Styles(colorprofile.ANSI256)
-	if !reflect.DeepEqual(s256.Keycap.GetBackground(), lipgloss.Color("202")) || !s256.KeycapLip() {
+	if !reflect.DeepEqual(s256.Keycap.GetBackground(), lipgloss.Color("122")) || !s256.KeycapLip() {
 		t.Errorf("256 keycap bg %v", s256.Keycap.GetBackground())
 	}
 
 	// 16 colors: the keycap is reverse video of the accent, no lip, no flap
 	// face, no floor.
 	s16 := th.Styles(colorprofile.ANSI)
-	if !s16.Keycap.GetReverse() || !reflect.DeepEqual(s16.Keycap.GetForeground(), lipgloss.Color("3")) {
+	if !s16.Keycap.GetReverse() || !reflect.DeepEqual(s16.Keycap.GetForeground(), lipgloss.Color("14")) {
 		t.Errorf("16 keycap: reverse %v fg %v", s16.Keycap.GetReverse(), s16.Keycap.GetForeground())
 	}
 	if s16.KeycapLip() || !noColor(s16.FlapFace.GetBackground()) || s16.FloorFunc() != nil {

@@ -340,7 +340,7 @@ func (m *Model) welcomeScreen(w, h int) []string {
 		key += "first"
 	}
 	// While the input has text (completions open) focus is on the prompt:
-	// the wordmark loses its reticle, so orange marks the prompt and the
+	// the wordmark loses its reticle, so the accent marks the prompt and the
 	// selected completion only (DESIGN.md 4.1).
 	typing := !m.in.Empty() || m.palette != nil || m.showHelp
 	if typing {

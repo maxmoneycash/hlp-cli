@@ -1,0 +1,56 @@
+  [1m[38;2;244;243;239mhlp[0m[39m[49m                                                                                                                                                                                                [38;2;151;252;228m■[39m  
+
+  [38;2;151;252;228m›[39m [7m[38;2;244;243;239m [0m[39m[49m                                                                                                                                                                                                   
+
+[38;2;151;252;228m▌[39m [1m[38;2;244;243;239m/account[0m[39m[49m        [38;2;151;151;156mequity and positions[39m                                                                                                                                                                  
+  [38;2;244;243;239m/arena[39m          [38;2;151;151;156mhead to head[39m                    
+  [38;2;244;243;239m/asset[39m          [38;2;151;151;156masset id[39m                                                                                                                                                                              
+  [38;2;244;243;239m/backtest[39m       [38;2;151;151;156mbacktest a strategy[39m             
+  [38;2;244;243;239m/book[39m           [38;2;151;151;156morder book[39m                                                                                                                                                                            
+  [38;2;244;243;239m/buy[39m            [38;2;151;151;156mbuy or long[39m                     
+  [38;2;244;243;239m/cancel[39m         [38;2;151;151;156mcancel orders[39m                                                                                                                                                                         
+  [38;2;244;243;239m/candles[39m        [38;2;151;151;156mcandle style[39m                    
+  [38;2;244;243;239m/candles[39m        [38;2;151;151;156mcandle style[39m                                                                                                                                                                          
+  [38;2;244;243;239m/chart[39m          [38;2;151;151;156mcandles[39m                         
+  [38;2;244;243;239m/clear[39m          [38;2;151;151;156mclear the transcript[39m                                                                                                                                                                  
+  [38;2;244;243;239m/close[39m          [38;2;151;151;156mclose a position[39m                
+  [38;2;244;243;239m/compare[39m        [38;2;151;151;156mcompare vaults[39m                                                                                                                                                                        
+  [38;2;244;243;239m/deposit[39m        [38;2;151;151;156mdeposit to a vault[39m              
+  [38;2;244;243;239m/discover[39m       [38;2;151;151;156mcurated vaults[39m                                                                                                                                                                        
+  [38;2;244;243;239m/fills[39m          [38;2;151;151;156mrecent fills[39m                    
+  [38;2;244;243;239m/fund[39m           [38;2;151;151;156mNAV and epochs[39m                                                                                                                                                                        
+  [38;2;244;243;239m/fund-epochs[39m    [38;2;151;151;156msettled epochs[39m                  
+  [38;2;244;243;239m/fund-user[39m      [38;2;151;151;156mdepositor position[39m                                                                                                                                                                    
+  [38;2;244;243;239m/funding[39m        [38;2;151;151;156mfunding rates[39m                   
+  [38;2;244;243;239m/help[39m           [38;2;151;151;156mkeys and commands[39m                                                                                                                                                                     
+  [38;2;244;243;239m/hlp[39m            [38;2;151;151;156mHLP positioning[39m                 
+  [38;2;244;243;239m/index[39m          [38;2;151;151;156mvault indexes[39m                                                                                                                                                                         
+  [38;2;244;243;239m/macro[39m          [38;2;151;151;156mprediction-market macro context[39m 
+  [38;2;244;243;239m/markets[39m        [38;2;151;151;156mmarkets[39m                                                                                                                                                                               
+  [38;2;244;243;239m/models[39m         [38;2;151;151;156mlLM models for the[39m              
+  [38;2;244;243;239m/open[39m           [38;2;151;151;156mopen the latest card[39m                                                                                                                                                                  
+  [38;2;244;243;239m/paper[39m          [38;2;151;151;156mpaper trade[39m                     
+  [38;2;244;243;239m/paperaccount[39m   [38;2;151;151;156mpaper account summary[39m                                                                                                                                                                 
+  [38;2;244;243;239m/papercancel[39m    [38;2;151;151;156mcancel paper orders[39m             
+  [38;2;244;243;239m/paperorder[39m     [38;2;151;151;156mpaper order on the[39m                                                                                                                                                                    
+  [38;2;244;243;239m/paperreset[39m     [38;2;151;151;156mcreate or reset a[39m               
+  [38;2;244;243;239m/pine[39m           [38;2;151;151;156mpine scripts[39m                                                                                                                                                                          
+  [38;2;244;243;239m/preview[39m        [38;2;151;151;156morder risk check[39m                
+  [38;2;244;243;239m/price[39m          [38;2;151;151;156mprice[39m                                                                                                                                                                                 
+  [38;2;244;243;239m/quit[39m           [38;2;151;151;156mleave[39m                           
+  [38;2;244;243;239m/schema[39m         [38;2;151;151;156mtool schemas[39m                                                                                                                                                                          
+  [38;2;244;243;239m/sell[39m           [38;2;151;151;156msell or short[39m                   
+  [38;2;244;243;239m/status[39m         [38;2;151;151;156mhealth check[39m                                                                                                                                                                          
+  [38;2;244;243;239m/strat[39m          [38;2;151;151;156mquant strategy[39m                  
+  [38;2;244;243;239m/theme[39m          [38;2;151;151;156mswitch theme[39m                                                                                                                                                                          
+  [38;2;244;243;239m/trades[39m         [38;2;151;151;156mrecent trades[39m                   
+  [38;2;244;243;239m/vault[39m          [38;2;151;151;156mtearsheet[39m                                                                                                                                                                             
+  [38;2;244;243;239m/vault-history[39m  [38;2;151;151;156mbulk dated vault histories[39m      
+  [38;2;244;243;239m/vaults[39m         [38;2;151;151;156mscreener[39m                                                                                                                                                                              
+  [38;2;244;243;239m/watch[39m          [38;2;151;151;156mfollow live[39m                     
+  [38;2;244;243;239m/withdraw[39m       [38;2;151;151;156mwithdraw from a vault[39m                                                                                                                                                                 
+
+
+
+[38;2;48;48;52m────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+[39m  [38;2;107;107;112m❯[39m                                                                                                                                                                                     [38;2;107;107;112m↑↓  enter  esc[39m  

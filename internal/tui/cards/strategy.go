@@ -682,7 +682,9 @@ func (p *painter) strategyCard(r *core.Result) card {
 	for _, x := range ps[:n] {
 		label := x.coin
 		if x.label != "" && x.label != x.coin && !p.o.Compact {
-			label += " " + p.st.muted.Render(x.label)
+			// Plain text: the table strips escape codes from cells, so a
+			// pre-styled label would print its colour codes as text.
+			label += " " + x.label
 		}
 		row := []cell{p.c(label), p.cs(fmtWeight(x.w), x.w)}
 		if barW > 0 && peak > 0 {

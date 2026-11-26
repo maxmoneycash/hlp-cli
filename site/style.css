@@ -1,5 +1,5 @@
 /* hlp landing. The setup-rush landing language (docs/DESIGN.md §2 tokens, §3 type, §4 marks).
-   Dark only: the ground is the terminal's ground. Mobile first. One accent: orange. */
+   Dark only: the ground is the terminal's ground. Mobile first. One accent: Hyperliquid mint. */
 
 :root {
   --bg: #131315;
@@ -9,8 +9,8 @@
   --text: #f4f3ef;
   --muted: #97979c;
   --dim: #6b6b70;
-  --accent: #ff5a1f;
-  --accent-edge: #a8360b;
+  --accent: #97fce4;
+  --accent-edge: #2f7d6d;
   --down: #ff4b3e;
 
   --g: 16px;
@@ -123,7 +123,7 @@ i { font-style: normal; color: var(--dim); }
 .install code { flex: 1; min-width: 0; font-size: 13px; white-space: nowrap; overflow-x: auto; scrollbar-width: none; }
 .install code::-webkit-scrollbar { display: none; }
 
-/* Keycap: orange chamfered face, a hard 3px edge the press travels into. */
+/* Keycap: mint chamfered face, a hard 3px edge the press travels into. */
 .keycap {
   --ch: 8px;
   flex: none; border: 0; padding: 0; background: none; cursor: pointer;

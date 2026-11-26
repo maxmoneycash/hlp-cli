@@ -16,7 +16,7 @@ package theme
 // stay clear of both.
 //
 // "rush" is the default (docs/DESIGN.md section 2): the setuprush.com landing
-// surfaces and app tokens, one orange accent, white gains and red losses, no
+// surfaces and app tokens, one Hyperliquid mint accent, white gains and red losses, no
 // green or teal anywhere.
 
 // Built-in theme names.
@@ -47,7 +47,7 @@ func builtins() []Theme {
 // table is binding). Ground and surfaces come from the landing
 // (landing.css:10-16), inks from the app tokens (index.css:42-71). Gains are
 // ink: Up == Text and Success == Text, and the sign carries direction. The
-// orange is the only accent; at 16 colors it is yellow (3) so it never
+// mint is the only accent; at 16 colors it is bright cyan (14) so it never
 // collides with Down (9), and Warn is bright yellow (11), always paired with
 // its "!" glyph or a word.
 func rushTheme() Theme {
@@ -66,7 +66,7 @@ func rushTheme() Theme {
 		MA:       [3]Color{C("#8ab4f8", 111, 12), C("#b4a2ff", 147, 13), C("#e9b949", 179, 11)},
 		VolMix:   0.30,
 
-		Accent:  C("#ff5a1f", 202, 3),
+		Accent:  C("#97fce4", 122, 14),
 		Accent2: C("#8ab4f8", 111, 12),
 		Muted:   C("#97979c", 246, 7),
 		Border:  C("#303034", 236, 8),
@@ -77,7 +77,7 @@ func rushTheme() Theme {
 
 		Raised:     C("#202023", 235, -2),
 		Floor:      C("#2c2c30", 236, -2),
-		AccentEdge: C("#a8360b", 130, -2),
+		AccentEdge: C("#2f7d6d", 30, -2),
 		ChartSkin:  "rush",
 	}
 }
@@ -85,7 +85,7 @@ func rushTheme() Theme {
 // paperTheme is rush on the setup-rush "paper" chart skin's ground: the
 // whole app recolors with /theme paper, not just the chart, so the chart is
 // not a beige sticker on a black page (CRITIQUE.md, theme rows). Same rules
-// as rush: ink gains, red losses, one orange accent (darkened for the light
+// as rush: ink gains, red losses, one mint accent (darkened to teal for the light
 // ground), no green. The paper skin pairs with it and paints the same
 // ground, which the shell sets with OSC 11.
 func paperTheme() Theme {
@@ -104,7 +104,7 @@ func paperTheme() Theme {
 		MA:       [3]Color{C("#2a55a0", 25, 4), C("#5a40b0", 61, 5), C("#6b5000", 94, 3)},
 		VolMix:   0.30,
 
-		Accent:  C("#c04a0c", 166, 3),
+		Accent:  C("#064d42", 23, 6),
 		Accent2: C("#2a55a0", 25, 4),
 		Muted:   C("#4f4c46", 239, 8),
 		Border:  C("#a3a197", 247, 7),
@@ -115,7 +115,7 @@ func paperTheme() Theme {
 
 		Raised:     C("#b3b1a7", 249, -2),
 		Floor:      C("#b0aea4", 248, -2),
-		AccentEdge: C("#7c2a08", 94, -2),
+		AccentEdge: C("#03302a", 22, -2),
 		ChartSkin:  "paper",
 	}
 }

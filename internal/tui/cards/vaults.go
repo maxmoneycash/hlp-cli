@@ -354,7 +354,7 @@ func screenerName(s string) string {
 }
 
 // seriesColor maps a line-chart color index to its theme token
-// (0 = ink, 1..3 = MA[0..2]): the subject is never orange (DESIGN.md
+// (0 = ink, 1..3 = MA[0..2]): the subject is never the accent (DESIGN.md
 // section 2 rule 2).
 func seriesColor(th theme.Theme, i int) theme.Color {
 	if i <= 0 {
@@ -366,7 +366,7 @@ func seriesColor(th theme.Theme, i int) theme.Color {
 // identityColor gives each well-known series one color on every card
 // (tearsheet, compare, backtest): HLP, BTC and HYPE keep their hue
 // wherever they appear, the subject takes the accent, anything else is a
-// quiet neutral. The subject is ink: orange marks one thing at a time and
+// quiet neutral. The subject is ink: the accent marks one thing at a time and
 // a curve is never it.
 func identityColor(th theme.Theme, name string, subject bool) theme.Color {
 	switch strings.ToUpper(strings.TrimSpace(name)) {

@@ -2,7 +2,7 @@
 
 Status: binding. Every change to `internal/theme`, `internal/tui` and `internal/tui/cards` follows this file. When code and this file disagree, the code is wrong.
 
-The direction in one line: say less. The interface shows the number you came for, in ink on near-black with one orange accent, and nothing that repeats what is already on screen. Terminal references: lazygit, k9s and btop.
+The direction in one line: say less. The interface shows the number you came for, in ink on near-black with one Hyperliquid mint accent, and nothing that repeats what is already on screen. Terminal references: lazygit, k9s and btop.
 
 Section numbers below are cited from code comments (for example `DESIGN.md section 5.1 rule 6`). "Before" in the tables refers to an earlier, wordier build.
 
@@ -10,7 +10,7 @@ Section numbers below are cited from code comments (for example `DESIGN.md secti
 
 ## 1. The one idea
 
-**A quiet, near-black terminal: real words only on the thing you asked for, one big number, one orange accent, and nothing else talking.**
+**A quiet, near-black terminal: real words only on the thing you asked for, one big number, one Hyperliquid mint accent, and nothing else talking.**
 
 The landing page works because of what it leaves out. It has six statements, six sentences and mono labels of three words or fewer, and each section shows one live object. hlp currently does the opposite:
 
@@ -57,8 +57,8 @@ Mapping from setup-rush:
 | `Text` | ink: titles, values, gains | `#f4f3ef` | 255 | 15 | foreground |
 | `Muted` | labels, units, secondary values | `#97979c` | 246 | 7 | muted-foreground |
 | `Dim` | meta, placeholders, ghost hints, axis ticks | `#6b6b70` | 242 | 8 | between muted and border |
-| `Accent` | **the only accent**: prompt `❯`, focused reticle, live `■`, selection bar `▌`, keycap face | `#ff5a1f` | 202 | 3 | primary / orange |
-| `AccentEdge` (new) | keycap lip under the face | `#a8360b` | 130 | -2 | keycap edge |
+| `Accent` | **the only accent**: prompt `❯`, focused reticle, live `■`, selection bar `▌`, keycap face | `#97fce4` | 122 | 14 | primary / Hyperliquid mint |
+| `AccentEdge` (new) | keycap lip under the face | `#2f7d6d` | 30 | -2 | keycap edge |
 | `Up` | gains, bull candles | `#f4f3ef` | 255 | 15 | bull = foreground |
 | `Down` | losses, bear candles, failures | `#ff4b3e` | 203 | 9 | bear |
 | `Warn` | stale data, testnet, notes (`!`) | `#e9b949` | 179 | 11 | gold |
@@ -72,18 +72,18 @@ Mapping from setup-rush:
 Rules:
 
 1. **Gains are white, losses are red, and the sign carries direction.** There is no green and no teal anywhere in rush. Every signed number shows its sign: `+` for gains and U+2212 `−` for losses, never the ASCII hyphen, in cards, ticker and tables alike. `cards.SignedPct`, `SignedUSD` and the chart's change labels emit U+2212. Plain mode (`--plain`, MCP text, JSON) keeps ASCII `-`, so machine output does not change.
-2. **Orange marks one thing at a time.** These are the only places it appears:
+2. **The accent marks one thing at a time.** These are the only places it appears:
    - the prompt `❯`;
    - the reticle corners on the focused card;
    - the live `■` in the top bar;
    - the `▌` bar on the selected row of a list, completion or palette;
    - the keycap on a confirm.
 
-   Orange is never used for titles, headers, links, numbers or the brand name.
+   The accent is never used for titles, headers, links, numbers or the brand name.
 3. **Status colours mean status.** Red is only for a negative number, an error, or a check that failed. Gold is only for a warning (`!`, STALE, TESTNET). Max drawdown is a negative number by definition, so it is shown in ink, not red. It turns red only when it is worse than the configured `risk.max_dd`, or than −30% when that is unset.
 4. **Flat.** No borders around cards, no rounded boxes, no gradients, no fills used as decoration. Depth comes from the one surface step (`Surface` on `BG`). Tinted fills are allowed only where they encode a value: heatmap cells, depth bars and the drawdown area.
 5. **Charts match.** In the TUI, theme `rush` uses the chart skin `rush`: the setup-rush "terminal" palette (ink `#f4f3ef` up, `#ff4b3e` down) with its background set to the ground `#131315`, so a chart is not a darker rectangle on the page. Up bodies are hollow (an ink outline on the ground, as the landing's ChartWall draws them) and down bodies solid red, on both `rush` and `terminal`; inline cards draw 3-column bodies so the outline reads as a box. The theme `paper` is the same rules on the paper skin's ground (`#c6c4ba`): `/theme paper` repaints the whole app (OSC 11), not just the chart, and the paper skin's live tag and volume are ink, not green.
-6. **Fallbacks.** At 256 colours use the hand-picked indexes above. Never rely on automatic downsampling, which turns `#ff5a1f` into red 196 and collides with Down. At 16 colours:
+6. **Fallbacks.** At 256 colours use the hand-picked indexes above. Never rely on automatic downsampling, which can land the accent next to a status colour and collides with Down. At 16 colours:
    - surfaces become reverse video;
    - the floor grid and the flap cell faces are omitted;
    - the accent is yellow (3), and warn is bright yellow (11) and always carries its `!` glyph or a word label, so the two never rely on hue alone.
@@ -96,7 +96,7 @@ Contrast on `#131315`:
 |---|---|---|
 | `#f4f3ef` | 17.0:1 | any text |
 | `#97979c` | 6.6:1 | any text |
-| `#ff5a1f` | 6.1:1 | any text |
+| `#97fce4` | 15.6:1 | any text |
 | `#ff4b3e` | 5.6:1 | any text |
 | `#6b6b70` | 3.5:1 | Dim only: meta and ghost text, never a value someone must read |
 
@@ -479,6 +479,6 @@ There are also visual checks, made by looking at the PNGs:
 
 - one focal point;
 - no teal, green or purple pixels in chrome (charts' MA lines excepted);
-- orange appears in 3 places or fewer per shot;
+- the accent appears in 3 places or fewer per shot;
 - no box borders;
 - the reticle on exactly one card.

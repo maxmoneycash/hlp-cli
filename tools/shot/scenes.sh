@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # scenes.sh [OUTDIR] [SCENE...]
 #
-# Reproduces the docs/screenshots/before set at 140x42 (scenes 01 to 18 with
+# Shoots the compact set at 140x42 (scenes 01 to 18 with
 # 03b, 06b, 08b, 13b and 16b) with the same names and keystrokes, into OUTDIR
-# (default docs/screenshots/after). Name scene ids (02 06b ...) to shoot only
+# (default tools/shot/out/scenes). Name scene ids (02 06b ...) to shoot only
 # those. Each scene is one tools/shot/shoot.sh run: a clean config, no keys,
 # reduced motion, read-only public data.
 #
@@ -13,12 +13,12 @@
 #
 #   tools/shot/scenes.sh                      # the whole set
 #   tools/shot/scenes.sh /tmp/x 02 08 08b     # three scenes
-#   tools/shot/words.sh docs/screenshots/after
+#   tools/shot/words.sh tools/shot/out/scenes
 set -euo pipefail
 
 HERE=$(cd "$(dirname "$0")" && pwd)
 ROOT=$(cd "$HERE/../.." && pwd)
-OUT=${1:-$ROOT/docs/screenshots/after}
+OUT=${1:-$ROOT/tools/shot/out/scenes}
 [[ $# -gt 0 ]] && shift
 mkdir -p "$OUT"
 OUT=$(cd "$OUT" && pwd)
