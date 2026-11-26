@@ -275,6 +275,11 @@ func paneName(p *pane) string {
 		return "chart"
 	case paneVaults:
 		return "vaults " + itoa(len(p.view)) // the count lives in the crumb: said once
+	case paneDash:
+		if p.dash.coin != "" && strings.Contains(fmtRows(p.dash), "{coin}") {
+			return p.dash.title + " " + p.dash.coin
+		}
+		return p.dash.title
 	}
 	if p.res != nil && p.res.Title != "" {
 		return p.res.Title
@@ -322,6 +327,8 @@ func (m *Model) paneHints(p *pane) [][2]string {
 			return [][2]string{{"type", "filter"}, {"enter", "keep"}, {"esc", "clear"}}
 		}
 		return [][2]string{{"esc", "back"}, {"/", "filter"}, {"s", "sort"}, {"↑↓", "select"}, {"enter", "tearsheet"}, {"r", "reverse"}}
+	case paneDash:
+		return [][2]string{{"esc", "back"}, {"1-9", "open"}, {"tab", "next"}}
 	}
 	return [][2]string{{"esc", "back"}, {"i", "info"}, {"↑↓", "scroll"}, {"g/G", "top/bottom"}}
 }

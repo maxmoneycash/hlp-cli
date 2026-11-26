@@ -23,6 +23,7 @@ const (
 	paneCard   paneKind = iota // any card, full size, scrollable (tearsheet, watch, arena, ...)
 	paneChart                  // interactive candles
 	paneVaults                 // sortable, filterable screener
+	paneDash                   // a grid of live tiles (/dash)
 )
 
 // pane is a full-screen view over the transcript.
@@ -36,6 +37,12 @@ type pane struct {
 	scroll  int
 	loading bool
 	err     error
+
+	// dashboard (paneDash): its layout and one pane per tile; a tile's
+	// label is the command it runs
+	dash  *dashSpec
+	tiles []*pane
+	label string
 
 	// chart
 	zoom, offset, cursor, style int // zoom 0 = auto (defaultZoom of the pane width)
@@ -245,6 +252,8 @@ func (m *Model) paneKey(p *pane, k tea.KeyPressMsg) tea.Cmd {
 		return m.chartKey(p, key)
 	case paneVaults:
 		return m.vaultsKey(p, key)
+	case paneDash:
+		return m.dashKey(p, key)
 	}
 	if key == "i" {
 		p.info = !p.info
@@ -470,6 +479,8 @@ func (m *Model) renderPane(p *pane, width, height int) []string {
 		return m.renderChartPane(p, width, height)
 	case paneVaults:
 		return m.renderVaultsPane(p, width, height)
+	case paneDash:
+		return m.renderDashPane(p, width, height)
 	}
 	o := m.cardOpts(width, false)
 	o.Info = p.info

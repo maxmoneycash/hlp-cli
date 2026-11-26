@@ -58,16 +58,24 @@ func (p *painter) backtestCard(r *core.Result) card {
 	}
 	if cs := mcs; len(cs) > 0 {
 		// The whole backtest window, not its last screen: merge bars so
-		// every fill lands on the chart, two columns per candle so they
-		// span the panel's width.
+		// every fill lands on the chart.
 		cs, per := fitCandles(cs, max((p.w-14)/2, 20))
 		pairs := [][2]string{{"", p.lbl(strings.TrimPrefix(coin, "xyz:"))}, {"", p.st.text.Render(strconv.Itoa(len(d.Fills))) + " " + p.lbl("fills")}}
 		if per > 1 {
 			pairs = append(pairs, [2]string{"", p.st.text.Render(strconv.Itoa(per)) + " " + p.lbl("bars per candle")})
 		}
 		c.body = append(c.body, "", p.meta(pairs...))
+		// The widest candles that still fit every one (merging rounds
+		// the count down, so a fixed width leaves the left side empty).
+		zoom := 1
+		for _, z := range []int{6, 4, 2} {
+			if len(cs)*z <= p.w-14 {
+				zoom = z
+				break
+			}
+		}
 		g, _ := candlesFn(cs, chart.CandleOpts{
-			Width: p.w, Height: 14, Style: p.o.ChartStyle, Skin: p.o.ChartSkin, Zoom: 2, VolRows: 0, Cursor: -1,
+			Width: p.w, Height: 14, Style: p.o.ChartStyle, Skin: p.o.ChartSkin, Zoom: zoom, VolRows: 0, Cursor: -1,
 			Markers: fillMarkers(cs, d.Fills, coin), Coin: coin, Location: p.o.Location,
 		}, p.th)
 		c.body = append(c.body, p.gridLines(g)...)

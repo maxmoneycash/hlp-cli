@@ -140,6 +140,15 @@ func (m *Model) runSlash(text string) tea.Cmd {
 		m.add(&entry{kind: entryUser, text: text})
 		m.add(&entry{kind: entryError, err: &core.Error{Code: core.CodeUsage, Message: "Unknown candle style " + args[0], Hint: "/candles"}})
 		return nil
+	case "dash":
+		name, coin := "markets", ""
+		if len(args) > 0 {
+			name = args[0]
+		}
+		if len(args) > 1 {
+			coin = args[1]
+		}
+		return m.openDash(name, coin)
 	case "open":
 		return m.openLatest()
 	case "quit", "exit", "q":

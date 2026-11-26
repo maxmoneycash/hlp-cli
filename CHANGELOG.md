@@ -5,6 +5,14 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.5] - 2026-11-26
+
+### Added
+- `/dash markets|vaults|hlp|strategies|research [coin]`: full-screen grids of live tiles. `1`-`9` opens a tile, `tab` moves to the next dashboard.
+
+### Fixed
+- Backtest price panels pick the widest candles that fit, so they span the panel.
+
 ## [0.1.4] - 2026-11-25
 
 ### Fixed

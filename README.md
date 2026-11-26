@@ -11,7 +11,7 @@ strategies trade on paper. Candlestick charts, a JSON CLI and an MCP server incl
 [![ci](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-<img src="docs/screenshots/desktop/d01-shell-session.png" alt="The hlp shell: a live BTC 15m chart, the top vaults and a price board as cards, with a live ticker along the top" width="880">
+<img src="docs/screenshots/desktop/01-dash-markets.png" alt="The markets dashboard: a live BTC chart, order book, trades, markets and funding filling the terminal" width="880">
 
 </div>
 
@@ -70,19 +70,11 @@ hlp vaults --select name,tvl,sharpe --limit 5 | jq
 
 | | |
 |---|---|
-| <img src="docs/screenshots/desktop/d02-chart-btc-15m.png" alt="BTC 15m chart full screen with moving averages, volume and the crosshair" width="430"><br>**Chart** | <img src="docs/screenshots/desktop/d03-shell-watchlist.png" alt="A HYPE chart and the HLP vault card with the watchlist open" width="430"><br>**Watchlist** |
-| <img src="docs/screenshots/desktop/d04-vault-screener.png" alt="The vault screener: fifty vaults with TVL, APR, returns, drawdown, Sharpe and trend" width="430"><br>**Vault screener** | <img src="docs/screenshots/desktop/d05-vault-hlp-tearsheet.png" alt="HLP tearsheet: return curve, drawdown, metrics, checklist and monthly returns" width="430"><br>**Vault tearsheet** |
-| <img src="docs/screenshots/desktop/d10-vault-compare.png" alt="HLP, Growi HF and 22Cap compared: curves, metrics and correlation" width="430"><br>**Compare vaults** | <img src="docs/screenshots/desktop/d06-hlp-positioning.png" alt="What HLP holds now across its parent and seven child vaults" width="430"><br>**HLP positioning** |
-| <img src="docs/screenshots/desktop/d07-book-and-trades.png" alt="The ETH order book and recent trades as live cards" width="430"><br>**Book and trades** | <img src="docs/screenshots/desktop/d08-markets.png" alt="Perps, HIP-3 and spot markets by volume" width="430"><br>**Markets** |
-| <img src="docs/screenshots/desktop/d09-funding.png" alt="Funding ranking: who pays longs and who pays shorts" width="430"><br>**Funding** | <img src="docs/screenshots/desktop/d15-macro.png" alt="Prediction-market odds from Polymarket, Kalshi and Hyperliquid" width="430"><br>**Macro odds** |
-| <img src="docs/screenshots/desktop/d17-thesis-backtest.png" alt="A plain-English thesis backtest against HLP, BTC and HYPE with fills on the chart" width="430"><br>**Thesis backtest** | <img src="docs/screenshots/desktop/d18-pine-backtest.png" alt="A 90-day Pine EMA cross backtest on BTC with every fill on the chart" width="430"><br>**Pine backtest** |
-| <img src="docs/screenshots/desktop/d19-vault-arena.png" alt="Four real vaults raced over 30 days on one chart, with the leaderboard" width="430"><br>**Vault arena** | <img src="docs/screenshots/desktop/d13-quant-strategy.png" alt="An hlp.xyz quant strategy: live target book and backtest stats" width="430"><br>**Quant strategy** |
-| <img src="docs/screenshots/desktop/d14-strategy-vault.png" alt="A HyperEVM strategy vault: NAV, epochs, fees and roles" width="430"><br>**Strategy vault** | <img src="docs/screenshots/desktop/d12-index.png" alt="A vault index and its allocation" width="430"><br>**Vault index** |
-| <img src="docs/screenshots/desktop/d11-discover.png" alt="Curated vaults by theme, style and risk" width="430"><br>**Discover** | <img src="docs/screenshots/desktop/d16-order-preview.png" alt="A dry-run order preview with every risk check" width="430"><br>**Order preview** |
-| <img src="docs/screenshots/desktop/d29-ask-illustrative.png" alt="Illustrative: a question answered with a live vault card, from a local fake model" width="430"><br>**Ask (illustrative)** | <img src="docs/screenshots/desktop/d23-palette.png" alt="The command palette" width="430"><br>**Palette** |
-| <img src="docs/screenshots/desktop/d22-autocomplete.png" alt="Slash-command completion" width="430"><br>**Completion** | <img src="docs/screenshots/desktop/d21-help.png" alt="Keys and commands" width="430"><br>**Help** |
-| <img src="docs/screenshots/desktop/d24-theme-hyperliquid.png" alt="The hyperliquid theme" width="430"><br>**Hyperliquid theme** | <img src="docs/screenshots/desktop/d25-theme-paper.png" alt="The paper theme" width="430"><br>**Paper theme** |
-| <img src="docs/screenshots/desktop/d26-heikin-ashi.png" alt="Heikin-Ashi candles" width="430"><br>**Heikin-Ashi** |  |
+| <img src="docs/screenshots/desktop/01-dash-markets.png" alt="Markets dashboard: BTC chart, order book, trades, markets and funding" width="430"><br>**Markets** | <img src="docs/screenshots/desktop/02-dash-vaults.png" alt="Vaults dashboard: screener, HLP tearsheet, vault comparison and curated themes" width="430"><br>**Vaults** |
+| <img src="docs/screenshots/desktop/03-dash-hlp.png" alt="HLP dashboard: HLP's live positions, a vault arena, an index and a strategy vault" width="430"><br>**HLP** | <img src="docs/screenshots/desktop/04-dash-strategies.png" alt="Strategies dashboard: a Pine and a thesis backtest with fills, a quant strategy and a dry-run order preview" width="430"><br>**Strategies** |
+| <img src="docs/screenshots/desktop/05-dash-research.png" alt="Research dashboard: HYPE chart, prediction-market odds, book, trades, funding and HIP-3 markets" width="430"><br>**Research** | <img src="docs/screenshots/desktop/06-dash-markets-eth-hyperliquid.png" alt="The markets dashboard for ETH in the hyperliquid theme" width="430"><br>**Hyperliquid theme** |
+| <img src="docs/screenshots/desktop/07-dash-vaults-paper.png" alt="The vaults dashboard in the paper theme" width="430"><br>**Paper theme** | <img src="docs/screenshots/desktop/08-dash-research-sol-heikin.png" alt="The research dashboard for SOL with Heikin-Ashi candles" width="430"><br>**Heikin-Ashi** |
+| <img src="docs/screenshots/desktop/09-shell.png" alt="The chat shell: chart, vault and price cards, the watchlist and slash completion" width="430"><br>**Shell** | <img src="docs/screenshots/desktop/10-ask-illustrative.png" alt="Illustrative: a question answered with a live vault card, from a local fake model" width="430"><br>**Ask (illustrative)** |
 
 ## What you get
 
@@ -241,6 +233,9 @@ completion, `ctrl+k` palette, `ctrl+b` watchlist, `ctrl+t` theme, `?` help. VS C
 `terminal.integrated.sendKeybindingsToShell`. Windows Terminal takes `alt+enter` for full screen. Plain words work with no
 model at all ("chart btc 4h", "top vaults by sharpe", "funding"). Add a model and the assistant can
 call every read-only tool and answer with live cards.
+
+`/dash markets`, `/dash vaults`, `/dash hlp`, `/dash strategies` and `/dash research` open live
+dashboards; add a coin (`/dash markets ETH`). `1`-`9` opens a tile full screen, `tab` moves to the next.
 
 <!-- not rendered yet (`make gifs` / commit docs/images, then restore): <img src="docs/gifs/chat-inline.gif" alt="Typing how's btc doing and getting an inline chart with funding and OI" width="880"> -->
 

@@ -30,6 +30,7 @@ var localCommands = []command{
 	{slash: "clear", summary: "Clear the transcript", group: "shell"},
 	{slash: "theme", args: "<name>", summary: "Switch theme or chart theme (terminal, paper, neon...); no name lists them", group: "shell"},
 	{slash: "candles", args: "<style>", summary: "Candle style: classic, solid, hollow, ohlc, line, heikin...", group: "shell"},
+	{slash: "dash", args: "<name> [coin]", summary: "Dashboards: markets, vaults, hlp, strategies, research (tab cycles)", group: "shell"},
 	{slash: "open", summary: "Open the latest card full screen (ctrl+o)", group: "shell"},
 	{slash: "quit", aliases: []string{"exit", "q"}, summary: "Leave hlp", group: "shell"},
 }

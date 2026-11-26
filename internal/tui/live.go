@@ -76,7 +76,13 @@ func (m *Model) desiredLive() []liveSpec {
 		return nil
 	}
 	var out []liveSpec
-	if p := m.topPane(); p != nil {
+	if p := m.topPane(); p != nil && p.kind == paneDash {
+		for _, t := range p.tiles {
+			if s, ok := m.specFor("pane:"+strconv.Itoa(t.seq), t.res, t.tool, t.call); ok {
+				out = append(out, s)
+			}
+		}
+	} else if p != nil {
 		if s, ok := m.specFor("pane:"+strconv.Itoa(p.seq), p.res, p.tool, p.call); ok {
 			out = append(out, s)
 		}
@@ -425,11 +431,13 @@ func (m *Model) onLive(msg tea.Msg) tea.Cmd {
 // applyLive replaces the result behind a live key.
 func (m *Model) applyLive(key string, f func(*core.Result) *core.Result) {
 	for _, p := range m.panes {
-		if "pane:"+strconv.Itoa(p.seq) == key {
-			if r := f(p.res); r != nil {
-				p.setResult(r)
+		for _, t := range append([]*pane{p}, p.tiles...) {
+			if "pane:"+strconv.Itoa(t.seq) == key {
+				if r := f(t.res); r != nil {
+					t.setResult(r)
+				}
+				return
 			}
-			return
 		}
 	}
 	for _, e := range m.entries {
