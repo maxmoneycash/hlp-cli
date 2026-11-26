@@ -5,6 +5,14 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.6] - 2026-11-26
+
+### Added
+- Agent mode: under Claude Code, Codex, Cursor or Gemini CLI, JSON results are bounded like MCP results (series dropped or downsampled, 64 KB cap, cuts listed in `meta.warnings`). `--compact` / `HLP_COMPACT=1` and `--full` / `HLP_COMPACT=0` override it.
+- `hlp <command> --help --json` prints that tool's JSON Schema.
+- Unknown commands get a "did you mean" hint (`hlp chrat` → `hlp chart`), and `hlp /vaults` says to drop the slash.
+- `llms.txt`: a short map of the repo and the agent contract for LLMs.
+
 ## [0.1.5] - 2026-11-26
 
 ### Added

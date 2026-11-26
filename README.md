@@ -302,7 +302,8 @@ that agent's skills folder.
 | Errors | `{"error":{"code","message","hint","details"}}` on stderr |
 | Shaping | `--select a,b.c` (paths map over lists: `positions.coin`), `--limit N`, `-q` bare values, `--results-only`, `--csv`, `--plain` for no ANSI |
 | Streams | `-w`/`--live` to follow updates, `--ndjson` for one JSON line per update, bounded by `--max-events N` or `--for 30s`; piped `--json` gives one snapshot and exits |
-| Discovery | `hlp schema` lists tools; `hlp schema get_vault` prints input and output JSON Schema |
+| Agent mode | Under a coding agent (`AI_AGENT`, `CLAUDECODE`, `CODEX_SANDBOX`, `CURSOR_AGENT`, `GEMINI_CLI`) results are agent-sized like MCP's: bulky series dropped, long lists downsampled, 64 KB cap, every cut in `meta.warnings`. `--compact` / `HLP_COMPACT=1` turns it on anywhere, `--full` / `HLP_COMPACT=0` off |
+| Discovery | `hlp schema` lists tools; `hlp schema get_vault` (or `hlp vault --help --json`) prints input and output JSON Schema; a mistyped command gets a "did you mean" hint |
 | Exit codes | `0` ok · `1` error (network, upstream, not found) · `2` usage, including an unknown coin, vault or file · `3` refused by safety · `4` retryable (rate limited or upstream 5xx; the error has `"retryable":true` and, when known, `details.retryAfterMs`). A `--dry-run` preview exits `0` even when a risk check fails; the failed check is in the card and in `data.checks` |
 
 ## AI vs AI arena

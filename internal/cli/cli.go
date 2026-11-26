@@ -50,6 +50,7 @@ type globals struct {
 	command             string
 
 	resultsOnly, raw, csv bool
+	compact, full         bool
 	live                  bool
 	maxEvents             int
 	forDur                time.Duration
@@ -87,6 +88,7 @@ type app struct {
 	reg *core.Registry
 	// onWS, when set, receives WebSocket states (the TUI status bar).
 	onWS func(string)
+	root *cobra.Command // set by Run, for "did you mean" hints
 }
 
 // Execute builds the command tree from the core registry and runs it.
@@ -105,7 +107,8 @@ func Run(ctx context.Context, args []string, bi BuildInfo, pio IO) int {
 	}
 	a := &app{io: pio, g: &globals{}, bi: bi, reg: core.Default()}
 	root := a.rootCmd()
-	root.SetArgs(args)
+	a.root = root
+	root.SetArgs(helpAsSchema(root, args, pio.Getenv))
 	// help and usage text go through a writer that trims trailing spaces
 	// from every line, so `hlp --help | grep` and README pastes stay clean
 	tw := &trimWriter{w: pio.Out}
@@ -123,6 +126,67 @@ func Run(ctx context.Context, args []string, bi BuildInfo, pio IO) int {
 		}),
 	)
 	return core.ExitCode(classify(err))
+}
+
+// helpAsSchema turns `hlp [command] --help --json` into `hlp schema
+// [tool] --json`: agents asking for help in JSON get the tool's input and
+// output schema instead of prose. Other args pass through.
+func helpAsSchema(root *cobra.Command, args []string, getenv func(string) string) []string {
+	help, js := false, false
+	var rest []string
+	for _, x := range args {
+		switch x {
+		case "--help", "-h":
+			help = true
+		case "--json":
+			js = true
+		default:
+			rest = append(rest, x)
+		}
+	}
+	if v := strings.ToLower(getenv("HLP_JSON")); v == "1" || v == "true" || v == "yes" {
+		js = true
+	}
+	if len(args) > 0 && args[0] == "help" {
+		help, rest = true, rest[1:]
+	}
+	if !help || !js {
+		return args
+	}
+	c, _, err := root.Find(rest)
+	if err != nil {
+		return args
+	}
+	if c == root {
+		return []string{"schema", "--json"}
+	}
+	if t := c.Annotations["tool"]; t != "" {
+		return []string{"schema", t, "--json"}
+	}
+	return args
+}
+
+// suggestHint is the hint for an unknown command: the closest commands
+// ("did you mean"), or the command without a leading slash typed from the
+// shell habit (`hlp /vaults`).
+func suggestHint(root *cobra.Command, msg string) string {
+	const pre = `unknown command "`
+	if !strings.HasPrefix(msg, pre) {
+		return ""
+	}
+	name, _, _ := strings.Cut(msg[len(pre):], `"`)
+	if bare := strings.TrimPrefix(name, "/"); bare != name {
+		if c, _, err := root.Find([]string{bare}); err == nil && c != root {
+			return "drop the slash: `hlp " + bare + "`"
+		}
+	}
+	if root.SuggestionsMinimumDistance <= 0 {
+		root.SuggestionsMinimumDistance = 2
+	}
+	if s := root.SuggestionsFor(name); len(s) > 0 {
+		return "did you mean `hlp " + strings.Join(s, "` or `hlp ") + "`? Run `hlp --help` for every command"
+	}
+	return ""
 }
 
 // classify turns cobra's plain usage errors into USAGE errors (exit 2).
@@ -150,6 +214,12 @@ func (a *app) jsonErrors() bool {
 
 func (a *app) reportError(err error) {
 	err = classify(err)
+	var e *core.Error
+	if a.root != nil && errors.As(err, &e) && e.Code == core.CodeUsage {
+		if h := suggestHint(a.root, e.Message); h != "" {
+			e.Hint = h
+		}
+	}
 	if a.jsonErrors() {
 		WriteError(a.io.Err, err)
 		return
@@ -167,6 +237,10 @@ func (a *app) mode() (Mode, error) {
 	if m.ResultsOnly || m.Raw || m.CSV {
 		m.JSON, m.Plain = true, false
 	}
+	if g.compact && g.full {
+		return m, &core.Error{Code: core.CodeUsage, Message: "--compact and --full cannot be combined"}
+	}
+	m.Compact = m.JSON && !m.CSV && !m.Raw && !g.full && (g.compact || agentCompact(a.io.Getenv))
 	if m.CSV && m.NDJSON {
 		return m, &core.Error{Code: core.CodeUsage, Message: "--csv and --ndjson cannot be combined"}
 	}
@@ -214,6 +288,8 @@ func (a *app) rootCmd() *cobra.Command {
 	pf.BoolVar(&g.resultsOnly, "results-only", false, "Print data without the {data, meta} envelope")
 	pf.BoolVarP(&g.raw, "raw", "q", false, "Print bare values (with --select of one field), else data only")
 	pf.BoolVar(&g.csv, "csv", false, "Output the rows of data as CSV (nested fields as a.b)")
+	pf.BoolVar(&g.compact, "compact", false, "Trim JSON for agents: drop bulky series, cap at 64 KB (automatic under a coding agent, HLP_COMPACT=1)")
+	pf.BoolVar(&g.full, "full", false, "Full JSON even under a coding agent (HLP_COMPACT=0)")
 	pf.BoolVarP(&g.live, "live", "w", false, "Stream updates: redraw on a terminal, NDJSON when piped")
 	pf.IntVar(&g.maxEvents, "max-events", 0, "Stop a stream after N results, exit 0 (env HLP_MAX_EVENTS)")
 	pf.DurationVar(&g.forDur, "for", 0, "Stop a stream after this long, exit 0 (e.g. 30s, 5m)")
@@ -316,7 +392,7 @@ func (a *app) width() int {
 
 // globalFlagNames are persistent flags; tool inputs with these names reuse them.
 var globalFlagNames = map[string]bool{"json": true, "ndjson": true, "plain": true, "select": true, "limit": true, "color": true, "testnet": true, "config": true, "theme": true, "help": true, "version": true,
-	"results-only": true, "raw": true, "csv": true, "live": true, "max-events": true, "for": true}
+	"results-only": true, "raw": true, "csv": true, "compact": true, "full": true, "live": true, "max-events": true, "for": true}
 
 // addToolCommands creates one cobra command per tool from Tool.Command
 // ("vault compare" nests under "vault"), with flags generated from the
@@ -374,12 +450,13 @@ func (a *app) toolCmd(t core.Tool, use string) *cobra.Command {
 		short += " [mutating]"
 	}
 	cmd := &cobra.Command{
-		Use:     use + positionalUse(tool),
-		Short:   short,
-		Long:    strings.TrimSpace(tool.Summary + "\n\n" + tool.Description),
-		Aliases: commandAliases(tool),
-		Args:    cobra.ArbitraryArgs,
-		Example: examplesFor(tool),
+		Use:         use + positionalUse(tool),
+		Short:       short,
+		Long:        strings.TrimSpace(tool.Summary + "\n\n" + tool.Description),
+		Aliases:     commandAliases(tool),
+		Annotations: map[string]string{"tool": tool.Name},
+		Args:        cobra.ArbitraryArgs,
+		Example:     examplesFor(tool),
 	}
 	a.hideGlobals(cmd, tool)
 	fields := core.Fields(tool)
@@ -655,6 +732,13 @@ var errStreamBound = errors.New("stream bound reached")
 // card; redraw clears the screen first for live TTY streams.
 func (a *app) emit(env *core.Env, r *core.Result, m Mode, redraw bool) error {
 	if m.JSON {
+		if m.Compact {
+			c, err := compactResult(r, m)
+			if err != nil {
+				return err
+			}
+			r, m.Select, m.Limit = c, nil, 0
+		}
 		return writeResult(a.io.Out, r, m)
 	}
 	out := a.renderCard(env, r, m)

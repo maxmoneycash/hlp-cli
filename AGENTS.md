@@ -63,7 +63,9 @@ holds the same guidance as task recipes.
   `details.retryAfterMs` (rate limits, timeouts, connection errors, any 5xx, hlp.xyz still loading).
 - **Retry rule:** on `RATE_LIMITED` or `retryable: true`, wait `details.retryAfterMs` (or 2 s), then
   retry once. Run hlp calls one at a time: parallel processes share one rate limit.
-- **Discovery:** `hlp schema` lists every tool; `hlp schema <tool>` prints its input and output JSON
+- **Discovery:** `hlp <command> --help --json` is `hlp schema <tool>` for that command, and an
+  unknown command's error `hint` names the closest commands (`did you mean`).
+  `hlp schema` lists every tool; `hlp schema <tool>` prints its input and output JSON
   Schema. Input field names are exactly those in the schema.
 
 ## Units and conventions
@@ -166,6 +168,12 @@ holds the same guidance as task recipes.
   most recent rows. `markets` and `vaults` also take `--offset N`, and `trades` and `fills` take
   `--limit`.
 - Unshaped, a vault tearsheet is about 220 KB and a comparison about 560 KB. Always select.
+- **Agent mode.** When hlp runs under a coding agent (any of `AI_AGENT`, `CLAUDECODE`,
+  `CODEX_SANDBOX`, `CURSOR_AGENT`, `GEMINI_CLI`, `HLP_AGENT` set) JSON results are bounded the way
+  MCP bounds them: curves (`curve`, `nav`, `equity`, `pnl`, `plots`, `markers`) dropped unless
+  `--select` names them, time series downsampled to 200 points, the payload capped at 64 KB.
+  Each cut is a line in `meta.warnings` and sets `meta.truncated`. `--compact` or `HLP_COMPACT=1`
+  turns it on anywhere; `--full` or `HLP_COMPACT=0` turns it off. Schemas are never compacted.
 
 ## Streams
 

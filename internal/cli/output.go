@@ -29,6 +29,7 @@ type Mode struct {
 	ResultsOnly bool // --results-only: print data without the {data, meta} envelope
 	Raw         bool // -q/--raw: bare values when --select names one scalar field
 	CSV         bool // --csv: the rows of data as CSV (nested fields flattened a.b)
+	Compact     bool // --compact, HLP_COMPACT=1 or a coding agent: the MCP-sized payload
 
 	// Streams.
 	Live      bool          // -w/--live: stream (redraw on a TTY)

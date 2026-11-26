@@ -1,0 +1,29 @@
+# hlp cli
+
+> hlp is a Hyperliquid terminal for markets and vaults: candlestick charts, vault screener and tearsheets, Pine and thesis backtests, paper trading and an AI vs AI arena. Every command speaks JSON and MCP, and no keys are needed for reads.
+
+Install: `curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.sh | sh` or `go install github.com/maxmoneycash/hlp-cli/cmd/hlp@latest`.
+
+Use from an agent: `claude mcp add hlp -- hlp mcp` (MCP over stdio), or call the CLI. Output is JSON when stdout is not a terminal: `{"data", "meta"}` on stdout, `{"error": {"code", "message", "hint", "retryable"}}` on stderr. Exit codes: 0 ok, 1 error, 2 usage, 3 refused by safety (never work around it), 4 retryable. Under a coding agent results are trimmed to about 64 KB with every cut listed in `meta.warnings`; use `--select a,b.c` for exactly the fields you need, or `--full`.
+
+## Docs
+
+- [AGENTS.md](https://github.com/maxmoneycash/hlp-cli/blob/main/AGENTS.md): the agent contract (envelope, units, errors, retries, streams, safety)
+- [skills/hlp/SKILL.md](https://github.com/maxmoneycash/hlp-cli/blob/main/skills/hlp/SKILL.md): task recipes; `hlp skill --install claude|codex|cursor`
+- [README.md](https://github.com/maxmoneycash/hlp-cli/blob/main/README.md): features, install, configuration
+- [docs/ARCHITECTURE.md](https://github.com/maxmoneycash/hlp-cli/blob/main/docs/ARCHITECTURE.md): one tool registry behind the CLI, shell, MCP and agent
+
+## Discovery
+
+- `hlp schema`: every tool with a one-line summary
+- `hlp schema <tool>` or `hlp <command> --help --json`: input and output JSON Schema
+- `hlp status`: connectivity and rate-limit budget
+
+## Common calls
+
+- `hlp price BTC ETH HYPE`
+- `hlp vaults --sort sharpe --limit 10 --select name,address,tvl,apr,maxDD,sharpe`
+- `hlp vault hlp --select summary,tearsheet.metrics`
+- `hlp chart BTC 1h --select summary`
+- `hlp backtest examples/thesis/long-spy-short-memes.yaml --select tearsheet.metrics`
+- `hlp preview buy BTC --usd 100` (never signed, never sent)
