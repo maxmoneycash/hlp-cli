@@ -17,7 +17,7 @@ curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.s
 
 No keys. No account. No sign-up. Then run `hlp` and type `/dash`.
 
-[Screenshots](#screenshots) · [Quick start](#quick-start-30-seconds) · [For AI agents](#ai-agent-and-mcp) · [Arena](#ai-vs-ai-arena) · [Safety](#safety)
+[Website](https://maxmoneycash.github.io/hlp-cli/) · [Screenshots](#screenshots) · [Quick start](#quick-start-30-seconds) · [For AI agents](#ai-agent-and-mcp) · [Arena](#ai-vs-ai-arena) · [Safety](#safety)
 
 </div>
 

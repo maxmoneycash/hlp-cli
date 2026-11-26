@@ -12,6 +12,9 @@ set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 ROOT=$(cd "$HERE/../.." && pwd)
 OUT=${1:-$ROOT/docs/screenshots/hero.gif}
+# FILM_FLAGS: renderer flags for every frame (the site uses -no-frame: its
+# own plate frames the terminal)
+FILM_FLAGS=${FILM_FLAGS:--title hlp}
 [[ -x /usr/local/opt/go/bin/go ]] && export PATH=/usr/local/opt/go/bin:$PATH
 WORK=${TMPDIR:-/tmp}/hlp-film-$$
 mkdir -p "$WORK"
@@ -23,7 +26,7 @@ HLP_BIN=$WORK/hlp SHOT_BIN=$WORK/shot SHOT_OUT=$WORK/out SHOT_FILM=$WORK/rec SHO
 	"$HERE/shoot.sh" hero 160 46 "/dash markets{Enter}{wait 25}{Tab}{wait 20}{Tab}{wait 25}{Tab}{wait 50}{Tab}{wait 25}" >/dev/null
 
 # seconds kept before each tab: markets, vaults, hlp, strategies, research
-python3 - "$WORK" <<'PY'
+FILM_FLAGS=$FILM_FLAGS python3 - "$WORK" <<'PY'
 import filecmp, os, subprocess, sys
 w = sys.argv[1]; rec = os.path.join(w, "rec")
 t = {int(a): float(b) for a, b in (l.split() for l in open(os.path.join(rec, "times.txt")))}
@@ -42,7 +45,7 @@ for end, hold in zip(ends, holds):
     for i, n in enumerate(starts):
         stop = t[starts[i + 1]] if i + 1 < len(starts) else t[seg[-1]] + 0.13
         png = os.path.join(w, "fr", f"{k:04d}.png")
-        subprocess.run([os.path.join(w, "shot"), "-cols", "160", "-rows", "46", "-title", "hlp",
+        subprocess.run([os.path.join(w, "shot"), "-cols", "160", "-rows", "46", *os.environ.get("FILM_FLAGS", "-title hlp").split(),
                         "-bg", "#131315", "-scale", "1", "-o", png, ansi(n)], check=True, capture_output=True)
         lines.append(f"file '{png}'\nduration {stop - t[n]:.3f}")
         k += 1
