@@ -5,6 +5,9 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- The welcome wordmark scales with the window (up to 4x), and the first-run line leads with `/dash markets`.
+
 ## [0.1.6] - 2026-11-26
 
 ### Added

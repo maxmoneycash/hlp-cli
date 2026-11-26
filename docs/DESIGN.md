@@ -382,7 +382,7 @@ row H-1    ❯ █                                                              
 
 | Screen | Focal |
 |---|---|
-| Welcome | the `HLP` wordmark in the reticle |
+| Welcome | the `HLP` wordmark in the reticle, scaled with the window (1x to 4x, `glyph.Scale`) |
 | Transcript | the newest card's focal number (bold); the reticle marks that card |
 | Pane | the big digits |
 | Confirm | the keycap |

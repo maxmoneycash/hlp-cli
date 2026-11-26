@@ -350,7 +350,11 @@ func (m *Model) welcomeScreen(w, h int) []string {
 		return e.rl
 	}
 	lines := make([]string, h)
-	mark := glyph.Wordmark()
+	// The wordmark grows with the window so it stays the focal point of an
+	// empty screen (DESIGN.md 6.2): 1x on a laptop split, up to 4x on a
+	// full-size terminal.
+	m3 := glyph.Wordmark()
+	mark := glyph.Scale(m3[:], max(min(w/36, h/10, 4), 1))
 	const col = 4
 	markW := lipgloss.Width(mark[0])
 	// reticle: one blank cell each side of the mark, corners in the rows
@@ -371,7 +375,7 @@ func (m *Model) welcomeScreen(w, h int) []string {
 	}
 	block = append(block, retBot)
 	if firstRun {
-		block = append(block, "", strings.Repeat(" ", col)+m.st.dim.Render("/chart BTC   /vaults   /vault hlp"))
+		block = append(block, "", strings.Repeat(" ", col)+m.st.dim.Render("/dash markets   /chart BTC   /vaults   /vault hlp"))
 	}
 	top := max((h*2)/5-2, 1)
 	if top+len(block) > h {

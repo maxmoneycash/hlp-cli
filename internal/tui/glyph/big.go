@@ -117,3 +117,49 @@ func BigWidth(s string) int {
 func Wordmark() [3]string {
 	return draw([]token{{'H', 0}, {'L', 1}, {'P', 1}}, wordFace)
 }
+
+// Scale enlarges block art drawn with █ ▀ ▄ and spaces by s in both
+// directions: each cell is two square pixels stacked, the pixels are
+// repeated s times across and down, and pairs of pixel rows are drawn
+// back as half blocks, so edges stay crisp at any size.
+func Scale(rows []string, s int) []string {
+	if s <= 1 {
+		return rows
+	}
+	var px [][]bool
+	for _, r := range rows {
+		var top, bot []bool
+		for _, c := range r {
+			t, b := c == '█' || c == '▀', c == '█' || c == '▄'
+			for range s {
+				top, bot = append(top, t), append(bot, b)
+			}
+		}
+		for range s {
+			px = append(px, top)
+		}
+		for range s {
+			px = append(px, bot)
+		}
+	}
+	out := make([]string, 0, (len(px)+1)/2)
+	for y := 0; y < len(px); y += 2 {
+		var b strings.Builder
+		for x := range px[y] {
+			t := px[y][x]
+			bt := y+1 < len(px) && px[y+1][x]
+			switch {
+			case t && bt:
+				b.WriteRune('█')
+			case t:
+				b.WriteRune('▀')
+			case bt:
+				b.WriteRune('▄')
+			default:
+				b.WriteByte(' ')
+			}
+		}
+		out = append(out, b.String())
+	}
+	return out
+}
