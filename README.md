@@ -57,7 +57,7 @@ Pipe anything and it prints JSON: `hlp vaults --select name,tvl,sharpe --limit 5
 
 ## AI agents
 
-35 read-only tools over MCP. Answers come back sized for an agent's context.
+35 tools over MCP, none of which can trade. Answers come back sized for an agent's context.
 
 ```sh
 claude mcp add hlp -- hlp mcp        # Claude Code
