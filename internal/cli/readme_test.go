@@ -48,12 +48,14 @@ func readmeCommands(t *testing.T, path string) []string {
 	return out
 }
 
-// Every command a reader can paste from the README must at least get past
+// Every command a reader can paste from the README or the guide must at least get past
 // argument parsing (exit code 2 = usage error is a broken README). Data the
 // offline fixtures lack (HIP-3 markets, named vaults) may fail otherwise.
 func TestREADMECommandsParse(t *testing.T) {
 	fx := isolate(t)
-	cmds := readmeCommands(t, filepath.Join(coretest.RepoRoot(), "README.md"))
+	root := coretest.RepoRoot()
+	cmds := readmeCommands(t, filepath.Join(root, "README.md"))
+	cmds = append(cmds, readmeCommands(t, filepath.Join(root, "docs", "GUIDE.md"))...)
 	if len(cmds) < 15 {
 		t.Fatalf("found only %d README commands", len(cmds))
 	}
