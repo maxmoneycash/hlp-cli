@@ -4,10 +4,10 @@
 
 **The Hyperliquid terminal. Live charts, every vault, backtests and AI agents, in your shell.**
 
-[![MCP: 35 tools](https://img.shields.io/badge/MCP-35_tools-97fce4?labelColor=0f1a1f)](#ai-agents)
-[![macOS · Linux · Windows](https://img.shields.io/badge/macOS_%C2%B7_Linux_%C2%B7_Windows-97fce4?labelColor=0f1a1f)](#install)
-[![no keys needed](https://img.shields.io/badge/no_keys-needed-97fce4?labelColor=0f1a1f)](#safety)
-[![license: MIT](https://img.shields.io/badge/license-MIT-97fce4?labelColor=0f1a1f)](LICENSE)
+[![MCP: 35 tools](docs/badges/mcp.svg)](#ai-agents)
+[![macOS · Linux · Windows](docs/badges/platforms.svg)](#install)
+[![no keys needed](docs/badges/keys.svg)](#safety)
+[![license: MIT](docs/badges/license.svg)](LICENSE)
 
 <img src="docs/screenshots/hero.gif" alt="hlp in a terminal: the live markets dashboard for BTC, then tab through the vaults, HLP, strategies and research dashboards" width="100%">
 
