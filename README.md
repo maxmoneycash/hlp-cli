@@ -5,7 +5,6 @@
 **The Hyperliquid terminal. Live charts, every vault, backtests and AI agents, in your shell.**
 
 [![release](https://img.shields.io/github/v/release/maxmoneycash/hlp-cli?sort=semver&include_prereleases&color=97fce4&labelColor=0f1a1f)](https://github.com/maxmoneycash/hlp-cli/releases)
-[![stars](https://img.shields.io/github/stars/maxmoneycash/hlp-cli?style=flat&color=97fce4&labelColor=0f1a1f)](https://github.com/maxmoneycash/hlp-cli/stargazers)
 [![ci](https://img.shields.io/github/actions/workflow/status/maxmoneycash/hlp-cli/ci.yml?branch=main&label=ci&color=97fce4&labelColor=0f1a1f)](https://github.com/maxmoneycash/hlp-cli/actions/workflows/ci.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-97fce4?labelColor=0f1a1f)](LICENSE)
 
