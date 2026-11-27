@@ -17,6 +17,8 @@ curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.s
 
 No keys. No account. No sign-up. Then run `hlp` and type `/dash`.
 
+Plug it into Claude Code, Cursor or Codex: `claude mcp add hlp -- hlp mcp`
+
 [Website](https://maxmoneycash.github.io/hlp-cli/) · [Screenshots](#screenshots) · [Quick start](#quick-start-30-seconds) · [For AI agents](#ai-agent-and-mcp) · [Arena](#ai-vs-ai-arena) · [Safety](#safety)
 
 </div>
@@ -90,8 +92,6 @@ hlp vaults --select name,tvl,sharpe --limit 5 | jq
 
 ## Charts
 
-<!-- not rendered yet (`make gifs` / commit docs/images, then restore): <img src="docs/gifs/hero.gif" alt="Typing /chart HYPE 15m, opening it full screen, walking the crosshair back and zooming in" width="880"> -->
-
 Candles with hollow up bodies and solid red down bodies, moving averages behind them, volume, a live
 last-price tag and a crosshair. The price leads in big digits. Any perp, spot or HIP-3 market
 (`xyz:SP500`, `xyz:NVDA`).
@@ -119,8 +119,6 @@ badly: use `--style ascii` or `chart.style = "ascii"` in config.
 cycles them; `--theme <name>` picks one.
 
 ## Vault analytics
-
-<!-- not rendered yet (`make gifs` / commit docs/images, then restore): <img src="docs/gifs/vaults.gif" alt="The vault screener sorted by Sharpe, filtered to one vault, and its tearsheet down to the checklist" width="880"> -->
 
 The screener merges every Hyperliquid vault (stats-data) with hlp.xyz's curated metrics. Defaults
 hide closed vaults, HLP's child vaults and anything under $10k. Risk filters never pass a vault whose
@@ -197,8 +195,6 @@ shows on stderr and finished windows are cached, so reruns are quick. More these
 
 ## Pine import
 
-<!-- not rendered yet (`make gifs` / commit docs/images, then restore): <img src="docs/gifs/pine.gif" alt="A Pine strategy run on HYPE with its fills on the chart and a tearsheet" width="880"> -->
-
 Pine v5 and v6 strategies run locally: `ta.*`, `strategy.entry/exit/close` (with trailing stops),
 inputs, `var` state, `switch`, user functions with default and named arguments, `timestamp()` and
 `plot`. `request.security` works for the same coin at the chart's timeframe or a higher one (closed
@@ -237,8 +233,6 @@ call every read-only tool and answer with live cards.
 
 `/dash markets`, `/dash vaults`, `/dash hlp`, `/dash strategies` and `/dash research` open live
 dashboards; add a coin (`/dash markets ETH`). `1`-`9` opens a tile full screen, `tab` moves to the next.
-
-<!-- not rendered yet (`make gifs` / commit docs/images, then restore): <img src="docs/gifs/chat-inline.gif" alt="Typing how's btc doing and getting an inline chart with funding and OI" width="880"> -->
 
 Bring your own model in `~/.config/hlp/config.toml`. Local models need no key; hlp never ships or
 proxies one.
@@ -289,8 +283,6 @@ args = ["mcp"]
 Then ask: *"Find Hyperliquid vaults over $1M with drawdown under 20% that beat HLP risk-adjusted;
 cite meta.asOf."*
 
-<!-- not rendered yet (`make gifs` / commit docs/images, then restore): <img src="docs/gifs/agent.gif" alt="Claude Code answering a vault question through hlp mcp" width="880"> -->
-
 **Skill.** [`skills/hlp/SKILL.md`](skills/hlp/SKILL.md) teaches an agent the JSON contract and the
 tools. `hlp skill` prints it, and `hlp skill --install claude` (or `codex`, `cursor`) copies it into
 that agent's skills folder.
@@ -308,8 +300,6 @@ that agent's skills folder.
 | Exit codes | `0` ok · `1` error (network, upstream, not found) · `2` usage, including an unknown coin, vault or file · `3` refused by safety · `4` retryable (rate limited or upstream 5xx; the error has `"retryable":true` and, when known, `details.retryAfterMs`). A `--dry-run` preview exits `0` even when a risk check fails; the failed check is in the card and in `data.checks` |
 
 ## AI vs AI arena
-
-<!-- not rendered yet (`make gifs` / commit docs/images, then restore): <img src="docs/gifs/arena.gif" alt="Four paper strategies on one live feed: two local models, a Pine script and a thesis, with a leaderboard" width="880"> -->
 
 Several strategies, the same live feed, the same $10,000 of paper money: local LLM bots, Pine
 scripts and theses on one leaderboard with return, Sharpe and max drawdown. Every entrant is a
@@ -332,8 +322,6 @@ scout up to 4 coins (crypto majors and HIP-3 equity perps), then decide in stric
 confidence, reason and evidence per trade; risk limits are enforced in code. In paper and arena
 runs they also see prediction-market odds (`hlp macro`: Hyperliquid HIP-4, Polymarket, Kalshi) as
 labelled context, never as a signal and never in backtests (`macro.disabled = true` turns it off).
-
-<!-- not rendered yet (`make gifs` / commit docs/images, then restore): <img src="docs/gifs/paper.gif" alt="A local model's paper vault: equity vs HLP, positions and a decision log with reasons" width="880"> -->
 
 Run one strategy on its own as a paper vault. `hlp paper start` runs in the foreground; stop it
 with ctrl+c and the ledger stays, so `paper list` and `paper status` show it afterwards:
