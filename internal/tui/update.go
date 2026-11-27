@@ -1,9 +1,11 @@
 package tui
 
 import (
+	"fmt"
 	"strings"
 
 	tea "charm.land/bubbletea/v2"
+	"github.com/charmbracelet/colorprofile"
 
 	"github.com/maxmoneycash/hlp-cli/internal/theme"
 )
@@ -24,7 +26,54 @@ func (m *Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 // setFrame stores the frame as one joined string: View serves it as is.
 func (m *Model) setFrame(lines []string) {
+	if r := m.groundReplacer(); r != nil {
+		// Most lines repeat from frame to frame: look them up instead of
+		// rescanning (a map hit is far cheaper than a Replace).
+		out := make([]string, len(lines))
+		for i, l := range lines {
+			v, ok := m.groundLines[l]
+			if !ok {
+				v = l
+				if strings.Contains(l, m.groundKey) {
+					v = r.Replace(l)
+				}
+				if len(m.groundLines) > 4096 {
+					clear(m.groundLines)
+				}
+				m.groundLines[l] = v
+			}
+			out[i] = v
+		}
+		lines = out
+	}
 	m.frame = []string{strings.Join(lines, "\n")}
+}
+
+// groundReplacer turns cells painted with the theme ground into the
+// terminal's default background while hlp sets that default to the same
+// ground (OSC 11). Opaque terminals look the same; translucent ones (Warp,
+// Ghostty, iTerm over a wallpaper) show one even glass instead of opaque
+// blocks wherever a chart or pane painted its ground. nil when hlp does
+// not paint the ground.
+func (m *Model) groundReplacer() *strings.Replacer {
+	if !m.paintsBackground() {
+		return nil
+	}
+	bg := m.th.BG
+	var k string
+	switch {
+	case m.profile == colorprofile.TrueColor && bg.True.Valid:
+		k = fmt.Sprintf("48;2;%d;%d;%d", bg.True.R, bg.True.G, bg.True.B)
+	case m.profile == colorprofile.ANSI256 && bg.C256 >= 0:
+		k = fmt.Sprintf("48;5;%d", bg.C256)
+	default:
+		return nil
+	}
+	if m.groundRep == nil || m.groundKey != k {
+		m.groundLines = map[string]string{}
+		m.groundKey, m.groundRep = k, strings.NewReplacer("["+k+"m", "[49m", "["+k+";", "[49;", ";"+k+"m", ";49m", ";"+k+";", ";49;")
+	}
+	return m.groundRep
 }
 
 // quiet reports, before msg is applied, that it changes nothing visible.

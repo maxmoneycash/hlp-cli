@@ -6,8 +6,8 @@
 # docs/screenshots/desktop by default. Name scene ids (01 05 ...) to shoot
 # only those. Same rules as
 # scenes.sh: a clean config, no keys, reduced motion, read-only public data.
-# The ask scene talks to a local fake model (tools/shot/fakellm) and is
-# captioned illustrative.
+# Scene 10 is the markets dashboard in a see-through terminal over a
+# wallpaper (docs/screenshots/wallpaper/field.jpg, generated, not a photo).
 #
 #   tools/shot/desktop.sh
 #   DESK_COLS=240 DESK_ROWS=64 tools/shot/desktop.sh /tmp/x 02
@@ -53,7 +53,7 @@ SCENES=(
 	"07|07-dash-vaults-paper|SHOT_BG=#c6c4ba SHOT_FG=#191a17 SHOT_WAIT=25 SHOT_MAX=40|/theme paper{Enter}{wait 1}/dash vaults{Enter}{wait 25}"
 	"08|08-dash-research-sol-heikin|SHOT_WAIT=25 SHOT_MAX=40|/candles heikin{Enter}{wait 1}/dash research SOL{Enter}{wait 25}"
 	"09|09-shell|COLS=150 SHOT_WAIT=6 SHOT_MAX=30|/chart ETH 1h{Enter}{wait 6}{settle}/vault hlp{Enter}{wait 8}{settle}/price btc eth hype sol{Enter}{wait 4}{settle}{C-b}{wait 2}/da"
-	"10|10-ask-illustrative|COLS=150 FAKE=1 SHOT_WAIT=40 SHOT_MAX=90|/chart HYPE 1h{Enter}{wait 6}{settle}/funding{Enter}{wait 5}{settle}/price btc eth hype sol{Enter}{wait 4}{settle}{C-b}{wait 1}$ASK{Enter}"
+	"10|10-dash-markets-glass|GLASS=1 SHOT_WAIT=25 SHOT_MAX=40|/dash markets{Enter}{wait 25}"
 )
 
 PICK=("$@")
@@ -84,15 +84,19 @@ for row in "${SCENES[@]}"; do
 	envv=()
 	# shellcheck disable=SC2206
 	[[ -n $envs ]] && envv=($envs)
-	fake="" bg="" fg="" cols=$COLS
+	fake="" bg="" fg="" glass="" cols=$COLS
 	for kv in ${envv[@]+"${envv[@]}"}; do
 		[[ $kv == COLS=* ]] && cols=${kv#COLS=}
 		[[ $kv == FAKE=1 ]] && fake=1
 		[[ $kv == SHOT_BG=* ]] && bg=${kv#SHOT_BG=}
 		[[ $kv == SHOT_FG=* ]] && fg=${kv#SHOT_FG=}
+		[[ $kv == GLASS=1 ]] && glass=1
 	done
 	extra=(SHOT_FLAGS="$DEFAULT_FLAGS")
 	[[ -n $bg ]] && extra=(SHOT_FLAGS="-bg $bg${fg:+ -fg $fg}")
+	# GLASS=1: a translucent terminal over a wallpaper (Warp, Ghostty, iTerm
+	# with a background image), saved as JPEG (the gradient is 3 MB as PNG).
+	[[ -n $glass ]] && extra=(SHOT_FLAGS="-bg #131315 -opacity 0.45 -wallpaper-blur 10 -wallpaper $ROOT/docs/screenshots/wallpaper/field.jpg")
 	if [[ -n $fake ]]; then
 		start_fake
 		extra+=(SHOT_CONFIG="$HERE/fake.toml" SHOT_TITLE="hlp (illustrative: local fake model)")
@@ -101,5 +105,8 @@ for row in "${SCENES[@]}"; do
 		failed=1
 	fi
 	[[ -s $OUT/$name.ansi ]] || { echo "desktop: no capture for $id" >&2; failed=1; }
+	if [[ -n $glass && -s $OUT/$name.png ]]; then
+		sips -s format jpeg -s formatOptions 90 "$OUT/$name.png" --out "$OUT/$name.jpg" >/dev/null && rm "$OUT/$name.png"
+	fi
 done
 exit $failed

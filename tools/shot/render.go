@@ -24,6 +24,7 @@ type painter struct {
 	img    *image.RGBA
 	fs     *fontSet
 	fg, bg color.RGBA // terminal defaults
+	glass  float64    // opacity of the default ground (0 or 1 = opaque)
 	pal    [16]color.RGBA
 	lw     int // light stroke width in px
 }
@@ -97,6 +98,17 @@ func (p *painter) resolve(c tcolor, def color.RGBA) color.RGBA {
 func mix(a, b color.RGBA, t float64) color.RGBA {
 	l := func(x, y uint8) uint8 { return uint8(math.Round(float64(x)*(1-t) + float64(y)*t)) }
 	return color.RGBA{l(a.R, b.R), l(a.G, b.G), l(a.B, b.B), 255}
+}
+
+// ground is the default background as the window paints it: translucent
+// (premultiplied) when the terminal is see-through, like Warp or Ghostty
+// over a wallpaper.
+func (p *painter) ground() color.RGBA {
+	if p.glass <= 0 || p.glass >= 1 {
+		return p.bg
+	}
+	m := func(v uint8) uint8 { return uint8(math.Round(float64(v) * p.glass)) }
+	return color.RGBA{m(p.bg.R), m(p.bg.G), m(p.bg.B), uint8(math.Round(255 * p.glass))}
 }
 
 func (p *painter) fill(x0, y0, x1, y1 int, c color.RGBA) {
@@ -204,7 +216,11 @@ func (p *painter) draw(g *grid, ox, oy int) {
 				span = 2
 			}
 			px, py := ox+x*cw, oy+y*ch
-			p.fill(px, py, px+span*cw, py+ch, bg)
+			if p.glass > 0 && p.glass < 1 && c.attrs.bg.kind == colDefault && !c.attrs.rev {
+				p.fill(px, py, px+span*cw, py+ch, p.ground())
+			} else {
+				p.fill(px, py, px+span*cw, py+ch, bg)
+			}
 			items = append(items, item{x, y, span, c, fg, bg})
 		}
 	}

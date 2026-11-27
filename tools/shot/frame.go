@@ -10,6 +10,7 @@ import (
 	"image/draw"
 	"math"
 
+	xdraw "golang.org/x/image/draw"
 	"golang.org/x/image/font"
 	"golang.org/x/image/font/opentype"
 	"golang.org/x/image/math/fixed"
@@ -20,10 +21,12 @@ type frameOpts struct {
 	frame    bool
 	shadow   bool
 	title    string
-	pad      float64 // pt
-	margin   float64 // pt
-	radius   float64 // pt
-	backdrop string  // dark | light | none | #hex[,#hex]
+	pad      float64     // pt
+	margin   float64     // pt
+	radius   float64     // pt
+	backdrop string      // dark | light | none | #hex[,#hex]
+	wall     image.Image // wallpaper behind everything (overrides backdrop)
+	wallBlur float64     // blur of the wallpaper seen through the window, pt
 	scale    float64
 }
 
@@ -179,7 +182,7 @@ func compose(g *grid, p *painter, o frameOpts) *image.RGBA {
 	pad := pt(o.pad)
 	if !o.frame {
 		img := image.NewRGBA(image.Rect(0, 0, gw+2*pad, gh+2*pad))
-		draw.Draw(img, img.Bounds(), image.NewUniform(p.bg), image.Point{}, draw.Src)
+		draw.Draw(img, img.Bounds(), image.NewUniform(p.ground()), image.Point{}, draw.Src)
 		p.img = img
 		p.draw(g, pad, pad)
 		return img
@@ -187,7 +190,7 @@ func compose(g *grid, p *painter, o frameOpts) *image.RGBA {
 	titleH := pt(34)
 	winW, winH := gw+2*pad, titleH+pt(o.pad*0.35)+gh+pad
 	win := image.NewRGBA(image.Rect(0, 0, winW, winH))
-	draw.Draw(win, win.Bounds(), image.NewUniform(p.bg), image.Point{}, draw.Src)
+	draw.Draw(win, win.Bounds(), image.NewUniform(p.ground()), image.Point{}, draw.Src)
 	p.img = win
 	p.draw(g, pad, titleH+pt(o.pad*0.35))
 
@@ -219,7 +222,18 @@ func compose(g *grid, p *painter, o frameOpts) *image.RGBA {
 	margin := pt(o.margin)
 	W, H := winW+2*margin, winH+2*margin
 	out := image.NewRGBA(image.Rect(0, 0, W, H))
-	backdrop(out, o.backdrop)
+	winR := image.Rect(margin, margin, margin+winW, margin+winH)
+	var glass *image.RGBA
+	if o.wall != nil {
+		cover(out, o.wall)
+		if p.glass > 0 && p.glass < 1 {
+			// what the see-through window shows: the wallpaper behind it,
+			// blurred, taken before the shadow darkens it
+			glass = blurred(out, winR, o.wallBlur*s)
+		}
+	} else {
+		backdrop(out, o.backdrop)
+	}
 	rad := o.radius * s
 	wx, wy := float64(margin), float64(margin)
 	if o.shadow {
@@ -235,6 +249,9 @@ func compose(g *grid, p *painter, o frameOpts) *image.RGBA {
 	}
 	rr := roundRect(wx, wy, float64(winW), float64(winH), rad)
 	mask := alphaMask(W, H, rr)
+	if glass != nil {
+		draw.DrawMask(out, winR, glass, winR.Min, mask, winR.Min, draw.Src)
+	}
 	draw.DrawMask(out, image.Rect(margin, margin, margin+winW, margin+winH), win, image.Point{}, mask, image.Pt(margin, margin), draw.Over)
 	// Hairline edges: a dark outer line and a faint light inner line, the
 	// way macOS draws dark windows.
@@ -251,4 +268,31 @@ func withAlpha(m *image.Alpha, a float64) *image.Alpha {
 		m.Pix[i] = uint8(float64(m.Pix[i]) * a)
 	}
 	return m
+}
+
+// cover draws src over dst scaled to cover it, centred.
+func cover(dst *image.RGBA, src image.Image) {
+	b, sb := dst.Bounds(), src.Bounds()
+	k := math.Max(float64(b.Dx())/float64(sb.Dx()), float64(b.Dy())/float64(sb.Dy()))
+	w, h := int(math.Ceil(float64(sb.Dx())*k)), int(math.Ceil(float64(sb.Dy())*k))
+	x0, y0 := b.Min.X-(w-b.Dx())/2, b.Min.Y-(h-b.Dy())/2
+	xdraw.CatmullRom.Scale(dst, image.Rect(x0, y0, x0+w, y0+h), src, sb, draw.Src, nil)
+}
+
+// blurred returns the r part of src softened by about sigma px: scaled down
+// and back up, twice, which is close to a gaussian at these sizes.
+func blurred(src *image.RGBA, r image.Rectangle, sigma float64) *image.RGBA {
+	out := image.NewRGBA(r)
+	draw.Draw(out, r, src, r.Min, draw.Src)
+	if sigma < 1 {
+		return out
+	}
+	f := math.Max(sigma/2, 1)
+	sw, sh := max(int(float64(r.Dx())/f), 1), max(int(float64(r.Dy())/f), 1)
+	for range 2 {
+		small := image.NewRGBA(image.Rect(0, 0, sw, sh))
+		xdraw.ApproxBiLinear.Scale(small, small.Bounds(), out, r, draw.Src, nil)
+		xdraw.CatmullRom.Scale(out, r, small, small.Bounds(), draw.Src, nil)
+	}
+	return out
 }

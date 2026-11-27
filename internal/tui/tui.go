@@ -3,6 +3,7 @@ package tui
 import (
 	"context"
 	"encoding/json"
+	"strings"
 	"sync"
 	"time"
 
@@ -74,10 +75,14 @@ type Model struct {
 	// is whether that background is dark. A theme of the other polarity
 	// repaints the terminal background (View.BackgroundColor).
 	termBG, termDark bool
-	profile          colorprofile.Profile
-	st               chrome
-	width, height    int
-	focused          bool
+	// groundKey/groundRep cache groundReplacer for the current theme.
+	groundKey     string
+	groundRep     *strings.Replacer
+	groundLines   map[string]string // line -> the line with the ground as default
+	profile       colorprofile.Profile
+	st            chrome
+	width, height int
+	focused       bool
 
 	entries []*entry
 	nextID  int

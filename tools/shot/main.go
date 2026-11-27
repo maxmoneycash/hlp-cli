@@ -11,6 +11,9 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"image"
+	"image/draw"
+	_ "image/jpeg"
 	"image/png"
 	"io"
 	"os"
@@ -36,6 +39,9 @@ func main() {
 		bdrop    = flag.String("backdrop", "dark", "backdrop: dark, light, warm, none (transparent), #hex or #top,#bottom")
 		bg       = flag.String("bg", "#0a0a0b", "terminal default background")
 		fg       = flag.String("fg", "#f4f3ef", "terminal default foreground")
+		wallpath = flag.String("wallpaper", "", "PNG or JPEG behind the window instead of -backdrop")
+		opacity  = flag.Float64("opacity", 1, "terminal background opacity; under 1 the wallpaper shows through, blurred")
+		wblur    = flag.Float64("wallpaper-blur", 14, "blur of the wallpaper seen through the window, in points")
 	)
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "usage: shot [flags] [input.ansi]\n\nRenders ANSI text to a framed PNG.\n\n")
@@ -82,7 +88,25 @@ func main() {
 	}
 	p.lw = max(1, int(float64(fs.cellW)/8.5+0.5))
 
+	p.glass = *opacity
+	var wall image.Image
+	if *wallpath != "" {
+		f, err := os.Open(*wallpath)
+		if err != nil {
+			die(err)
+		}
+		src, _, err := image.Decode(f)
+		f.Close()
+		if err != nil {
+			die(fmt.Errorf("wallpaper: %w", err))
+		}
+		// RGBA once: resampling a JPEG's YCbCr image takes the slow path.
+		rgba := image.NewRGBA(src.Bounds())
+		draw.Draw(rgba, rgba.Bounds(), src, src.Bounds().Min, draw.Src)
+		wall = rgba
+	}
 	img := compose(g, p, frameOpts{
+		wall: wall, wallBlur: *wblur,
 		frame: !*noFrame, shadow: !*noShadow, title: *title, pad: *pad,
 		margin: *margin, radius: *radius, backdrop: strings.ToLower(*bdrop), scale: *scale,
 	})
