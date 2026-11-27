@@ -57,6 +57,8 @@ Pipe anything and it prints JSON: `hlp vaults --select name,tvl,sharpe --limit 5
 
 ## AI agents
 
+<img src="docs/screenshots/agent.gif" alt="A real Claude Code session with hlp over MCP: asked which vaults over $1M beat HLP risk-adjusted, it calls the vault screener and answers with a table" width="100%">
+
 35 tools over MCP, none of which can trade. Answers come back sized for an agent's context.
 
 ```sh
