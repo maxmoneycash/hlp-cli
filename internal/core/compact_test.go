@@ -55,14 +55,10 @@ func TestCompactDropsAndDownsamplesSeries(t *testing.T) {
 	if _, ok := ts["benchmarks"].([]any)[0].(map[string]any)["curve"]; ok {
 		t.Fatal("benchmark curve kept")
 	}
-	spark := m["summary"].(map[string]any)["spark"].([]any)
-	if len(spark) != CompactMaxPoints {
-		t.Fatalf("spark has %d points", len(spark))
+	if _, ok := m["summary"].(map[string]any)["spark"]; ok {
+		t.Fatal("summary.spark kept without series:true")
 	}
-	if last := spark[len(spark)-1].(map[string]any)["v"].(json.Number); last != "999" {
-		t.Fatalf("last point lost: %v", last)
-	}
-	if !out.Meta.Truncated || len(out.Meta.Warnings) < 3 || out.Meta.Warnings[0] != "orig" {
+	if !out.Meta.Truncated || len(out.Meta.Warnings) < 2 || out.Meta.Warnings[0] != "orig" {
 		t.Fatalf("meta: %+v", out.Meta)
 	}
 	if len(res.Meta.Warnings) != 1 {
@@ -74,6 +70,12 @@ func TestCompactDropsAndDownsamplesSeries(t *testing.T) {
 	nav := out.Data.(map[string]any)["nav"].([]any)
 	if len(nav) != CompactMaxPoints {
 		t.Fatalf("nav %d", len(nav))
+	}
+	if last := nav[len(nav)-1].(map[string]any)["v"].(json.Number); last != "2999" {
+		t.Fatalf("last point lost: %v", last)
+	}
+	if spark := out.Data.(map[string]any)["summary"].(map[string]any)["spark"].([]any); len(spark) != CompactMaxPoints {
+		t.Fatalf("spark %d", len(spark))
 	}
 }
 

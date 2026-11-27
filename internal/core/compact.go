@@ -49,11 +49,15 @@ const (
 // Only list or object values are dropped: "equity" or "pnl" numbers stay.
 var seriesKeys = map[string]bool{
 	"curve": true, "nav": true, "equity": true, "pnl": true, "plots": true, "markers": true,
+	// a screener row's sparkline and the history series of a tearsheet:
+	// list_vaults with 50 rows carried 50 of them
+	"spark": true, "sharePrice": true, "estimatedEquity": true, "drawdown": true,
 }
 
 // CompactOptions tunes Compact.
 type CompactOptions struct {
-	// Series keeps curves, nav, equity, pnl, plots and markers (still
+	// Series keeps curves, nav, equity, pnl, plots, markers, spark,
+	// sharePrice, estimatedEquity and drawdown series (still
 	// downsampled to MaxPoints).
 	Series bool
 	// MaxPoints caps each time series; 0 = CompactMaxPoints.

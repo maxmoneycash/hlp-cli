@@ -7,6 +7,7 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ### Changed
 - The welcome wordmark scales with the window (up to 4x), and the first-run line leads with `/dash markets`.
+- Agent results (MCP and agent mode) drop every vault's `spark` and the `sharePrice`, `drawdown` and `estimatedEquity` series unless series are asked for: a vault list for Claude Code went from tens of KB to about 6 KB.
 
 ## [0.1.6] - 2026-11-26
 

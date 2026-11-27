@@ -170,7 +170,7 @@ holds the same guidance as task recipes.
 - Unshaped, a vault tearsheet is about 220 KB and a comparison about 560 KB. Always select.
 - **Agent mode.** When hlp runs under a coding agent (any of `AI_AGENT`, `CLAUDECODE`,
   `CODEX_SANDBOX`, `CURSOR_AGENT`, `GEMINI_CLI`, `HLP_AGENT` set) JSON results are bounded the way
-  MCP bounds them: curves (`curve`, `nav`, `equity`, `pnl`, `plots`, `markers`) dropped unless
+  MCP bounds them: curves (`curve`, `nav`, `equity`, `pnl`, `plots`, `markers`, `spark`, `sharePrice`, `drawdown`, `estimatedEquity`) dropped unless
   `--select` names them, time series downsampled to 200 points, the payload capped at 64 KB.
   Each cut is a line in `meta.warnings` and sets `meta.truncated`. `--compact` or `HLP_COMPACT=1`
   turns it on anywhere; `--full` or `HLP_COMPACT=0` turns it off. Schemas are never compacted.
@@ -227,7 +227,7 @@ accept the licence: their `acceptPineforgeLicense` input is ignored, and the per
 `hlp mcp` serves every read-only tool on stdio: `claude mcp add hlp -- hlp mcp`.
 
 - Results: `structuredContent` is `{data, meta}`, compacted for agents. Series are capped at 200
-  points; curves (`nav`, `equity`, `pnl`, `plots`, `markers`, benchmark curves) are dropped unless
+  points; curves (`nav`, `equity`, `pnl`, `plots`, `markers`, `spark`, `sharePrice`, `drawdown`, benchmark curves) are dropped unless
   you pass `series: true`; and the payload is capped at 64 KB, with `meta.truncated` and a warning
   naming what was cut. The text content is the same envelope as compact JSON, at most 16 KB, followed
   by a plain-text picture for charts, comparisons and backtests.
