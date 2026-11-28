@@ -9,7 +9,7 @@
 [![no keys needed](docs/badges/keys.svg)](#safety)
 [![license: MIT](docs/badges/license.svg)](LICENSE)
 
-<img src="docs/screenshots/hero.gif" alt="hlp in a terminal: the live markets dashboard for BTC, then tab through the vaults, HLP, strategies and research dashboards" width="100%">
+<img src="docs/screenshots/desktop/10-warp.jpg" alt="hlp in Warp over a wallpaper: BTC order book, funding, vault screener, vault arena and a multi-year BTC chart" width="100%">
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/maxmoneycash/hlp-cli/main/install.sh | sh
@@ -31,7 +31,7 @@ Plug it into Claude Code, Cursor or Codex: `claude mcp add hlp -- hlp mcp`
 | <img src="docs/screenshots/desktop/03-dash-hlp.png" alt="HLP dashboard: HLP's live positions, a vault arena, an index and a strategy vault" width="430"><br>**HLP** | <img src="docs/screenshots/desktop/04-dash-strategies.png" alt="Strategies dashboard: a Pine and a thesis backtest with fills, a quant strategy and a dry-run order preview" width="430"><br>**Strategies** |
 | <img src="docs/screenshots/desktop/05-dash-research.png" alt="Research dashboard: HYPE chart, prediction-market odds, book, trades, funding and HIP-3 markets" width="430"><br>**Research** | <img src="docs/screenshots/desktop/06-dash-markets-eth-hyperliquid.png" alt="The markets dashboard for ETH in the hyperliquid theme" width="430"><br>**Hyperliquid theme** |
 | <img src="docs/screenshots/desktop/07-dash-vaults-paper.png" alt="The vaults dashboard in the paper theme" width="430"><br>**Paper theme** | <img src="docs/screenshots/desktop/08-dash-research-sol-heikin.png" alt="The research dashboard for SOL with Heikin-Ashi candles" width="430"><br>**Heikin-Ashi** |
-| <img src="docs/screenshots/desktop/09-shell.png" alt="The chat shell: chart, vault and price cards, the watchlist and slash completion" width="430"><br>**Shell** | <img src="docs/screenshots/desktop/10-warp.jpg" alt="hlp in Warp over a wallpaper: BTC order book, funding, vault screener, vault arena and a multi-year BTC chart" width="430"><br>**In Warp** |
+| <img src="docs/screenshots/desktop/09-shell.png" alt="The chat shell: chart, vault and price cards, the watchlist and slash completion" width="430"><br>**Shell** | <img src="docs/screenshots/hero.gif" alt="hlp live: the markets dashboard for BTC, then tab through the vaults, HLP, strategies and research dashboards" width="430"><br>**Live** |
 
 ## Try it
 
